@@ -1,4 +1,4 @@
 class Specdatum < ActiveRecord::Base
-  mount_uploader :pologennja, FileUploader
+  mount_uploader :pologennya, FileUploader
 	belongs_to :specialization
 end

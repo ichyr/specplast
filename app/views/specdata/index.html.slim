@@ -1,8 +1,8 @@
 h1 Listing specdata
 
-table
+table.table.table-hover
   thead
-    tr
+    tr.row
       th Gen info
       th Proby
       th Activity
@@ -15,13 +15,13 @@ table
 
   tbody
     - @specdata.each do |specdatum|
-      tr
+      tr.row
         td = specdatum.gen_info
         td = specdatum.proby
         td = specdatum.activity
         td = specdatum.provid
         td = specdatum.specialization_id
-        td = link_to "Pologennya", specdatum.pologennja.url.to_s
+        td = link_to "Pologennya", specdatum.file.url.to_s
         td = link_to 'Show', specdatum
         td = link_to 'Edit', edit_specdatum_path(specdatum)
         td = link_to 'Destroy', specdatum, data: {:confirm => 'Are you sure?'}, :method => :delete
