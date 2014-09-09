@@ -1,17 +1,8 @@
 Feature: Specialization management
-
-	Scenario: Main page without specializations
-		Given I visit main page
-		When there is no specializations
-		Then I should not see any specialization
-		And I should see "Спецпластування"
-
-	Scenario: Main page with 3 specializations
-
-	Scenario: Main page - images of specializations
-
-	Scenario: Main page - default images for specializations
-
-	Scenario: Admin creation of specialization
-
-	Scenario: Admin creation of specialization - validations
+	Specialization must name and avatar
+	Specialization without avatar must hanve defualt avatar present
+	Specialization can change it's name
+	Specialization can change it's avatar
+	We can delete a specialization
+	Specialization has support data in :specdata
+	Specialziation has vmilists list in :vmilists
