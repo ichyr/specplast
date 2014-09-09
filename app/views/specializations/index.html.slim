@@ -20,4 +20,5 @@ table.table.table-hover
 
 br
 
-= link_to 'New Specialization', new_specialization_path
+- if policy(Specialization.new).new?
+  = link_to 'New Specialization', new_specialization_path
