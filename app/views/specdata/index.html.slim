@@ -8,9 +8,10 @@ table
       th Activity
       th Provid
       th Specialization
-      th
-      th
-      th
+      th Pologennja
+      th Inspect
+      th Edit
+      th Destroy
 
   tbody
     - @specdata.each do |specdatum|
@@ -20,6 +21,7 @@ table
         td = specdatum.activity
         td = specdatum.provid
         td = specdatum.specialization_id
+        td = link_to "Pologennya", specdatum.pologennja.url.to_s
         td = link_to 'Show', specdatum
         td = link_to 'Edit', edit_specdatum_path(specdatum)
         td = link_to 'Destroy', specdatum, data: {:confirm => 'Are you sure?'}, :method => :delete
