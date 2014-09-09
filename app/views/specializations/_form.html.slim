@@ -1,8 +1,9 @@
-= simple_form_for(@specialization) do |f|
+= simple_form_for(@specialization, html:{multipart:true}) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
+    = f.input :avatar, as: :file
 
   .form-actions
     = f.button :submit
