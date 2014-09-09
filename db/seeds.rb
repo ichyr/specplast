@@ -6,15 +6,16 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
-USER_NAMES = ["qwe", "asd"]
+roles = User.roles.keys
+
+USER_NAMES = roles
 USER_PASSWORD = "changeme"
-USER_ADMIN = [false, true]
+USER_ROLES = roles
 
 0.upto(USER_NAMES.length - 1 ) { |index|
-	p "index ->  #{index}"
 	user = CreateAdminService.new.call_custom USER_NAMES[index].to_s + "@example.com",
 																		 				USER_PASSWORD,
-																		 				USER_ADMIN[index]
+																		 				USER_ROLES[index]
 }
 
 
