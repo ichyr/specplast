@@ -1,0 +1,29 @@
+h1 Listing specdata
+
+table
+  thead
+    tr
+      th Gen info
+      th Proby
+      th Activity
+      th Provid
+      th Specialization
+      th
+      th
+      th
+
+  tbody
+    - @specdata.each do |specdatum|
+      tr
+        td = specdatum.gen_info
+        td = specdatum.proby
+        td = specdatum.activity
+        td = specdatum.provid
+        td = specdatum.specialization_id
+        td = link_to 'Show', specdatum
+        td = link_to 'Edit', edit_specdatum_path(specdatum)
+        td = link_to 'Destroy', specdatum, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Specdatum', new_specdatum_path

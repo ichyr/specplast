@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909080515) do
+ActiveRecord::Schema.define(version: 20140909194407) do
+
+  create_table "specdata", force: true do |t|
+    t.text     "gen_info"
+    t.text     "proby"
+    t.text     "activity"
+    t.text     "provid"
+    t.integer  "specialization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "specializations", force: true do |t|
     t.string   "name"

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Gen info:
+  = @specdatum.gen_info
+p
+  strong Proby:
+  = @specdatum.proby
+p
+  strong Activity:
+  = @specdatum.activity
+p
+  strong Provid:
+  = @specdatum.provid
+p
+  strong Specialization:
+  = @specdatum.specialization_id
+
+= link_to 'Edit', edit_specdatum_path(@specdatum)
+'|
+= link_to 'Back', specdata_path

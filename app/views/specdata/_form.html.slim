@@ -1,0 +1,12 @@
+= simple_form_for(@specdatum) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :gen_info
+    = f.input :proby
+    = f.input :activity
+    = f.input :provid
+    = f.input :specialization_id
+
+  .form-actions
+    = f.button :submit
