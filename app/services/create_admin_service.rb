@@ -6,4 +6,13 @@ class CreateAdminService
         user.admin!
       end
   end
+
+  def call_custom email, password, admin
+  	user = User.find_or_create_by!(email: email) do |user|
+        user.password = password
+        user.password_confirmation = password
+
+        user.admin! if admin
+      end
+  end
 end
