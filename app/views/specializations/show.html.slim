@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @specialization.name
+
+= link_to 'Edit', edit_specialization_path(@specialization)
+'|
+= link_to 'Back', specializations_path
