@@ -1,16 +1,17 @@
 h1 Listing specializations
 
-table
+table.table.table-hover
   thead
-    tr
+    tr.row
       th Name
-      th
-      th
-      th
+      th.text-center Avatar
+      th Inspect
+      th Edit
+      th Delete
 
   tbody
     - @specializations.each do |specialization|
-      tr
+      tr.row
         td = specialization.name
         td = image_tag specialization.avatar.url(:thumb).to_s if specialization.avatar
         td = link_to 'Show', specialization

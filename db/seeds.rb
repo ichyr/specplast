@@ -8,3 +8,12 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+# Seed Specializations
+SPECIALIZATIONS_COUNT = 3
+SPECIALIZATION_NAMES = [ "Кінна", "Військова", "Мандрівнича", "Спортивна",
+												 "Морська", "Летунська", "Мистецька"]
+
+SPECIALIZATIONS_COUNT.times {
+  Specialization.create name: SPECIALIZATION_NAMES.sample
+}

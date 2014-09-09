@@ -10,3 +10,5 @@ Feature: Specialization management
 	We can delete a specialization
 	Specialization has support data in :specdata
 	Specialziation has vmilists list in :vmilists
+	Only admin can create new specialization
+	Only admin can delete a specialization
