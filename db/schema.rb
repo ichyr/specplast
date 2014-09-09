@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909194407) do
+ActiveRecord::Schema.define(version: 20140909195331) do
 
   create_table "specdata", force: true do |t|
     t.text     "gen_info"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140909194407) do
     t.integer  "specialization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file"
   end
 
   create_table "specializations", force: true do |t|
