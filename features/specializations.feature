@@ -12,3 +12,5 @@ Feature: Specialization management
 	Specialziation has vmilists list in :vmilists
 	Only admin can create new specialization
 	Only admin can delete a specialization
+	Specialization can be edited by any admin
+	Specialization can be edited by moderator that can moderate it

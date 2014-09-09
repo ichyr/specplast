@@ -27,6 +27,7 @@ class SpecializationsController < ApplicationController
   # POST /specializations.json
   def create
     @specialization = Specialization.new(specialization_params)
+    authorize @specialization
 
     respond_to do |format|
       if @specialization.save
@@ -56,6 +57,7 @@ class SpecializationsController < ApplicationController
   # DELETE /specializations/1
   # DELETE /specializations/1.json
   def destroy
+    authorize @specialization
     @specialization.destroy
     respond_to do |format|
       format.html { redirect_to specializations_url, notice: 'Specialization was successfully destroyed.' }

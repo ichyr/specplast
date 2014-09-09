@@ -7,6 +7,7 @@ table.table.table-hover
       th.text-center Avatar
       th Inspect
       th Edit
+    - if policy(Specialization.new).new?
       th Delete
 
   tbody
@@ -16,6 +17,7 @@ table.table.table-hover
         td = image_tag specialization.avatar.url(:thumb).to_s if specialization.avatar
         td = link_to 'Show', specialization
         td = link_to 'Edit', edit_specialization_path(specialization)
+      - if policy(Specialization.new).new?
         td = link_to 'Destroy', specialization, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
