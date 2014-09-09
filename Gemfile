@@ -21,6 +21,7 @@ gem 'unicorn-rails'
 
 # file management
 gem 'carrierwave'
+gem 'rmagick'
 
 group :development do
   gem 'better_errors'
