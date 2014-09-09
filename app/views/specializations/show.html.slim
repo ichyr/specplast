@@ -1,6 +1,6 @@
 p#notice = notice
 
-= image_tag @specialization.avatar.url(:thumb) if @specialization.avatar
+= image_tag @specialization.avatar.url(:thumb).to_s if @specialization.avatar
 p
   strong Name:
   = @specialization.name

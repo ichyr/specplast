@@ -3,9 +3,10 @@
 
   .form-inputs
     = f.input :name
-    = f.input :avatar, as: :file
-
-    
+    = f.label :avatar
+    .upload-preview
+  		= image_tag @specialization.avatar.url(:thumb).to_s
+    = f.file_field :avatar, class: "file"
 
   .form-actions
     = f.button :submit
