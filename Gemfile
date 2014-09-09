@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
+
 gem 'rails', '4.1.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
@@ -17,6 +18,10 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
+
+# file management
+gem 'carrierwave'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -36,6 +41,7 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
@@ -43,6 +49,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
