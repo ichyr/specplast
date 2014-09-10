@@ -7,7 +7,7 @@
     = f.input :activity
     = f.input :provid
     = f.input :specialization_id
-    = f.input :file, as: :file
+    = f.input :file, as: :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
 
   .form-actions
     = f.button :submit
