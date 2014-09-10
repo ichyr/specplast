@@ -15,6 +15,9 @@ p
 p
   strong Specialization:
   = @specdatum.specialization_id
+p
+  strong Pologennya:
+  = link_to "Pologennya", @specdatum.file.url
 
 = link_to 'Edit', edit_specdatum_path(@specdatum)
 '|
