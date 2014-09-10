@@ -23,6 +23,9 @@ gem 'unicorn-rails'
 gem 'carrierwave'
 gem 'rmagick'
 
+# for diagram generation
+gem 'railroady'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
