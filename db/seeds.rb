@@ -7,6 +7,7 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 roles = User.roles.keys
+roles.delete("moderator")
 
 USER_NAMES = roles
 USER_PASSWORD = "changeme"
@@ -19,12 +20,25 @@ USER_ROLES = roles
 }
 
 
+# This will seed specializations, relevant specdata and moderators for given
+# specialization
+
 # Seed Specializations
 
-SPECIALIZATIONS_COUNT = 3
+SPECIALIZATIONS_COUNT = 5
 SPECIALIZATION_NAMES = [ "Кінна", "Військова", "Мандрівнича", "Спортивна",
 												 "Морська", "Летунська", "Мистецька"]
 
-SPECIALIZATIONS_COUNT.times {
-  Specialization.create name: SPECIALIZATION_NAMES.sample
+# Seed Specdatum
+SPECDATUM_TEXT = "Будь ласка надайте актуальні інформацію по цьому напрямку"
+
+0.upto(SPECIALIZATIONS_COUNT - 1) { |index|
+  Specialization.create name: SPECIALIZATION_NAMES[index]
+}
+
+Specialization.all.each { |spec| 
+  CreateSpecdataService.new.call SPECDATUM_TEXT, spec.id
+  CreateAdminService.new.call_moderator_create "s#{spec.id}@example.com",
+  																						 USER_PASSWORD,
+  																						 spec
 }

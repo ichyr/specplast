@@ -9,10 +9,19 @@ class CreateAdminService
 
   def call_custom email, password, role
   	user = User.find_or_create_by!(email: email) do |user|
-        user.password = password
-        user.password_confirmation = password
-
-        user.role = role
-      end
+      user.password = password
+      user.password_confirmation = password
+      user.role = role
+    end
   end
+
+  def call_moderator_create email, password, specialization
+    user = User.find_or_create_by!(email: email) do |user|
+      user.password = password
+      user.password_confirmation = password
+      user.moderator!
+      user.specialization = specialization
+    end
+  end
+
 end

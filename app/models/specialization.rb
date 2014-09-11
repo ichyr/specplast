@@ -1,4 +1,5 @@
 class Specialization < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
-	has_one :specdata
+	has_one :specdatum
+	has_many :users
 end
