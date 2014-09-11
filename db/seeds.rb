@@ -49,7 +49,7 @@ VMILIST_DEFAULT_NAME = "Вмілість "
 
 Specialization.all.each { |spec|
 	(1..VMILIST_COUNT_PER_SPECIALIZATION).each { |index|
-		temp_name = VMILIST_DEFAULT_NAME + index.to_s
+		temp_name = VMILIST_DEFAULT_NAME + spec.id.to_s + "::" + index.to_s
 		VmilistService.new.create temp_name, spec
 	}	
 }
