@@ -1,0 +1,27 @@
+h1 Listing vmilists
+
+table
+  thead
+    tr
+      th Name
+      th Child info
+      th Instructor info
+      th Specialization
+      th
+      th
+      th
+
+  tbody
+    - @vmilists.each do |vmilist|
+      tr
+        td = vmilist.name
+        td = vmilist.child_info
+        td = vmilist.instructor_info
+        td = vmilist.specialization_id
+        td = link_to 'Show', vmilist
+        td = link_to 'Edit', edit_vmilist_path(vmilist)
+        td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Vmilist', new_vmilist_path

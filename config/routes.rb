@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :vmilists
+
   resources :specdata
 
 	root to: 'visitors#index'

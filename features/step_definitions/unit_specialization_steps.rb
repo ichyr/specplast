@@ -7,3 +7,12 @@ Then(/^it should respond to messages (.*?)$/) do |methods|
 		expect(@specialization).to respond_to(method.to_s)
 	}  
 end
+
+When(/^I assign (\d+) new vmilist to it$/) do |arg1|
+  
+end
+
+Then(/^it should reference these (\d+) vmilists$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+

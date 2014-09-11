@@ -7,7 +7,16 @@ Feature: Specialization unit properties
 	Specialization can change it's name
 	Specialization can change it's avatar
 	Specialization has support data in :specdata
-	Specialziation has vmilists list in :vmilists
+
+	Scenario Outline: Specialziation has vmilists list in :vmilists
+  	Given I have new specialization object
+  	When I assign <number> new vmilist to it
+  	Then it should reference these <number> vmilists
+
+  Examples:
+    | number |
+    |  12   |
+    |  20   |
 	
 	Scenario: Specialization must name,  avatar, moderators
 		Given I have new specialization object

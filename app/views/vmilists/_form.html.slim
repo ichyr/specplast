@@ -1,0 +1,11 @@
+= simple_form_for(@vmilist) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :child_info
+    = f.input :instructor_info
+    = f.input :specialization_id
+
+  .form-actions
+    = f.button :submit

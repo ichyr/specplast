@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @vmilist.name
+p
+  strong Child info:
+  = @vmilist.child_info
+p
+  strong Instructor info:
+  = @vmilist.instructor_info
+p
+  strong Specialization:
+  = @vmilist.specialization_id
+
+= link_to 'Edit', edit_vmilist_path(@vmilist)
+'|
+= link_to 'Back', vmilists_path
