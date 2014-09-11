@@ -60,4 +60,5 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'cucumber-rails'
+  gem 'shoulda-matchers'
 end

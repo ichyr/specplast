@@ -8,11 +8,10 @@ Then(/^it should respond to messages (.*?)$/) do |methods|
 	}  
 end
 
-When(/^I assign (\d+) new vmilist to it$/) do |arg1|
-  
+Then(/^it should reference many vmilists$/) do
+  SpecializationService.new.create.should have_many :vmilists
 end
 
-Then(/^it should reference these (\d+) vmilists$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^it should reference one specdatum$/) do
+  SpecializationService.new.create.should have_one :specdatum
 end
-

@@ -1,7 +1,7 @@
 class VmilistService
 
-  def create
-    Vmilist.create! name: "Тест"
+  def create specialization
+    Vmilist.create! name: "Тест", specialization: specialization
   end
 
 end
