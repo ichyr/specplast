@@ -2,14 +2,14 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name, input_html: { class: 'form-control' }
-    = f.input :child_info, input_html: { class: 'form-control' }
-    = f.input :instructor_info, input_html: { class: 'form-control' }
+    = f.input :name
+    = f.input :child_info
+    = f.input :instructor_info
     = f.label :avatar
     .upload-preview
   		= image_tag @vmilist.avatar.url(:thumb).to_s
   	= f.file_field :avatar, class: "file"
-    = f.association :specialization, input_html: { class: 'form-control' }
+    = f.association :specialization
 
   .form-actions
     = f.button :submit
