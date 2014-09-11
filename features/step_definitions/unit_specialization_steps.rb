@@ -15,3 +15,8 @@ end
 Then(/^it should reference one specdatum$/) do
   SpecializationService.new.create.should have_one :specdatum
 end
+
+Then(/^it's avatar's is related to CarrierWave $/) do
+  expect(@specialization.avatar).to be_kind_of(CarrierWave::Uploader::Base)
+end
+

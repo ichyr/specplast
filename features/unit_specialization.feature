@@ -1,14 +1,8 @@
 Feature: Specialization unit properties
 
-	Default specialization avatar must be present is file system
-
-	Default specialization avatar thumb must be present is file system
-
-	Specialization without avatar must have defualt avatar present
-
-	Scenario: Specialization without avatar must have a default thumb avatar present
+	Scenario: Specialization avatar must have class AvatarUploader
 		Given I have new specialization object
-		Then it's avatar's thumb should be "default_thumb.png"
+		Then it's avatar's is related to CarrierWave
 
 	Scenario: Specialization has support data in :specdata
 		Then it should reference one specdatum
