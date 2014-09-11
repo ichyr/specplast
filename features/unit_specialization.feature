@@ -9,6 +9,6 @@ Feature: Specialization unit properties
 	Specialization has support data in :specdata
 	Specialziation has vmilists list in :vmilists
 	
-	Scenario: Specialization must name,  avatar, users ( as moderator )
-		Given I have new specialization
-		Then I can access name, avatar, users methods
+	Scenario: Specialization must name,  avatar, moderators
+		Given I have new specialization object
+		Then it should respond to messages name, avatar, moderators
