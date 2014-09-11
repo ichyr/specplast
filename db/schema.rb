@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911103130) do
+ActiveRecord::Schema.define(version: 20140911103246) do
 
   create_table "specdata", force: true do |t|
     t.text     "gen_info"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140911103130) do
     t.integer  "specialization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
 end
