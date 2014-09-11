@@ -8,4 +8,7 @@ Feature: Specialization unit properties
 	Specialization can change it's avatar
 	Specialization has support data in :specdata
 	Specialziation has vmilists list in :vmilists
-	Specialization must name and avatar
+	
+	Scenario: Specialization must name,  avatar, users ( as moderator )
+		Given I have new specialization
+		Then I can access name, avatar, users methods
