@@ -1,5 +1,7 @@
 p#notice = notice
 
+= image_tag @vmilist.avatar.url(:thumb).to_s if @vmilist.avatar
+
 p
   strong Name:
   = @vmilist.name

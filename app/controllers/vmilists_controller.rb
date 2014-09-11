@@ -69,6 +69,6 @@ class VmilistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vmilist_params
-      params.require(:vmilist).permit(:name, :child_info, :instructor_info, :specialization_id)
+      params.require(:vmilist).permit(:name, :avatar, :child_info, :instructor_info, :specialization_id)
     end
 end

@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
+	root to: 'visitors#index'
+
   resources :vmilists
 
   resources :specdata
 
-	root to: 'visitors#index'
-
-	scope :admin do
-		resources :specializations
-	end
+  resources :specializations
 
   devise_for :users
 end
