@@ -3,7 +3,7 @@ class CreateAdminService
     user = User.find_or_create_by!(email: Rails.application.secrets.admin_email) do |user|
         user.password = Rails.application.secrets.admin_password
         user.password_confirmation = Rails.application.secrets.admin_password
-        user.admin!
+        user.change_role :admin
       end
   end
 
@@ -11,7 +11,7 @@ class CreateAdminService
   	user = User.find_or_create_by!(email: email) do |user|
       user.password = password
       user.password_confirmation = password
-      user.role = role
+      user.change_role role
     end
   end
 
@@ -19,7 +19,7 @@ class CreateAdminService
     user = User.find_or_create_by!(email: email) do |user|
       user.password = password
       user.password_confirmation = password
-      user.moderator!
+      user.change_role :moderator
       user.specialization = specialization
     end
   end
