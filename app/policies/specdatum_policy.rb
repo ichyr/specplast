@@ -1,4 +1,4 @@
-class SpecializationPolicy < ApplicationPolicy
+class SpecdatumPolicy < ApplicationPolicy
 
   def new? 
     user.admin?
@@ -9,7 +9,7 @@ class SpecializationPolicy < ApplicationPolicy
   end
 
   def edit?
-  	user.admin? || user.specialization.id = record.id
+  	user.admin? || user.specialization.id = record.specialization.id
   end
 
   def destroy?
