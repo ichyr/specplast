@@ -9,7 +9,7 @@ class SpecdatumPolicy < ApplicationPolicy
   end
 
   def edit?
-  	user.admin? || user.specialization.id = record.specialization.id
+  	user.admin? || user.specialization.id == record.specialization.id
   end
 
   def destroy?

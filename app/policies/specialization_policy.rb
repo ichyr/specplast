@@ -9,7 +9,7 @@ class SpecializationPolicy < ApplicationPolicy
   end
 
   def edit?
-  	user.admin? || user.specialization.id = record.id
+  	user.admin? || user.specialization.id == record.id
   end
 
   def destroy?
