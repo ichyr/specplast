@@ -64,4 +64,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'cucumber-rails'
   gem 'shoulda-matchers'
+
+  # for Travis CI
+  gem 'rake'
 end
