@@ -1,5 +1,11 @@
 language: ruby
 rvm:
-  - 2.1.2 
-bundler_args: --without development --deployment
+- 2.1.2
+
+bundler_args: "--without development --deployment"
 cache: bundler
+
+deploy:
+  api_key:
+    secure: iQVxyVujvRkoyI/vBG3IGQdN+6b0kqaFKBQIwfLXyKmFj/oiAZ1yag2mw6Yj3dpn/UjvVXme6iMK5cbsJ1wfePMUTKO40jcC57x7o25h6emxCBgvalyT+HE+lYoTvLKn3QA9OHBSBBDcB3Ikq/c7uZz6xtHrPVFC+mxZDOldMX0=
+

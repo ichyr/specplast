@@ -62,7 +62,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require=>false
   gem 'shoulda-matchers'
 
   # for Travis CI
