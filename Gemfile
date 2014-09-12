@@ -29,6 +29,9 @@ gem 'railroady'
 # pagination gem
 gem 'will_paginate', '~> 3.0'
 
+# PostGre DB
+gem 'pg'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

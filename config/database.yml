@@ -21,8 +21,11 @@ test: &test
   database: ":memory:"
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  # <<: *default
+  database: my_db_production
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
 
 cucumber:
   <<: *test
