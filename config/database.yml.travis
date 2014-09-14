@@ -23,8 +23,8 @@ development:
 test: &test
   <<: *default
   database: specplast_development
-  username: specplast
-  password: iii
+  username: postgres
+  password:
 
 production:
   <<: *default

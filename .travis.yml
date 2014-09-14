@@ -5,10 +5,18 @@ rvm:
 bundler_args: "--without development --deployment"
 cache: bundler
 
+addons:
+  postgresql: "9.3"
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database specplast_test;' -U postgres
+
 deploy:
   provider: heroku
   strategy: git
   run:
+  	- "rake db:create"
     - "rake db:migrate:reset"
     - "rake db:seed"
     - restart

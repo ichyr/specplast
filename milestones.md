@@ -36,3 +36,6 @@ development:
 
 postgres=# create user "guy_on_stackoverflow" with password 'keepitonthedl';
 postgres=# create database "dcaclab_development" owner "guy_on_stackoverflow"; 
+
+postgres=# create user "specplast" with password 'iii';
+postgres=# create database "specplast_test" owner "specplast"; 
