@@ -25,6 +25,7 @@ test: &test
   database: specplast_test
   username: specplast
   password: iii
+  host: localhost
 
 production:
   <<: *default

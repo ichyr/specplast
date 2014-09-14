@@ -1,0 +1,14 @@
+li= link_to 'Головна', root_path
+li= link_to 'Діяльність', root_path
+li= link_to 'Проби', root_path
+li= link_to 'Акції', root_path
+li= link_to 'Провід', root_path
+li= link_to 'Контакти', root_path
+li= link_to 'Про нас', root_path
+
+- if user_signed_in?
+  <!-- li= link_to 'Обліковий запис', edit_user_registration_path -->
+  li= link_to 'Вийти', destroy_user_session_path, :method=>'delete'
+- else
+  li= link_to 'Увійти', new_user_session_path
+  <!-- li= link_to 'Зареєструватися', new_user_registration_path -->

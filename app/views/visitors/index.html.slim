@@ -1,0 +1,9 @@
+- @specializations.each_with_index do |specialization, index|
+  - if index % 3 == 0
+    .row
+  .col-md-4
+    a href="/specializations/#{specialization.id}" 
+      img src=specialization.avatar.url(:thumb) /
+      p.text-center
+        = specialization.name
+  - if index % 3 == 2
