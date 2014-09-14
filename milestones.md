@@ -13,12 +13,6 @@ sudo -u postgres psql postgres
 \password postgres
 ```
 
-Create a Postgres user for the Rails app we'll create in the next step. To do this, switch into the Postgres user:
-
-```
-su - postgres
-```
-
 Then create a user (or a "role", as Postgres calls it):
 
 ```
@@ -26,3 +20,19 @@ Then create a user (or a "role", as Postgres calls it):
 create role myapp with createdb login password 'password1';
 ```
 
+- set up database.yml
+```
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: kickrstack_development
+  **host: localhost**
+  pool: 5
+  username: kickrstack
+  password: secret
+```
+
+- Create a new user and password and the user's new database:
+
+postgres=# create user "guy_on_stackoverflow" with password 'keepitonthedl';
+postgres=# create database "dcaclab_development" owner "guy_on_stackoverflow"; 
