@@ -31,10 +31,9 @@ script:
 deploy:
   provider: heroku
   strategy: git
-  # run:
-    # - "rake db:create"
-    # - "rake db:migrate:reset"
-    # - "rake db:seed"
-    # - restart
   api_key:
     secure: iQVxyVujvRkoyI/vBG3IGQdN+6b0kqaFKBQIwfLXyKmFj/oiAZ1yag2mw6Yj3dpn/UjvVXme6iMK5cbsJ1wfePMUTKO40jcC57x7o25h6emxCBgvalyT+HE+lYoTvLKn3QA9OHBSBBDcB3Ikq/c7uZz6xtHrPVFC+mxZDOldMX0=
+  run:
+    - "rake db:migrate"
+    - "rake db:seed"
+    - restart
