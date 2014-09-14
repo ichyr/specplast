@@ -22,13 +22,13 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: specplast_development
+  database: specplast_test
   username: postgres
   password:
 
 production:
   <<: *default
-  database: specplast_development
+  database: specplast_production
   username: specplast
   password:
 

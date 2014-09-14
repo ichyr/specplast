@@ -10,7 +10,7 @@ addons:
 
 before_script:
   - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database specplast_test;' -U postgres
+  - psql -c 'create database specplast_test' -U postgres
 
 deploy:
   provider: heroku
@@ -23,3 +23,12 @@ deploy:
   api_key:
     secure: iQVxyVujvRkoyI/vBG3IGQdN+6b0kqaFKBQIwfLXyKmFj/oiAZ1yag2mw6Yj3dpn/UjvVXme6iMK5cbsJ1wfePMUTKO40jcC57x7o25h6emxCBgvalyT+HE+lYoTvLKn3QA9OHBSBBDcB3Ikq/c7uZz6xtHrPVFC+mxZDOldMX0=
 
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - mysql -e 'create database strano_test'
+  - psql -c 'create database strano_test' -U postgres
