@@ -8,7 +8,7 @@ br
   - if index % 3 == 0
     .row
   .col-md-4
-    a href="#{ url_for(specialization) }"
+    = link_to specialization
       img src=specialization.avatar.url(:thumb) /
       p.text-center
         = specialization.name
