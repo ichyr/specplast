@@ -13,9 +13,8 @@ Given(/^I have (\d+) specializations in database$/) do |arg1|
 end
 
 Then(/^I should see (\d+) links to specializations$/) do |arg1|
-  (1..arg1.to_i).each { |index|
-  	spec = Specialization.find(index)
-  	expect(page).to has_link(spec.name, {href: link_to(spec)})
+  Specialization.all.each { |spec| 
+      expect(page).to have_link(spec.name, {href: url_for(spec)})
   }
 end
 

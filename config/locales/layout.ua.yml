@@ -12,3 +12,4 @@ ua:
     instruktory_page: "Інструктори"
     provid_page: "Провід"
     bulava_page: "Булава"
+    no_specializations: "В базі даних немає відомостей про жодну спеціалізацію"

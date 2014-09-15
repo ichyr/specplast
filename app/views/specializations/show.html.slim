@@ -1,7 +1,6 @@
 p#notice = notice
 
-h1 Listing vmilists
-  = @specialization.name
+h1 = "Listing vmilists #{@specialization.name}"
 
 table.table.table-hover
   thead
@@ -26,10 +25,6 @@ table.table.table-hover
         td = link_to 'Show', vmilist
         td = link_to 'Edit', edit_vmilist_path(vmilist)
         td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= will_paginate @specializaion.vmilists
 
 br
 

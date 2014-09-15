@@ -12,26 +12,26 @@ Feature: General view of index page
 
 	@ignore
 	Scenario: I must see list of specializations
-		Given I have 10 specializations in database
+		Given I have 9 specializations in database
 		And I see index page
-		Then I should see 10 links to specializations
+		Then I should see 9 links to specializations
 
 	@ignore
 	Scenario: I must see avatars of specializations
-		Given I have 10 specializations in database
+		Given I have 9 specializations in database
 		And I see index page
-		Then I should see 10 avatars to specializations
+		Then I should see 9 avatars to specializations
 
 	@ignore
 	Scenario: I must see page with relevant links
-		Given I have 10 specializations in database
+		Given I have 9 specializations in database
 		And I see index page
 		When I click on specific link
 		Then I should see corresponding specialization page
 
 	@ignore
 	Scenario: I must see page with avatar-links 
-		Given I have 10 specializations in database
+		Given I have 9 specializations in database
 		And I see index page
 		When I click on specific avatar
 		Then I should see corresponding specialization page
