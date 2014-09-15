@@ -7,8 +7,8 @@ li= link_to t("layout.provid_page"), root_path
 li= link_to t("layout.bulava_page"), root_path
 
 - if user_signed_in?
-  li= link_to I18n.t('layout.user_profile'), edit_user_registration_path
+  / li= link_to I18n.t('layout.user_profile'), edit_user_registration_path
   li= link_to I18n.t('layout.sign_out'), destroy_user_session_path, :method=>'delete'
 - else
   li= link_to I18n.t('layout.sign_in'), new_user_session_path
-  li= link_to I18n.t('layout.sign_up'), new_user_registration_path
+  / li= link_to I18n.t('layout.sign_up'), new_user_registration_path
