@@ -1,0 +1,14 @@
+ua:
+  layout:
+    title: "Спеціалізаційне пластування"
+    sign_in: "Увійти"
+    sign_out: "Вийти"
+    user_profile: "Профіль користувача"
+    sign_up: "Зареєструватися"
+    home_page: "Головна"
+    vmilosti_page: "Вмілості"
+    activities_page: "Акції"
+    proby_page: "Проби"
+    instruktory_page: "Інструктори"
+    provid_page: "Провід"
+    bulava_page: "Булава"
