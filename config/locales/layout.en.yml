@@ -1,0 +1,14 @@
+en:
+  layout:
+    title: "Scouts specialization"
+    sign_in: "Sign in"
+    sign_out: "Sign out"
+    user_profile: "User profile"
+    sign_up: "Sign up"
+    home_page: "Home"
+    vmilosti_page: "Vmilists"
+    activities_page: "Activities"
+    proby_page: "Proby"
+    instruktory_page: "Instruktory"
+    provid_page: "Provid"
+    bulava_page: "Bulava"

@@ -30,4 +30,5 @@ br
 
 br
 
-= link_to 'New Vmilist', new_vmilist_path
+- if policy(Vmilist.new).new?
+  = link_to 'New Vmilist', new_vmilist_path

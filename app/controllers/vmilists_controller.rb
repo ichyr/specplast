@@ -1,5 +1,6 @@
 class VmilistsController < ApplicationController
   before_action :set_vmilist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
   # GET /vmilists
   # GET /vmilists.json

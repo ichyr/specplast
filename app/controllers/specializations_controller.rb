@@ -1,6 +1,6 @@
 class SpecializationsController < ApplicationController
   before_action :set_specialization, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
   # GET /specializations
   # GET /specializations.json
@@ -11,6 +11,8 @@ class SpecializationsController < ApplicationController
   # GET /specializations/1
   # GET /specializations/1.json
   def show
+    @specialization = Specialization.find(params[:id])
+    @vmilists = @specialization.vmilists
   end
 
   # GET /specializations/new

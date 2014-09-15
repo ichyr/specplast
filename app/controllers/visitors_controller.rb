@@ -3,6 +3,6 @@ class VisitorsController < ApplicationController
 
 	def index		
 		@specializations = Specialization.all
-		flash[:notice] = NO_SPECIALIZATIONS_MSG if @specializations.count == 0
+		# flash[:notice] = NO_SPECIALIZATIONS_MSG if @specializations.count == 0
 	end
 end

@@ -10,8 +10,15 @@ feature 'Navigation links', :devise do
   #   Then I see "sign in," and "sign up"
   scenario 'view navigation links' do
     visit root_path
-    expect(page).to have_content 'Sign in'
-    expect(page).to have_content 'Sign up'
+
+    expect(page).to have_content I18n.t 'layout.sign_in'
+    expect(page).to have_content I18n.t "layout.home_page"
+    expect(page).to have_content I18n.t "layout.vmilosti_page"
+    expect(page).to have_content I18n.t "layout.activities_page"
+    expect(page).to have_content I18n.t "layout.proby_page"
+    expect(page).to have_content I18n.t "layout.instruktory_page"
+    expect(page).to have_content I18n.t "layout.provid_page"
+    expect(page).to have_content I18n.t "layout.bulava_page"
   end
 
 end
