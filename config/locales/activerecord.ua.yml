@@ -1,0 +1,24 @@
+ua:
+  activerecord:
+    errors:
+      models:
+        messages: 
+          blank: "Запоніть поле %{attribute}."
+        user:
+          blank: "Будь ласка введіть інформацію про користувача!"
+          attributes:
+            name:
+              blank: "Заповніть поле імені!"
+            email:
+              blank: "Ведіть і-мейл у відповідне поле!"
+            password:
+              blank: "Будь ласка заповніть поле паролю!"
+    models:
+      specialiation: "specialization"
+      vmilist: "vmilist"
+      specdatum: "specialization data"
+      user: "user"
+    attributes:
+      user:
+        login: "Handle"
+      # will translate User attribute "login" as "Handle"
