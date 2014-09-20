@@ -1,8 +1,5 @@
-br
-br
-
 - if @specializations.count == 0 
-  .bg-primary = I18n.t('layout.no_specializations')
+  h3.bg-primary.text-center = I18n.t('layout.no_specializations')
 
 - @specializations.each_with_index do |specialization, index|
   - if index % 3 == 0

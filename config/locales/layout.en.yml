@@ -13,3 +13,5 @@ en:
     provid_page: "Provid"
     bulava_page: "Bulava"
     no_specializations: "There are currently no specializations availible"
+    no_vmilist: "There are currently no any vmilists in this specialization availible"
+    vmilists: "Vmilists"
