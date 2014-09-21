@@ -29,5 +29,5 @@ When(/^I sign in as a user$/) do
 end
 
 Then(/^I should see logout link in header$/) do
-  expect(page).to have_link I18n.t("layout.sign_in"), destroy_user_session_path
+  expect(page).to have_link I18n.t("layout.sign_out"), destroy_user_session_path
 end
