@@ -2,6 +2,25 @@
 
 en:
   devise:
+    user:
+      name: "Name"
+      phone: "Phone"
+      password: "Password"
+      email: "Email"
+      password_confirmation: "Password confirmation"
+      new_password: "New password"
+      new_password_confirmation: "Confirmation of a new password"
+      current_password: "Current password"
+      live_it_blunk: "Leave this field blank, if you don't ant to change it"
+      we_neew_current: "We need you current password to confirm it the changes"
+      unhappy: "Are you unhappy?"
+      cancel_my_account: "Cancel registration of my account"
+      change_default_password: "Please, change the default password"
+      sign_up: "Sign up"
+      sign_in: "Sign in"
+      remember_me: "remember me"
+      forgot_your_password: "Forgot password?"
+      didnt_receive_confirmation_instructions: "Din't recieve emai with confirmaiton instructions?"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."

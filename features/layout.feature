@@ -1,6 +1,8 @@
 Feature: General header of the system
 
-	# @ignore
+	Navigation links should point to correct locations
+
+	@ignore
 	Scenario: I must see system title 
 		Given I see index page
 		Then I should see title in header

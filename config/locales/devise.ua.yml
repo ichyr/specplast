@@ -3,11 +3,11 @@
 ua:
   devise:
     user:
-      name: "Ім'я: "
-      phone: "Телефон: "
-      password: "Пароль: "
-      email: "Імейл: "
-      password_confirmation: "Підтвердженя паролю: "
+      name: "Ім'я"
+      phone: "Телефон"
+      password: "Пароль"
+      email: "Імейл"
+      password_confirmation: "Підтвердженя паролю"
       new_password: "Новий пароль"
       new_password_confirmation: "Підтвердженя нового паролю"
       current_password: "Поточний пароль"
@@ -16,7 +16,7 @@ ua:
       unhappy: "Незадоволені?"
       cancel_my_account: "Відмінити мій обліковий запис"
       change_default_password: "Будь ласка, поміняйте пароль за замовчуванням"
-      sign_up: "Реєстрація"
+      sign_up: "Зареєструватися"
       sign_in: "Вхід"
       remember_me: "запам'ятати мене"
       forgot_your_password: "Забули пароль?"
