@@ -1,20 +1,32 @@
 p#notice = notice
 
-= image_tag @vmilist.avatar.url(:thumb).to_s if @vmilist.avatar
+h3.text-center = @vmilist.name
 
-p
-  strong Name:
-  = @vmilist.name
-p
-  strong Child info:
-  = @vmilist.child_info
-p
-  strong Instructor info:
-  = @vmilist.instructor_info
-p
-  strong Specialization:
-  = @vmilist.specialization_id
+/! Nav tabs
+ul.nav.nav-tabs role="tablist" 
+  li.active
+    a data-toggle="tab" href="#info" role="tab" = I18n.t("vmilist.general_info")
+  li
+    a data-toggle="tab" href="#child" role="tab"  = I18n.t("vmilist.children_info")
+  li
+    a data-toggle="tab" href="#instruktor" role="tab"  = I18n.t("vmilist.instruktor_info")
 
-= link_to 'Edit', edit_vmilist_path(@vmilist)
-'|
-= link_to 'Back', vmilists_path
+/! Tab panes
+.tab-content
+  br
+  br
+  #info.tab-pane.active
+    = image_tag @vmilist.avatar.url(:thumb).to_s if @vmilist.avatar
+    p
+      strong Specialization:
+      = @vmilist.specialization.name
+
+    = link_to 'Edit', edit_vmilist_path(@vmilist)
+    '|
+    = link_to 'Back', vmilists_path
+  #child.tab-pane
+    p
+      = @vmilist.child_info
+  #instruktor.tab-pane
+    p
+      = @vmilist.instructor_info
