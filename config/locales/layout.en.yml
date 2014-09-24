@@ -18,6 +18,7 @@ en:
   buttons:
     edit: "Edit"
   users:
+    title: "User administration page"
     name: "Name"
     email: "E-mail"
     role: "Role"
