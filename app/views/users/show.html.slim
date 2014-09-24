@@ -1,2 +1,7 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
+h1.text-center = @user.name
+
+b = I18n.t "users.email"
+p = @user.email
+b = I18n.t "users.role"
+p = @user.role.to_s
+
