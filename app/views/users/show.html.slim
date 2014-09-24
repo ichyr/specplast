@@ -5,3 +5,4 @@ p = @user.email
 b = I18n.t "users.role"
 p = @user.role.to_s
 
+= link_to 'Edit', controller: :users, action: :edit, id: @user.id

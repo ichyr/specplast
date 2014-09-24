@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   get 'users/:id', to: 'users#show'
 
-  get 'users/edit'
+  get 'users/edit/:id', to: 'users#edit'
 
-  get 'users/update'
+  put 'users/:id', to: 'users#update'
 
-  get 'users/delete'
+  delete 'users/:id', to: 'users#delete'
 
 	root to: 'visitors#index'
 
