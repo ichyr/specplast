@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @users = 
+    @admins = User.where("role = ?", 2)
+    @moderators = User.where("role = ?", 1)
+    @instruktors = User.where("role = ?", 3)
   end
 
   def show

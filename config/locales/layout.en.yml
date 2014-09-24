@@ -15,3 +15,15 @@ en:
     no_specializations: "There are currently no specializations available"
     no_vmilist: "There are currently no any vmilists in this specialization available"
     vmilists: "Vmilists"
+  buttons:
+    edit: "Edit"
+  users:
+    name: "Name"
+    email: "E-mail"
+    role: "Role"
+    roles:
+      admin: "Administrator"
+      instruktor: "Instructor"
+      moderator: "Moderator"
+    specialization: "Specialization"
+

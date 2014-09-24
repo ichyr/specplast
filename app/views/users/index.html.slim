@@ -1,2 +1,65 @@
-h1 Users#index
-p Find me in app/views/users/index.html.slim
+h1.text-center Users#index
+
+p  = @admins.count
+p  = @moderators.count
+p  = @instruktors.count
+
+h3.text-center Instruktors list
+table.table.table-hover
+  thead
+    tr.row
+      th = I18n.t "users.name"
+      th = I18n.t "users.email"
+      th = I18n.t "users.role"
+      th = I18n.t "buttons.edit"
+      
+  tbody
+    - @instruktors.each do |user|
+      tr.row
+        td = user.name
+        td = user.email
+        td = user.role.to_s
+        td
+          a.btn.btn-info Edit
+
+br
+
+h3.text-center Moderators list
+table.table.table-hover
+  thead
+    tr.row
+      th = I18n.t "users.name"
+      th = I18n.t "users.email"
+      th = I18n.t "users.role"
+      th = I18n.t "users.specialization"
+      th = I18n.t "buttons.edit"
+      
+  tbody
+    - @moderators.each do |user|
+      tr.row
+        td = user.name
+        td = user.email
+        td = user.role.to_s
+        td = user.specialization.name
+        td
+          a.btn.btn-info Edit
+
+br
+
+h3.text-center Administrators list
+table.table.table-hover
+  thead
+    tr.row
+      th = I18n.t "users.name"
+      th = I18n.t "users.email"
+      th = I18n.t "users.role"
+      th = I18n.t "buttons.edit"
+      
+  tbody
+    - @admins.each do |user|
+      tr.row
+        td = user.name
+        td = user.email
+        td = user.role.to_s
+        td
+          a.btn.btn-info Edit
