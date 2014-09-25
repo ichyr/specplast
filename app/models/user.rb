@@ -23,6 +23,5 @@ class User < ActiveRecord::Base
 
   def change_role role
     self.role = role
-    self.specialization = nil if role != :moderator
   end
 end
