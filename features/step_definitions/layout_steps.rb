@@ -23,7 +23,7 @@ When(/^I sign in as a user$/) do
 	test_email = "test@example.com"
 	test_password = "password123"
   CreateAdminService.new.call_custom test_email,
-  																	 test_password, :moderator
+  																	 test_password, :instruktor
   sign_in_with test_email, test_password
   visit "/"
 end
