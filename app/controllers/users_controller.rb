@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @admins = User.where("role = ?", 2)
+    @instruktors = User.where("role = ?", 0)
     @moderators = User.where("role = ?", 1)
-    @instruktors = User.where("role = ?", 3)
+    @admins = User.where("role = ?", 2)
   end
 
   def show
@@ -14,8 +14,25 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.update!(user_params)
+        format.html { redirect_to action: "index", 
+                                  notice: 'User was successfully updated.' }
+        format.json { render :index, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, 
+                             status: :unprocessable_entity }
+      end
+    end
   end
 
   def delete
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :role, :specialization)
   end
 end

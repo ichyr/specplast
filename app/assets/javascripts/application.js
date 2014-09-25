@@ -15,3 +15,26 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function () {
+	var roles = $("input[name='user[role]']:radio");
+	var select_div = $(".user_specialization");
+	var select = $("#user_specialization_id")[0];
+
+	if (roles.val() != "moderator") {
+		select_div.hide();
+    select.options.selectedIndex = 0;
+	}
+
+  roles.change(function () {
+    var role = this.value;
+    switch(role) {
+    	case "moderator":
+     	  select_div.show();
+     	  break;
+     	default:
+     	  select_div.hide();
+     	  select.options.selectedIndex = 0;
+    }
+  });
+});

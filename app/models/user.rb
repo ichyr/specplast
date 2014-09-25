@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # :user role stands for instructor
-  enum role: [:user, :moderator, :admin]
+  enum role: [:instruktor, :moderator, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
   # Include default devise modules. Others available are:
@@ -11,8 +11,14 @@ class User < ActiveRecord::Base
 
   belongs_to :specialization
 
+  validates :specialization_id, presence: true, if: :is_moderator
+
+  def is_moderator
+    :role.to_s == "moderator"
+  end
+ 
   def set_default_role
-    change_role :user
+    change_role :instruktor
   end
 
   def change_role role

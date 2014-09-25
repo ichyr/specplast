@@ -2,10 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :email
-    = f.input :role
-    = f.association :specialization
+    = f.input :name, html: { name: "user[name]" }
+    = f.input :email, html: { name: "user[email]" }
+    = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }
+    = f.association :specialization, html: { name: "user[specialization_id]" }
 
   .form-actions
     = f.button :submit
