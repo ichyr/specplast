@@ -20,10 +20,10 @@ $(document).ready(function () {
 	var roles = $("input[name='user[role]']:radio");
 	var select_div = $(".user_specialization");
 	var select = $("#user_specialization_id")[0];
+	var submit = $(".edit_user input.btn")[0];
 
-	if (roles.val() != "moderator") {
+	if (roles[1].checked != true) {
 		select_div.hide();
-    select.options.selectedIndex = 0;
 	}
 
   roles.change(function () {
@@ -37,4 +37,5 @@ $(document).ready(function () {
      	  select.options.selectedIndex = 0;
     }
   });
+
 });

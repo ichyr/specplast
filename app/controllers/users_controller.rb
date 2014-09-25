@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     respond_to do |format|
-      if @user.update!(user_params)
+      if @user.update(user_params)
         format.html { redirect_to action: "index", 
                                   notice: 'User was successfully updated.' }
         format.json { render :index, status: :ok, location: @user }
@@ -33,6 +33,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :role, :specialization)
+    params.require(:user).permit(:name, :email, :role, :specialization_id)
   end
 end

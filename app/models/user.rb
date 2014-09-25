@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
 
   belongs_to :specialization
 
-  validates :specialization_id, presence: true, if: :is_moderator
+  validates :specialization_id, presence:true, allow_nil: false, if: :is_moderator
 
   def is_moderator
-    :role.to_s == "moderator"
+    self.role.to_s == "moderator"
   end
  
   def set_default_role
