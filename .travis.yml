@@ -20,8 +20,6 @@ addons:
 
 before_script:
   - cp config/database.yml.travis config/database.yml
-  - cp .env.heroku .env
-  - gem install foreman --no-ri --no-rdoc
   - psql -c 'create database specplast_test' -U postgres
   - bundle exec rake db:create db:migrate db:schema:load
 
@@ -37,5 +35,5 @@ deploy:
     secure: iQVxyVujvRkoyI/vBG3IGQdN+6b0kqaFKBQIwfLXyKmFj/oiAZ1yag2mw6Yj3dpn/UjvVXme6iMK5cbsJ1wfePMUTKO40jcC57x7o25h6emxCBgvalyT+HE+lYoTvLKn3QA9OHBSBBDcB3Ikq/c7uZz6xtHrPVFC+mxZDOldMX0=
   run:
     - "rake db:migrate"
-    - "foreman run rake db:seed"
+    - "rake db:seed"
     - restart

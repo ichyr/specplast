@@ -3,8 +3,8 @@
 
 # User creation
 
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+# user = CreateAdminService.new.call
+# puts 'CREATED ADMIN USER: ' << user.email
 
 roles = User.roles.keys
 roles.delete("moderator")
