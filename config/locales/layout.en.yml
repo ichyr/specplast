@@ -18,6 +18,7 @@ en:
     users_panel: "Users"
     moderator_panel: "Moderators"
     admin_panel: "Administrators"
+    no_vmilists: "No vmilists found for your query!"
   buttons:
     edit: "Edit"
     delete: "Delete"

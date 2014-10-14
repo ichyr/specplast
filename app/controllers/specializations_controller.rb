@@ -12,7 +12,15 @@ class SpecializationsController < ApplicationController
   # GET /specializations/1.json
   def show
     @specialization = Specialization.find(params[:id])
-    @vmilists = @specialization.vmilists
+    @vmilists = Vmilist.where('vmilists.name LIKE ? and vmilists.specialization_id = ?', "%#{params[:search]}%", "#{params[:id]}").paginate per_page: 5, page: params[:page]
+
+    p ""
+    puts " THIS IS HERE"
+    p ""
+    puts @vmilist
+    p ""
+    puts " THIS IS HERE"
+    p ""
   end
 
   # GET /specializations/new
