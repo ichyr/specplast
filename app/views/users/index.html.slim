@@ -21,7 +21,7 @@ ul.nav.nav-tabs role="tablist"
         tr.row
           th = I18n.t "users.name"
           th = I18n.t "users.email"
-          th = I18n.t "users.avatar"
+          th.text-center = I18n.t "users.avatar"
           th = I18n.t "users.role"
           th = I18n.t "buttons.edit"
           th = I18n.t "buttons.delete"
@@ -31,7 +31,7 @@ ul.nav.nav-tabs role="tablist"
           tr.row
             td = user.name
             td = user.email
-            td = image_tag user.avatar.url(:thumb).to_s if user.avatar
+            td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
             td = user.role.to_s
             td
               = link_to 'Edit', controller: :users, action: :edit, id: user.id
@@ -44,6 +44,7 @@ ul.nav.nav-tabs role="tablist"
         tr.row
           th = I18n.t "users.name"
           th = I18n.t "users.email"
+          th.text-center = I18n.t "users.avatar"
           th = I18n.t "users.role"
           th = I18n.t "users.specialization"
           th = I18n.t "buttons.edit"
@@ -54,6 +55,7 @@ ul.nav.nav-tabs role="tablist"
           tr.row
             td = user.name
             td = user.email
+            td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
             td = user.role.to_s
             td = user.specialization.name if user.specialization
             td
@@ -67,6 +69,7 @@ ul.nav.nav-tabs role="tablist"
         tr.row
           th = I18n.t "users.name"
           th = I18n.t "users.email"
+          th.text-center = I18n.t "users.avatar"
           th = I18n.t "users.role"
           th = I18n.t "buttons.edit"
           th = I18n.t "buttons.delete"
@@ -76,6 +79,7 @@ ul.nav.nav-tabs role="tablist"
           tr.row
             td = user.name
             td = user.email
+            td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
             td = user.role.to_s
             td
               = link_to 'Edit', controller: :users, action: :edit, id: user.id
