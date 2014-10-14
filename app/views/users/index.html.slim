@@ -2,73 +2,82 @@ p#notice = notice
 
 h1.text-center = I18n.t "users.title"
 
-h3.text-center Instruktors list
-table.table.table-hover
-  thead
-    tr.row
-      th = I18n.t "users.name"
-      th = I18n.t "users.email"
-      th = I18n.t "users.avatar"
-      th = I18n.t "users.role"
-      th = I18n.t "buttons.edit"
-      th = I18n.t "buttons.delete"
-      
-  tbody
-    - @instruktors.each do |user|
-      tr.row
-        td = user.name
-        td = user.email
-        td = image_tag user.avatar.url(:thumb).to_s if user.avatar
-        td = user.role.to_s
-        td
-          = link_to 'Edit', controller: :users, action: :edit, id: user.id
-        td
-          = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete
+/! Nav tabs
+ul.nav.nav-tabs role="tablist" 
+  li.active
+    a data-toggle="tab" href="#users" role="tab" = I18n.t("layout.users_panel")
+  li
+    a data-toggle="tab" href="#moderators" role="tab"  = I18n.t("layout.moderator_panel")
+  li
+    a data-toggle="tab" href="#admins" role="tab"  = I18n.t("layout.admin_panel")
 
-br
+/! Tab panes
+.tab-content
+  br
+  br
+  #users.tab-pane.active
+    table.table.table-hover
+      thead
+        tr.row
+          th = I18n.t "users.name"
+          th = I18n.t "users.email"
+          th = I18n.t "users.avatar"
+          th = I18n.t "users.role"
+          th = I18n.t "buttons.edit"
+          th = I18n.t "buttons.delete"
+          
+      tbody
+        - @instruktors.each do |user|
+          tr.row
+            td = user.name
+            td = user.email
+            td = image_tag user.avatar.url(:thumb).to_s if user.avatar
+            td = user.role.to_s
+            td
+              = link_to 'Edit', controller: :users, action: :edit, id: user.id
+            td
+              = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-h3.text-center Moderators list
-table.table.table-hover
-  thead
-    tr.row
-      th = I18n.t "users.name"
-      th = I18n.t "users.email"
-      th = I18n.t "users.role"
-      th = I18n.t "users.specialization"
-      th = I18n.t "buttons.edit"
-      th = I18n.t "buttons.delete"
-      
-  tbody
-    - @moderators.each do |user|
-      tr.row
-        td = user.name
-        td = user.email
-        td = user.role.to_s
-        td = user.specialization.name if user.specialization
-        td
-          = link_to 'Edit', controller: :users, action: :edit, id: user.id
-        td
-          = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete
+  #moderators.tab-pane
+    table.table.table-hover
+      thead
+        tr.row
+          th = I18n.t "users.name"
+          th = I18n.t "users.email"
+          th = I18n.t "users.role"
+          th = I18n.t "users.specialization"
+          th = I18n.t "buttons.edit"
+          th = I18n.t "buttons.delete"
+          
+      tbody
+        - @moderators.each do |user|
+          tr.row
+            td = user.name
+            td = user.email
+            td = user.role.to_s
+            td = user.specialization.name if user.specialization
+            td
+              = link_to 'Edit', controller: :users, action: :edit, id: user.id
+            td
+              = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
-
-h3.text-center Administrators list
-table.table.table-hover
-  thead
-    tr.row
-      th = I18n.t "users.name"
-      th = I18n.t "users.email"
-      th = I18n.t "users.role"
-      th = I18n.t "buttons.edit"
-      th = I18n.t "buttons.delete"
-      
-  tbody
-    - @admins.each do |user|
-      tr.row
-        td = user.name
-        td = user.email
-        td = user.role.to_s
-        td
-          = link_to 'Edit', controller: :users, action: :edit, id: user.id
-        td
-          = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete
+  #admins.tab-pane
+    table.table.table-hover
+      thead
+        tr.row
+          th = I18n.t "users.name"
+          th = I18n.t "users.email"
+          th = I18n.t "users.role"
+          th = I18n.t "buttons.edit"
+          th = I18n.t "buttons.delete"
+          
+      tbody
+        - @admins.each do |user|
+          tr.row
+            td = user.name
+            td = user.email
+            td = user.role.to_s
+            td
+              = link_to 'Edit', controller: :users, action: :edit, id: user.id
+            td
+              = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete

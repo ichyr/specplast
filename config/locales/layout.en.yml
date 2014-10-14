@@ -15,8 +15,12 @@ en:
     no_specializations: "There are currently no specializations available"
     no_vmilist: "There are currently no any vmilists in this specialization available"
     vmilists: "Vmilists"
+    users_panel: "Users"
+    moderator_panel: "Moderators"
+    admin_panel: "Administrators"
   buttons:
     edit: "Edit"
+    delete: "Delete"
   users:
     title: "User administration page"
     name: "Name"
