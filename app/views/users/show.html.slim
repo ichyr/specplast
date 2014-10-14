@@ -1,8 +1,13 @@
-h1.text-center = @user.name
+p#notice = notice
+
+h2.text-center = @user.name
 
 b = I18n.t "users.email"
 p = @user.email
 b = I18n.t "users.role"
 p = @user.role.to_s
+b = I18n.t "users.avatar"
+= image_tag user.avatar.url(:thumb).to_s if user.avatar
+
 
 = link_to 'Edit', controller: :users, action: :edit, id: @user.id

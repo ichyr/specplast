@@ -126,7 +126,8 @@ CREATE TABLE users (
     updated_at timestamp without time zone,
     name character varying(255),
     role integer,
-    specialization_id integer
+    specialization_id integer,
+    avatar character varying(255)
 );
 
 
@@ -290,4 +291,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140910084337');
 INSERT INTO schema_migrations (version) VALUES ('20140911103130');
 
 INSERT INTO schema_migrations (version) VALUES ('20140911103246');
+
+INSERT INTO schema_migrations (version) VALUES ('20141014101441');
 

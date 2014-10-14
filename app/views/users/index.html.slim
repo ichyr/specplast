@@ -8,6 +8,7 @@ table.table.table-hover
     tr.row
       th = I18n.t "users.name"
       th = I18n.t "users.email"
+      th = I18n.t "users.avatar"
       th = I18n.t "users.role"
       th = I18n.t "buttons.edit"
       th = I18n.t "buttons.delete"
@@ -17,6 +18,7 @@ table.table.table-hover
       tr.row
         td = user.name
         td = user.email
+        td = image_tag user.avatar.url(:thumb).to_s if user.avatar
         td = user.role.to_s
         td
           = link_to 'Edit', controller: :users, action: :edit, id: user.id
@@ -42,7 +44,7 @@ table.table.table-hover
         td = user.name
         td = user.email
         td = user.role.to_s
-        td = user.specialization.name
+        td = user.specialization.name if user.specialization
         td
           = link_to 'Edit', controller: :users, action: :edit, id: user.id
         td

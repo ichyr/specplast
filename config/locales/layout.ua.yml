@@ -26,4 +26,5 @@ ua:
       admin: "Адміністратор"
       instruktor: "Інструктор"
       moderator: "Модератор"
+    avatar: "Аватар"
     specialization: "Спеціалізація"

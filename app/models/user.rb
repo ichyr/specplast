@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
+  
   # :user role stands for instructor
   enum role: [:instruktor, :moderator, :admin]
   after_initialize :set_default_role, :if => :new_record?

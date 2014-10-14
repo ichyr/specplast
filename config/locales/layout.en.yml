@@ -26,5 +26,6 @@ en:
       admin: "Administrator"
       instruktor: "Instructor"
       moderator: "Moderator"
+    avatar: "Avatar"
     specialization: "Specialization"
 
