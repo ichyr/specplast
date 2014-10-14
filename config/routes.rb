@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 	root to: 'visitors#index'
+  get "activities", to: 'visitors#activities'
+  get "vmilosti", to: 'visitors#vmilosti'
+  get "proby", to: 'visitors#proby'
+  get "instructors", to: 'visitors#instructors'
+  get "provid", to: 'visitors#provid'
+  get "bulava", to: 'visitors#bulava'
 
   resources :vmilists
 
