@@ -10,7 +10,8 @@ class VisitorsController < ApplicationController
 	end
 
 	def vmilosti
-		@specializations = Specialization.select("name")
+		@specializations = Specialization.all
+		@vmilosti = Vmilist.all
 	end
 
 	def instructors
