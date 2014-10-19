@@ -1,0 +1,27 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<h3 class="text-center">
+  Specialization activities
+</h3>
+
+<ul class="nav nav-tabs" role="tablist">
+  <% @specializations.each_with_index do |specialization, index| %>
+    <li class= <%= "active" if index == 0%>>
+      <a href="#<%=specialization.name%>" data-toggle="tab" role="tab">
+        <%= specialization.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+
+<div class="tab-content">
+  <% @specializations.each_with_index do |specialization, index| %>
+    <div id="<%=specialization.name%>" class="tab-pane">
+      <%= specialization.specdatum.activity %>
+    </div>
+  <% end %>
+</div>

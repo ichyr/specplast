@@ -5,33 +5,27 @@ class VisitorsController < ApplicationController
 	end
 
 	def activities
-		@specializations_names = Specialization.select("name")
-		@specdatum_activity = Specdatum.select("activity")
+		@specializations = Specialization.all
 	end
 
 	def vmilosti
 		@specializations = Specialization.all
-		@vmilosti = Vmilist.all
 	end
 
 	def instructors
-		@specializations_names = Specialization.select("name")
-		@specdatum_activity = Specdatum.select("instructors")
+		@specializations = Specialization.all
 	end
 
 	def provid
-		@specializations_names = Specialization.select("name")
-		@specdatum_activity = Specdatum.select("provid")
+		@specializations = Specialization.all
 	end
 
 	def proby
-		@specializations_names = Specialization.select("name")
-		@specdatum_activity = Specdatum.select("proby")
+		@specializations = Specialization.all
 	end
 
 	def bulava
-		@specializations_names = Specialization.select("name")
-		@specdatum_activity = Specdatum.select("activity")
+		@bulava = "Text to be included"
 	end
 
 end

@@ -3,12 +3,12 @@
 </p>
 
 <h3 class="text-center">
-  Specialization vmilists
+  Specialization activities
 </h3>
 
 <ul class="nav nav-tabs" role="tablist">
   <% @specializations.each_with_index do |specialization, index| %>
-    <li>
+    <li class= <%= "active" if index == 0%>>
       <a href="#<%=specialization.name%>" data-toggle="tab" role="tab">
         <%= specialization.name %>
       </a>
@@ -21,7 +21,32 @@
 <div class="tab-content">
   <% @specializations.each_with_index do |specialization, index| %>
     <div id="<%=specialization.name%>" class="tab-pane">
-      <%= specialization.vmilists[1].name %>
+      <% specialization.vmilists.each_with_index do |vmilist, index| %>
+          <% if specialization.vmilists.count == 0  %>
+            <div class="row">
+              <h3 class="bg-primary text-center"> 
+                <%= I18n.t('layout.no_vmilists') %>
+              </h3>
+            </div>
+          <% else %>
+            <% if index % 3 == 0  %>
+              <div class="row">
+            <% end %>
+
+            <div class="col-xs-4">
+              <a href="<%= url_for vmilist %>">
+                <img scr="<%= vmilist.avatar.url(:thumb).to_s %>" />
+                <p class="text-center">
+                  <%= vmilist.name %>
+                </p>
+              </a>
+            </div>
+
+            <% if index % 3 == 0  %>
+              </div>
+            <% end %>
+          <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
