@@ -8,7 +8,7 @@
 
 <ul class="nav nav-tabs" role="tablist">
   <% @specializations.each_with_index do |specialization, index| %>
-    <li>
+    <li class= <%= "active" if index == 0%> >
       <a href="#<%=specialization.name%>" data-toggle="tab" role="tab">
         <%= specialization.name %>
       </a>
@@ -20,7 +20,7 @@
 
 <div class="tab-content">
   <% @specializations.each_with_index do |specialization, index| %>
-    <div id="<%=specialization.name%>" class="tab-pane">
+     <div id="<%=specialization.name%>" class="tab-pane <%= "active" if index == 0%>">
       <%= specialization.specdatum.proby %>
     </div>
   <% end %>
