@@ -21,6 +21,7 @@
 <div class="tab-content">
   <% @specializations.each_with_index do |specialization, index| %>
     <div id="<%=specialization.name%>" class="tab-pane">
+      <% count = specialization.vmilists.count %>
       <% specialization.vmilists.each_with_index do |vmilist, index| %>
           <% if specialization.vmilists.count == 0  %>
             <div class="row">
@@ -42,7 +43,7 @@
               </a>
             </div>
 
-            <% if index % 3 == 0  %>
+            <% if (index % 3 == 2) or (index == count) %>
               </div>
             <% end %>
           <% end %>
