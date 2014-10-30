@@ -1,27 +1,46 @@
 p#notice = notice
 
-h2.text-center = "#{I18n.t 'layout.vmilists'} #{@specialization.name}"
+h3.text-center = "#{@specialization.name} #{I18n.t("layout.models.specialization")}"
 
-.pull-right
-	= form_tag specialization_path, :method => 'get', :id => "specialization_search" do
-	  p
-	    = text_field_tag :search, params[:search]
-	    = submit_tag "Search", :name => nil
+ul.nav.nav-tabs.nav-justified role="tablist"
+    li.active
+      a href="Інформація" data-toggle="tab" role="tab"
+        = "Інформація"
+    li
+      a href="#Проба" data-toggle="tab" role="tab"
+        = "Проба"
+    li
+      a href="#Заходи" data-toggle="tab" role="tab"
+        = "Заходи"
+    li
+      a href="#Вмілості" data-toggle="tab" role="tab"
+        = "Вмілості"
+    li
+      a href="#Провід" data-toggle="tab" role="tab"
+        = "Провід"
 
-.row
-- if @vmilists.count == 0 
-  h3.bg-primary.text-center = I18n.t('layout.no_vmilists')
 
-- @vmilists.each_with_index do |vmilist, index|
-  - if index % 3 == 0
+<br />
+
+.tab-content
+  .tab-pane.active id="Інформація"
+    = @specialization.specdatum.gen_info
+  .tab-pane id="Проба"
+    = @specialization.specdatum.proby
+  .tab-pane id="Заходи"
+    = @specialization.specdatum.activity
+  .tab-pane id="Вмілості"
+    h2.text-center = "#{I18n.t 'layout.vmilists'} #{@specialization.name}"
+
+    .pull-right
+      = form_tag specialization_path, :method => 'get', :id => "specialization_search" do
+        p
+          = text_field_tag :search, params[:search]
+          = submit_tag "Search", :name => nil
+    
+    .vmilists = render "vmilists"
+
     .row
-  .col-md-4
-    = link_to vmilist
-      img src=vmilist.avatar.url(:thumb) /
-      p.text-center
-        = vmilist.name
-  - if index % 3 == 2
-
-
-.row
-.text-center = will_paginate @vmilists
+    .text-center = will_paginate @vmilists
+  .tab-pane id="Провід"
+    = @specialization.specdatum.provid

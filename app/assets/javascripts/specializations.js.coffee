@@ -19,4 +19,15 @@ $(document).ready ->
 
   return
 
+# pagination and search in specializations/show view
+$ ->
+  $("#vmilists .pagination a").live "click", ->
+    $.getScript @href
+    false
 
+  # Search form.
+  $("#specialization_search").submit ->
+    $.get @action, $(this).serialize(), null, "script"
+    false
+
+  return

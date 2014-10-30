@@ -19,6 +19,9 @@ en:
     moderator_panel: "Moderators"
     admin_panel: "Administrators"
     no_vmilists: "No vmilists found for your query!"
+    models:
+      specialization: "Specialization"
+      vmilist: "Vmilist"
   buttons:
     edit: "Edit"
     delete: "Delete"
