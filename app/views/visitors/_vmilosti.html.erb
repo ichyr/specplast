@@ -1,0 +1,29 @@
+<div class="visitors_vmilosti">
+  <% count = specialization.vmilists.count %>
+  <% specialization.vmilists.each_with_index do |vmilist, index| %>
+    <% if specialization.vmilists.count == 0  %>
+      <div class="row">
+        <h3 class="bg-primary text-center"> 
+          <%= I18n.t('layout.no_vmilists') %>
+        </h3>
+      </div>
+      <% else %>
+      <% if index % 3 == 0  %>
+      <div class="row">
+        <% end %>
+
+        <div class="col-xs-4">
+          <a href="<%= url_for vmilist %>">
+            <img scr="<%= vmilist.avatar.url(:thumb).to_s %>" />
+            <p class="text-center">
+              <%= vmilist.name %>
+            </p>
+          </a>
+        </div>
+
+        <% if (index % 3 == 2) or (index == count - 1) %>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

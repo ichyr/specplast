@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "instructors", to: 'visitors#instructors'
   get "provid", to: 'visitors#provid'
   get "bulava", to: 'visitors#bulava'
+  get "vmilosti/:id", to: 'visitors#api'
 
   resources :vmilists
 

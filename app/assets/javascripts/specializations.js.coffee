@@ -25,9 +25,6 @@ $(document).ready ->
   # Search form.
   $("#specialization_search").submit ->
     $.get @action, $(this).serialize(), null, "script"
-    console.log("This is me!")
-    console.log($(this).serialize())
-    console.log("This is me!")
     false
 
   return

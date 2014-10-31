@@ -28,4 +28,8 @@ class VisitorsController < ApplicationController
 		@bulava = "Text to be included"
 	end
 
+	def api
+		@specialization = Specialization.find(param[:id])
+	end
+
 end
