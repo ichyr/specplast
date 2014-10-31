@@ -30,13 +30,12 @@ ul.nav.nav-tabs.nav-justified role="tablist"
   .tab-pane id="Заходи"
     = @specialization.specdatum.activity
   .tab-pane id="Вмілості"
-    h2.text-center = "#{I18n.t 'layout.vmilists'} #{@specialization.name}"
 
     .pull-right
       = form_tag specialization_path, :method => 'get', :id => "specialization_search" do
         p
           = text_field_tag :search, params[:search]
-          = submit_tag "Search", :name => nil
+          = submit_tag I18n.t("layout.search"), :name => nil
     
     #vmilists = render "vmilists"
 

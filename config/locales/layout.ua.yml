@@ -19,6 +19,7 @@ ua:
     models:
       specialization: "Спеціалізація"
       vmilist: "Вмілість"
+    search: "Пошук"
   buttons:
     edit: "Редагувати"
     delete: "Видалити"
