@@ -17,17 +17,17 @@ $(document).ready ->
     reader.readAsDataURL file
     return
 
-  return
-
-# pagination and search in specializations/show view
-$ ->
-  $("#vmilists .pagination a").live "click", ->
+  # pagination and search in specializations/show view
+  $("#vmilists .pagination a").on "click", ->
     $.getScript @href
     false
 
   # Search form.
   $("#specialization_search").submit ->
     $.get @action, $(this).serialize(), null, "script"
+    console.log("This is me!")
+    console.log($(this).serialize())
+    console.log("This is me!")
     false
 
   return

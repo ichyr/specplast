@@ -38,9 +38,7 @@ ul.nav.nav-tabs.nav-justified role="tablist"
           = text_field_tag :search, params[:search]
           = submit_tag "Search", :name => nil
     
-    .vmilists = render "vmilists"
+    #vmilists = render "vmilists"
 
-    .row
-    .text-center = will_paginate @vmilists
   .tab-pane id="Провід"
     = @specialization.specdatum.provid
