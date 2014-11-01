@@ -24,6 +24,8 @@ class SpecializationsController < ApplicationController
 
   # GET /specializations/1/edit
   def edit
+    @specialization = Specialization.find(params[:id])
+    @specialization.specdatum
   end
 
   # POST /specializations
@@ -47,7 +49,7 @@ class SpecializationsController < ApplicationController
   # PATCH/PUT /specializations/1.json
   def update
     respond_to do |format|
-      if @specialization.update(specialization_params)
+      if @specialization.update(specialization_update_params)
         format.html { redirect_to @specialization, notice: 'Specialization was successfully updated.' }
         format.json { render :show, status: :ok, location: @specialization }
       else
@@ -78,4 +80,10 @@ class SpecializationsController < ApplicationController
     def specialization_params
       params.require(:specialization).permit(:name, :avatar)
     end
+
+    def specialization_update_params
+    params.require(:specialization).permit( :name, :avatar, 
+             specdatum_attributes: [:id, :gen_info, :proby, 
+            :activity, :provid, :specialization_id, :file] )
+  end
 end

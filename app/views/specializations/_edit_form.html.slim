@@ -1,0 +1,21 @@
+= simple_form_for(@specialization, html:{multipart:true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.label :avatar
+    .upload-preview
+      = image_tag @specialization.avatar.url(:thumb).to_s
+    = f.file_field :avatar, class: "file"
+
+    = f.simple_fields_for :specdatum do |builder|
+      = builder.input :id, wrapper_html: { class: 'hidden' }
+      = builder.input :gen_info, as: :text
+      = builder.input :proby, as: :text
+      = builder.input :activity, as: :text
+      = builder.input :provid, as: :text
+      = builder.input :file, as: :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
+    end
+
+  .form-actions
+    = f.button :submit
