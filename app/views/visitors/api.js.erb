@@ -1,1 +1,1 @@
-$('#vmilosti').html('<%= escape_javascript(render("vmilosti")) %>');
+$('#vmilosti<%=params[:id]%>').html('<%= escape_javascript(render("vmilosti")) %>');
