@@ -24,7 +24,7 @@
     <div id="<%=specialization.name%>" class="tab-pane <%= "active" if index == 0%>">
 
       <div class="pull-right">
-        <form accept-charset="UTF-8" action="/visitors/api/<%=specialization.id%>" id="visitors_vmilosti_search" method="get">
+        <form accept-charset="UTF-8" action="/visitors/api/<%=specialization.id%>" class="visitors_vmilosti_search" method="get">
           <div style="display:none">
             <input name="utf8" value="✓" type="hidden">
           </div>
@@ -38,7 +38,9 @@
       <br />
       <br />
 
-      <%= render partial: 'vmilosti', locals: { specialization: specialization, index: index } %>
+      <div id="vmilosti">
+        <%= render partial: 'vmilosti', locals: { specialization: specialization, index: index } %>
+      </div>
 
     </div>
   <% end %>

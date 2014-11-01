@@ -1,7 +1,11 @@
 <div class="visitors_vmilosti">
-  <% count = specialization.vmilists.count %>
-  <% specialization.vmilists.each_with_index do |vmilist, index| %>
-    <% if specialization.vmilists.count == 0  %>
+  <% specialization ||= @specialization %>
+  <% vmilists = specialization.vmilists %>
+  <% vmilists = @vmilists if @vmilists %>
+  <% count = vmilists.length %>
+
+  <% vmilists.each_with_index do |vmilist, index| %>
+    <% if vmilists.count == 0  %>
       <div class="row">
         <h3 class="bg-primary text-center"> 
           <%= I18n.t('layout.no_vmilists') %>

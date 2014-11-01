@@ -29,7 +29,10 @@ class VisitorsController < ApplicationController
 	end
 
 	def api
-		@specialization = Specialization.find(param[:id])
+		@specialization = Specialization.find(params[:id])
+		@vmilists = @specialization.vmilists.select do |vmilist|
+			vmilist.name.include?(params[:search])
+		end
 	end
 
 end

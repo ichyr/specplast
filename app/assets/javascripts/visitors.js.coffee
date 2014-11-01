@@ -5,7 +5,7 @@
 
 $(document).ready ->
   # Search form.
-  $("#visitors_vmilosti_search").submit ->
+  $(".visitors_vmilosti_search").submit ->
     $.get @action, $(this).serialize(), null, "script"
     false
 
