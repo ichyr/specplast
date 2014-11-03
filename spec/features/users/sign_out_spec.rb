@@ -11,9 +11,9 @@ feature 'Sign out', :devise do
   scenario 'user signs out successfully' do
     user = FactoryGirl.create(:user)
     signin(user.email, user.password)
-    expect(page).to have_content I18n.t 'devise.sessions.signed_in'
-    click_link 'Sign out'
-    expect(page).to have_content I18n.t 'devise.sessions.signed_out'
+    expect(page).to have_selector("[href~='#{destroy_user_session_path}']")
+    page.first("[href~='#{destroy_user_session_path}']").click
+    expect(page).to have_selector(".glyphicon-log-in")
   end
 
 end

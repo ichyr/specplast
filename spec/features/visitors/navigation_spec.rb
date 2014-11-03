@@ -11,7 +11,7 @@ feature 'Navigation links', :devise do
   scenario 'view navigation links' do
     visit root_path
 
-    expect(page).to have_content I18n.t 'layout.sign_in'
+    expect(page).to have_selector("[href~='#{new_user_session_path}']")
     expect(page).to have_content I18n.t "layout.home_page"
     expect(page).to have_content I18n.t "layout.vmilosti_page"
     expect(page).to have_content I18n.t "layout.activities_page"
