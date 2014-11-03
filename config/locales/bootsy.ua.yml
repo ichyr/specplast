@@ -1,0 +1,27 @@
+en:
+  bootsy:
+    action:
+      refresh: Оновити
+      destroy: Знищити
+      close: Закрити
+      load: Завантажити
+      upload: Завантажити новий малюнок
+    image_gallery: Гелерея малюнків
+    image:
+      s: Малюнок
+      p: Манюнки
+      size: Розмір
+      large: Великий
+      medium: Середній
+      small: Маленький
+      original: Оригінальний
+      new: Новий малюнок
+      confirm:
+        destroy: Ви дійсно хочете видалити цей малюнок?
+      position:
+        left: Зліва
+        right: Справа
+        inline: Всередині
+    no_images_uploaded: На даний момент немає жодного завантаженого малюнку.
+    js:
+      alert_unsaved: У вас є не збережені малюнки!
