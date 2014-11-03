@@ -70,7 +70,8 @@ class SpecdataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def specdatum_params
-      params.require(:specdatum).permit(:gen_info, :proby, :activity, 
-                                        :provid, :specialization_id, :file)
+      params.require(:specdatum).permit(:gen_info, :proby, :activity,
+                                        :provid, :specialization_id, :file,
+                                        :bootsy_image_gallery_id)
     end
 end

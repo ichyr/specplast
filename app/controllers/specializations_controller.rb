@@ -84,6 +84,7 @@ class SpecializationsController < ApplicationController
     def specialization_update_params
     params.require(:specialization).permit( :name, :avatar, 
              specdatum_attributes: [:id, :gen_info, :proby, 
-            :activity, :provid, :specialization_id, :file] )
+            :activity, :provid, :specialization_id, :file,
+            :bootsy_image_gallery_id] )
   end
 end

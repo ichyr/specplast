@@ -30,6 +30,70 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: bootsy_image_galleries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE bootsy_image_galleries (
+    id integer NOT NULL,
+    bootsy_resource_id integer,
+    bootsy_resource_type character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: bootsy_image_galleries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE bootsy_image_galleries_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: bootsy_image_galleries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE bootsy_image_galleries_id_seq OWNED BY bootsy_image_galleries.id;
+
+
+--
+-- Name: bootsy_images; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE bootsy_images (
+    id integer NOT NULL,
+    image_file character varying(255),
+    image_gallery_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: bootsy_images_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE bootsy_images_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: bootsy_images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE bootsy_images_id_seq OWNED BY bootsy_images.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -189,6 +253,20 @@ ALTER SEQUENCE vmilists_id_seq OWNED BY vmilists.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY bootsy_image_galleries ALTER COLUMN id SET DEFAULT nextval('bootsy_image_galleries_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY bootsy_images ALTER COLUMN id SET DEFAULT nextval('bootsy_images_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY specdata ALTER COLUMN id SET DEFAULT nextval('specdata_id_seq'::regclass);
 
 
@@ -211,6 +289,22 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 --
 
 ALTER TABLE ONLY vmilists ALTER COLUMN id SET DEFAULT nextval('vmilists_id_seq'::regclass);
+
+
+--
+-- Name: bootsy_image_galleries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY bootsy_image_galleries
+    ADD CONSTRAINT bootsy_image_galleries_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: bootsy_images_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY bootsy_images
+    ADD CONSTRAINT bootsy_images_pkey PRIMARY KEY (id);
 
 
 --
@@ -293,4 +387,8 @@ INSERT INTO schema_migrations (version) VALUES ('20140911103130');
 INSERT INTO schema_migrations (version) VALUES ('20140911103246');
 
 INSERT INTO schema_migrations (version) VALUES ('20141014101441');
+
+INSERT INTO schema_migrations (version) VALUES ('20141103160759');
+
+INSERT INTO schema_migrations (version) VALUES ('20141103160760');
 
