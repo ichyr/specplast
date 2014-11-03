@@ -1,0 +1,14 @@
+p#notice
+  = notice
+h3.text-center
+  | Specialization activities
+ul.nav.nav-tabs.nav-justified role="tablist" 
+  - @specializations.each_with_index do |specialization, index|
+    li class=("active" if index == 0)
+      a data-toggle="tab" href="##{specialization.name}" role="tab" 
+        = specialization.name
+br/
+.tab-content
+  - @specializations.each_with_index do |specialization, index|
+    div class=("tab-pane #{"active" if index == 0}") id=specialization.name 
+      = specialization.specdatum.activity

@@ -6,7 +6,7 @@
   Specialization provid
 </h3>
 
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs nav-justified" role="tablist">
   <% @specializations.each_with_index do |specialization, index| %>
     <li class= <%= "active" if index == 0%> >
       <a href="#<%=specialization.name%>" data-toggle="tab" role="tab">

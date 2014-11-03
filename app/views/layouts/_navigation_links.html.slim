@@ -10,10 +10,10 @@ li= link_to t("layout.bulava_page"), controller: "/visitors", action: :bulava
   / li= link_to I18n.t('layout.user_profile'), edit_user_registration_path
   / li= link_to I18n.t('layout.sign_out'), destroy_user_session_path, :method=>'delete'
   li= link_to destroy_user_session_path, :method=>'delete'
-    i class="glyphicon glyphicon-log-out"
+    span class="glyphicon glyphicon-log-out"
   end
 - else
   / li= link_to I18n.t('layout.sign_up'), new_user_registration_path
   / li= link_to I18n.t('layout.sign_in'), new_user_session_path
   li= link_to new_user_session_path
-    i class="glyphicon glyphicon-log-in"
+    span class="glyphicon glyphicon-log-in"
