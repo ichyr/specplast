@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
+    = f.input :name, inner_html: {class: 'form-control'}
     = f.label :avatar
     .upload-preview
       = image_tag @specialization.avatar.url(:thumb).to_s
@@ -10,7 +10,7 @@
 
     = f.simple_fields_for :specdatum do |builder|
       = builder.input :id, wrapper_html: { class: 'hidden' }
-      = builder.input :gen_info, as: :bootsy
+      = builder.input :gen_info, as: :bootsy, inner_html: {class: 'form-control'}
       = builder.input :proby, as: :bootsy
       = builder.input :activity, as: :bootsy
       = builder.input :provid, as: :bootsy
