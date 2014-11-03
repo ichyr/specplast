@@ -16,7 +16,7 @@ Then(/^I should see navigation links in header$/) do
 end
 
 Then(/^I should see login link in header$/) do
-  expect(page).to have_link I18n.t("layout.sign_in"), new_user_session_path
+  expect(page).to have_selector("[href~='#{new_user_session_path}']")
 end
 
 When(/^I sign in as a user$/) do
@@ -29,5 +29,5 @@ When(/^I sign in as a user$/) do
 end
 
 Then(/^I should see logout link in header$/) do
-  expect(page).to have_link I18n.t("layout.sign_out"), destroy_user_session_path
+  expect(page).to have_selector("[href~='#{destroy_user_session_path}']")
 end

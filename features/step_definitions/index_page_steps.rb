@@ -8,7 +8,8 @@ end
 
 Given(/^I have (\d+) specializations in database$/) do |arg1|
   (1..arg1.to_i).each { |index|
-  	SpecializationService.new.create_name "Спеціалізація #{index.to_s}"
+  	a = SpecializationService.new.create_name "Спеціалізація #{index.to_s}"
+    CreateSpecdataService.new.call a.id
   }
 end
 

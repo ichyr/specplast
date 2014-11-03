@@ -30,14 +30,12 @@ SPECIALIZATION_NAMES = [ "Кінна", "Військова", "Мандрівни
 												 "Морська", "Летунська", "Мистецька"]
 
 # Seed Specdatum
-SPECDATUM_TEXT = "Будь ласка надайте актуальні інформацію по цьому напрямку"
-
 0.upto(SPECIALIZATIONS_COUNT - 1) { |index|
   Specialization.create name: SPECIALIZATION_NAMES[index]
 }
 
 Specialization.all.each { |spec| 
-  CreateSpecdataService.new.call SPECDATUM_TEXT, spec.id
+  CreateSpecdataService.new.call spec.id
   CreateAdminService.new.call_moderator_create "s#{spec.id}@example.com",
   																						 USER_PASSWORD,
   																						 spec
