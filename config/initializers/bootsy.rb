@@ -60,5 +60,5 @@ Bootsy.setup do |config|
 
   # Store directory (inside 'public') for storage = :file
   # BE CAREFUL! Changing this may break previously uploaded file paths!
-  # config.store_dir = 'uploads'
+  config.store_dir = 'uploads/textareas'
 end

@@ -1,4 +1,4 @@
-= simple_form_for(@specdatum) do |f|
+= simple_form_for(@specdatum, html:{ multipart: true, class: 'form-horizontal'}) do |f|
   = f.error_notification
 
   .form-inputs

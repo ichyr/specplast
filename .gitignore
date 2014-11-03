@@ -13,6 +13,9 @@
 # File of current work
 TODO
 
+# Uploaded for development files
+/public/uploads/tmp/*
+
 # Diagrams of models and controllers
 /doc/*
 
