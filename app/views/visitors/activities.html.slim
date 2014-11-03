@@ -11,4 +11,4 @@ br/
 .tab-content
   - @specializations.each_with_index do |specialization, index|
     div class=("tab-pane #{"active" if index == 0}") id=specialization.name 
-      = specialization.specdatum.activity
+      = raw specialization.specdatum.activity

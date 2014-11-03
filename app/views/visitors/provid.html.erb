@@ -21,7 +21,7 @@
 <div class="tab-content">
   <% @specializations.each_with_index do |specialization, index| %>
     <div id="<%=specialization.name%>" class="tab-pane <%= "active" if index == 0%>">
-      <%= specialization.specdatum.provid %>
+      <%= raw specialization.specdatum.provid %>
     </div>
   <% end %>
 </div>

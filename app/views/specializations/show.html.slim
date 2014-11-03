@@ -24,11 +24,11 @@ ul.nav.nav-tabs.nav-justified role="tablist"
 
 .tab-content
   .tab-pane.active id="Інформація"
-    = @specialization.specdatum.gen_info
+    = raw @specialization.specdatum.gen_info
   .tab-pane id="Проба"
-    = @specialization.specdatum.proby
+    = raw @specialization.specdatum.proby
   .tab-pane id="Заходи"
-    = @specialization.specdatum.activity
+    = raw @specialization.specdatum.activity
   .tab-pane id="Вмілості"
 
     .pull-right
@@ -40,4 +40,4 @@ ul.nav.nav-tabs.nav-justified role="tablist"
     #vmilists = render "vmilists"
 
   .tab-pane id="Провід"
-    = @specialization.specdatum.provid
+    = raw @specialization.specdatum.provid
