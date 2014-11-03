@@ -34,6 +34,9 @@ gem 'pg'
 # Assets 
 gem 'rails_12factor', group: :production
 
+# Bootstrap 3 WYSIWYG editor with carrierwave file upload
+gem 'bootsy'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
