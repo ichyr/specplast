@@ -1,19 +1,16 @@
-.visitors_vmilosti
-  - specialization ||= @specialization
-  - vmilists = specialization.vmilists
-  - vmilists = @vmilists if @vmilists
-  - count = vmilists.length
-  - vmilists.each_with_index do |vmilist, index|
-    - if vmilists.count == 0
+.row
+  - if @vmilists.count == 0 
+    h3.bg-primary.text-center = I18n.t('layout.no_vmilists')
+
+  - @vmilists.each_with_index do |vmilist, index|
+    - if index % 3 == 0
       .row
-        h3.bg-primary.text-center
-          = I18n.t('layout.no_vmilists')
-    - else
-      - if index % 3 == 0
-        .row
-      .col-xs-4
-        a href=(url_for vmilist) 
-          img scr=vmilist.avatar.url(:thumb).to_s /
-          p.text-center
-            = vmilist.name
-      - if (index % 3 == 2) or (index == count - 1)
+    .col-md-4
+      = link_to vmilist
+        img src=vmilist.avatar.url(:thumb) /
+        p.text-center
+          = vmilist.name
+    - if index % 3 == 2
+
+.row
+  .text-center = will_paginate @vmilists

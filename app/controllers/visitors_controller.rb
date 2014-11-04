@@ -9,7 +9,8 @@ class VisitorsController < ApplicationController
 	end
 
 	def vmilosti
-		@specializations = Specialization.all
+		@vmilists = Vmilist.where("name like ?", "%#{params[:search]}%")
+			                  .paginate(:page => params[:page], :per_page => 12)
 	end
 
 	def instructors

@@ -13,7 +13,7 @@ class SpecializationsController < ApplicationController
   def show
     @specialization = Specialization.find(params[:id])
     @vmilists = Vmilist.where('vmilists.name LIKE ? and vmilists.specialization_id = ?', 
-      "%#{params[:search]}%", "#{params[:id]}").paginate per_page: 5, page: params[:page]
+      "%#{params[:search]}%", "#{params[:id]}").paginate per_page: 9, page: params[:page]
   end
 
   # GET /specializations/new

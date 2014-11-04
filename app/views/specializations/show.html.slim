@@ -4,7 +4,10 @@ h3.text-center = "#{@specialization.name} #{I18n.t("layout.models.specialization
 
 ul.nav.nav-tabs.nav-justified role="tablist"
     li.active
-      a href="Інформація" data-toggle="tab" role="tab"
+      a href="#Вмілості" data-toggle="tab" role="tab"
+        = "Вмілості"
+    li
+      a href="#Інформація" data-toggle="tab" role="tab"
         = "Інформація"
     li
       a href="#Проба" data-toggle="tab" role="tab"
@@ -13,9 +16,6 @@ ul.nav.nav-tabs.nav-justified role="tablist"
       a href="#Заходи" data-toggle="tab" role="tab"
         = "Заходи"
     li
-      a href="#Вмілості" data-toggle="tab" role="tab"
-        = "Вмілості"
-    li
       a href="#Провід" data-toggle="tab" role="tab"
         = "Провід"
 
@@ -23,13 +23,7 @@ ul.nav.nav-tabs.nav-justified role="tablist"
 <br />
 
 .tab-content
-  .tab-pane.active id="Інформація"
-    = raw @specialization.specdatum.gen_info
-  .tab-pane id="Проба"
-    = raw @specialization.specdatum.proby
-  .tab-pane id="Заходи"
-    = raw @specialization.specdatum.activity
-  .tab-pane id="Вмілості"
+  .tab-pane.active id="Вмілості"
 
     .pull-right
       = form_tag specialization_path, :method => 'get', :id => "specialization_search" do
@@ -38,6 +32,11 @@ ul.nav.nav-tabs.nav-justified role="tablist"
           = submit_tag I18n.t("layout.search"), :name => nil
     
     #vmilists = render "vmilists"
-
+  .tab-pane id="Інформація"
+    = raw @specialization.specdatum.gen_info
+  .tab-pane id="Проба"
+    = raw @specialization.specdatum.proby
+  .tab-pane id="Заходи"
+    = raw @specialization.specdatum.activity
   .tab-pane id="Провід"
     = raw @specialization.specdatum.provid
