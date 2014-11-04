@@ -37,6 +37,9 @@ gem 'rails_12factor', group: :production
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
 gem 'bootsy'
 
+# Bootstrap pagination links
+gem 'will_paginate-bootstrap'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
