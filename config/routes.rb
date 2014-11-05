@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'moderator', to: 'moderator#index'
+  get 'moderator/specialization', to: 'moderator#specialization'
+
   get 'admin', to: 'admin#index'
   get 'admin/instruktors', to: 'admin#instruktors'
   get 'admin/moderators', to: 'admin#moderators'

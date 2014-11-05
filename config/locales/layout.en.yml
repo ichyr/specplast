@@ -30,6 +30,10 @@ en:
       administrators_tab: "Administrators"
       moderators_tab: "Moderators"
       bulava_tab: "Bulava page"
+    moderator:
+      page_title: "Moderator panel"
+      vmilists_tab: "Vmilists"
+      specializations_tab: "Specialization data"
   buttons:
     edit: "Edit"
     delete: "Delete"
