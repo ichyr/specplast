@@ -23,6 +23,13 @@ en:
       specialization: "Specialization"
       vmilist: "Vmilist"
     search: "Search"
+    administration:
+      page_title: "Administration panel"
+      specializations_tab: "Specializations"
+      instruktors_tab: "Instructors"
+      administrators_tab: "Administrators"
+      moderators_tab: "Moderators"
+      bulava_tab: "Bulava page"
   buttons:
     edit: "Edit"
     delete: "Delete"

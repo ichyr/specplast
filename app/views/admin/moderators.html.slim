@@ -1,0 +1,40 @@
+h1.text-center = I18n.t "layout.administration.page_title"
+
+p#notice = notice
+
+/! Nav tabs
+ul.nav.nav-tabs role="tablist" 
+  li
+    a data-toggle="tab" href="(= admin_path )" role="tab" = I18n.t("layout.administration.specializations_tab")
+  li
+    a data-toggle="tab" href="(= admin_instruktors_path )" role="tab" = I18n.t("layout.administration.instruktors_tab")
+  li.active
+    a data-toggle="tab" href="(= admin_moderators_path )" role="tab" = I18n.t("layout.administration.moderators_tab")
+  li
+    a data-toggle="tab" href="(= admin_administrators_path )" role="tab" = I18n.t("layout.administration.administrators_tab")
+  li
+    a data-toggle="tab" href="(= admin_bulava_path )" role="tab" = I18n.t("layout.administration.bulava_tab")
+
+table.table.table-hover
+  thead
+    tr.row
+      th = I18n.t "users.name"
+      th = I18n.t "users.email"
+      th.text-center = I18n.t "users.avatar"
+      th = I18n.t "users.role"
+      th = I18n.t "users.specialization"
+      th = I18n.t "buttons.edit"
+      th = I18n.t "buttons.delete"
+      
+  tbody
+    - @moderators.each do |user|
+      tr.row
+        td = user.name
+        td = user.email
+        td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
+        td = user.role.to_s
+        td = user.specialization.name if user.specialization
+        td
+          = link_to 'Edit', controller: :users, action: :edit, id: user.id
+        td
+          = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete

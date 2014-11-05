@@ -20,6 +20,13 @@ ua:
       specialization: "Спеціалізація"
       vmilist: "Вмілість"
     search: "Пошук"
+    administration:
+      page_title: "Адміністративна панель"
+      specializations_tab: "Спеціалізації"
+      instruktors_tab: "Інструктори"
+      administrators_tab: "Адміністратори"
+      moderators_tab: "Модератори"
+      bulava_tab: "Сторінка булави"
   buttons:
     edit: "Редагувати"
     delete: "Видалити"

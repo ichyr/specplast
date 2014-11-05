@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'admin', to: 'admin#index'
+  get 'admin/instruktors', to: 'admin#instruktors'
+  get 'admin/moderators', to: 'admin#moderators'
+  get 'admin/administrators', to: 'admin#administrators'
+  get 'admin/bulava', to: 'admin#bulava'
+
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 	root to: 'visitors#index'
 

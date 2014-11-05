@@ -1,0 +1,21 @@
+h1.text-center = I18n.t "layout.administration.page_title"
+
+p#notice = notice
+
+/! Nav tabs
+ul.nav.nav-tabs role="tablist" 
+  li
+    a data-toggle="tab" href="(= admin_path )" role="tab" = I18n.t("layout.administration.specializations_tab")
+  li
+    a data-toggle="tab" href="(= admin_instruktors_path )" role="tab" = I18n.t("layout.administration.instruktors_tab")
+  li
+    a data-toggle="tab" href="(= admin_moderators_path )" role="tab" = I18n.t("layout.administration.moderators_tab")
+  li
+    a data-toggle="tab" href="(= admin_administrators_path )" role="tab" = I18n.t("layout.administration.administrators_tab")
+  li.active
+    a data-toggle="tab" href="(= admin_bulava_path )" role="tab" = I18n.t("layout.administration.bulava_tab")
+    
+
+h1 This page will be WYSIWYG editor for bulava
+
+p featuring button to save and retuurn to initial state
