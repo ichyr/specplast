@@ -1,21 +1,35 @@
-h1.text-center = I18n.t "layout.administration.page_title"
+h1.text-center = I18n.t "layout.moderator.page_title"
 
 p#notice = notice
 
 /! Nav tabs
-ul.nav.nav-tabs
+ul.nav.nav-tabs.nav-justified
+  li
+    a href="#{moderator_path}" = I18n.t("layout.moderator.vmilists_tab")
   li.active
-    a href="#{admin_path}" = I18n.t("layout.administration.specializations_tab")
-  li
-    a href="#{admin_instruktors_path}" = I18n.t("layout.administration.instruktors_tab")
-  li
-    a href="#{admin_moderators_path}" = I18n.t("layout.administration.moderators_tab")
-  li
-    a href="#{admin_administrators_path}" = I18n.t("layout.administration.administrators_tab")
-  li
-    a href="#{admin_bulava_path}" = I18n.t("layout.administration.bulava_tab")
-
-- if policy(Specialization.new).new?
-  .pull-right = link_to 'New Specialization', new_specialization_path
+    a href="#{moderator_specialization_path}" = I18n.t("layout.moderator.specializations_tab")
 
 br
+br
+
+= simple_form_for(@specialization, html:{ multipart: true, class: 'form-horizontal'}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, inner_html: {class: 'form-control'}
+    = f.label :avatar
+    .upload-preview
+      = image_tag @specialization.avatar.url(:thumb).to_s
+    = f.file_field :avatar, class: "file"
+
+    = f.simple_fields_for :specdatum do |builder|
+      = builder.input :id, wrapper_html: { class: 'hidden' }
+      = builder.input :gen_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+      = builder.input :proby, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+      = builder.input :activity, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+      = builder.input :provid, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+      = builder.input :file, as: :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
+    end
+
+  .form-actions
+    = f.button :submit

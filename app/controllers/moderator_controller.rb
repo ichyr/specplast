@@ -7,6 +7,5 @@ class ModeratorController < ApplicationController
 
   def specialization
   	@specialization = Specialization.find(current_user.specialization.id)
-  	@scpecializaion.specdata
   end
 end
