@@ -20,6 +20,7 @@ class AdminController < ApplicationController
   end
 
   def bulava
-  	
+  	@bulava_info = GeneralInfo.where("key = ?", "bulava")
   end
+
 end

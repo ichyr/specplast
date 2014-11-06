@@ -14,8 +14,13 @@ ul.nav.nav-tabs
     a href="#{admin_administrators_path}" = I18n.t("layout.administration.administrators_tab")
   li.active
     a href="#{admin_bulava_path}" = I18n.t("layout.administration.bulava_tab")
-    
 
-h1 This page will be WYSIWYG editor for bulava
+= simple_form_for(@bulava_info[0], html:{class: 'form-horizontal'}) do |f|
+  = f.error_notification
 
-p featuring button to save and retuurn to initial state
+  .form-inputs
+    = f.input :value, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+    end
+
+  .form-actions
+    = f.button :submit
