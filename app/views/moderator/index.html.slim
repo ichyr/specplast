@@ -17,8 +17,6 @@ table.table.table-hover
     tr.row
       th Name
       th.text-center Avatar
-      th Child info
-      th Instructor info
       th Specialization
       th Inspect
       th Edit
@@ -30,8 +28,6 @@ table.table.table-hover
         td = vmilist.name
         td = image_tag vmilist.avatar.url(:thumb).to_s if vmilist.avatar
         td = vmilist.child_info
-        td = vmilist.instructor_info
-        td = vmilist.specialization_id
         td = link_to 'Show', vmilist
         td = link_to 'Edit', edit_vmilist_path(vmilist)
         td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
