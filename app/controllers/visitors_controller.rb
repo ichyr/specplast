@@ -26,7 +26,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def bulava
-		@bulava = "Text to be included"
+		@bulava_info = GeneralInfo.where("key = ?", "bulava")
 	end
 
 	def api

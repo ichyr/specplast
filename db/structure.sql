@@ -94,6 +94,38 @@ ALTER SEQUENCE bootsy_images_id_seq OWNED BY bootsy_images.id;
 
 
 --
+-- Name: general_infos; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE general_infos (
+    id integer NOT NULL,
+    key text,
+    value text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: general_infos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE general_infos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: general_infos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE general_infos_id_seq OWNED BY general_infos.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -267,6 +299,13 @@ ALTER TABLE ONLY bootsy_images ALTER COLUMN id SET DEFAULT nextval('bootsy_image
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY general_infos ALTER COLUMN id SET DEFAULT nextval('general_infos_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY specdata ALTER COLUMN id SET DEFAULT nextval('specdata_id_seq'::regclass);
 
 
@@ -305,6 +344,14 @@ ALTER TABLE ONLY bootsy_image_galleries
 
 ALTER TABLE ONLY bootsy_images
     ADD CONSTRAINT bootsy_images_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: general_infos_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY general_infos
+    ADD CONSTRAINT general_infos_pkey PRIMARY KEY (id);
 
 
 --
@@ -391,4 +438,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141014101441');
 INSERT INTO schema_migrations (version) VALUES ('20141103160759');
 
 INSERT INTO schema_migrations (version) VALUES ('20141103160760');
+
+INSERT INTO schema_migrations (version) VALUES ('20141106162220');
 
