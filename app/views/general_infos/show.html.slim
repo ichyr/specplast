@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Key:
+  = @general_info.key
+p
+  strong Value:
+  = @general_info.value
+
+= link_to 'Edit', edit_general_info_path(@general_info)
+'|
+= link_to 'Back', general_infos_path

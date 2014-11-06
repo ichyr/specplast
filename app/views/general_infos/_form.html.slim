@@ -1,0 +1,9 @@
+= simple_form_for(@general_info) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :key
+    = f.input :value
+
+  .form-actions
+    = f.button :submit

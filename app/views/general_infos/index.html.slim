@@ -1,0 +1,23 @@
+h1 Listing general_infos
+
+table
+  thead
+    tr
+      th Key
+      th Value
+      th
+      th
+      th
+
+  tbody
+    - @general_infos.each do |general_info|
+      tr
+        td = general_info.key
+        td = general_info.value
+        td = link_to 'Show', general_info
+        td = link_to 'Edit', edit_general_info_path(general_info)
+        td = link_to 'Destroy', general_info, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New General info', new_general_info_path

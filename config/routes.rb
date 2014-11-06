@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :general_infos
+
   get 'admin', to: 'admin#index'
   get 'admin/instruktors', to: 'admin#instruktors'
   get 'admin/moderators', to: 'admin#moderators'

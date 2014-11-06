@@ -20,6 +20,18 @@ class AdminController < ApplicationController
   end
 
   def bulava
-  	
+  	@bulava = GeneralInfo.where("key = ?", "bulava")
+  end
+
+  def bulava_update
+     respond_to do |format|
+      if @specdatum.update(bulava_params)
+        format.html { redirect_to @specdatum, notice: 'Specdatum was successfully updated.' }
+        format.json { render :show, status: :ok, location: @specdatum }
+      else
+        format.html { render :edit }
+        format.json { render json: @specdatum.errors, status: :unprocessable_entity }
+      end
+    end
   end
 end
