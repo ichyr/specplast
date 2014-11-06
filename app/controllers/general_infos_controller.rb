@@ -42,11 +42,9 @@ class GeneralInfosController < ApplicationController
   def update
     respond_to do |format|
       if @general_info.update(general_info_params)
-        format.html { redirect_to @general_info, notice: 'General info was successfully updated.' }
-        format.json { render :show, status: :ok, location: @general_info }
+        format.html { redirect_to controller: :admin, action: :bulava, notice: 'Bulava was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @general_info.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +54,7 @@ class GeneralInfosController < ApplicationController
   def destroy
     @general_info.destroy
     respond_to do |format|
-      format.html { redirect_to general_infos_url, notice: 'General info was successfully destroyed.' }
+      format.html { redirect_to general_infos_url, notice: 'Bulava info was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
