@@ -12,6 +12,10 @@ class VmilistPolicy < ApplicationPolicy
   	( user.admin? || user.specialization.id == record.specialization.id ) if !user.nil?
   end
 
+  def update?
+    ( user.admin? || user.specialization.id == record.specialization.id ) if !user.nil?
+  end
+
   def destroy?
   	( user.admin? || user.specialization.id == record.specialization.id ) if !user.nil?
   end
