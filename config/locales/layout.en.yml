@@ -21,6 +21,7 @@ en:
     no_vmilists: "No vmilists found for your query!"
     models:
       specialization: "Specialization"
+      specialization_edit: "Specialization edit"
       vmilist: "Vmilist"
     search: "Search"
     administration:
