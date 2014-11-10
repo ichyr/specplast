@@ -16,6 +16,4 @@ table.table.table-hover
         td = link_to 'Edit', edit_vmilist_path(vmilist)
         td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
-
 .text-center = will_paginate @vmilists, renderer: BootstrapPagination::Rails
