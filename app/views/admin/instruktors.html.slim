@@ -32,7 +32,5 @@ table.table.table-hover
         td = user.email
         td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
         td = user.role.to_s
-        td
-          = link_to 'Edit', controller: :users, action: :edit, id: user.id
-        td
-          = link_to 'Destroy', controller: :users, action: :delete, id: user.id, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Edit', controller: :users, action: :edit, id: user.id
+        td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
