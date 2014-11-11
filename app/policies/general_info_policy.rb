@@ -1,4 +1,12 @@
 class GeneralInfoPolicy
+  def index?
+    user.admin? if !user.nil?
+  end
+
+  def show?
+    user.admin? if !user.nil?
+  end
+
 	def new? 
     user.admin? if !user.nil?
   end
