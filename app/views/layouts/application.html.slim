@@ -10,6 +10,7 @@ html lang="en"
       = content_for?(:title) ? yield(:title) : 'Specplast'
 
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
 
   body
@@ -23,5 +24,3 @@ html lang="en"
     .footer
       .container
         == render 'layouts/footer'
-
-  == javascript_include_tag 'application', 'data-turbolinks-track' => true
