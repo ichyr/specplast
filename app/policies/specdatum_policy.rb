@@ -5,7 +5,9 @@ class SpecdatumPolicy < ApplicationPolicy
   end
 
   def edit?
-    user.admin? || user.specialization.id == record.specialization.id if !user.nil?
+    if !user.nil? && !user.instruktor?
+      user.admin? || user.specialization_id == record.specialization_id
+    end
   end
 
   def create?
@@ -13,7 +15,9 @@ class SpecdatumPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? if !user.nil?
+    if !user.nil? && !user.instruktor?
+      user.admin? || user.specialization_id == record.specialization_id
+    end
   end
 
   def destroy?

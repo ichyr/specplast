@@ -1,5 +1,10 @@
 h1 Listing vmilists
 
+- if policy(Vmilist.new).new?
+  .pull-right.btn.btn-success = link_to 'New Vmilist', new_vmilist_path
+  
+br
+
 table.table.table-hover
   thead
     tr.row
@@ -28,7 +33,3 @@ br
 
 = will_paginate @vmilists, renderer: BootstrapPagination::Rails
 
-br
-
-- if policy(Vmilist.new).new?
-  = link_to 'New Vmilist', new_vmilist_path
