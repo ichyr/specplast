@@ -42,7 +42,7 @@ Specialization.all.each { |spec|
 }
 
 # Seed specializations with vmilosti
-VMILIST_COUNT_PER_SPECIALIZATION = 20
+VMILIST_COUNT_PER_SPECIALIZATION = 12
 VMILIST_DEFAULT_NAME = "Вмілість "
 
 Specialization.all.each { |spec|

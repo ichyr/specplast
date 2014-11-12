@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootsy
-//= require turbolinks
-//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
+//= require bootsy
+//= require turbolinks
 //= require_tree .
 
 $(document).ready(function () {

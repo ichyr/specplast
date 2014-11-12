@@ -1,0 +1,11 @@
+stop server
+	heroku maintenance:on --app specplast
+
+run server
+	heroku maintenance:off --app specplast
+
+run rake command
+	heroku run:detached rake db:migrate:reset --app specplast
+
+see logs
+	heroku logs --app specplast
