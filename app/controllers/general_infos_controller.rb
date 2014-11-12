@@ -1,10 +1,12 @@
 class GeneralInfosController < ApplicationController
   before_action :set_general_info, only: [:show, :edit, :update, :destroy]
 
+  after_action :verify_authorized
+  
   # GET /general_infos
   # GET /general_infos.json
   def index
-    # authorize :general_info, :index?
+    authorize :generalInfo, :index?
 
     @general_infos = GeneralInfo.all
   end
@@ -12,19 +14,19 @@ class GeneralInfosController < ApplicationController
   # GET /general_infos/1
   # GET /general_infos/1.json
   def show
-    # authorize :general_info, :show?
+    authorize :generalInfo, :show?
   end
 
   # GET /general_infos/new
   def new
-    # authorize :general_info, :new?
+    authorize :generalInfo, :new?
     
     @general_info = GeneralInfo.new
   end
 
   # GET /general_infos/1/edit
   def edit
-    # authorize :general_info, :edit?
+    authorize :generalInfo, :edit?
   end
 
   # POST /general_infos
@@ -32,7 +34,7 @@ class GeneralInfosController < ApplicationController
   def create
     @general_info = GeneralInfo.new(general_info_params)
 
-    # authorize :general_info, :create?
+    authorize :generalInfo, :create?
 
     respond_to do |format|
       if @general_info.save
@@ -48,7 +50,7 @@ class GeneralInfosController < ApplicationController
   # PATCH/PUT /general_infos/1
   # PATCH/PUT /general_infos/1.json
   def update
-    # authorize :general_info, :update?
+    authorize :generalInfo, :update?
     
     respond_to do |format|
       if @general_info.update(general_info_params)
@@ -62,7 +64,7 @@ class GeneralInfosController < ApplicationController
   # DELETE /general_infos/1
   # DELETE /general_infos/1.json
   def destroy
-    # authorize :general_info, :destroy?
+    authorize :generalInfo, :destroy?
     
     @general_info.destroy
     respond_to do |format|

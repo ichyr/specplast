@@ -2,10 +2,13 @@ class SpecializationsController < ApplicationController
   before_action :set_specialization, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
+  after_action :verify_authorized, :except => [:index, :show]
+
   # GET /specializations
   # GET /specializations.json
   def index
-    @specializations = Specialization.all
+    # @specializations = Specialization.all
+    redirect_to :root
   end
 
   # GET /specializations/1
@@ -26,12 +29,15 @@ class SpecializationsController < ApplicationController
   def edit
     @specialization = Specialization.find(params[:id])
     @specialization.specdatum
+
+    authorize @specialization
   end
 
   # POST /specializations
   # POST /specializations.json
   def create
     @specialization = Specialization.new(specialization_params)
+
     authorize @specialization
 
     respond_to do |format|
@@ -48,6 +54,8 @@ class SpecializationsController < ApplicationController
   # PATCH/PUT /specializations/1
   # PATCH/PUT /specializations/1.json
   def update
+    authorize @specialization
+
     respond_to do |format|
       if @specialization.update(specialization_update_params)
         format.html { redirect_to @specialization, notice: 'Specialization was successfully updated.' }
@@ -63,6 +71,7 @@ class SpecializationsController < ApplicationController
   # DELETE /specializations/1.json
   def destroy
     authorize @specialization
+
     @specialization.destroy
     respond_to do |format|
       format.html { redirect_to specializations_url, notice: 'Specialization was successfully destroyed.' }

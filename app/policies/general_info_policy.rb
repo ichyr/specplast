@@ -1,4 +1,4 @@
-class GeneralInfoPolicy
+class GeneralInfoPolicy < ApplicationPolicy
   def index?
     user.admin? if !user.nil?
   end
@@ -7,16 +7,16 @@ class GeneralInfoPolicy
     user.admin? if !user.nil?
   end
 
-	def new? 
+  def new? 
     user.admin? if !user.nil?
   end
 
   def create?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 
   def edit?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 
   def update?
@@ -24,6 +24,6 @@ class GeneralInfoPolicy
   end
 
   def destroy?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 end

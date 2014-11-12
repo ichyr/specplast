@@ -2,6 +2,8 @@ class VmilistsController < ApplicationController
   before_action :set_vmilist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
+  after_action :verify_authorized, :except => [:index, :show]
+
   # GET /vmilists
   # GET /vmilists.json
   def index
@@ -15,17 +17,22 @@ class VmilistsController < ApplicationController
 
   # GET /vmilists/new
   def new
+    authorize :vmilist, :new?
+    
     @vmilist = Vmilist.new
   end
 
   # GET /vmilists/1/edit
   def edit
+    authorize @vmilist
   end
 
   # POST /vmilists
   # POST /vmilists.json
   def create
     @vmilist = Vmilist.new(vmilist_params)
+
+    authorize @vmilist
 
     respond_to do |format|
       if @vmilist.save
@@ -41,6 +48,8 @@ class VmilistsController < ApplicationController
   # PATCH/PUT /vmilists/1
   # PATCH/PUT /vmilists/1.json
   def update
+    authorize(@vmilist)
+
     respond_to do |format|
       if @vmilist.update(vmilist_params)
         format.html { redirect_to @vmilist, notice: 'Vmilist was successfully updated.' }
@@ -55,6 +64,8 @@ class VmilistsController < ApplicationController
   # DELETE /vmilists/1
   # DELETE /vmilists/1.json
   def destroy
+    authorize @vmilist
+
     @vmilist.destroy
     respond_to do |format|
       format.html { redirect_to vmilists_url, notice: 'Vmilist was successfully destroyed.' }
