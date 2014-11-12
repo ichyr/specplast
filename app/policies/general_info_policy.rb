@@ -1,4 +1,4 @@
-class GeneralInfoPolicy
+class GeneralInfoPolicy < ApplicationPolicy
   def index?
     user.admin? if !user.nil?
   end

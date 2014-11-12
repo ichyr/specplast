@@ -2,6 +2,8 @@ class SpecdataController < ApplicationController
   before_action :set_specdatum, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
+  after_action :verify_authorized, :except => [:index, :show]
+
   # GET /specdata
   # GET /specdata.json
   def index
@@ -15,16 +17,21 @@ class SpecdataController < ApplicationController
 
   # GET /specdata/new
   def new
+    authorize :specdatum, :new?
+
     @specdatum = Specdatum.new
   end
 
   # GET /specdata/1/edit
   def edit
+    authorize :specdatum, :edit?
   end
 
   # POST /specdata
   # POST /specdata.json
   def create
+    authorize :specdatum, :create?
+
     @specdatum = Specdatum.new(specdatum_params)
 
     respond_to do |format|
@@ -41,6 +48,8 @@ class SpecdataController < ApplicationController
   # PATCH/PUT /specdata/1
   # PATCH/PUT /specdata/1.json
   def update
+    authorize :specdatum, :update?
+
     respond_to do |format|
       if @specdatum.update(specdatum_params)
         format.html { redirect_to @specdatum, notice: 'Specdatum was successfully updated.' }
@@ -55,6 +64,8 @@ class SpecdataController < ApplicationController
   # DELETE /specdata/1
   # DELETE /specdata/1.json
   def destroy
+    authorize :specdatum, :destroy?
+    
     @specdatum.destroy
     respond_to do |format|
       format.html { redirect_to specdata_url, notice: 'Specdatum was successfully destroyed.' }
