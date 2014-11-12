@@ -16,7 +16,8 @@ ul.nav.nav-tabs
     a href="#{admin_bulava_path}" = I18n.t("layout.administration.bulava_tab")
 
 - if policy(Specialization.new).new?
-  .pull-right = link_to 'New Specialization', new_specialization_path
+  br
+  .btn.btn-success.pull-right = link_to 'New Specialization', new_specialization_path
 
 br
 
