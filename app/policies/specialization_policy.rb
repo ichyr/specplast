@@ -9,7 +9,7 @@ class SpecializationPolicy < ApplicationPolicy
   end
 
   def edit?
-  	( user.admin? || user.specialization.id == record.id ) if !user.nil?
+  	( user.admin? || user.specialization.id == record.id ) if !user.nil? && !user.instruktor?
   end
 
   def destroy?
