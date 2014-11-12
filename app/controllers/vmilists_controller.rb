@@ -5,7 +5,6 @@ class VmilistsController < ApplicationController
   # GET /vmilists
   # GET /vmilists.json
   def index
-    # @vmilists = Vmilist.all
     @vmilists = Vmilist.paginate(:page => params[:page], :per_page => 10)
   end
 

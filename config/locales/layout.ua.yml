@@ -18,6 +18,7 @@ ua:
     no_vmilists: "За вашим запитом не було знайдено жодної вмілості"
     models:
       specialization: "Спеціалізація"
+      specialization_edit: "Редагування спеціалізації"
       vmilist: "Вмілість"
     search: "Пошук"
     administration:

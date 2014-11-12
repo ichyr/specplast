@@ -7,11 +7,39 @@ li= link_to t("layout.provid_page"), controller: "/visitors", action: :provid
 li= link_to t("layout.bulava_page"), controller: "/visitors", action: :bulava
 
 - if user_signed_in?
-  / li= link_to I18n.t('layout.user_profile'), edit_user_registration_path
+  / 
   / li= link_to I18n.t('layout.sign_out'), destroy_user_session_path, :method=>'delete'
-  li= link_to destroy_user_session_path, :method=>'delete'
-    span class="glyphicon glyphicon-log-out"
-  end
+  / # li= link_to destroy_user_session_path, :method=>'delete'
+    / span class="glyphicon glyphicon-log-out"
+  / end
+  li.dropdown
+    a.dropdown-toggle data-toggle="dropdown"
+      span.glyphicon.glyphicon-user
+    ul.dropdown-menu role="menu"
+      li
+        a
+          = link_to I18n.t('layout.user_profile'), edit_user_registration_path
+
+
+      - if current_user.role == "admin"
+        li
+          a
+            = link_to I18n.t("layout.administration.page_title"), admin_path
+
+
+
+      - if current_user.role == "moderator"
+        li
+          a
+            = link_to I18n.t("layout.moderator.page_title"), moderator_path
+        li
+          a
+            = link_to I18n.t("layout.models.specialization_edit"), edit_specialization_path(current_user.specialization)
+
+      li.divider
+      li 
+        a 
+          = link_to I18n.t("layout.sign_out"), destroy_user_session_path, :method=>'delete'
 - else
   / li= link_to I18n.t('layout.sign_up'), new_user_registration_path
   / li= link_to I18n.t('layout.sign_in'), new_user_session_path

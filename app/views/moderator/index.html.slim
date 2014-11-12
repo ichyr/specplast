@@ -2,13 +2,9 @@ h1.text-center = I18n.t "layout.moderator.page_title"
 
 p#notice = notice
 
-/! Nav tabs
-ul.nav.nav-tabs.nav-justified
-  li.active
-    a href="#{moderator_path}" = I18n.t("layout.moderator.vmilists_tab")
-  li
-    a href="#{moderator_specialization_path}" = I18n.t("layout.moderator.specializations_tab")
+.btn.btn-success.pull-right = link_to 'New Vmilist', new_vmilist_path
 
+br
 br
 
 .pull-right
@@ -23,6 +19,3 @@ br
 br
 
 .moderator-vmilists-list = render "vmilists"
-
-/ - if policy(Vmilist.new).new?
-/   = link_to 'New Vmilist', new_vmilist_path
