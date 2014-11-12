@@ -9,7 +9,7 @@ class SpecdatumPolicy < ApplicationPolicy
   end
 
   def create?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 
   def update?
@@ -17,7 +17,7 @@ class SpecdatumPolicy < ApplicationPolicy
   end
 
   def destroy?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
   
 end

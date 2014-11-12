@@ -24,15 +24,15 @@ class VmilistsController < ApplicationController
 
   # GET /vmilists/1/edit
   def edit
-    authorize :vmilist, :edit?
+    authorize @vmilist
   end
 
   # POST /vmilists
   # POST /vmilists.json
   def create
-    authorize :vmilist, :create?
-
     @vmilist = Vmilist.new(vmilist_params)
+
+    authorize @vmilist
 
     respond_to do |format|
       if @vmilist.save
@@ -48,7 +48,7 @@ class VmilistsController < ApplicationController
   # PATCH/PUT /vmilists/1
   # PATCH/PUT /vmilists/1.json
   def update
-    authorize :vmilist, :update?
+    authorize(@vmilist)
 
     respond_to do |format|
       if @vmilist.update(vmilist_params)
@@ -64,7 +64,7 @@ class VmilistsController < ApplicationController
   # DELETE /vmilists/1
   # DELETE /vmilists/1.json
   def destroy
-    authorize :vmilist, :destroy?
+    authorize @vmilist
 
     @vmilist.destroy
     respond_to do |format|

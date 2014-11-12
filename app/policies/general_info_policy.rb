@@ -7,16 +7,16 @@ class GeneralInfoPolicy < ApplicationPolicy
     user.admin? if !user.nil?
   end
 
-	def new? 
+  def new? 
     user.admin? if !user.nil?
   end
 
   def create?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 
   def edit?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 
   def update?
@@ -24,6 +24,6 @@ class GeneralInfoPolicy < ApplicationPolicy
   end
 
   def destroy?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 end

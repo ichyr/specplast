@@ -17,15 +17,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    authorize :users, :edit?
-
     @user = User.find(params[:id])
+
+    authorize @user
   end
 
   def update
-    authorize :users, :update?
-
     @user = User.find(params[:id])
+    
+    authorize @user
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to action: "index", 
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def delete
-    authorize :users, :delete?
+    authorize @user
   end
 
   private

@@ -24,15 +24,15 @@ class SpecdataController < ApplicationController
 
   # GET /specdata/1/edit
   def edit
-    authorize :specdatum, :edit?
+    authorize @spectadum
   end
 
   # POST /specdata
   # POST /specdata.json
   def create
-    authorize :specdatum, :create?
-
     @specdatum = Specdatum.new(specdatum_params)
+
+    authorize @spectadum
 
     respond_to do |format|
       if @specdatum.save
@@ -48,7 +48,7 @@ class SpecdataController < ApplicationController
   # PATCH/PUT /specdata/1
   # PATCH/PUT /specdata/1.json
   def update
-    authorize :specdatum, :update?
+    authorize @spectadum
 
     respond_to do |format|
       if @specdatum.update(specdatum_params)
@@ -64,7 +64,7 @@ class SpecdataController < ApplicationController
   # DELETE /specdata/1
   # DELETE /specdata/1.json
   def destroy
-    authorize :specdatum, :destroy?
+    authorize @spectadum
     
     @specdatum.destroy
     respond_to do |format|

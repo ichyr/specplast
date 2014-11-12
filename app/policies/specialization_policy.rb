@@ -5,15 +5,15 @@ class SpecializationPolicy < ApplicationPolicy
   end
 
   def create?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
 
   def edit?
-  	( user.admin? || user.specialization.id == record.id ) if !user.nil? && !user.instruktor?
+    ( user.admin? || user.specialization.id == record.id ) if !user.nil? && !user.instruktor?
   end
 
   def destroy?
-  	user.admin? if !user.nil?
+    user.admin? if !user.nil?
   end
   
 end
