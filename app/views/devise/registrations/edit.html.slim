@@ -1,7 +1,7 @@
 .authform
   h3
     | Edit #{resource_name.to_s.humanize}
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f|
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart:true, :method => :put, :role => 'form'}) do |f|
     = devise_error_messages!
     .form-group
       = f.label :name
@@ -12,6 +12,17 @@
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         div
           | Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .form-group
+       = f.label :avatar
+    .form-group
+      .upload-preview
+        = image_tag @user.avatar.url(:thumb).to_s
+    .form-group
+      = f.file_field :avatar, class: "file"
+    .form-group
+      = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }
+    .form-group
+      = f.association :specialization, html: { name: "user[specialization_id]" }
     fieldset
       p Leave these fields blank if you don't want to change your password.
       .form-group
