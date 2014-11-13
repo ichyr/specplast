@@ -19,10 +19,6 @@
         = image_tag @user.avatar.url(:thumb).to_s
     .form-group
       = f.file_field :avatar, class: "file"
-    .form-group
-      = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }
-    .form-group
-      = f.association :specialization, html: { name: "user[specialization_id]" }
     fieldset
       p Leave these fields blank if you don't want to change your password.
       .form-group
