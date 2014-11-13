@@ -19,6 +19,13 @@
         = image_tag @user.avatar.url(:thumb).to_s
     .form-group
       = f.file_field :avatar, class: "file"
+    .form-group
+      = f.label :name, class: 'col-md-6'
+      = f.label @user.role, class: 'col-md-6'
+    - if @user.role = "moderator"
+      .form-group
+        = f.label :specialization, class: 'col-md-6'
+        = f.label @user.specialization.name, class: 'col-md-6'
     fieldset
       p Leave these fields blank if you don't want to change your password.
       .form-group
