@@ -1,7 +1,7 @@
 .authform
   h3.text-center.content-header
     | Edit #{resource_name.to_s.humanize}
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart:true, :method => :put, :role => 'form'}) do |f|
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :method => :put, :role => 'form'}) do |f|
     = devise_error_messages!
     .form-group
       = f.label :name
@@ -22,7 +22,7 @@
     .form-group
       = f.label :name, class: 'col-md-6'
       = f.label @user.role, class: 'col-md-6'
-    - if @user.role = "moderator"
+    - if @user.role == "moderator"
       .form-group
         = f.label :specialization, class: 'col-md-6'
         = f.label @user.specialization.name, class: 'col-md-6'
