@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   resources :specializations
 
-    resources :general_infos
+  resources :general_infos
 
   get 'users', to: 'users#index'
   get 'users/:id', to: 'users#show', :as => :user

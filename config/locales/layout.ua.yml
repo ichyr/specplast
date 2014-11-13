@@ -27,7 +27,7 @@ ua:
       instruktors_tab: "Інструктори"
       administrators_tab: "Адміністратори"
       moderators_tab: "Модератори"
-      bulava_tab: "Сторінка булави"
+      bulava_tab: "Булави"
   buttons:
     edit: "Редагувати"
     delete: "Видалити"

@@ -41,7 +41,12 @@ class UsersController < ApplicationController
   end
 
   def delete
+    @user = User.find(params[:id])
+
     authorize @user
+
+    @user.destroy
+    redirect_to request.referrer || root_path, notice: 'User was successfully destroyed.'
   end
 
   private

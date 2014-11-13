@@ -30,7 +30,7 @@ en:
       instruktors_tab: "Instructors"
       administrators_tab: "Administrators"
       moderators_tab: "Moderators"
-      bulava_tab: "Bulava page"
+      bulava_tab: "Bulava"
     moderator:
       page_title: "Moderator panel"
       vmilists_tab: "Vmilists"
