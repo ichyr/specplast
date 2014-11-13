@@ -29,13 +29,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to action: "index", 
+        format.html { redirect_to form_route(@user.role), 
                                   notice: 'User was successfully updated.' }
-        format.json { render :index, status: :ok, location: @user }
       else
         format.html { render :edit }
-        format.json { render json: @user.errors, 
-                             status: :unprocessable_entity }
       end
     end
   end
@@ -52,5 +49,17 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :email, :role, :specialization_id, :avatar)
+    end
+
+    def form_route role
+      roles = User.roles.keys
+
+      case role
+      when roles[0] then admin_instruktors_path
+      when roles[1] then admin_moderators_path
+      when roles[2] then admin_administrators_path
+      else admin_path
+      end
+
     end
 end
