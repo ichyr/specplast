@@ -1,19 +1,19 @@
 h3.text-center.content-header = I18n.t "layout.moderator.page_title"
 
-h3.text-center.content-header
-
+br
 .btn.btn-success.pull-right = link_to 'New Vmilist', new_vmilist_path
 
+br
 br
 br
 
 .pull-right
   form.moderator_vmilosti_search accept-charset="UTF-8" action="/moderator" method="get" 
     div style="display:none" 
-      input name="utf8" type="hidden" value="✓" /
+      input name="utf8" type="hidden" value="✓"
     p
-      input#search name="search" type="text" /
-      input type="submit" value="Search" /
+      input#search name="search" type="text"
+      input type="submit" value="Search"
 
 br
 br

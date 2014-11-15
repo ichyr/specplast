@@ -51,3 +51,7 @@ Specialization.all.each { |spec|
 		VmilistService.new.create temp_name, spec
 	}	
 }
+
+
+bulava = { key: "bulava", value: "Privit svit! <h1> OLA </h1>" }
+GeneralInfo.create bulava
