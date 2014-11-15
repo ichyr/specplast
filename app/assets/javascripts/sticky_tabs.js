@@ -13,7 +13,7 @@ ready = function(){
   hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
   $('.nav-tabs a').click(function (e) {
-    if $(this).attr("data-spec") != "true" {
+    if($(this).attr("data-spec") != "true"){
       $(this).tab('show');
       var scrollmem = $('body').scrollTop();
       window.location.hash = this.hash;
