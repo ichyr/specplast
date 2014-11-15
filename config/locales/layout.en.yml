@@ -37,6 +37,13 @@ en:
       specializations_tab: "Specialization data"
     specialization:
       pologennya_link: "Actual specializtion terms of reference"
+      activities: "Specialization activities"
+      bulava: "Specialization bulava"
+      instruktors: "Specialization instruktors"
+      proby: "Specialization proby"
+      provid: "Specialization provid"
+      vmilists: "Specialized vmilists search"
+    page_under_construction: "This page is under construction"
   buttons:
     edit: "Edit"
     delete: "Delete"

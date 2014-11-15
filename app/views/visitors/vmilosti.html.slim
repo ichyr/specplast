@@ -1,14 +1,16 @@
-h3.text-center.content-header
-  | Search for all vmilists
+h3.text-center.content-header = I18n.t "layout.specialization.vmilists"
+
+br
 
 .pull-right
-  form.visitors_vmilosti_search accept-charset="UTF-8" action="/vmilosti" method="get" 
+  form.visitors_vmilosti_search accept-charset="UTF-8" action="/vmilosti" method="get" role="form" class="form-inline"
     div style="display:none" 
       input name="utf8" type="hidden" value="✓"
     p
-      input#search name="search" type="text"
-      input type="submit" value="Search"
+      input#search.form-control name="search" type="text"
+      input.form-control type="submit" value="Search"
 
+br
 br
 br
 

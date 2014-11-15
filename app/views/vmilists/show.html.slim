@@ -3,28 +3,21 @@ h3.text-center.content-header = @vmilist.name
 /! Nav tabs
 ul.nav.nav-tabs.nav-justified role="tablist" 
   li.active
-    a data-toggle="tab" href="#info" role="tab" = I18n.t("vmilist.general_info")
-  li
     a data-toggle="tab" href="#child" role="tab"  = I18n.t("vmilist.children_info")
   li
     a data-toggle="tab" href="#instruktor" role="tab"  = I18n.t("vmilist.instruktor_info")
+  li
+    a data-toggle="tab" href="#list" role="tab" = I18n.t("vmilist.general_list")
 
 /! Tab panes
 .tab-content
   br
   br
-  #info.tab-pane.active
-    = image_tag @vmilist.avatar.url(:thumb).to_s if @vmilist.avatar
-    p
-      strong Specialization:
-      = @vmilist.specialization.name
-
-    = link_to 'Edit', edit_vmilist_path(@vmilist)
-    '|
-    = link_to 'Back', vmilists_path
-  #child.tab-pane
+  #child.tab-pane.active
     p
       = @vmilist.child_info
   #instruktor.tab-pane
     p
       = @vmilist.instructor_info
+  #list.tab-pane
+    h3.text-center.content-header = I18n.t "layout.page_under_construction"

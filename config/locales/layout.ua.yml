@@ -37,6 +37,13 @@ ua:
       specializations_tab: "Дані спеціалізації"
     specialization:
       pologennya_link: "Положення про спеціалізацію"
+      activities: "Заходи спеціалізацій"
+      bulava: "Булава спеціалізаційного пластування"
+      instruktors: "Інструктори спеціалізацій"
+      proby: "Спеціалізаційні проби"
+      provid: "Провід спеціалізацій"
+      vmilists: "Пошук спеціалізаційних вмілостей"
+    page_under_construction: "Сторінка у розробці"
   buttons:
     edit: "Редагувати"
     delete: "Видалити"

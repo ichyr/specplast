@@ -1,10 +1,21 @@
+br
+
+i.text-right.row.col-xs-4.col-xs-offset-8 = "Раз добром нагріте серце вік не прохолоне!"
+b.text-right.row.col-xs-4.col-xs-offset-8 = "Т. Шевченко"
+
+br
+br
+br
+br
+br
+
 - if @specializations.count == 0 
   h3.bg-primary.text-center = I18n.t('layout.no_specializations')
 
 - @specializations.each_with_index do |specialization, index|
   - if index % 3 == 0
     .row
-  .col-md-4
+  .col-sm-4
     = link_to specialization
       img src=specialization.avatar.url(:thumb) /
       p.text-center
