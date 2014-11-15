@@ -1,25 +1,64 @@
 = simple_form_for(@specialization, html:{ multipart: true, class: 'form-horizontal'}) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :name, inner_html: {class: 'form-control'}
-    = f.label :avatar
-    .upload-preview
-      = image_tag @specialization.avatar.url(:thumb).to_s
-    = f.file_field :avatar, class: "file"
+  .form-actions
+    = f.button :submit, class: 'btn btn-success pull-right'
 
     = f.simple_fields_for :specdatum do |builder|
       = builder.input :id, wrapper_html: { class: 'hidden' }
-      = builder.input :gen_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-      = builder.input :proby, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-      = builder.input :activity, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-      = builder.input :provid, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-      = f.label :file
-      br
-      - if @specialization.specdatum.file.file
-        = link_to I18n.t("layout.specialization.pologennya_link"), @specialization.specdatum.file.url
-      = builder.file_field :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
-    end
 
-  .form-actions
-    = f.button :submit, input_html: {class: 'btn btn-success'}
+      br
+      br
+      br
+
+      div role="tabpanel" 
+        /! Nav tabs
+        ul.nav.nav-tabs.nav-justified role="tablist" 
+          li role="presentation" 
+            a aria-controls="gen_info" data-toggle="tab" href="#gen_info" role="tab" data-spec="true"
+              = I18n.t "layout.specialization.general_info"
+          li role="presentation" 
+            a aria-controls="proby" data-toggle="tab" href="#proby" role="tab" data-spec="true"
+              = I18n.t "layout.specialization.proby"
+          li role="presentation" 
+            a aria-controls="activity" data-toggle="tab" href="#activity" role="tab" data-spec="true"
+              = I18n.t "layout.specialization.activity"
+          li role="presentation" 
+            a aria-controls="provid" data-toggle="tab" href="#provid" role="tab" data-spec="true"
+              = I18n.t "layout.specialization.provid"
+          li.active role="presentation" 
+            a aria-controls="changeme" data-toggle="tab" href="#changeme" role="tab" data-spec="true"
+              = "ChangeME"
+
+        /! Tab panes
+        .tab-content
+          #gen_info.tab-pane role="tabpanel" 
+            br
+            = builder.label I18n.t "layout.specialization.pologennya"
+            br
+            - if @specialization.specdatum.file.file
+              = link_to I18n.t("layout.specialization.pologennya_link"), @specialization.specdatum.file.url
+            - else
+              = I18n.t("layout.specialization.no_pologennya_link")
+            = builder.file_field :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
+            
+            br
+
+            = builder.input :gen_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+          #proby.tab-pane role="tabpanel" 
+            = builder.input :proby, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+          #activity.tab-pane role="tabpanel" 
+            = builder.input :activity, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+          #provid.tab-pane role="tabpanel" 
+            = builder.input :provid, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+          / end
+          #changeme.tab-pane.active role="tabpanel" 
+            .form-inputs
+              = f.label :name
+              br
+              = f.text_field :name, inner_html: {class: 'form-control'}
+              br
+              = f.label :avatar
+              .upload-preview
+                = image_tag @specialization.avatar.url(:thumb).to_s
+              = f.file_field :avatar, class: "file"
