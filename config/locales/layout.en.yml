@@ -49,6 +49,8 @@ en:
       proby: "Proby"
       provid: "Provid"
       activity: "Activities"
+      main: "Main"
+      edit_page: "Editing specialization"
     page_under_construction: "This page is under construction"
   buttons:
     edit: "Edit"

@@ -27,8 +27,8 @@
             a aria-controls="provid" data-toggle="tab" href="#provid" role="tab" data-spec="true"
               = I18n.t "layout.specialization.provid"
           li.active role="presentation" 
-            a aria-controls="changeme" data-toggle="tab" href="#changeme" role="tab" data-spec="true"
-              = "ChangeME"
+            a aria-controls="main" data-toggle="tab" href="#main" role="tab" data-spec="true"
+              = I18n.t "layout.specialization.main"
 
         /! Tab panes
         .tab-content
@@ -52,7 +52,7 @@
           #provid.tab-pane role="tabpanel" 
             = builder.input :provid, as: :bootsy, input_html: {class: 'form-control', rows: 15}
           / end
-          #changeme.tab-pane.active role="tabpanel" 
+          #main.tab-pane.active role="tabpanel" 
             .form-inputs
               = f.label :name
               br
