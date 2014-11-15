@@ -6,9 +6,11 @@ br
   form.visitors_vmilosti_search accept-charset="UTF-8" action="/vmilosti" method="get" role="form" class="form-inline"
     div style="display:none" 
       input name="utf8" type="hidden" value="✓"
-    p
-      input#search.form-control name="search" type="text"
-      input.form-control type="submit" value="Search"
+    .input-group
+      input.form-control name="search" placeholder="Search" type="text" 
+      .input-group-btn
+        button.btn.btn-default type="submit" 
+          i.glyphicon.glyphicon-search
 
 br
 br
