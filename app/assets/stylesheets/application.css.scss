@@ -15,6 +15,9 @@
  *= require bootsy
  */
 
+main[role="main"] {
+	padding-bottom: 0px !important;
+}
 
  /*main menu justification hack*/
 .navbar-nav>li {
