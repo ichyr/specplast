@@ -1,9 +1,7 @@
 class VmilistPolicy < ApplicationPolicy
 
-  def new? 
-    if !user.nil? && !user.instruktor?
-      user.admin? || user.specialization_id == record.specialization_id
-    end
+  def new?
+    user.admin? || user.moderator?
   end
 
   def create?

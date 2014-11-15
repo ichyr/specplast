@@ -17,9 +17,9 @@ class VmilistsController < ApplicationController
 
   # GET /vmilists/new
   def new
-    authorize :vmilist, :new?
-    
     @vmilist = Vmilist.new
+
+    authorize @vmilist
   end
 
   # GET /vmilists/1/edit
