@@ -32,6 +32,9 @@ ul.nav.nav-tabs.nav-justified role="tablist"
     #vmilists = render "vmilists"
   .tab-pane id="Інформація"
     = raw @specialization.specdatum.gen_info
+    br
+    - if @specialization.specdatum.file.file
+        .row.text-right = link_to I18n.t("layout.specialization.pologennya_link"), @specialization.specdatum.file.url
   .tab-pane id="Проба"
     = raw @specialization.specdatum.proby
   .tab-pane id="Заходи"

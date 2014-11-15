@@ -35,6 +35,8 @@ en:
       page_title: "Moderator panel"
       vmilists_tab: "Vmilists"
       specializations_tab: "Specialization data"
+    specialization:
+      pologennya_link: "Actual specializtion terms of reference"
   buttons:
     edit: "Edit"
     delete: "Delete"

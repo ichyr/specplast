@@ -14,7 +14,11 @@
       = builder.input :proby, as: :bootsy, input_html: {class: 'form-control', rows: 15}
       = builder.input :activity, as: :bootsy, input_html: {class: 'form-control', rows: 15}
       = builder.input :provid, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-      = builder.input :file, as: :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
+      = f.label :file
+      br
+      - if @specialization.specdatum.file.file
+        = link_to I18n.t("layout.specialization.pologennya_link"), @specialization.specdatum.file.url
+      = builder.file_field :file, input_html: {  accept: FileUploader.new.extentions_for_accept_attribute }
     end
 
   .form-actions
