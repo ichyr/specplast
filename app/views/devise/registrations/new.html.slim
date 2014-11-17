@@ -1,7 +1,7 @@
 .authform
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :role => 'form'}) do |f|
     h3.text-center.content-header = I18n.t "devise.user.sign_up_label"
-    .alert.alert-danger = devise_error_messages!
+    = devise_error_messages!
     .form-group
       = f.label :name, I18n.t("devise.user.name")
       = f.text_field :name, :autofocus => true, class: 'form-control'

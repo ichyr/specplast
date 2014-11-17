@@ -12,7 +12,10 @@ class User < ActiveRecord::Base
 
   belongs_to :specialization
 
-  validates :specialization_id, presence:true, allow_nil: false, if: :is_moderator
+  validates :specialization_id, presence:true, 
+            allow_nil: false, if: :is_moderator
+  validates :name, presence: true, length: { minimum: 4}
+  validates :role,  inclusion: { in: User.roles.keys }
 
   def is_moderator
     self.role.to_s == "moderator"

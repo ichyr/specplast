@@ -5,5 +5,10 @@ class Specdatum < ActiveRecord::Base
   
 	belongs_to :specialization
 
-	# lenght: => 10
+	validates :gen_info, presence: true, length: { minimum: 25 }
+	validates :proby, presence: true, length: { minimum: 25 }
+	validates :activity, presence: true, length: { minimum: 25 }
+	validates :provid, presence: true, length: { minimum: 25 }
+	validates :specialization_id, presence: true 
+	
 end

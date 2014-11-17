@@ -2,7 +2,7 @@
   h3.text-center.content-header
     | Edit #{resource_name.to_s.humanize}
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :method => :put, :role => 'form'}) do |f|
-    .alert.alert-danger = devise_error_messages!
+    = devise_error_messages!
     .form-group
       = f.label :name
       = f.text_field :name, :autofocus => true, class: 'form-control'
