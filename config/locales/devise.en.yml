@@ -12,7 +12,7 @@ en:
       new_password: "New password"
       new_password_confirmation: "Confirmation of a new password"
       current_password: "Current password"
-      live_it_blunk: "Leave this field blank, if you don't ant to change it"
+      live_it_blank: "Leave this field blank, if you don't ant to change it"
       we_neew_current: "We need you current password to confirm it the changes"
       unhappy: "Are you unhappy?"
       cancel_my_account: "Cancel registration of my account"
@@ -25,6 +25,13 @@ en:
       forgot_your_password: "Forgot password?"
       didnt_receive_confirmation_instructions: "Din't recieve emai with confirmaiton instructions?"
       reset_instructions: "We'll send password reset instructions."
+      edit: "Editing user"
+      cancel_account: "Delete my account"
+      unhappy: "Unhappy? We'll be sad to see you go."
+      are_you_sure: "Are you sure?"
+      must_enter_password: "You must enter your current password to make changes."
+    buttons:
+      update: "Update"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."

@@ -1,19 +1,18 @@
 .authform
-  h3.text-center.content-header
-    | Edit #{resource_name.to_s.humanize}
+  h3.text-center.content-header = I18n.t "devise.user.edit"
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :method => :put, :role => 'form'}) do |f|
     = devise_error_messages!
     .form-group
-      = f.label :name
+      = f.label :name, I18n.t("devise.user.name")
       = f.text_field :name, :autofocus => true, class: 'form-control'
     .form-group
-      = f.label :email
+      = f.label :email, I18n.t("devise.user.email")
       = f.email_field :email, class: 'form-control'
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         div
           | Currently waiting confirmation for: #{resource.unconfirmed_email}
     .form-group
-       = f.label :avatar
+       = f.label :avatar, I18n.t("devise.user.avatar")
     .form-group
       .upload-preview
         = image_tag @user.avatar.url(:thumb).to_s
@@ -27,20 +26,20 @@
         = f.label :specialization, class: 'col-md-6'
         = f.label @user.specialization.name, class: 'col-md-6'
     fieldset
-      p Leave these fields blank if you don't want to change your password.
+      p = I18n.t("devise.user.live_it_blank")
       .form-group
-        = f.label :password
+        = f.label :password, I18n.t("devise.user.password")
         = f.password_field :password, :autocomplete => 'off', class: 'form-control'
       .form-group
-        = f.label :password_confirmation
+        = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
         = f.password_field :password_confirmation, class: 'form-control'
     fieldset
-      p You must enter your current password to make changes.
+      p = I18n.t("devise.user.must_enter_password")
       .form-group
-        = f.label :current_password
+        = f.label :current_password, I18n.t("devise.user.current_password")
         = f.password_field :current_password, class: 'form-control'
     = f.submit 'Update', :class => 'button right'
 .authform
-  h3 Cancel Account
-  p Unhappy? We'll be sad to see you go.
-  = button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right'
+  h4 = I18n.t("devise.user.cancel_account")
+  p = I18n.t("devise.user.unhappy")
+  = button_to I18n.t("devise.user.cancel_my_account"), registration_path(resource_name), :data => { :confirm => I18n.t("devise.user.are_you_sure") }, :method => :delete, :class => 'button right'

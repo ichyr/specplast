@@ -6,7 +6,7 @@
       = f.label :name, I18n.t("devise.user.name")
       = f.text_field :name, :autofocus => true, class: 'form-control'
     .form-group
-      = f.label :email
+      = f.label :email, I18n.t("devise.user.email")
       = f.email_field :email, class: 'form-control'
     .form-group
       = f.label :password, I18n.t("devise.user.password")
