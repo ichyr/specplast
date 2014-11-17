@@ -1,10 +1,22 @@
 class Vmilist < ActiveRecord::Base
 
-	after_initialize :check_defaults, :if => :new_record?
-
 	mount_uploader :avatar, AvatarUploader
 
+	after_initialize :check_defaults, :if => :new_record?
+
 	belongs_to :specialization
+
+	validates :name, presence: { message: "name can't be blank"}, 
+	                 length: { minimum: 4, message: "message lenght" }
+	validates :child_info, presence: true, 
+	                       length: { minimum: 25, message: " child info length!!! " }
+	validates :instructor_info, presence: true, 
+	                       length: { minimum: 25, message: " instruktor info length!!! " }
+	validates :specialization_id, presence: { message: " specialization presence" } 
+	validates :name, uniqueness: { case_sensitive: false, 
+																	message: "Vmilist name is already taken!" }
+
+
 
 	DEFAULT_TEXT = "Даний розділ ще не є заповнений інформацією!"
 

@@ -52,6 +52,9 @@ en:
       main: "Main"
       edit_page: "Editing specialization"
     page_under_construction: "This page is under construction"
+    vmilist:
+      new: "New vmilist"
+      editing: "Editing vmilist"
   buttons:
     edit: "Edit"
     delete: "Delete"

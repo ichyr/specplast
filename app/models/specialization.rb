@@ -6,4 +6,6 @@ class Specialization < ActiveRecord::Base
 	has_many :vmilists
 
 	accepts_nested_attributes_for :specdatum, allow_destroy: true
+
+	
 end

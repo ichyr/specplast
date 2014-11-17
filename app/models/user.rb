@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
   belongs_to :specialization
 
   validates :specialization_id, presence:true, allow_nil: false, if: :is_moderator

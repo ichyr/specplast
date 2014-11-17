@@ -51,6 +51,9 @@ ua:
       main: "Основне"
       edit_page: "Оновлення спеціалізації"
     page_under_construction: "Сторінка у розробці"
+    vmilist:
+      new: "Створення вмілості"
+      editing: "Редагування вмілості"
   buttons:
     edit: "Редагувати"
     delete: "Видалити"
