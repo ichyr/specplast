@@ -1,11 +1,11 @@
 .authform
   = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-    h3.text-center.content-header Change your password
+    h3.text-center.content-header = I18n.t("devise.passwords.change_your_password")
     = devise_error_messages!
     = f.hidden_field :reset_password_token
     .form-group
-      = f.label :password, 'New password'
+      = f.label :password, I18n.t 'devise.user.new_password'
       = f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control'
-      = f.label :password_confirmation, 'Confirm new password'
+      = f.label :password_confirmation, I18n.t 'devise.user.new_password_confirmation'
       = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
-    = f.submit 'Change my Password', :class => 'button right'
+    = f.submit I18n.t("devise.passwords.change_your_password"), :class => 'button right'

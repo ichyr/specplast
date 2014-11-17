@@ -1,11 +1,12 @@
-stop server
-	heroku maintenance:on --app specplast
-
-run server
-	heroku maintenance:off --app specplast
-
 run rake command
 	heroku run:detached rake db:migrate:reset --app specplast
 
 see logs
 	heroku logs --app specplast
+
+delete contents of DB
+  heroku pg:reset DATABASE_URL --app specplast
+
+run migrations and seed data
+  heroku run rake db:migrate --app specplast
+  heroku run rake db:seed --app specplast

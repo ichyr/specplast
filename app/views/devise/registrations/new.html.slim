@@ -1,26 +1,26 @@
 .authform
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :role => 'form'}) do |f|
-    h3.text-center.content-header Sign up
+    h3.text-center.content-header = I18n.t "devise.user.sign_up_label"
     = devise_error_messages!
     .form-group
-      = f.label :name
+      = f.label :name, I18n.t("devise.user.name")
       = f.text_field :name, :autofocus => true, class: 'form-control'
     .form-group
       = f.label :email
       = f.email_field :email, class: 'form-control'
     .form-group
-      = f.label :password
+      = f.label :password, I18n.t("devise.user.password")
       = f.password_field :password, class: 'form-control'
     .form-group
-       = f.label :avatar
+       = f.label :avatar, I18n.t("devise.user.avatar")
     .form-group
       .upload-preview
         = image_tag @user.avatar.url(:thumb).to_s
     .form-group
       = f.file_field :avatar, class: "file"
     .form-group.hidden
-      = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }, value: 0
+      = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }, value: 0, :label => I18n.t("devise.user.status")
     .form-group
-      = f.label :password_confirmation
+      = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
       = f.password_field :password_confirmation, class: 'form-control'
-    = f.submit 'Sign up', :class => 'button right'
+    = f.submit I18n.t('devise.user.sign_up'), :class => 'button right'

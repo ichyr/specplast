@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  # I18n.locale = :ua
+
   protected
 
   def configure_permitted_parameters
