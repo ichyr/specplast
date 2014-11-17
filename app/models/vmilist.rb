@@ -6,15 +6,14 @@ class Vmilist < ActiveRecord::Base
 
 	belongs_to :specialization
 
-	validates :name, presence: { message: "name can't be blank"}, 
-	                 length: { minimum: 4, message: "message lenght" }
+	validates :name, presence: true, 
+	                 length: { minimum: 4}
 	validates :child_info, presence: true, 
-	                       length: { minimum: 25, message: " child info length!!! " }
+	                       length: { minimum: 25 }
 	validates :instructor_info, presence: true, 
-	                       length: { minimum: 25, message: " instruktor info length!!! " }
-	validates :specialization_id, presence: { message: " specialization presence" } 
-	validates :name, uniqueness: { case_sensitive: false, 
-																	message: "Vmilist name is already taken!" }
+	                       length: { minimum: 25 }
+	validates :specialization_id, presence: true 
+	validates :name, uniqueness: { case_sensitive: false }
 
 
 

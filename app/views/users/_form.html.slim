@@ -1,5 +1,5 @@
 = simple_form_for(@user, html:{multipart:true}) do |f|
-  = f.error_notification
+  .bg-danger = f.error_notification
 
   .form-inputs
     = f.input :name, html: { name: "user[name]" }

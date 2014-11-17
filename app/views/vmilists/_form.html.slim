@@ -1,7 +1,7 @@
 - @vmilist.specialization = current_user.specialization if current_user.moderator?
 
 = simple_form_for(@vmilist, html:{multipart:true, class: 'form-horizontal'}) do |f|
-  = f.error_notification
+  .bg-danger = f.error_notification
 
   .form-inputs
     = f.input :name, inner_html: {class: 'form-control'}
