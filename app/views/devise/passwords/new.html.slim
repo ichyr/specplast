@@ -2,7 +2,7 @@
   = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f|
     h3.text-center.content-header = I18n.t('devise.user.forgot_your_password')
     p = I18n.t('devise.user.reset_instructions')
-    .bg-danger = devise_error_messages!
+    .alert.alert-danger = devise_error_messages!
     .form-group
       = f.label :email, I18n.t('devise.user.email')
       = f.email_field :email, :autofocus => true, class: 'form-control'
