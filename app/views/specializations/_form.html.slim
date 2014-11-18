@@ -1,5 +1,6 @@
 = simple_form_for(@specialization, html:{multipart:true}) do |f|
-  .alert.alert-danger = f.error_notification
+  - if f.error_notification
+    .alert.alert-danger = f.error_notification
 
   .form-inputs
     = f.input :name

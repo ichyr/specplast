@@ -1,7 +1,11 @@
 .authform
   = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+
     h3.text-center.content-header = I18n.t("devise.passwords.change_your_password")
-    = devise_error_messages!
+    
+    - if devise_error_messages!
+      .alert.alert-danger = devise_error_messages!
+
     = f.hidden_field :reset_password_token
     .form-group
       = f.label :password, I18n.t 'devise.user.new_password'
