@@ -1,0 +1,41 @@
+en:
+  activerecord:
+    errors:
+      models:
+        messages: 
+          blank: "Fill in the field %{attribute}."
+        user:
+          blank: "Please enter th information about the user!"
+          attributes:
+            name:
+              blank: "Fill in the name field!"
+            email:
+              blank: "Fill in the e-mail field!"
+            password:
+              blank: "Fill in the password field!"
+    models:
+      specialization: "Specialization"
+      vmilist: "Vmilist"
+      specdatum: "Specialization data"
+      user: "User"
+    attributes:
+      user:
+        name: "name"
+        email: "email"
+        role: "role"
+      specialiation:
+        name: "name"
+        avatar: "avatar"
+      specdatum:
+        gen_info: "information"
+        proby: "proby"
+        activity: "activities"
+        provid: "provid"
+        file: "terms of reference"
+      vmilist:
+        name: "name"
+        avatar: "avatar"
+        child_info: "Scouts checklist"
+        instructor_info: "Instruktor qualifications"
+
+      # will translate User attribute "login" as "Handle"

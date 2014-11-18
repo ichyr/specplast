@@ -1,4 +1,4 @@
-h3.text-center.content-header = "#{@specialization.name} #{I18n.t("layout.models.specialization")}"
+h3.text-center.content-header = "#{@specialization.name} #{I18n.t("activerecord.models.specialization")}"
 
 ul.nav.nav-tabs.nav-justified role="tablist"
     li.active
@@ -24,7 +24,7 @@ ul.nav.nav-tabs.nav-justified role="tablist"
   .tab-pane.active id="Вмілості"
     .pull-right = form_tag specialization_path, :method => 'get', :id => "specialization_search" do
       .input-group
-        input.form-control name="search" placeholder="Search" type="text" 
+        input.form-control name="search" placeholder="" type="text" 
         .input-group-btn
           button.btn.btn-default type="submit" 
             i.glyphicon.glyphicon-search
