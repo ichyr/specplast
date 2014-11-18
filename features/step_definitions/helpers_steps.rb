@@ -16,6 +16,5 @@ def sign_in_with(email, password)
   visit new_user_session_path
   fill_in I18n.t("devise.user.email"), with: email
   fill_in I18n.t("devise.user.password"), with: password
-  # sleep(inspection_time=5)
   click_button I18n.t("devise.user.sign_in_button")
 end

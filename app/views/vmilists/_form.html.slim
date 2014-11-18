@@ -13,10 +13,15 @@
   		= image_tag @vmilist.avatar.url(:thumb).to_s
   	= f.file_field :avatar, class: "file"
     - if current_user.moderator?
-      = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, inner_html: {class: 'form-control'}, readonly: true
+      = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, disabled: true, inner_html: {class: 'form-control'}
     - else
       = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, inner_html: {class: 'form-control'}
     end
 
   .form-actions
     = f.button :submit, class: 'btn btn-warning'
+
+javascript:
+  $('#new_vmilist').on('submit', function() {
+    $('#vmilist_specialization_id').attr('disabled', false);
+  });

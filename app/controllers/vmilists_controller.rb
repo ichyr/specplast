@@ -42,11 +42,9 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       if @vmilist.save
-        format.html { redirect_to @vmilist, notice: 'Vmilist was successfully created.' }
-        format.json { render :show, status: :created, location: @vmilist }
+        format.html {  redirect_to moderator_path, notice: 'Vmilist was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @vmilist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,11 +56,9 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       if @vmilist.update(vmilist_params)
-        format.html { redirect_to @vmilist, notice: 'Vmilist was successfully updated.' }
-        format.json { render :show, status: :ok, location: @vmilist }
+        format.html { redirect_to moderator_path, notice: 'Vmilist was successfully update.' }
       else
         format.html { render :edit }
-        format.json { render json: @vmilist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,8 +70,7 @@ class VmilistsController < ApplicationController
 
     @vmilist.destroy
     respond_to do |format|
-      format.html { redirect_to vmilists_url, notice: 'Vmilist was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to :back , notice: 'Vmilist was successfully destroyed.' }
     end
   end
 
