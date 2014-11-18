@@ -14,28 +14,28 @@ ua:
             password:
               blank: "Будь ласка заповніть поле паролю!"
     models:
-      specialiation: "Specialization"
-      vmilist: "Vmilist"
-      specdatum: "Specialization data"
-      user: "User"
+      specialiation: "Спеціалізація"
+      vmilist: "Вмілість"
+      specdatum: "Дані спеціалізації"
+      user: "Користувач"
     attributes:
       user:
-        name: "name"
-        email: "email"
-        role: "role"
+        name: "Ім'я"
+        email: "Електронна пошта"
+        role: "Роль"
       specialiation:
-        name: "name"
-        avatar: "avatar"
+        name: "Назва"
+        avatar: "Іконка"
       specdatum:
-        gen_info: "information"
-        proby: "proby"
-        activity: "activities"
-        provid: "provid"
-        file: "terms of reference"
+        gen_info: "Інформація"
+        proby: "Проби"
+        activity: "Заходи"
+        provid: "Провід"
+        file: "Положення"
       vmilist:
-        name: "name"
-        avatar: "avatar"
-        child_info: "information for scouts"
-        instructor_info: "information for instructors"
+        name: "Назва"
+        avatar: "Іконка"
+        child_info: "Вимоги до здачі"
+        instructor_info: "Вимоги до інструкторів"
 
       # will translate User attribute "login" as "Handle"

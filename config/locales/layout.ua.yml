@@ -37,7 +37,7 @@ ua:
       specializations_tab: "Дані спеціалізації"
     specialization:
       pologennya_link: "Положення про спеціалізацію"
-      no_pologennya_link: "There is currently no specialization terms of reference present."
+      no_pologennya_link: "Не даний момент жодне полодення завантаженим не було."
       activities: "Заходи спеціалізацій"
       bulava: "Булава спеціалізаційного пластування"
       instruktors: "Інструктори спеціалізацій"

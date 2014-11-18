@@ -3,7 +3,7 @@
     = render "errors", object: f.object
 
   .form-actions
-    = f.button :submit, class: 'btn btn-success pull-right'
+    = f.button :submit, class: 'btn btn-success pull-right', value: I18n.t("devise.buttons.update")
 
     = f.simple_fields_for :specdatum do |builder|
       = builder.input :id, wrapper_html: { class: 'hidden' }
@@ -35,7 +35,7 @@
         .tab-content
           #gen_info.tab-pane role="tabpanel" 
             br
-            = builder.label I18n.t "layout.specialization.pologennya"
+            = builder.label I18n.t "layout.specialization.pologennya_link"
             br
             - if @specialization.specdatum.file.file
               = link_to I18n.t("layout.specialization.pologennya_link"), @specialization.specdatum.file.url

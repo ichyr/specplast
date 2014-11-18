@@ -1,6 +1,6 @@
 - if object.errors.any?
   .alert.alert-error role="alert"
-    = "The form contains  #{pluralize(object.errors.count, 'error')}."
+    = I18n.t("simple_form.error_notification.default_message")
     ul
       - object.errors.full_messages.each do |msg|
         li = msg
