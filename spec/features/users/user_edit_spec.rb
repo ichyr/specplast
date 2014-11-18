@@ -19,9 +19,9 @@ feature 'User edit', :devise do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     visit edit_user_registration_path(user)
-    fill_in 'Email', :with => 'newemail@example.com'
-    fill_in 'Current password', :with => user.password
-    click_button 'Update'
+    fill_in I18n.t("devise.user.email"), :with => 'newemail@example.com'
+    fill_in I18n.t("devise.user.current_password"), :with => user.password
+    click_button I18n.t("devise.buttons.update")
     expect(page).to have_content I18n.t 'devise.registrations.updated'
   end
 
@@ -34,8 +34,8 @@ feature 'User edit', :devise do
     other = FactoryGirl.create(:user, email: 'other@example.com')
     login_as(me, :scope => :user)
     visit edit_user_registration_path(other)
-    expect(page).to have_content 'Edit User'
-    expect(page).to have_field('Email', with: me.email)
+    expect(page).to have_content I18n.t "devise.user.edit"
+    expect(page).to have_field(I18n.t("devise.user.email"), with: me.email)
   end
 
 end

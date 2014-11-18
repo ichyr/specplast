@@ -5,31 +5,36 @@ h1 Listing vmilists
   
 br
 
-table.table.table-hover
-  thead
-    tr.row
-      th Name
-      th.text-center Avatar
-      th Child info
-      th Instructor info
-      th Specialization
-      th Inspect
-      th Edit
-      th Destroy
+.row
+  - if @vmilists.count == 0 
+    h3.bg-primary.text-center = I18n.t('layout.no_vmilists')
+  - else
 
-  tbody
-    - @vmilists.each do |vmilist|
-      tr.row
-        td = vmilist.name
-        td = image_tag vmilist.avatar.url(:thumb).to_s if vmilist.avatar
-        td = vmilist.child_info
-        td = vmilist.instructor_info
-        td = vmilist.specialization_id
-        td = link_to 'Show', vmilist
-        td = link_to 'Edit', edit_vmilist_path(vmilist)
-        td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
+    table.table.table-hover
+      thead
+        tr.row
+          th Name
+          th.text-center Avatar
+          th Child info
+          th Instructor info
+          th Specialization
+          th Inspect
+          th Edit
+          th Destroy
 
-br
+      tbody
+        - @vmilists.each do |vmilist|
+          tr.row
+            td = vmilist.name
+            td = image_tag vmilist.avatar.url(:thumb).to_s if vmilist.avatar
+            td = vmilist.child_info
+            td = vmilist.instructor_info
+            td = vmilist.specialization_id
+            td = link_to 'Show', vmilist
+            td = link_to 'Edit', edit_vmilist_path(vmilist)
+            td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-= will_paginate @vmilists, renderer: BootstrapPagination::Rails
+    br
+
+    = will_paginate @vmilists, renderer: BootstrapPagination::Rails
 

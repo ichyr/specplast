@@ -1,19 +1,24 @@
-table.table.table-hover
-  thead
-    tr.row
-      th Name
-      th.text-center Avatar
-      th Inspect
-      th Edit
-      th Destroy
+.row
+  - if @vmilists.count == 0 
+    h3.bg-primary.text-center = I18n.t('layout.no_vmilists')
+  - else
+  
+    table.table.table-hover
+      thead
+        tr.row
+          th Name
+          th.text-center Avatar
+          th Inspect
+          th Edit
+          th Destroy
 
-  tbody
-    - @vmilists.each do |vmilist|
-      tr.row
-        td = vmilist.name
-        td = image_tag vmilist.avatar.url(:thumb).to_s, size: "25x25" if vmilist.avatar
-        td = link_to 'Show', vmilist
-        td = link_to 'Edit', edit_vmilist_path(vmilist)
-        td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
+      tbody
+        - @vmilists.each do |vmilist|
+          tr.row
+            td = vmilist.name
+            td = image_tag vmilist.avatar.url(:thumb).to_s, size: "25x25" if vmilist.avatar
+            td = link_to 'Show', vmilist
+            td = link_to 'Edit', edit_vmilist_path(vmilist)
+            td = link_to 'Destroy', vmilist, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-.text-center = will_paginate @vmilists, renderer: BootstrapPagination::Rails
+    .text-center = will_paginate @vmilists, renderer: BootstrapPagination::Rails

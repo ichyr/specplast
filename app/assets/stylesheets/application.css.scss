@@ -36,6 +36,17 @@ a:hover {
 	text-decoration: none;
 }
 
+.btn.btn-success a {
+	color: white;
+	text-decoration: none;
+}
+
+.btn.btn-success a:hover {
+	color: white;
+	background-color: none;
+	text-decoration: none;
+}
+
 .announcement {
 	padding: 25px;
 	border: 2px solid;

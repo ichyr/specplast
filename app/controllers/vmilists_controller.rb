@@ -32,6 +32,12 @@ class VmilistsController < ApplicationController
   def create
     @vmilist = Vmilist.new(vmilist_params)
 
+    puts "controller got !"
+    puts "controller got !"
+    puts vmilist_params[:specialization_id]
+    puts "controller got !"
+    puts "controller got !"
+
     authorize @vmilist
 
     respond_to do |format|

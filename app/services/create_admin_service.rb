@@ -1,6 +1,7 @@
 class CreateAdminService
   def call
     user = User.new
+    user.name = "TestUser"
     user.email = Rails.application.secrets.admin_email
     user.password = Rails.application.secrets.admin_password
     user.password_confirmation = Rails.application.secrets.admin_password
@@ -11,6 +12,7 @@ class CreateAdminService
 
   def call_custom email, password, role
   	user = User.new
+    user.name = "TestUser"
     user.email = email
     user.password = password
     user.password_confirmation = password
@@ -21,6 +23,7 @@ class CreateAdminService
 
   def call_moderator_create email, password, specialization
     user = User.new
+    user.name = "TestUser"
     user.email = email
     user.password = password
     user.password_confirmation = password
