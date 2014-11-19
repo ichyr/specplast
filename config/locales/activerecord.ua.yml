@@ -13,6 +13,8 @@ ua:
               blank: "Ведіть і-мейл у відповідне поле!"
             password:
               blank: "Будь ласка заповніть поле паролю!"
+            current_password:
+              blank: "має бути введеним для зміни користувача"
     models:
       specialiation: "Спеціалізація"
       vmilist: "Вмілість"

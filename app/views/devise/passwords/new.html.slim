@@ -5,7 +5,7 @@
     
     p = I18n.t('devise.user.reset_instructions')
 
-    - if devise_error_messages!
+    - if devise_error_messages! && devise_error_messages! != ""
       .alert.alert-danger = devise_error_messages!
 
     .form-group

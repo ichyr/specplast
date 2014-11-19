@@ -5,7 +5,7 @@ en:
         messages: 
           blank: "Fill in the field %{attribute}."
         user:
-          blank: "Please enter th information about the user!"
+          blank: "Please enter the information about the user!"
           attributes:
             name:
               blank: "Fill in the name field!"
@@ -13,6 +13,8 @@ en:
               blank: "Fill in the e-mail field!"
             password:
               blank: "Fill in the password field!"
+            current_password:
+              blank: "must be entered for user update!"
     models:
       specialization: "Specialization"
       vmilist: "Vmilist"

@@ -1,7 +1,7 @@
 .authform
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :role => 'form'}) do |f|
     h3.text-center.content-header = I18n.t "devise.user.sign_up_label"
-    - if devise_error_messages!
+    - if devise_error_messages! && devise_error_messages! != ""
       .alert.alert-danger = devise_error_messages!
     .form-group
       = f.label :name, I18n.t("devise.user.name")
@@ -13,6 +13,9 @@
       = f.label :password, I18n.t("devise.user.password")
       = f.password_field :password, class: 'form-control'
     .form-group
+      = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
+      = f.password_field :password_confirmation, class: 'form-control'
+    .form-group
        = f.label :avatar, I18n.t("devise.user.avatar")
     .form-group
       .upload-preview
@@ -21,9 +24,6 @@
       = f.file_field :avatar, class: "file"
     .form-group.hidden
       = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }, value: 0, :label => I18n.t("devise.user.status")
-    .form-group
-      = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
-      = f.password_field :password_confirmation, class: 'form-control'
     = f.submit I18n.t('devise.user.sign_up'), :class => 'button right'
 
 #user_avatar
