@@ -31,9 +31,10 @@ Rails.application.routes.draw do
   get "bulava", to: 'visitors#bulava'
   get "visitors/api/:id", to: 'visitors#api'
   
-  get 'users', to: 'users#index'
   #  User controller
   devise_for :users
+
+  get 'users', to: 'users#index'
   get 'users/:id', to: 'users#show', :as => :user
   get 'users/edit/:id', to: 'users#edit'
   put 'users/:id', to: 'users#update'
@@ -41,9 +42,11 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#delete'
 
   # Exceptions and errors 
-  get ':error_code', to: 'error#show', constrains: {error_code: /\d{3}/}
-  # get '402', to: 'error#error_402'
-  # get '404', to: 'error#error_404'
-  # get '500', to: 'error#error_500'
+  get '/402', to: "error#error_402"
+  get '/404', to: "error#error_404"
+  get '/500', to: "error#error_500"
+
+  # Default root
+  get '*path', to: redirect("/404")
 
 end
