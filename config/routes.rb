@@ -41,8 +41,9 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#delete'
 
   # Exceptions and errors 
-  get '402', to: 'error#error_402'
-  get '404', to: 'error#error_404'
-  get '500', to: 'error#error_500'
+  get ':error_code', to: 'error#show', constrains: {error_code: /\d{3}/}
+  # get '402', to: 'error#error_402'
+  # get '404', to: 'error#error_404'
+  # get '500', to: 'error#error_500'
 
 end
