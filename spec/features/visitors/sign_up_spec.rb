@@ -19,7 +19,8 @@ feature 'Sign Up', :devise do
   #   Then I see an invalid email message
   scenario 'visitor cannot sign up with invalid email address' do
     sign_up_with('bogus', 'please123', 'please123')
-    expect(page).to have_content 'Email is invalid'
+    expect(page).to have_content I18n.t("activerecord.attributes.user.email")
+    expect(page).to have_content I18n.t("errors.messages.invalid")
   end
 
   # Scenario: Visitor cannot sign up without password
@@ -28,7 +29,8 @@ feature 'Sign Up', :devise do
   #   Then I see a missing password message
   scenario 'visitor cannot sign up without password' do
     sign_up_with('test@example.com', '', '')
-    expect(page).to have_content "Password can't be blank"
+    expect(page).to have_content I18n.t("activerecord.attributes.user.password")
+    expect(page).to have_content I18n.t("activerecord.errors.models.user.attributes.password.blank")
   end
 
   # Scenario: Visitor cannot sign up with a short password

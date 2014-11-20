@@ -20,11 +20,13 @@ en:
       vmilist: "Vmilist"
       specdatum: "Specialization data"
       user: "User"
+      email: "Email"
     attributes:
       user:
-        name: "name"
-        email: "email"
-        role: "role"
+        name: "Name"
+        email: "Email"
+        role: "Role"
+        password: "Password"
       specialiation:
         name: "name"
         avatar: "avatar"
