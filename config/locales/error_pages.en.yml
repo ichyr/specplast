@@ -1,6 +1,6 @@
 en:
   error_403:
-    main_message: "Boddy - strengthen you lashes!"
+    main_message: "Buddy - strengthen you lashes!"
     sub_main_message: "You won't make it over this river."
     end_message: "Try logging in if you were on the other side!"
   error_404:

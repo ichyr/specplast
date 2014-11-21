@@ -34,6 +34,7 @@ main[role="main"] {
 a:hover {
 	color: #000080;
 	text-decoration: none;
+	background-color: rgba(0,0,0,0);
 }
 
 .btn.btn-success a {
@@ -43,7 +44,6 @@ a:hover {
 
 .btn.btn-success a:hover {
 	color: white;
-	background-color: none;
 	text-decoration: none;
 }
 
