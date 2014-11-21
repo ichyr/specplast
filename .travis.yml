@@ -36,6 +36,7 @@ deploy:
   run:
     - "rake assets:clean"
     - "rake assets:precompile"
-    - "rake db:migrate:reset"
+    - "pg:reset DATABASE_URL"
+    - "rake db:migrate"
     - "rake db:seed"
     - restart
