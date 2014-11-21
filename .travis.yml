@@ -13,7 +13,7 @@ before_install:
 env:
   global:
   - BUNDLE_ARCHIVE="test-bundle"
-  - RAILS_ENV=testя
+  - RAILS_ENV=test
 
 addons:
   postgresql: "9.3"
@@ -34,9 +34,9 @@ deploy:
   api_key:
     secure: iQVxyVujvRkoyI/vBG3IGQdN+6b0kqaFKBQIwfLXyKmFj/oiAZ1yag2mw6Yj3dpn/UjvVXme6iMK5cbsJ1wfePMUTKO40jcC57x7o25h6emxCBgvalyT+HE+lYoTvLKn3QA9OHBSBBDcB3Ikq/c7uZz6xtHrPVFC+mxZDOldMX0=
   run:
+    - "rake RAILS_ENV=production"
     - "rake assets:clean"
     - "rake assets:precompile"
-    - "pg:reset DATABASE_URL"
-    - "rake db:migrate"
+    - "rake db:migrate:reset"
     - "rake db:seed"
     - restart
