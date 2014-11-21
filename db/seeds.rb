@@ -25,9 +25,9 @@ USER_ROLES = roles
 
 # Seed Specializations
 
-SPECIALIZATIONS_COUNT = 5
-SPECIALIZATION_NAMES = [ "Кінна", "Військова", "Мандрівнича", "Спортивна",
-												 "Морська", "Летунська", "Мистецька"]
+SPECIALIZATIONS_COUNT = 7
+SPECIALIZATION_NAMES = [ "Кінна", "Мистецька", "Військова", "Мандрівнича", "Спортивна",
+												 "Морська", "Летунська" ]
 
 # Seed Specdatum
 0.upto(SPECIALIZATIONS_COUNT - 1) { |index|
