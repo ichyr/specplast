@@ -1,2 +1,17 @@
-h1 Error#error_500
-p Find me in app/views/error/error_500.html.slim
+h2.text-center Молодець!
+h3.text-center Ми і не знали, що в нас можна таке попросити.
+h4.text-center Інформація про цей випадок вже передається адміністраторам!
+
+br
+
+= image_tag "http://clipart.usscouts.org/library/Baden-Powell_Art/brb-10.gif"
+
+br
+
+h4.text-center Дякуємо і пропонуємо тобі перейти на одну є таких сторінок:
+.row
+  h4.col-md-4.text-center = link_to "Navigate to homepage", root_path
+  h4.col-md-4.text-center = link_to "Write us a letter", bulava_path 
+  h4.col-md-4.text-center = link_to "Visit Plast Portal", "http://www.plast.org.ua"
+
+br
