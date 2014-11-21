@@ -39,7 +39,7 @@
       .form-group
         = f.label :current_password, I18n.t("devise.user.current_password")
         = f.password_field :current_password, class: 'form-control'
-    = f.submit 'Update', :class => 'button right'
+    = f.submit I18n.t("devise.buttons.update"), :class => 'button right'
 .authform
   h4 = I18n.t("devise.user.cancel_account")
   p = I18n.t("devise.user.unhappy")

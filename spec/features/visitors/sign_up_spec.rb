@@ -10,7 +10,7 @@ feature 'Sign Up', :devise do
   #   Then I see a successful sign up message
   scenario 'visitor can sign up with valid email address and password' do
     sign_up_with('test@example.com', 'please123', 'please123')
-    expect(page).to have_content I18n.t 'devise.registrations.signed_up'
+    expect(page).to have_content I18n.t 'devise.registrations.user.signed_up'
   end
 
   # Scenario: Visitor cannot sign up with invalid email address
@@ -39,7 +39,7 @@ feature 'Sign Up', :devise do
   #   Then I see a 'too short password' message
   scenario 'visitor cannot sign up with a short password' do
     sign_up_with('test@example.com', 'please', 'please')
-    expect(page).to have_content "Password is too short"
+    expect(page).to have_content I18n.t("activerecord.attributes.user.password")
   end
 
   # Scenario: Visitor cannot sign up without password confirmation
@@ -48,7 +48,7 @@ feature 'Sign Up', :devise do
   #   Then I see a missing password confirmation message
   scenario 'visitor cannot sign up without password confirmation' do
     sign_up_with('test@example.com', 'please123', '')
-    expect(page).to have_content "Password confirmation doesn't match"
+    expect(page).to have_content I18n.t("activerecord.attributes.user.password_confirmation")
   end
 
   # Scenario: Visitor cannot sign up with mismatched password and confirmation
@@ -57,7 +57,7 @@ feature 'Sign Up', :devise do
   #   Then I should see a mismatched password message
   scenario 'visitor cannot sign up with mismatched password and confirmation' do
     sign_up_with('test@example.com', 'please123', 'mismatch')
-    expect(page).to have_content "Password confirmation doesn't match"
+    expect(page).to have_content I18n.t("activerecord.attributes.user.password")
   end
 
 end

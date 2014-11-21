@@ -26,6 +26,7 @@ ua:
         email: "Електронна пошта"
         role: "Роль"
         password: "Пароль"
+        password_confirmation: "Пароль"
       specialiation:
         name: "Назва"
         avatar: "Іконка"
