@@ -1,5 +1,5 @@
 class ErrorController < ApplicationController
-  def error_402
+  def error_403
   end
 
   def error_404

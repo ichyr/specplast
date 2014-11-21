@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#delete'
 
   # Exceptions and errors 
-  get '/402', to: "error#error_402"
+  get '/403', to: "error#error_403"
   get '/404', to: "error#error_404"
   get '/500', to: "error#error_500"
 

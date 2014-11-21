@@ -1,0 +1,17 @@
+en:
+  error_403:
+    main_message: "Boddy - strengthen you lashes!"
+    sub_main_message: "You won't make it over this river."
+    end_message: "Try logging in if you were on the other side!"
+  error_404:
+    main_message: "We have looked everywhere here! Nothing!"
+    end_message: "Don't worry, this is not the end!"
+  error_500:
+    main_message: "Brilliant!"
+    sub_main_message_1: "We don't even think that somebody could ask for this!"
+    sub_main_message_2: "This issue is being currently transmitted to administrators!"
+    end_message: "We are grateful for your discovery and encourage you to continue investigating our site:"
+  error_general:
+    home_page: "Home page"
+    contacts_page: "Contact us"
+    plast_portal: "Visit Plast Portal"

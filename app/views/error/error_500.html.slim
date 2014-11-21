@@ -1,6 +1,6 @@
-h2.text-center Молодець!
-h3.text-center Ми і не знали, що в нас можна таке попросити.
-h4.text-center Інформація про цей випадок вже передається адміністраторам!
+h2.text-center = I18n.t "error_500.main_message"
+h3.text-center = I18n.t "error_500.sub_main_message_1"
+h4.text-center = I18n.t "error_500.sub_main_message_2"
 
 br
 
@@ -8,10 +8,10 @@ br
 
 br
 
-h4.text-center Дякуємо і пропонуємо тобі перейти на одну є таких сторінок:
+h3.text-center = I18n.t "error_500.end_message"
 .row
-  h4.col-md-4.text-center = link_to "Navigate to homepage", root_path
-  h4.col-md-4.text-center = link_to "Write us a letter", bulava_path 
-  h4.col-md-4.text-center = link_to "Visit Plast Portal", "http://www.plast.org.ua"
+  h4.col-md-4.text-center = link_to I18n.t("error_general.home_page"), root_path
+  h4.col-md-4.text-center = link_to I18n.t("error_general.contacts_page"), bulava_path 
+  h4.col-md-4.text-center = link_to I18n.t("error_general.plast_portal"), "http://www.plast.org.ua"
 
 br
