@@ -2,21 +2,21 @@ language: ruby
 rvm:
 - 2.1.2
 
-# bundler_args: --without development --path=~/.bundle
-# # set for bundler install all gems, except "development" group 
-# # and use "~/.bundle" folder for this gems
+bundler_args: --without development --path=~/.bundle
+# set for bundler install all gems, except "development" group 
+# and use "~/.bundle" folder for this gems
 
-# before_install:
-# - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
-# # skip installing docs for gems
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+# skip installing docs for gems
 
-# env:
-#   global:
-#   - BUNDLE_ARCHIVE="test-bundle"
-#   - RAILS_ENV=test
+env:
+  global:
+  - BUNDLE_ARCHIVE="test-bundle"
+  - RAILS_ENV=test
 
-# addons:
-#   postgresql: "9.3"
+addons:
+  postgresql: "9.3"
 
 # before_script:
 #   - cp config/database.yml.travis config/database.yml
