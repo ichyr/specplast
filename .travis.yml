@@ -34,11 +34,9 @@ deploy:
   api_key:
     secure: iQVxyVujvRkoyI/vBG3IGQdN+6b0kqaFKBQIwfLXyKmFj/oiAZ1yag2mw6Yj3dpn/UjvVXme6iMK5cbsJ1wfePMUTKO40jcC57x7o25h6emxCBgvalyT+HE+lYoTvLKn3QA9OHBSBBDcB3Ikq/c7uZz6xtHrPVFC+mxZDOldMX0=
   run:
-    - "rake RAILS_ENV=production"
     - "rake assets:clean"
     - "rake assets:precompile"
-    - "psql -c 'create database specplast_production' -U postgres"
-    - "pg:reset"
+    - "pg:reset DATABASE_URL"
     - "rake db:migrate"
     - "rake db:seed"
     - restart
