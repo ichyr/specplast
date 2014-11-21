@@ -15,29 +15,29 @@ ul.nav.nav-tabs.nav-justified
 
 - if policy(Specialization.new).new?
   br
-  .btn.btn-success.pull-right = link_to 'New Specialization', new_specialization_path
+  .btn.btn-success.pull-right = link_to I18n.t("layout.administration.button.new"), new_specialization_path
 
 br
 
 table.table.table-hover
   thead
     tr.row
-      th Name
-      th.text-center Avatar
-      th Inspect
-      th Edit
+      th = I18n.t("layout.administration.name")
+      th.text-center = I18n.t("layout.administration.avatar")
+      th 
+      th 
       - if policy(Specialization.new).new?
-        th Delete
+        th 
 
   tbody
     - @specializations.each do |specialization|
       tr.row
-        td = specialization.name
+        td.vertical-align = specialization.name
         td = image_tag specialization.avatar.url(:thumb).to_s if specialization.avatar
-        td = link_to 'Show', specialization
-        td = link_to 'Edit', edit_specialization_path(specialization)
+        td.vertical-align = link_to I18n.t("layout.administration.button.show"), specialization, :class => "btn btn-sm btn-info"
+        td.vertical-align = link_to I18n.t("layout.administration.button.edit"), edit_specialization_path(specialization),:class => "btn btn-sm btn-warning"
         - if policy(Specialization.new).new?
-          td = link_to 'Destroy', specialization, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td.vertical-align = link_to I18n.t("layout.administration.button.delete"), specialization, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => "btn btn-sm btn-danger"
 
 .row
   .text-center = will_paginate @specializations, renderer: BootstrapPagination::Rails

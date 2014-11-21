@@ -31,6 +31,13 @@ en:
       administrators_tab: "Administrators"
       moderators_tab: "Moderators"
       bulava_tab: "Bulava"
+      name: "Name"
+      avatar: "Avatar"
+      button:
+        new: "New Specialization"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
     moderator:
       page_title: "Moderator panel"
       vmilists_tab: "Vmilists"

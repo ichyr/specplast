@@ -31,6 +31,13 @@ ua:
       administrators_tab: "Адміністратори"
       moderators_tab: "Модератори"
       bulava_tab: "Булави"
+      name: "Назва"
+      avatar: "Світлина"
+      button:
+        new: "Нова спеціалізація"
+        show: "Відкрити"
+        edit: "Оновити"
+        delete: "Видалити"
     moderator:
       page_title: "Панель модератора"
       vmilists_tab: "Вмілості"

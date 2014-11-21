@@ -16,7 +16,7 @@ ua:
             current_password:
               blank: "має бути введеним для зміни користувача"
     models:
-      specialiation: "Спеціалізація"
+      specialization: "Спеціалізація"
       vmilist: "Вмілість"
       specdatum: "Дані спеціалізації"
       user: "Користувач"
