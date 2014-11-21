@@ -37,6 +37,8 @@ deploy:
     - "rake RAILS_ENV=production"
     - "rake assets:clean"
     - "rake assets:precompile"
-    - "rake db:migrate:reset"
+    - "psql -c 'create database specplast_production' -U postgres"
+    - "pg:reset"
+    - "rake db:migrate"
     - "rake db:seed"
     - restart
