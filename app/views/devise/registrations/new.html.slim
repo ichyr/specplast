@@ -25,5 +25,3 @@
     .form-group.hidden
       = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }, value: 0, :label => I18n.t("devise.user.status")
     = f.submit I18n.t('devise.user.sign_up'), :class => 'button right'
-
-#user_avatar
