@@ -20,12 +20,12 @@
     .form-group
       = f.file_field :avatar, class: "file"
     .form-group
-      = f.label :name, I18n.t("users.role"), class: 'col-md-6'
-      = f.label I18n.t("users.roles.#{@user.role}"), class: 'col-md-6'
+      = f.label :name, I18n.t("users.role"), class: 'col-sm-6'
+      = f.label I18n.t("users.roles.#{@user.role}"), class: 'col-sm-6'
     - if @user.role == "moderator"
       .form-group
-        = f.label I18n.t("layout.models.specialization"), class: 'col-md-6'
-        = f.label @user.specialization.name, class: 'col-md-6'
+        = f.label I18n.t("layout.models.specialization"), class: 'col-sm-6'
+        = f.label @user.specialization.name, class: 'col-sm-6'
     fieldset
       p = I18n.t("devise.user.live_it_blank")
       .form-group
