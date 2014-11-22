@@ -1,6 +1,8 @@
 en:
   alerts:
     are_you_sure: "Are you sure?"
+  actions:
+    new: "New"
   date:
     abbr_day_names:
     - Sun

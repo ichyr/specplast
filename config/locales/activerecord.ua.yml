@@ -27,9 +27,10 @@ ua:
         role: "Роль"
         password: "Пароль"
         password_confirmation: "Пароль"
-      specialiation:
+      specialization:
         name: "Назва"
         avatar: "Іконка"
+        create_button: "Створити спеціалізацію"
       specdatum:
         gen_info: "Інформація"
         proby: "Проби"

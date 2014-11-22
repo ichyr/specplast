@@ -28,9 +28,10 @@ en:
         role: "Role"
         password: "Password"
         password_confirmation: "Password"
-      specialiation:
+      specialization:
         name: "name"
         avatar: "avatar"
+        create_button: "Create specialization"
       specdatum:
         gen_info: "information"
         proby: "proby"

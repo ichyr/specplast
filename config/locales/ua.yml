@@ -1,6 +1,8 @@
 ua:
   alerts:
     are_you_sure: "Ви впевнені у цьому?"
+  actions:
+    new: "Нова"
   date:
     abbr_day_names:
     - Нд
