@@ -15,9 +15,9 @@ ul.nav.nav-tabs.nav-justified role="tablist"
   br
   #child.tab-pane.active
     p
-      = @vmilist.child_info
+      = raw @vmilist.child_info
   #instruktor.tab-pane
     p
-      = @vmilist.instructor_info
+      = raw @vmilist.instructor_info
   #list.tab-pane
     h3.text-center.content-header.announcement = I18n.t "layout.page_under_construction"

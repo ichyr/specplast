@@ -6,19 +6,19 @@
     table.table.table-hover
       thead
         tr.row
-          th Name
-          th.text-center Avatar
-          th Inspect
-          th Edit
-          th Destroy
+          th = I18n.t("activerecord.attributes.vmilist.name")
+          th.text-center = I18n.t("activerecord.attributes.vmilist.avatar")
+          th
+          th
+          th
 
       tbody
         - @vmilists.each do |vmilist|
           tr.row
             td = vmilist.name
             td = image_tag vmilist.avatar.url(:thumb).to_s, size: "25x25" if vmilist.avatar
-            td = link_to 'Show', vmilist
-            td = link_to 'Edit', edit_vmilist_path(vmilist)
-            td = link_to 'Destroy', vmilist, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete
+            td = link_to I18n.t("actions.show"), vmilist, :class => "btn btn-sm btn-info"
+            td = link_to I18n.t("actions.edit"), edit_vmilist_path(vmilist), :class => "btn btn-sm btn-warning"
+            td = link_to I18n.t("actions.delete"), vmilist, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete, :class => "btn btn-sm btn-danger"
 
     .text-center = will_paginate @vmilists, renderer: BootstrapPagination::Rails

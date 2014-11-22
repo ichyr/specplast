@@ -3,6 +3,11 @@ ua:
     are_you_sure: "Ви впевнені у цьому?"
   actions:
     new: "Нова"
+    show: "Відкрити"
+    edit: "Оновити"
+    delete: "Знищити"
+  placeholders:
+    search: "Шукати"
   date:
     abbr_day_names:
     - Нд

@@ -34,10 +34,10 @@ table.table.table-hover
       tr.row
         td.vertical-align = specialization.name
         td = image_tag specialization.avatar.url(:thumb).to_s if specialization.avatar
-        td.vertical-align = link_to I18n.t("layout.administration.button.show"), specialization, :class => "btn btn-sm btn-info"
-        td.vertical-align = link_to I18n.t("layout.administration.button.edit"), edit_specialization_path(specialization),:class => "btn btn-sm btn-warning"
+        td.vertical-align = link_to I18n.t("actions.show"), specialization, :class => "btn btn-sm btn-info"
+        td.vertical-align = link_to I18n.t("actions.edit"), edit_specialization_path(specialization),:class => "btn btn-sm btn-warning"
         - if policy(Specialization.new).new?
-          td.vertical-align = link_to I18n.t("layout.administration.button.delete"), specialization, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete, :class => "btn btn-sm btn-danger"
+          td.vertical-align = link_to I18n.t("actions.delete"), specialization, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete, :class => "btn btn-sm btn-danger"
 
 .row
   .text-center = will_paginate @specializations, renderer: BootstrapPagination::Rails

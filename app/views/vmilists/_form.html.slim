@@ -4,24 +4,43 @@
   -if f.error_notification
     .alert.alert-danger = f.error_notification
 
-  .form-inputs
-    = f.input :name, inner_html: {class: 'form-control'}
-    = f.input :child_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-    = f.input :instructor_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
-    = f.label :avatar
-    .upload-preview
-  		= image_tag @vmilist.avatar.url(:thumb).to_s
-  	= f.file_field :avatar, class: "file"
-    - if current_user.moderator?
-      = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, disabled: true, inner_html: {class: 'form-control'}
-    - else
-      = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, inner_html: {class: 'form-control'}
-    end
-
   .form-actions
-    = f.button :submit, class: 'btn btn-success'
+    = f.button :submit, class: 'btn btn-success pull-right', value: I18n.t("devise.buttons.update")
+  
+  br
+  br
 
-javascript:
-  $('#new_vmilist').on('submit', function() {
-    $('#vmilist_specialization_id').attr('disabled', false);
-  });
+  ul.nav.nav-tabs.nav-justified role="tablist" 
+    li.active
+      a data-toggle="tab" href="#main" role="tab" = I18n.t("layout.specialization.main")
+    li
+      a data-toggle="tab" href="#child" role="tab"  = I18n.t("vmilist.children_info")
+    li
+      a data-toggle="tab" href="#instruktor" role="tab"  = I18n.t("vmilist.instruktor_info")
+
+  /! Tab panes
+  .tab-content
+    #main.tab-pane.active
+      .form-inputs
+        = f.input :name, inner_html: {class: 'form-control'}
+        = f.label :avatar
+        .upload-preview
+          = image_tag @vmilist.avatar.url(:thumb).to_s
+        = f.file_field :avatar, class: "file"
+        - if current_user.moderator?
+          = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, disabled: true, inner_html: {class: 'form-control'}, label: I18n.t("activerecord.models.specialization")
+        - else
+          = f.association :specialization, label_method: :name, value_method: :id, include_blank: false, inner_html: {class: 'form-control'}
+        end
+    #child.tab-pane
+      .form-inputs
+        = f.input :child_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+    #instruktor.tab-pane
+      .form-inputs
+        = f.input :instructor_info, as: :bootsy, input_html: {class: 'form-control', rows: 15}
+
+- if !current_user.admin?
+  javascript:
+    $('#new_vmilist').on('submit', function() {
+      $('#vmilist_specialization_id').attr('disabled', false);
+    });
