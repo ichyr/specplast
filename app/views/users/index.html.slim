@@ -32,7 +32,7 @@ ul.nav.nav-tabs role="tablist"
             td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
             td = user.role.to_s
             td = link_to 'Edit', controller: :users, action: :edit, id: user.id
-            td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+            td = link_to 'Destroy', user, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete
 
   #moderators.tab-pane
     table.table.table-hover
@@ -55,7 +55,7 @@ ul.nav.nav-tabs role="tablist"
             td = user.role.to_s
             td = user.specialization.name if user.specialization
             td = link_to 'Edit', controller: :users, action: :edit, id: user.id
-            td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+            td = link_to 'Destroy', user, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete
 
   #admins.tab-pane
     table.table.table-hover
@@ -76,4 +76,4 @@ ul.nav.nav-tabs role="tablist"
             td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
             td = user.role.to_s
             td = link_to 'Edit', controller: :users, action: :edit, id: user.id
-            td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+            td = link_to 'Destroy', user, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete

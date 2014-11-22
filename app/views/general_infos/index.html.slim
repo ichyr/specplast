@@ -16,7 +16,7 @@ table
         td = general_info.value
         td = link_to 'Show', general_info
         td = link_to 'Edit', edit_general_info_path(general_info)
-        td = link_to 'Destroy', general_info, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Destroy', general_info, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete
 
 br
 

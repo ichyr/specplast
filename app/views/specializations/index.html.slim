@@ -18,7 +18,7 @@ table.table.table-hover
         td = link_to 'Show', specialization
         td = link_to 'Edit', edit_specialization_path(specialization)
         - if policy(Specialization.new).new?
-          td = link_to 'Destroy', specialization, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td = link_to 'Destroy', specialization, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete
 
 br
 

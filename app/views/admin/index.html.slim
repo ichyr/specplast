@@ -37,7 +37,7 @@ table.table.table-hover
         td.vertical-align = link_to I18n.t("layout.administration.button.show"), specialization, :class => "btn btn-sm btn-info"
         td.vertical-align = link_to I18n.t("layout.administration.button.edit"), edit_specialization_path(specialization),:class => "btn btn-sm btn-warning"
         - if policy(Specialization.new).new?
-          td.vertical-align = link_to I18n.t("layout.administration.button.delete"), specialization, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => "btn btn-sm btn-danger"
+          td.vertical-align = link_to I18n.t("layout.administration.button.delete"), specialization, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete, :class => "btn btn-sm btn-danger"
 
 .row
   .text-center = will_paginate @specializations, renderer: BootstrapPagination::Rails
