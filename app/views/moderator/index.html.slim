@@ -4,7 +4,7 @@ br
 .btn.btn-success.pull-right = link_to "#{I18n.t 'actions.new'} #{ I18n.t 'activerecord.models.vmilist'}", new_vmilist_path
 
 .pull-left
-  form.moderator_vmilosti_search accept-charset="UTF-8" action="/moderator" method="get" 
+  form.moderator_vmilosti_search.form-inline accept-charset="UTF-8" action="/moderator" method="get" 
     div style="display:none" 
       input name="utf8" type="hidden" value="✓"
     .input-group
