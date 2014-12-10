@@ -126,6 +126,39 @@ ALTER SEQUENCE general_infos_id_seq OWNED BY general_infos.id;
 
 
 --
+-- Name: qualifications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE qualifications (
+    id integer NOT NULL,
+    user_id integer,
+    vmilist_id integer,
+    confirmed boolean,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: qualifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE qualifications_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: qualifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -306,6 +339,13 @@ ALTER TABLE ONLY general_infos ALTER COLUMN id SET DEFAULT nextval('general_info
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY qualifications ALTER COLUMN id SET DEFAULT nextval('qualifications_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY specdata ALTER COLUMN id SET DEFAULT nextval('specdata_id_seq'::regclass);
 
 
@@ -352,6 +392,14 @@ ALTER TABLE ONLY bootsy_images
 
 ALTER TABLE ONLY general_infos
     ADD CONSTRAINT general_infos_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: qualifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY qualifications
+    ADD CONSTRAINT qualifications_pkey PRIMARY KEY (id);
 
 
 --
@@ -440,4 +488,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141103160759');
 INSERT INTO schema_migrations (version) VALUES ('20141103160760');
 
 INSERT INTO schema_migrations (version) VALUES ('20141106162220');
+
+INSERT INTO schema_migrations (version) VALUES ('20141210222059');
 

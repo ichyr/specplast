@@ -6,6 +6,9 @@ class Vmilist < ActiveRecord::Base
 
 	belongs_to :specialization
 
+	has_many :qualifications
+  has_many :users, through: :qualifications
+
 	validates :name, presence: true, 
 	                 length: { minimum: 4}
 	validates :child_info, presence: true, 
@@ -14,8 +17,6 @@ class Vmilist < ActiveRecord::Base
 	                       length: { minimum: 25 }
 	validates :specialization_id, presence: true 
 	validates :name, uniqueness: { case_sensitive: false }
-
-
 
 	DEFAULT_TEXT = "Даний розділ ще не є заповнений інформацією!"
 

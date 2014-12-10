@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
   belongs_to :specialization
 
+  has_many :qualifications
+  has_many :vmilists, through: :appointments
+
+
   validates :specialization_id, presence:true, 
             allow_nil: false, if: :is_moderator
   validates :name, presence: true, length: { minimum: 4}
