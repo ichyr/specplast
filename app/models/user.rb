@@ -12,14 +12,21 @@ class User < ActiveRecord::Base
 
   belongs_to :specialization
 
-  has_many :qualifications
-  has_many :vmilists, through: :appointments
-
-
   validates :specialization_id, presence:true, 
             allow_nil: false, if: :is_moderator
   validates :name, presence: true, length: { minimum: 4}
   validates :role,  inclusion: { in: User.roles.keys }
+
+
+  has_many :qualifications
+  has_many :vmilists, through: :qualifications
+
+  attr_accessor :vmilists
+  attr_reader :vmilists
+
+  def vmilists=(ids)
+    self.vmilists = ids.split(",")
+  end
 
   def is_moderator
     self.role.to_s == "moderator"

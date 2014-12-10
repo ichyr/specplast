@@ -2,7 +2,7 @@ class VmilistsController < ApplicationController
   before_action :set_vmilist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
-  after_action :verify_authorized, :except => [:index, :show]
+  after_action :verify_authorized, :except => [:index, :show, :preview]
 
   # GET /vmilists
   # GET /vmilists.json
@@ -31,12 +31,6 @@ class VmilistsController < ApplicationController
   # POST /vmilists.json
   def create
     @vmilist = Vmilist.new(vmilist_params)
-
-    puts "controller got !"
-    puts "controller got !"
-    puts vmilist_params[:specialization_id]
-    puts "controller got !"
-    puts "controller got !"
 
     authorize @vmilist
 
@@ -74,6 +68,13 @@ class VmilistsController < ApplicationController
     end
   end
 
+  def preview
+    @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.json { render :json => @vmilists.map(&:attributes) }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vmilist
@@ -82,6 +83,7 @@ class VmilistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vmilist_params
-      params.require(:vmilist).permit(:name, :avatar, :child_info, :instructor_info, :specialization_id)
+      params.require(:vmilist).permit(:name, :avatar, :child_info, :instructor_info, 
+                                      :specialization_id, :users)
     end
 end

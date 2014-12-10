@@ -20,6 +20,9 @@
     .form-group
       = f.file_field :avatar, class: "file"
     .form-group
+      = f.label :vmilists, " !!! This must be I18nended !!! "
+      = f.email_field :vmilists, class: 'form-control'
+    .form-group
       = f.label :name, I18n.t("users.role"), class: 'col-sm-6'
       = f.label I18n.t("users.roles.#{@user.role}"), class: 'col-sm-6'
     - if @user.role == "moderator"

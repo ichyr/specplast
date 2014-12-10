@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
 
-  resources :vmilists
+  resources :vmilists do
+    collection do
+      get 'preview'
+    end
+  end
 
   resources :specdata
 
