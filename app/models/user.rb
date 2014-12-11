@@ -21,11 +21,10 @@ class User < ActiveRecord::Base
   has_many :qualifications
   has_many :vmilists, through: :qualifications
 
-  attr_accessor :vmilists
   attr_reader :vmilists
 
   def vmilists=(ids)
-    self.vmilists = ids.split(",")
+    self.vmilist_ids = ids.split(",")
   end
 
   def is_moderator

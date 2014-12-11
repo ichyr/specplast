@@ -21,7 +21,7 @@
       .upload-preview
         = image_tag @user.avatar.url(:thumb).to_s
     .form-group
-      = f.file_field :avatar, class: "file"
+      = f.file_field :avatar, "data-pre" => {"#{params[:vmilists]}"}, class: "file"
     .form-group
       = f.label :vmilists, " !!! This must be I18nended !!! "
       = f.email_field :vmilists, class: 'form-control'
