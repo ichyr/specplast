@@ -2,10 +2,17 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(function() {
-  $("#user_vmilists").tokenInput("/vmilists/preview.json", {
-    crossDomain: false,
-    prePopulate: $("#user_vmilists").data("pre"),
-    theme: "facebook"
-  });
-});
+var tokenInputInit = function() {
+  $(".token_input").each(function(){
+	  var el = $(this);
+	  el.tokenInput(el.data("url"), {
+	    crossDomain: false,
+	    theme: "facebook",
+	    prePopulate: el.data("pre"),
+	    preventDuplicates: true
+	  });
+	});
+};
+
+$(document).ready(tokenInputInit);
+$(document).on('page:load', tokenInputInit);

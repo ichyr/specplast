@@ -17,13 +17,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :role
     devise_parameter_sanitizer.for(:account_update) << :specialization_id
     devise_parameter_sanitizer.for(:account_update) << :avatar
-    devise_parameter_sanitizer.for(:account_update) << :vmilists
+    devise_parameter_sanitizer.for(:account_update) << :vmilist_token
 
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :role
     devise_parameter_sanitizer.for(:sign_up) << :specialization_id
     devise_parameter_sanitizer.for(:sign_up) << :avatar
-    devise_parameter_sanitizer.for(:sign_up) << :vmilists
+    devise_parameter_sanitizer.for(:sign_up) << :vmilist_token
   end
 
   private

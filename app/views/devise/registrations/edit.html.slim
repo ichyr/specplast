@@ -20,8 +20,8 @@
     .form-group
       = f.file_field :avatar, class: "file"
     .form-group
-      = f.label :vmilists, " !!! This must be I18nended !!! "
-      = f.text_field :vmilists, "data-pre" => ( current_user.vmilists ? current_user.vmilists.map(&:attributes).to_json : "" ), class: 'form-control'
+      = f.label :vmilist_token, " !!! This must be I18nended !!! "
+      = f.text_field :vmilist_token, "data-pre" => ( current_user.vmilists ? current_user.vmilists.map(&:attributes).to_json : "" ), "data-url" => preview_vmilists_path, class: 'form-control token_input'
     .form-group
       = f.label :name, I18n.t("users.role"), class: 'col-sm-6'
       = f.label I18n.t("users.roles.#{@user.role}"), class: 'col-sm-6'

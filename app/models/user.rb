@@ -21,9 +21,9 @@ class User < ActiveRecord::Base
   has_many :qualifications
   has_many :vmilists, through: :qualifications
 
-  attr_reader :vmilists
+  attr_reader :vmilist_token
 
-  def vmilists=(ids)
+  def vmilist_token=(ids)
     self.vmilist_ids = ids.split(",")
   end
 

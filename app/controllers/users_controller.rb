@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :email, :role,
-                                   :specialization_id, :avatar, :vmilists)
+                                   :specialization_id, :avatar, :vmilist_token)
     end
 
     def form_route role
