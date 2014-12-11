@@ -14,7 +14,9 @@ class VisitorsController < ApplicationController
 	end
 
 	def instructors
-		@specializations = Specialization.all
+		# додати пагінацію
+		# вибрати тільки тих користувачів, в яких є вмілості
+		@instruktors = User.all.paginate(:page => params[:page], :per_page => 1)
 	end
 
 	def provid

@@ -1,9 +1,21 @@
 h3.text-center.content-header = I18n.t "layout.specialization.instruktors"
 
-br
-br
-br
-br
-br
+table.table.table-hover
+  thead
+    tr.row
+      th Name
+      th.text-center Avatar
+      th Stanycja
+      th Okruga
+      th Vmilists
 
-h3.announcement.alert-info.text-center = I18n.t "layout.page_under_construction"
+  tbody
+    - @instruktors.each do |instruktor|
+      tr.row
+        td = instruktor.name
+        td = image_tag instruktor.avatar.url(:thumb).to_s if instruktor.avatar
+        td = instruktor.email
+        td = instruktor.email
+        td.decorate-array = instruktor.vmilists.collect(&:name)
+
+.text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails

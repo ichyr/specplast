@@ -20,4 +20,20 @@ ul.nav.nav-tabs.nav-justified role="tablist"
     p
       = raw @vmilist.instructor_info
   #list.tab-pane
-    h3.text-center.content-header.announcement = I18n.t "layout.page_under_construction"
+    table.table.table-hover
+      thead
+        tr.row
+          th Name
+          th.text-center Avatar
+          th Stanycja
+          th Okruga
+
+      tbody
+        - @vmilist.users.each do |instruktor|
+          tr.row
+            td = instruktor.name
+            td = image_tag instruktor.avatar.url(:thumb).to_s if instruktor.avatar
+            td = instruktor.email
+            td = instruktor.email
+
+
