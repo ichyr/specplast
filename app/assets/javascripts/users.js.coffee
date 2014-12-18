@@ -10,6 +10,8 @@ tokenInputInit = ->
       theme: "facebook"
       prePopulate: el.data("pre")
       preventDuplicates: true
+      onReady: ->
+        $("ul.token-input-list-facebook").css("width", "100%")
 
     return
 
