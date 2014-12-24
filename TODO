@@ -1,0 +1,269 @@
+Currently doing
+
+============================== release version 1.1
+
+   - add many-to-many association to vmilist-instrukor
+     - add delete logic to models dependendy: destroy
+     - add meaning to qualification field
+
+   - add tokeninput to instruktor menu
+     + gem 'jquery-tokeninput-rails'
+     + optimize selection on server for tokenInput
+     + sign_in - works
+     + sign_in saved all data
+       + http://stackoverflow.com/questions/19006080/jquery-tags-input-with-rails4-simple-form
+     + style generated input field
+     - I18n field label sup
+     - I18n field label sin
+     - I18n tokenIput
+       - https://github.com/GibbonEdu/core/blob/master/lib/jquery-tokeninput/src/jquery.tokeninput.js
+
+
+   - vmilist instruktors list
+     + list all instruktors
+     - додати пагінацію
+     - вибрати тільки тих користувачів, в яких є вмілості
+     - make pagination
+     - make search
+     
+   - general instruktors search
+     + list all instruktors
+     - make pagination
+     - make search by name
+     - style vmilists list
+     - clickable vmilist icons
+     ? make search by all fields
+
+   - moderator acceptance list
+     - list all potential instruktors for confirmation for specific vmilist
+     - search by name
+     - filter by vmilist
+
+   - instruktor public profile page
+     
+    
+   - add the following fields to instruktor : 
+          ...city, district, qualifications description
+    - view
+    - controller
+    - devise
+    - model
+
+==============================
+
+   + bootstrap very wide div?
+   - Oleskiy - спитатися, який клас bootstrap найкращий - xs ?
+
+   - when 500 - redirect to 500
+   - create a log with 500 errors
+
+   - write general e2e use case tests
+
+  - maybe delete index action in users controller?
+
+
+  ###  Improvements  #### 
+
+  - Password fields present on an insecure (http://) page. This is a security risk that allows user login credentials to be stolen.[Learn More]
+
+  ====  Chrome add-ons ====
+  - layour load
+  - live page
+
+Version 2.0
+- Create registry of skobs and virlytsi
+- add skob registry to proby as searchable/paginatable table
+
+TODO
+- Add general overview for vmilist
+- locate all constants somewhere
+
+General Info canditates
+  - цитата на першій сторінці
+  - положення про вмілості
+  - положення про спеціалізації
+  - положення про крайову булаву спеціалізацій
+
+
+================== RELEASE 1.0 ================= BACKLOG
++ Add avatar to user:
+  + mount uploader
+  + run migration
+  + change show
+  + change form
+  + change list
+
++ Add tabs to administration panel
+
++ Add search and pagination functionality
+  + add input to search and button
+  + pagination without search
+  + case sensitive search
+  + sort, search, paginate with jQuery http://railscasts.com/episodes/240-search-sort-paginate-with-ajax
+
++ Thursday
+  + add ajax table to navigate through vmilist in single specialization
+  + add ajax table to navigate through vmilist in visitors vmilosti
+    + only one specialization peworks
+      +
+      + need to specify wich tab to render, only first one is rerendered !!!
+      +
+  + make data independent from searches in other tabs
+  + add accept_nested_attributes_for form for edit specialization
+  + add gliphogrif to shorten "Sign in" in header menu
+
++ Add specdatum to:
+  + specialization show
+  - vmilists lists in specializations !
+  + make tabs for spedcata there
+  + context search in specializations vmilists lists
+  + make url to reflect state of active tab
+
++ make specdatum editable with specdata
+
++ Create tabbed views for specdata in main menu items
+  + create a tabbed view for vmilists
+  + create a tabbed view for akciji
+  + create a tabbed view for activities
+  + create a tabbed view for proby
+  + create a tabbed view for provid
+  + create a view for Bulava
+
+- Sunday
+  - bug on pagination - page refresh
+    ### bug is caused by turbolinks and tagging of resources
+    - resolved - moved pagination to the first tab )
+  - make pagintion in visitors vmilosti
+    + simplified vmilosti as simple search without tabs
+  + justify tabs headers in visitors
+  + make good initial data
+  + integrate WYSIWYG editor into Specdata
+    -- https://github.com/volmer/bootsy --
+    + init is done
+    + views are on
+    + uploader works
+      /??? don't know if the lib is necessary ???
+      -- http://www.imagemagick.org/script/install-source.php --
+      + install imagemagick
+      + sudo apt-get imagemagick
+    + work confirmed
+  + resolve bugs in cucumber
+
+  Tuesday 4/11/2014
+  + apply bootstrap to pagination links
+  + Add pundit to pages
+  + admin panel
+    + user list
+    + admin list
+    + moder list
+    + categories administration
+    + bulava
+      + slim interpolation of variables
+      + no data to populate
+  + moderator page
+    + vmilosti management
+      + paginated list
+      + search
+  + menu for administrator
+  + menu for instruktor
+  + menu for moderator
+  + add wysiwyg editor in vmilosti form 
+
+  Tuesday 11/11/2014
+  + remove specialization edit from moder page
+  + new vmilist button for moderator cabinet
+  + specialization automatic fill
+  + pundit integration in all controllers
+  + delete user dunctional
+  + administration panel user deletion implementation
+  + bug with dropdown menu of admin/other heading menu
+
+  BUGS
+  + moderator edit vmilist ( when clicked edit )
+  + admin edit users, but error occurs (everything works good)
+    + this relates to fact that edit tries to render users, that is not renderable
+  + in admin view users sees specializations dropdown for every selected role
+  + http://localhost:3000/vmilists/new - bug for moderator
+  + dulication of .content-header rows
+  
+  RELATED
+  + add other fields for user edit in device view ( only in users/edit/1 )
+  + enable user to edit his profile
+  + content header styling
+  + hover links are in white that is not good
+  + test file upload for specialization edit
+
+  + style search dialogs
+  + persist state in tab
+  + remove margin-bottom from the main div
+  + style specialization _edit
+  + moderator index search adaptation
+  + I18n devise views
+    + passwords
+      + edit
+      + new
+
+  Tuesday
+  + message about no vmilist found moderator index search
+  + validation of the fields in the models 
+    + vmilist
+    + users
+    + specialization
+    + admin
+  + messages internationalization for validation errors 
+    + devise messages
+    + BUG  NoMethodError in Devise::Registrations#update 
+  
+  BUG
+  + can't create a new vmilist as moderator
+    disabled fields didn't get submitted
+    + fixed it with jQuery )
+  + make select not editable
+  + fix tests ( layout_steps.rb - line 31 - doesn't log in properly )
+  + errors on specialization edit page are too not good
+
+
+  + moderator edit vmilist workflow
+  
+  + make error pages dynamic
+  - Add 404 page
+  - Add 500 page
+  - style everything
+    + specialization proby
+    + devise sign_in erros blob
+    + password confirmation for User#sign_up
+    - red alert for success of sign_up
+    + devise error when no current password present
+        Current password Please enter th information about the user!
+
+  + rspec tests
+  
+  - Bugs to resolve
+   + layout headers
+   + admin : new specialization
+   + admin : manage links
+   + admin : remove role columns from users lists
+   + admin : button for Zberegty General_info
+   + admin i18n will_paginate
+   10
+   + users/edit/1 - i18n
+   + users/edit - i18n. role enum + specialization name
+   10
+   + destroy - i18n all confirmation dialogs everywhere
+   10
+   + specializations/new - i18n
+   10
+   + specializations/new - validation messages view
+   + specializations/1/edit#provid - rowcount of textarea
+
+   + moderator - i18n
+   + moderator i18n will_paginate
+   + moderator - specializations/1/edit i18n labels in osnovne
+
+   + vmilists/1/edit - i18n
+   + vmilists/1/edit - change view to tabs
+
+   + admin user views - buttons look
+
+   + flash with Successful log out in red !!!
+======================================================================
