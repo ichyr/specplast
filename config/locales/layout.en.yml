@@ -19,6 +19,7 @@ en:
     moderator_panel: "Moderators"
     admin_panel: "Administrators"
     no_vmilists: "No vmilists found for your query!"
+    no_instructors: "No instruktors found maching your criteria!"
     models:
       specialization: "Specialization"
       specialization_edit: "Specialization edit"

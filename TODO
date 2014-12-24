@@ -18,20 +18,20 @@ Currently doing
      - I18n tokenIput
        - https://github.com/GibbonEdu/core/blob/master/lib/jquery-tokeninput/src/jquery.tokeninput.js
 
-   - add the following fields to instruktor : 
+   + add the following fields to instruktor : 
           ...city, district, qualifications description
     + db
     + view
     + controller
     + devise
-  ??? model
 
    - general instruktors search
      + list all instruktors
      + make pagination
      - make search by name
      - style vmilists list
-     - clickable vmilist icons
+       - problems when lots of vmilists they don't wrap as text but go far right
+     + clickable vmilist icons
      ? make search by all fields
 
    - vmilist instruktors list

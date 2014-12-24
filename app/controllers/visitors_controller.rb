@@ -14,9 +14,8 @@ class VisitorsController < ApplicationController
 	end
 
 	def instructors
-		# додати пагінацію
-		# вибрати тільки тих користувачів, в яких є вмілості
-		@instruktors = User.all.paginate(:page => params[:page], :per_page => 1)
+		@instruktors = User.where("name like ?", "%#{params[:search]}%")
+												.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def provid

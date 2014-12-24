@@ -1,0 +1,25 @@
+.row
+  - if @instruktors.count == 0 
+    h3.bg-primary.text-center = I18n.t('layout.no_instructors')
+
+  - else
+    .row
+      table.table.table-hover
+        thead
+          tr.row
+            th Name
+            th.text-center Avatar
+            th Stanycja
+            th Okruga
+            th Vmilists
+
+        tbody
+          - @instruktors.each do |instruktor|
+            tr.row
+              td = instruktor.name
+              td = image_tag instruktor.avatar.url(:thumb).to_s if instruktor.avatar
+              td = instruktor.city
+              td = instruktor.region
+              td.decorate-array = decorate_set(instruktor.vmilists)
+    .row
+      .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails

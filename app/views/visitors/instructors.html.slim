@@ -1,21 +1,19 @@
 h3.text-center.content-header = I18n.t "layout.specialization.instruktors"
 
-table.table.table-hover
-  thead
-    tr.row
-      th Name
-      th.text-center Avatar
-      th Stanycja
-      th Okruga
-      th Vmilists
+br
 
-  tbody
-    - @instruktors.each do |instruktor|
-      tr.row
-        td = instruktor.name
-        td = image_tag instruktor.avatar.url(:thumb).to_s if instruktor.avatar
-        td = instruktor.city
-        td = instruktor.region
-        td.decorate-array = decorate_set(instruktor.vmilists)
+.pull-right
+  form.visitors_instructors_search.form-inline accept-charset="UTF-8" action="/instructors" method="get" role="form"
+    div style="display:none" 
+      input name="utf8" type="hidden" value="✓"
+    .input-group
+      input.form-control name="search" placeholder="Search" type="text" 
+      .input-group-btn
+        button.btn.btn-default type="submit" 
+          i.glyphicon.glyphicon-search
 
-.text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails
+br
+br
+br
+
+div#vmilists = render "instruktors"

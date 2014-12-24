@@ -19,6 +19,7 @@ ua:
     moderator_panel: "Модератори"
     admin_panel: "Адміністратори"
     no_vmilists: "За вашим запитом не було знайдено жодної вмілості"
+    no_instructors: "За вашим запитом не було знайдено жодного інструктора"
     models:
       specialization: "Спеціалізація"
       specialization_edit: "Редагування спеціалізації"
