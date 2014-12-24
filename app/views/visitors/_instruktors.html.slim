@@ -7,11 +7,11 @@
       table.table.table-hover
         thead
           tr.row
-            th Name
-            th.text-center Avatar
-            th Stanycja
-            th Okruga
-            th Vmilists
+            th = I18n.t "users.name"
+            th.text-center = I18n.t "users.avatar"
+            th = I18n.t "users.city"
+            th = I18n.t "users.region"
+            th = I18n.t "users.vmilists"
 
         tbody
           - @instruktors.each do |instruktor|

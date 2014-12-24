@@ -76,3 +76,6 @@ ua:
       moderator: "Модератор"
     avatar: "Аватар"
     specialization: "Спеціалізація"
+    city: "Станиця"
+    region: "Округа"
+    vmilists: "Кваліфікації"
