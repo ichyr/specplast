@@ -14,8 +14,8 @@ table.table.table-hover
       tr.row
         td = instruktor.name
         td = image_tag instruktor.avatar.url(:thumb).to_s if instruktor.avatar
-        td = instruktor.email
-        td = instruktor.email
-        td.decorate-array = instruktor.vmilists.collect(&:name)
+        td = instruktor.city
+        td = instruktor.region
+        td.decorate-array = decorate_set(instruktor.vmilists)
 
 .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails
