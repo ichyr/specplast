@@ -30,6 +30,7 @@ en:
       unhappy: "Unhappy? We'll be sad to see you go."
       are_you_sure: "Are you sure?"
       must_enter_password: "You must enter your current password to make changes."
+      vmilists: "Qualified for the following skills"
     buttons:
       update: "Update"
     confirmations:

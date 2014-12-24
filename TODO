@@ -13,26 +13,32 @@ Currently doing
      + sign_in saved all data
        + http://stackoverflow.com/questions/19006080/jquery-tags-input-with-rails4-simple-form
      + style generated input field
-     - I18n field label sup
-     - I18n field label sin
+     + I18n field label sup
+     + I18n field label sin
      - I18n tokenIput
        - https://github.com/GibbonEdu/core/blob/master/lib/jquery-tokeninput/src/jquery.tokeninput.js
 
+   - add the following fields to instruktor : 
+          ...city, district, qualifications description
+    - view
+    - controller
+    - devise
+    - model
 
-   - vmilist instruktors list
-     + list all instruktors
-     - додати пагінацію
-     - вибрати тільки тих користувачів, в яких є вмілості
-     - make pagination
-     - make search
-     
    - general instruktors search
      + list all instruktors
-     - make pagination
+     + make pagination
      - make search by name
      - style vmilists list
      - clickable vmilist icons
      ? make search by all fields
+
+   - vmilist instruktors list
+     - list all instruktors
+     - додати пагінацію
+     - вибрати тільки тих користувачів, в яких є вмілості
+     - make pagination
+     - make search
 
    - moderator acceptance list
      - list all potential instruktors for confirmation for specific vmilist
@@ -42,12 +48,6 @@ Currently doing
    - instruktor public profile page
      
     
-   - add the following fields to instruktor : 
-          ...city, district, qualifications description
-    - view
-    - controller
-    - devise
-    - model
 
 ==============================
 
