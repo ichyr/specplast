@@ -31,6 +31,9 @@ en:
       are_you_sure: "Are you sure?"
       must_enter_password: "You must enter your current password to make changes."
       vmilists: "Qualified for the following skills"
+      city: "City"
+      region: "District/Region"
+      description: "Qualification summary"
     buttons:
       update: "Update"
     confirmations:

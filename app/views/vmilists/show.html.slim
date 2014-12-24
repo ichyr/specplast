@@ -32,8 +32,6 @@ ul.nav.nav-tabs.nav-justified role="tablist"
         - @vmilist.users.each do |instruktor|
           tr.row
             td = instruktor.name
-            td = image_tag instruktor.avatar.url(:thumb).to_s if instruktor.avatar
-            td = instruktor.email
-            td = instruktor.email
-
-
+            td = image_tag instruktor.avatar.url(:thumb).to_s, size: "25x25" if instruktor.avatar
+            td = instruktor.city
+            td = instruktor.region

@@ -13,6 +13,15 @@
         div
           | Currently waiting confirmation for: #{resource.unconfirmed_email}
     .form-group
+      = f.label :city, I18n.t("devise.user.city")
+      = f.text_field :city, class: 'form-control'
+    .form-group
+      = f.label :region, I18n.t("devise.user.region")
+      = f.text_field :region, class: 'form-control'
+    .form-group
+      = f.label :description, I18n.t("devise.user.description")
+      = f.text_area :description, class: 'form-control'
+    .form-group
        = f.label :avatar, I18n.t("devise.user.avatar")
     .form-group
       .upload-preview

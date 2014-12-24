@@ -31,6 +31,9 @@ ua:
       are_you_sure: "Ви впевнені у цьому?"
       must_enter_password: "Ви маєте ввести свій поточний пароль, щоб застосувати ці зміни."
       vmilists: "Можу бути інструктором з таких вмілостей"
+      city: "Станиця"
+      region: "Округа"
+      description: "Опис вмінь та навичок"
     buttons:
       update: "Зберегти"
     confirmations:

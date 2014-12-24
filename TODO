@@ -20,10 +20,11 @@ Currently doing
 
    - add the following fields to instruktor : 
           ...city, district, qualifications description
-    - view
-    - controller
-    - devise
-    - model
+    + db
+    + view
+    + controller
+    + devise
+  ??? model
 
    - general instruktors search
      + list all instruktors
