@@ -28,11 +28,16 @@ Currently doing
    - general instruktors search
      + list all instruktors
      + make pagination
-     - make search by name
-     - style vmilists list
-       - problems when lots of vmilists they don't wrap as text but go far right
+     + make search by name
+     + style vmilists list
+       + problems when lots of vmilists they don't wrap as text but go far right
+       ==> resolved as only 1 large item formed in the place of lots small
      + clickable vmilist icons
      ? make search by all fields
+
+   - general question
+      - make lots of navs not in 1 row as in http://localhost:3000/activities with 15 specializations
+      - style general no items found message
 
    - vmilist instruktors list
      - list all instruktors
@@ -68,7 +73,7 @@ Currently doing
   - Password fields present on an insecure (http://) page. This is a security risk that allows user login credentials to be stolen.[Learn More]
 
   ====  Chrome add-ons ====
-  - layour load
+  - layot load
   - live page
 
 Version 2.0
@@ -227,19 +232,19 @@ General Info canditates
   + moderator edit vmilist workflow
   
   + make error pages dynamic
-  - Add 404 page
-  - Add 500 page
-  - style everything
+  + Add 404 page
+  + Add 500 page
+  + style everything
     + specialization proby
     + devise sign_in erros blob
     + password confirmation for User#sign_up
-    - red alert for success of sign_up
+    + red alert for success of sign_up
     + devise error when no current password present
         Current password Please enter th information about the user!
 
   + rspec tests
   
-  - Bugs to resolve
+  + Bugs to resolve
    + layout headers
    + admin : new specialization
    + admin : manage links
