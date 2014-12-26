@@ -1,11 +1,12 @@
 = simple_form_for(@specialization, html:{multipart:true}) do |f|
   - if f.error_notification
-    = render "errors", object: f.object
+    .alert.alert-danger = render "errors", object: f.object
 
   .form-inputs
     = f.label :name
     br
     = f.text_field :name, inner_html: {class: 'form-control'}
+    br
     = f.label :avatar, I18n.t("activerecord.attributes.specialization.avatar")
     .upload-preview
   		= image_tag @specialization.avatar.url(:thumb).to_s

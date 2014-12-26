@@ -1,5 +1,10 @@
 ua:
   activerecord:
+    notice:
+      specialization:
+        success_creation: 'Нову спеціалізацію успішно створено.'
+        success_update: 'Дані спеціалізації успішно оновлено.'
+        success_destroy: 'Спеціалізацію знищено.'
     errors:
       models:
         messages: 

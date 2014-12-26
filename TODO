@@ -36,7 +36,7 @@ Currently doing
      ? make search by all fields
 
    - general question
-      - make lots of navs not in 1 row as in http://localhost:3000/activities with 15 specializations
+      + make lots of navs not in 1 row as in http://localhost:3000/activities with 15 specializations
       - style general no items found message
 
    - vmilist instruktors list

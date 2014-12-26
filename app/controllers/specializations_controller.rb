@@ -42,7 +42,8 @@ class SpecializationsController < ApplicationController
 
     respond_to do |format|
       if @specialization.save
-        format.html { redirect_to @specialization, notice: 'Specialization was successfully created.' }
+        CreateSpecdataService.new.call(@specialization.id)
+        format.html { redirect_to @specialization, notice: I18n.t("activerecord.notice.specialization.success_creation") }
         format.json { render :show, status: :created, location: @specialization }
       else
         format.html { render :new }
@@ -58,7 +59,7 @@ class SpecializationsController < ApplicationController
 
     respond_to do |format|
       if @specialization.update(specialization_update_params)
-        format.html { redirect_to @specialization, notice: 'Specialization was successfully updated.' }
+        format.html { redirect_to @specialization, notice: I18n.t("activerecord.notice.specialization.success_update") }
         format.json { render :show, status: :ok, location: @specialization }
       else
         format.html { render :edit }
@@ -74,7 +75,7 @@ class SpecializationsController < ApplicationController
 
     @specialization.destroy
     respond_to do |format|
-      format.html { redirect_to specializations_url, notice: 'Specialization was successfully destroyed.' }
+      format.html { redirect_to specializations_url, notice: I18n.t("activerecord.notice.specialization.success_destroy") }
       format.json { head :no_content }
     end
   end

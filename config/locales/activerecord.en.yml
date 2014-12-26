@@ -1,5 +1,10 @@
 en:
   activerecord:
+    notice:
+      specialization:
+        success_creation: 'Specialization was successfully created.'
+        success_update: 'Specialization was successfully updated.'
+        success_destroy: 'Specialization was successfully destroyed.'
     errors:
       models:
         messages: 

@@ -255,11 +255,11 @@ CREATE TABLE users (
     updated_at timestamp without time zone,
     name character varying(255),
     role integer,
+    specialization_id integer,
+    avatar character varying(255),
     city character varying(255),
     region character varying(255),
-    description text,
-    specialization_id integer,
-    avatar character varying(255)
+    description text
 );
 
 
