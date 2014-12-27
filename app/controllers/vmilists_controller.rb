@@ -13,6 +13,7 @@ class VmilistsController < ApplicationController
   # GET /vmilists/1
   # GET /vmilists/1.json
   def show
+    @instruktors = Vmilist.find(params[:id]).users.where("name like ?", "%#{params[:search]}%")
   end
 
   # GET /vmilists/new
