@@ -40,11 +40,11 @@ Currently doing
       - style general no items found message
 
    - vmilist instruktors list
-     - list all instruktors
-     - додати пагінацію
-     - вибрати тільки тих користувачів, в яких є вмілості
-     - make pagination
+     + list all instruktors
+     + додати пагінацію
+     + вибрати тільки тих користувачів, в яких є вмілості
      - make search
+       - try implementing via form_for tag, not hardcoded <form> structure
 
    - moderator acceptance list
      - list all potential instruktors for confirmation for specific vmilist

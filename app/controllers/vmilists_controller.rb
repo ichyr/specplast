@@ -19,7 +19,7 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js { render :file => "show.js.erb" }
+      format.js { render action: "show.js.erb" }
     end
   end
 

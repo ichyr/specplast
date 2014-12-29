@@ -22,13 +22,15 @@ ul.nav.nav-tabs.nav-justified role="tablist"
   #list.tab-pane
 
     .pull-right
-      form.vmilist_instruktors_search.form-inline accept-charset="UTF-8" method="get" role="form" remote="true"
-        div style="display:none" 
-          input name="utf8" type="hidden" value="✓"
+      = simple_form_for @vmilist, url: {action: "show"}, html: {class: "form-inline visitors_instructors_search"}, method: :get, remote: true do |f|
         .input-group
-          input.form-control name="search" placeholder="Search" type="text" 
+          = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
           .input-group-btn
             button.btn.btn-default type="submit" 
               i.glyphicon.glyphicon-search
+      end
+
+    br/
+    br/
 
     #instruktors-list = render 'instruktors'
