@@ -16,3 +16,10 @@ $(document).ready ->
     false
 
   return
+
+  $(".vmilist_instruktors_search btn").click ->
+    console.log("AJAX submitted!")
+    $.get @action, $(this).serialize(), null, "script"
+    false
+
+  return

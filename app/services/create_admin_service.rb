@@ -21,6 +21,18 @@ class CreateAdminService
     user
   end
 
+  def call_instruktor email, password, role, vmilists = []
+    user = User.new
+    user.name = "TestUser"
+    user.email = email
+    user.password = password
+    user.password_confirmation = password
+    user.change_role role
+    user.vmilists = vmilists
+    user.save
+    user
+  end
+
   def call_moderator_create email, password, specialization
     user = User.new
     user.name = "TestUser"

@@ -20,6 +20,15 @@ ul.nav.nav-tabs.nav-justified role="tablist"
     p
       = raw @vmilist.instructor_info
   #list.tab-pane
-    br
 
-    = render 'visitors/instruktors'
+    .pull-right
+      form.vmilist_instruktors_search.form-inline accept-charset="UTF-8" method="get" role="form" remote="true"
+        div style="display:none" 
+          input name="utf8" type="hidden" value="✓"
+        .input-group
+          input.form-control name="search" placeholder="Search" type="text" 
+          .input-group-btn
+            button.btn.btn-default type="submit" 
+              i.glyphicon.glyphicon-search
+
+    #instruktors-list = render 'instruktors'

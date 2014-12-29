@@ -69,3 +69,11 @@ BULAVA_INFO = <<-DOCS
 
 bulava = { key: "bulava", value: BULAVA_INFO }
 GeneralInfo.create bulava
+
+
+# ============== Create instruktors for VmilistService
+
+vmilist_temp = Vmilist.find(1)
+(1..25).each { |index| 
+	temp = CreateAdminService.new.call_instruktor "in#{index}@example.com", "changeme", :instruktor, [vmilist_temp]
+}

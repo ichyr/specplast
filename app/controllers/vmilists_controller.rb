@@ -13,7 +13,14 @@ class VmilistsController < ApplicationController
   # GET /vmilists/1
   # GET /vmilists/1.json
   def show
-    @instruktors = Vmilist.find(params[:id]).users.where("name like ?", "%#{params[:search]}%")
+    @instruktors = Vmilist.find(params[:id]).users
+      .where("name like ?", "%#{params[:search]}%")
+      .paginate(:page => params[:page], :per_page => 10)
+
+    respond_to do |format|
+      format.html
+      format.js { render :file => "show.js.erb" }
+    end
   end
 
   # GET /vmilists/new

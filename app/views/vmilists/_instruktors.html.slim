@@ -1,0 +1,25 @@
+.row
+  - if @instruktors.count == 0 
+    h3.bg-primary.text-center = I18n.t('layout.no_instructors')
+
+  - else
+    .row
+      table.table.table-hover
+        thead
+          tr.row
+            th.col-md-2 = I18n.t "users.name"
+            th.text-center.col-md-1 = I18n.t "users.avatar"
+            th.col-md-5 = I18n.t "users.email"
+            th.col-md-2 = I18n.t "users.city"
+            th.col-md-2 = I18n.t "users.region"
+
+        tbody
+          - @instruktors.each do |instruktor|
+            tr.row
+              td.col-md-2 = instruktor.name
+              td.col-md-1 = image_tag instruktor.avatar.url(:thumb).to_s, size: '25x25' if instruktor.avatar
+              td.col-md-5 = instruktor.email
+              td.col-md-2 = instruktor.city
+              td.col-md-2 = instruktor.region
+    .row
+      .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails
