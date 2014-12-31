@@ -3,7 +3,7 @@ h3.text-center.content-header = I18n.t "layout.specialization.vmilists"
 br
 
 .pull-right
-  = simple_form_for @vmilist, url: "/vmilosti", html: {class: "form-inline visitors_vmilosti_search"}, method: :get, remote: true do |f|
+  = simple_form_for :search, url: vmilosti_path, html: {class: "form-inline visitors_vmilosti_search"}, method: :get, remote: true do |f|
     .input-group
       = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
       .input-group-btn

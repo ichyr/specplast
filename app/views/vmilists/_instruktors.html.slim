@@ -22,4 +22,4 @@
               td.col-md-2 = instruktor.city
               td.col-md-2 = instruktor.region
     .row
-      .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails
+      .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails, params: {anchor: "list"}

@@ -48,7 +48,10 @@ Currently doing
 
    - AJAX questions and turbolinks
     - links have additional param added
-    - http://localhost:3000/vmilists/1?_=1420009858815&page=1#list
+      - http://localhost:3000/vmilists/1?_=1420009858815&page=1#list
+        - e.preventDefault()
+        - workaround - anchor in navigation
+        - http://stackoverflow.com/questions/13121793/how-to-paginate-combined-with-anchor-id
     - 
 
    - moderator acceptance list

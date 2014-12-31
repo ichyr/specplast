@@ -17,8 +17,10 @@ $(document).ready ->
     reader.readAsDataURL file
     return
 
+specialization_ready = ->
   # pagination and search in specializations/show view
-  $("#vmilists .pagination a").on "click", ->
+  $("#vmilists .pagination a").click (e) ->
+    e.preventDefault()
     $.getScript @href
     false
 
@@ -28,3 +30,5 @@ $(document).ready ->
     false
 
   return
+
+$(document).on "ready page:update", specialization_ready
