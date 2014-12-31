@@ -1,24 +1,24 @@
-.row
-  - if @qualifications.count == 0 
-    h3.bg-primary.text-center = I18n.t('layout.no_uncorfirmed_qualifacations')
+h3.text-center.content-header = I18n.t "layout.moderator.qualifications_page"
 
-  - else
-    .row
-      table.table.table-hover
-        thead
-          tr.row
-            th.col-md-4 = I18n.t "users.name"
-            th.text-center.col-md-1 = I18n.t "users.avatar"
-            th.col-md-5 = I18n.t "vmilist.name"
-            th.col-md.2 = I18n.t "qualification.confirmed"
+/! Nav tabs
+ul.nav.nav-tabs.nav-justified role="tablist" 
+  li.active
+    a data-toggle="tab" href="#waiting" role="tab"  = I18n.t("qualification.waiting")
+  li
+    a data-toggle="tab" href="#approved" role="tab"  = I18n.t("qualification.approved")
+  li
+    a data-toggle="tab" href="#no_information" role="tab" = I18n.t("qualification.no_information")
 
-        tbody
-          - @qualifications.each do |qualification|
-            tr.row
-              td.col-md-4 = qualification.user.name
-              td.col-md-1 = image_tag qualification.user.avatar.url(:thumb).to_s, size: '25x25' if qualification.user.avatar
-              td.col-md-5 = qualification.vmilist.name
-              td.col-md.2 = qualification.confirmed
-
-    .row
-      .text-center = will_paginate @qualifications, renderer: BootstrapPagination::Rails
+/! Tab panes
+.tab-content
+  br
+  br
+  #waiting.tab-pane.active
+    p
+      .waiting-qualifications-list = render partial: 'qualifications', locals: {type: "waiting"}
+  #approved.tab-pane
+    p
+      .approved-qualifications-list = render partial: 'qualifications', locals: {type: "approved"}
+  #no_information.tab-pane
+    p
+      .no-info-qualifications-list = render partial: 'qualifications', locals: {type: "no-info"}

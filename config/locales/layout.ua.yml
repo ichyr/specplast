@@ -44,6 +44,7 @@ ua:
       page_title: "Панель модератора"
       vmilists_tab: "Вмілості"
       specializations_tab: "Дані спеціалізації"
+      qualifications_page: "Підтвердження кваліфікаційного рівня"
     specialization:
       pologennya_link: "Положення про спеціалізацію"
       no_pologennya_link: "Не даний момент жодне полодення завантаженим не було."
@@ -80,3 +81,8 @@ ua:
     city: "Станиця"
     region: "Округа"
     vmilists: "Кваліфікації"
+  qualification:
+    confirmed: "Підтвердити кваліфікацію"
+    waiting: "Очікують підтвердження"
+    approved: "Рекомендовані інструктори"
+    no_information: "Не достатньо інформації"
