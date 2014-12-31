@@ -46,10 +46,18 @@ Currently doing
      - make search
        - try implementing via form_for tag, not hardcoded <form> structure
 
+   - AJAX questions and turbolinks
+    - links have additional param added
+    - http://localhost:3000/vmilists/1?_=1420009858815&page=1#list
+    - 
+
    - moderator acceptance list
-     - list all potential instruktors for confirmation for specific vmilist
+     - check for ARecord where(..).select(:id)
+     + list all potential instruktors for confirmation for specific vmilist
+      - add checkbox with immediate save after checking and ajax delete
      - search by name
      - filter by vmilist
+
 
    - instruktor public profile page
      

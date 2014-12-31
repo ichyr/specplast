@@ -1,0 +1,24 @@
+.row
+  - if @qualifications.count == 0 
+    h3.bg-primary.text-center = I18n.t('layout.no_uncorfirmed_qualifacations')
+
+  - else
+    .row
+      table.table.table-hover
+        thead
+          tr.row
+            th.col-md-4 = I18n.t "users.name"
+            th.text-center.col-md-1 = I18n.t "users.avatar"
+            th.col-md-5 = I18n.t "vmilist.name"
+            th.col-md.2 = I18n.t "qualification.confirmed"
+
+        tbody
+          - @qualifications.each do |qualification|
+            tr.row
+              td.col-md-4 = qualification.user.name
+              td.col-md-1 = image_tag qualification.user.avatar.url(:thumb).to_s, size: '25x25' if qualification.user.avatar
+              td.col-md-5 = qualification.vmilist.name
+              td.col-md.2 = qualification.confirmed
+
+    .row
+      .text-center = will_paginate @qualifications, renderer: BootstrapPagination::Rails

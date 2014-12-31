@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get 'moderator', to: 'moderator#index'
   get 'moderator/specialization', to: 'moderator#specialization'
+  get 'moderator/qualifications', to: 'moderator#qualification'
 
   get 'admin', to: 'admin#index'
   get 'admin/instruktors', to: 'admin#instruktors'
