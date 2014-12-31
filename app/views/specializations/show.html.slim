@@ -22,16 +22,17 @@ ul.nav.nav-tabs.nav-justified role="tablist"
 
 .tab-content
   .tab-pane.active id="Вмілості"
-    .pull-right = form_tag specialization_path, :method => 'get', :id => "specialization_search", class: "form-inline" do
-      .input-group
-        input.form-control name="search" placeholder="" type="text" 
-        .input-group-btn
-          button.btn.btn-default type="submit" 
-            i.glyphicon.glyphicon-search
+    .pull-right
+      = simple_form_for :search, url: specialization_path, class: "specialization_search form-inline", :method => 'get', remote: true do
+        .input-group
+          input.form-control name="search" placeholder="" type="text" 
+          .input-group-btn
+            button.btn.btn-default type="submit" 
+              i.glyphicon.glyphicon-search
     br
     br
     br
-    #vmilists = render "vmilists"
+    .specialization_vmilist_list = render "vmilists"
 
   .tab-pane id="Інформація"
     = raw @specialization.specdatum.gen_info

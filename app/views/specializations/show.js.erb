@@ -1,9 +1,1 @@
-$('#vmilists').html('<%= escape_javascript(render("vmilists")) %>');
-var sanitize_will_paginate = $("[href*='/specializations/']");
-var i = 0;
-while(i < sanitize_will_paginate.length) {
-  console.log("Pre  => " + sanitize_will_paginate[i].href);
-  sanitize_will_paginate[i].href = sanitize_will_paginate[i].href.replace(/_=[0-9]*&/, "");
-  console.log("Post => " + sanitize_will_paginate[i].href);
-  i += 1;
-}
+$('.specialization_vmilist_list').html('<%= escape_javascript(render("vmilists")) %>');
