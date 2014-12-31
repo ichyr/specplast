@@ -16,6 +16,11 @@ ajax_search_listeners_init = ->
     $.getScript @href
     false
 
+  $(".visitor_instruktors_table .pagination a").click (e) ->
+    e.preventDefault()
+    $.getScript @href
+    false
+
   return
 
 $(document).on "ready page:update", ajax_search_listeners_init

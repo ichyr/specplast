@@ -3,17 +3,16 @@ h3.text-center.content-header = I18n.t "layout.specialization.instruktors"
 br
 
 .pull-right
-  form.visitors_instructors_search.form-inline accept-charset="UTF-8" action="/instructors" method="get" role="form"
-    div style="display:none" 
-      input name="utf8" type="hidden" value="✓"
+  = simple_form_for :search, url: instructors_path, html: {class: "form-inline visitors_instructors_search"}, method: :get, remote: true do |f|
     .input-group
-      input.form-control name="search" placeholder="Search" type="text" 
+      = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
       .input-group-btn
         button.btn.btn-default type="submit" 
           i.glyphicon.glyphicon-search
+  end
 
 br
 br
 br
 
-div#vmilists = render "instruktors"
+.visitor_instruktors_table = render "instruktors"
