@@ -25,13 +25,13 @@
               td.col-md-3 = qualification.vmilist.name
               td.col-md-4.btn-toolbar
                 - if selected == NEEDS_APPROVE
-                  = link_to "Підтвердити", root_path, :class => "btn btn-sm btn-success"
-                  = link_to "Відкласти", root_path, :class => "btn btn-sm btn-primary"
+                  = link_to "Підтвердити", root_path, :class => "btn btn-sm btn-success", data: { qualification_id: qualification.id, new_state: NEEDS_APPROVE } 
+                  = link_to "Відкласти", root_path, :class => "btn btn-sm btn-primary", data: { qualification_id: qualification.id, new_state: NO_INFORMATION }
                 - elsif selected == APPROVED
-                  = link_to "Викреслити", root_path, :class => "btn btn-sm btn-danger"
+                  = link_to "Викреслити", root_path, :class => "btn btn-sm btn-danger", data: { qualification_id: qualification.id, new_state: TO_DELETE }
                 - elsif selected == NO_INFORMATION
-                  = link_to "Підтвердити", root_path, :class => "btn btn-sm btn-success"
-                  = link_to "Викреслити", root_path, :class => "btn btn-sm btn-danger"
+                  = link_to "Підтвердити", root_path, :class => "btn btn-sm btn-success"data: { qualification_id: qualification.id, new_state: NEEDS_APPROVE }
+                  = link_to "Викреслити", root_path, :class => "btn btn-sm btn-danger", data: { qualification_id: qualification.id, new_state: TO_DELETE }
 
     .row
       .text-center = will_paginate @qualifications, renderer: BootstrapPagination::Rails

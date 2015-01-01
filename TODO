@@ -54,10 +54,16 @@ Currently doing
         - http://stackoverflow.com/questions/13121793/how-to-paginate-combined-with-anchor-id
     - 
 
-   - moderator acceptance list
-     - check for ARecord where(..).select(:id)
-     + list all potential instruktors for confirmation for specific vmilist
+    - moderator acceptance list
+      + check for ARecord where(..).select(:id)
+        + select must be called before .where(...)
+        + Vmilist.select(:id, :avatar, :name).where("specialization_id = ?
+      + list all potential instruktors for confirmation for specific vmilist
       - add checkbox with immediate save after checking and ajax delete
+        + add action id + Qualification id as data-* attributes to HTML
+        - javascript listener containing
+        - ajax handler + jquery delete of tr on success
+        - pundit check for ability to change qualification (moder.spec_id == qual.vmilist.spec_id)
      - search by name
      - filter by vmilist
 

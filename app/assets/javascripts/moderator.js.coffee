@@ -2,6 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+update_qualification = (entity_id, new_state) ->
+  event.preventDefault()
+  console.log "Entity = " + entity_id + ", to: " + new_state
+  false
+
 $(document).on "ready page:update", ->
 
   $(".moderator_vmilosti_search").submit ->
@@ -9,3 +14,4 @@ $(document).on "ready page:update", ->
     false
 
   return
+

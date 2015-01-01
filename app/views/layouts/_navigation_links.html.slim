@@ -35,6 +35,9 @@ li= link_to t("layout.bulava_page"), controller: "/visitors", action: :bulava
         li
           a
             = link_to I18n.t("layout.models.specialization_edit"), edit_specialization_path(current_user.specialization)
+        li
+          a
+            = link_to I18n.t("layout.moderator.qualifications"),moderator_qualifications_for_approval_path
 
       li.divider
       li 

@@ -2,7 +2,7 @@ class ModeratorController < ApplicationController
   def index
     authorize :moderator, :index?
     
-    @vmilists = Vmilist.where("specialization_id = ? and name like ?", 
+    @vmilists = Vmilist.select(:id, :avatar, :name).where("specialization_id = ? and name like ?", 
                         current_user.specialization_id, "%#{params[:search]}%")
                        .paginate(:page => params[:page], :per_page => 10)
   end
@@ -26,9 +26,13 @@ class ModeratorController < ApplicationController
   def change_qualification
     temp = Qualification.find(params[:id])
     temp.change_status params[:new_state]
-    temp.save
+    
+    if temp.save
+      render nothing: true, status: 200
+    else
+      render nothing: true, status: :unprocessable_entity
+    end     
 
-    render nothing: true
   end
 
   private
