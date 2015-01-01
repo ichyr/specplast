@@ -10,7 +10,8 @@
             th.col-md-4 = I18n.t "users.name"
             th.text-center.col-md-1 = I18n.t "users.avatar"
             th.col-md-3 = I18n.t "vmilist.name"
-            th.col-md-4 = I18n.t "qualification.confirmed"
+            - if 
+              th.col-md-4 = I18n.t "qualification.confirmed"
 
         tbody
           - @qualifications.each do |qualification|
@@ -18,9 +19,10 @@
               td.col-md-4 = qualification.user.name
               td.col-md-1 = image_tag qualification.user.avatar.url(:thumb).to_s, size: '25x25' if qualification.user.avatar
               td.col-md-3 = qualification.vmilist.name
-              td.col-md-4
-               = link_to "?Так?", root_path, :class => "btn btn-sm btn-success"
-               = link_to "?Ні?", root_path, :class => "btn btn-sm btn-danger"
+              td.col-md-4.btn-toolbar
+                - if 
+                  = link_to "Підтвердити", root_path, :class => "btn btn-sm btn-success"
+                  = link_to "Відкласти", root_path, :class => "btn btn-sm btn-primary"
 
     .row
       .text-center = will_paginate @qualifications, renderer: BootstrapPagination::Rails
