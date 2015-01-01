@@ -25,12 +25,12 @@
               td.col-md-3 = qualification.vmilist.name
               td.col-md-4.btn-toolbar
                 - if selected == NEEDS_APPROVE
-                  = link_to "Підтвердити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: NEEDS_APPROVE  }, class: "btn btn-sm btn-success"
+                  = link_to "Підтвердити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED  }, class: "btn btn-sm btn-success"
                   = link_to "Відкласти", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: NO_INFORMATION }, class: "btn btn-sm btn-primary"
                 - elsif selected == APPROVED
                   = link_to "Викреслити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
                 - elsif selected == NO_INFORMATION
-                  = link_to "Підтвердити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: NEEDS_APPROVE }, class: "btn btn-sm btn-success"
+                  = link_to "Підтвердити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED }, class: "btn btn-sm btn-success"
                   = link_to "Викреслити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
 
     .row
