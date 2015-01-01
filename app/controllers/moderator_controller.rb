@@ -39,4 +39,13 @@ class ModeratorController < ApplicationController
                     .paginate(:page => params[:page], :per_page => 10)
     
   end
+
+  # params[:id]     - qualification id
+  # params[:state]  - new state status
+  # http://stackoverflow.com/questions/5380300/rails-checkbox-ajax-call-dont-want-to-render-anything
+  def change_qualification
+    temp = Qualification.find(params[:id])
+    temp.change_status params[:new_state]
+    render nothing: true
+  end
 end

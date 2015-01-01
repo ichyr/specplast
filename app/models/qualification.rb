@@ -10,6 +10,6 @@ class Qualification < ActiveRecord::Base
 
 	private
 	def set_default_confirmed
-		set_confirmed false
+		set_confirmed "false"
 	end
 end

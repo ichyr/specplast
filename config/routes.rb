@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'moderator/qualifications/for_approval', to: 'moderator#waiting'
   get 'moderator/qualifications/approved', to: 'moderator#approved'
   get 'moderator/qualifications/need_review', to: 'moderator#noinfo'
+  post 'moderator/qualifications/:id/:new_state', to: 'moderator#change_qualification'
+
 
   get 'admin', to: 'admin#index'
   get 'admin/instruktors', to: 'admin#instruktors'
