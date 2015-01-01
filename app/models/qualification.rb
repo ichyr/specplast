@@ -1,4 +1,5 @@
 class Qualification < ActiveRecord::Base
+
 	belongs_to :user
 	belongs_to :vmilist
 
@@ -10,6 +11,6 @@ class Qualification < ActiveRecord::Base
 
 	private
 	def set_default_confirmed
-		set_confirmed "false"
+		set_confirmed NEEDS_APPROVE
 	end
 end

@@ -3,7 +3,7 @@ class CreateQualifications < ActiveRecord::Migration
     create_table :qualifications do |t|
       t.integer :user_id
       t.integer :vmilist_id
-      t.boolean :confirmed
+      t.integer :confirmed
 
       t.timestamps
     end

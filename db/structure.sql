@@ -133,7 +133,7 @@ CREATE TABLE qualifications (
     id integer NOT NULL,
     user_id integer,
     vmilist_id integer,
-    confirmed boolean,
+    confirmed integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
