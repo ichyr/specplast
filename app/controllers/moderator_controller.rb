@@ -25,7 +25,7 @@ class ModeratorController < ApplicationController
   # want-to-render-anything
   def change_qualification
     temp = Qualification.find(params[:id])
-    temp.change_status params[:new_state]
+    temp.set_confirmed params[:new_state]
     
     if temp.save
       render nothing: true, status: 200

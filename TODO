@@ -66,6 +66,7 @@ Currently doing
         - pundit check for ability to change qualification (moder.spec_id == qual.vmilist.spec_id)
      - search by name
      - filter by vmilist
+     - I18n button labels in qualifications block
 
 
    - instruktor public profile page
