@@ -1,0 +1,9 @@
+h3.text-center.content-header = I18n.t "layout.moderator.qualifications_page"
+
+= render partial: "local_tabs", locals: {selected: "waiting"}
+
+br/
+br/
+
+#waiting.tab-pane.active
+  .qualifications-list = render partial: 'qualifications'

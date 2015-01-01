@@ -8,16 +8,4 @@ $(document).on "ready page:update", ->
     $.get @action, $(this).serialize(), null, "script"
     false
 
-  $("a[href~=waiting]").click ->
-    $.get @action, $(this).serialize(), null, "script"
-    false
-
-  $("a[href~=approved]").click ->
-    $.get @action, $(this).serialize(), null, "script"
-    false
-
-  $("a[href~=information]").click ->
-    $.get @action, $(this).serialize(), null, "script"
-    false  
-
   return

@@ -1,0 +1,8 @@
+/! Nav tabs
+ul.nav.nav-tabs.nav-justified.qualifications-tabs
+  li class=('active' if selected == "waiting")
+    = link_to I18n.t("qualification.waiting"), moderator_qualifications_for_approval_path
+  li class=('active' if selected == "approved")
+    = link_to I18n.t("qualification.approved"), moderator_qualifications_approved_path
+  li class=('active' if selected == "no_info")
+    = link_to I18n.t("qualification.no_information"), moderator_qualifications_need_review_path

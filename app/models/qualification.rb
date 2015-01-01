@@ -4,8 +4,12 @@ class Qualification < ActiveRecord::Base
 
 	after_initialize :set_default_confirmed, :if => :new_record?
 
+	def set_confirmed value
+		self.confirmed = value
+	end
+
 	private
 	def set_default_confirmed
-		self.confirmed = false
+		set_confirmed false
 	end
 end
