@@ -74,7 +74,7 @@ GeneralInfo.create bulava
 # ============== Create instruktors for VmilistService
 
 vmilist_temp = Vmilist.find(1)
-(1..30).each { |index| 
+(1..100).each { |index| 
 	temp = CreateAdminService.new.call_instruktor "in#{index}@example.com", "changeme", :instruktor, [vmilist_temp]
 }
 

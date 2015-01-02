@@ -61,12 +61,23 @@ Currently doing
       + list all potential instruktors for confirmation for specific vmilist
       - add checkbox with immediate save after checking and ajax delete
         + add action id + Qualification id as data-* attributes to HTML
-        - javascript listener containing
-        - ajax handler + jquery delete of tr on success
+        + javascript listener containing
+        + ajax handler + jquery delete of tr on success
         - pundit check for ability to change qualification (moder.spec_id == qual.vmilist.spec_id)
+     - ajax pagination
+      - bug with ajax click - doesn't preventDefault() from click
      - search by name
-     - filter by vmilist
      - I18n button labels in qualifications block
+     - filter by vmilist?
+     - optimize SQL queries !!!
+
+   - instruktors skills path
+     - when added to profile get status NEEDS_APPROVE
+     - when approved is visible in the public lists and search
+       - general search
+       - vmilist sspecific search
+     - when deleted deleted from profile
+     - when NO_INFORMATION is not visible
 
 
    - instruktor public profile page

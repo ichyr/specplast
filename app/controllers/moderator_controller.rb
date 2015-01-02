@@ -8,15 +8,33 @@ class ModeratorController < ApplicationController
   end
 
   def waiting
-    qualification_select NEEDS_APPROVE
+    @state_selected = NEEDS_APPROVE
+    qualification_select
+
+    respond_to do |format|
+      format.html
+      format.js { render action: "qualifications.js.erb" }
+    end
   end
 
   def approved
-    qualification_select APPROVED    
+    @state_selected = APPROVED
+    qualification_select
+
+    respond_to do |format|
+      format.html
+      format.js { render action: "qualifications.js.erb" }
+    end
   end  
 
   def noinfo
-    qualification_select NO_INFORMATION
+    @state_selected = NO_INFORMATION
+    qualification_select
+
+    respond_to do |format|
+      format.html
+      format.js { render action: "qualifications.js.erb" }
+    end
   end
 
   # params[:id]     - qualification id
@@ -24,6 +42,8 @@ class ModeratorController < ApplicationController
   # http://stackoverflow.com/questions/5380300/rails-checkbox-ajax-call-dont-
   # want-to-render-anything
   def change_qualification
+    authorize :moderator, :index?
+
     temp = Qualification.find(params[:id])
     temp.set_confirmed params[:new_state]
     
@@ -36,13 +56,13 @@ class ModeratorController < ApplicationController
   end
 
   private
-  def qualification_select state
+  def qualification_select
     authorize :moderator, :index?
 
     spec_vmilist_ids = current_user.specialization.vmilist_ids
 
     @qualifications = Qualification.where("vmilist_id in (?) and 
-                        confirmed = ?", spec_vmilist_ids, state)
+                        confirmed = ?", spec_vmilist_ids, @state_selected)
                       .paginate(:page => params[:page], :per_page => 10)
   end
 end

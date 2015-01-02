@@ -1,6 +1,6 @@
 .row
   - if @qualifications.count == 0 
-    h3.bg-primary.text-center = I18n.t('layout.no_uncorfirmed_qualifacations')
+    h3.bg-primary.text-center = I18n.t('layout.no_uncorfirmed_qualifications')
 
   - else
     .row
@@ -10,11 +10,11 @@
             th.col-md-4 = I18n.t "users.name"
             th.text-center.col-md-1 = I18n.t "users.avatar"
             th.col-md-3 = I18n.t "vmilist.name"
-            - if selected == NEEDS_APPROVE
+            - if @state_selected == NEEDS_APPROVE
               th.col-md-4 = I18n.t "qualification.confirmed.needs_approve"
-            - elsif selected == APPROVED
+            - elsif @state_selected == APPROVED
               th.col-md-4 = I18n.t "qualification.confirmed.approved"
-            - elsif selected == NO_INFORMATION
+            - elsif @state_selected == NO_INFORMATION
               th.col-md-4 = I18n.t "qualification.confirmed.no_information"
 
         tbody.qualifications_manage
@@ -24,12 +24,12 @@
               td.col-md-1 = image_tag qualification.user.avatar.url(:thumb).to_s, size: '25x25' if qualification.user.avatar
               td.col-md-3 = qualification.vmilist.name
               td.col-md-4.btn-toolbar
-                - if selected == NEEDS_APPROVE
+                - if @state_selected == NEEDS_APPROVE
                   = link_to "Підтвердити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED  }, class: "btn btn-sm btn-success"
                   = link_to "Відкласти", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: NO_INFORMATION }, class: "btn btn-sm btn-primary"
-                - elsif selected == APPROVED
+                - elsif @state_selected == APPROVED
                   = link_to "Викреслити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
-                - elsif selected == NO_INFORMATION
+                - elsif @state_selected == NO_INFORMATION
                   = link_to "Підтвердити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED }, class: "btn btn-sm btn-success"
                   = link_to "Викреслити", { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
 

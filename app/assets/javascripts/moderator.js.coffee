@@ -8,19 +8,25 @@ $(document).on "ready page:load", ->
     $.get @action, $(this).serialize(), null, "script"
     false
 
+  return
+
+$(document).on "ready page:update", ->
 
   $(".qualifications_manage a").click (e) ->
     $(this).attr("data-pending", "true")
     e.preventDefault()
     $.get(@href).done(->
-      temp = $('[data-pending="true"]')
-      temp = temp.parent().parent()
-      temp.remove()
+      $.getScript location
       return
     ).fail(->
-      alert "error"
+      alert "Error occured!"
       return
     )
+    false
+
+  $(".qualifications-list .pagination a").click (e) ->
+    e.preventDefault()
+    $.getScript @href
     false
 
   return
