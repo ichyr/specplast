@@ -18,12 +18,3 @@ br/
 
 #approved.tab-pane
   .qualifications-list = render partial: 'qualifications'
-
-  .pull-right
-  = simple_form_for :search, url: moderator_qualifications_for_approval_path, html: {class: "form-inline no_info_qualifications_search"}, method: :get, remote: true do |f|
-    .input-group
-      = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
-      .input-group-btn
-        button.btn.btn-default type="submit" 
-          i.glyphicon.glyphicon-search
-  end

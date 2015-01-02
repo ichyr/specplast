@@ -44,6 +44,7 @@ ua:
       page_title: "Панель модератора"
       vmilists_tab: "Вмілості"
       specializations_tab: "Дані спеціалізації"
+      qualifications: "Управління кваліфікаціями"
       qualifications_page: "Підтвердження кваліфікаційного рівня"
     specialization:
       pologennya_link: "Положення про спеціалізацію"
@@ -82,7 +83,10 @@ ua:
     region: "Округа"
     vmilists: "Кваліфікації"
   qualification:
-    confirmed: "Підтвердити кваліфікацію"
+    actions: "Можливі дії"
     waiting: "Очікують підтвердження"
     approved: "Рекомендовані інструктори"
     no_information: "Не достатньо інформації"
+    approve: "Підтвердити"
+    delete: "Вилучити"
+    no_info: "Відкласти"

@@ -64,10 +64,11 @@ Currently doing
         + javascript listener containing
         + ajax handler + jquery delete of tr on success
         - pundit check for ability to change qualification (moder.spec_id == qual.vmilist.spec_id)
-     - ajax pagination
-      - bug with ajax click - doesn't preventDefault() from click
-     - search by name
-      - join Users
+     + ajax pagination
+      + bug with ajax click - doesn't preventDefault() from click
+      - resolved by page:update event of Turbolinks
+     + search by name
+      + join Users
      - I18n button labels in qualifications block
      - filter by vmilist?
      - optimize SQL queries !!!

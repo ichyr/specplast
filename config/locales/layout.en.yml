@@ -44,6 +44,7 @@ en:
       page_title: "Moderator panel"
       vmilists_tab: "Vmilists"
       specializations_tab: "Specialization data"
+      qualifications: "Qualification management"
       qualifications_page: "Qualification approval page"
     specialization:
       pologennya_link: "Actual specializtion terms of reference"
@@ -83,8 +84,12 @@ en:
     region: "Region"
     vmilists: "Skills"
   qualification:
-    confirmed: "Confirm qualification"
+    actions: "Possible actions"
     waiting: "Waiting for confirmation"
     approved: "Approved instruktors"
     no_information: "No sufficient information"
+    approve: "Approve"
+    delete: "Delete"
+    no_info: "Postpone"
+    
 
