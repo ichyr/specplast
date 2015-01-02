@@ -7,7 +7,7 @@ br/
 .pull-right
   = simple_form_for :search, url: moderator_qualifications_for_approval_path, html: {class: "form-inline not_approved_qualifications_search"}, method: :get, remote: true do |f|
     .input-group
-      = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
+      = f.text_field :name, label: I18n.t("layout.search_label"), placeholder: I18n.t("layout.search_placeholder"), name: "search", class: "form-control "
       .input-group-btn
         button.btn.btn-default type="submit" 
           i.glyphicon.glyphicon-search

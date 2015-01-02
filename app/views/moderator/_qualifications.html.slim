@@ -1,6 +1,11 @@
 .row
-  - if @qualifications.count == 0 
-    h3.bg-primary.text-center = I18n.t('layout.no_uncorfirmed_qualifications')
+  - if @qualifications.count == 0
+    - if @state_selected == NEEDS_APPROVE
+      h3.bg-primary.text-center = I18n.t('layout.no_uncorfirmed_qualifications')
+    - elsif @state_selected == APPROVED
+      h3.bg-primary.text-center = I18n.t('layout.no_approved_qualifications')
+    - elsif @state_selected == NO_INFORMATION
+      h3.bg-primary.text-center = I18n.t('layout.no_no_info_qualifications')
 
   - else
     .row
@@ -10,7 +15,7 @@
             th.col-md-4 = I18n.t "users.name"
             th.text-center.col-md-1 = I18n.t "users.avatar"
             th.col-md-3 = I18n.t "vmilist.name"
-            th.col-md-4 = I18n.t "qualification.actions"
+            th.col-md-4.text-center = I18n.t "qualification.actions"
 
         tbody.qualifications_manage
           - @qualifications.each do |qualification|
@@ -18,7 +23,7 @@
               td.col-md-4 = qualification.user.name
               td.col-md-1 = image_tag qualification.user.avatar.url(:thumb).to_s, size: '25x25' if qualification.user.avatar
               td.col-md-3 = qualification.vmilist.name
-              td.col-md-4.btn-toolbar
+              td.col-md-4.btn-toolbar.text-center
                 - if @state_selected == NEEDS_APPROVE
                   = link_to I18n.t("qualification.approve"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED  }, class: "btn btn-sm btn-success"
                   = link_to I18n.t("qualification.no_info"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: NO_INFORMATION }, class: "btn btn-sm btn-primary"

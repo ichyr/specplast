@@ -12,8 +12,13 @@ ua:
     instruktory_page: "Інструктори"
     provid_page: "Провід"
     bulava_page: "Булава"
+    search_label: "Пошук"
+    search_placeholder: "Введіть ім'я для пошуку"
     no_specializations: "В базі даних немає відомостей про жодну спеціалізацію"
     no_vmilist: "В дані спеціалізації поки що немає наявних вмілостей"
+    no_uncorfirmed_qualifications: "Не було знайдено жодної кваліфікації, яка потребує підтвердження!"
+    no_approved_qualifications: "Не було знайдено жодної підтвердженої кваліфікації!"
+    no_no_info_qualifications: "Не було знайдено жодної кваліфікації, яка потребує додаткової інформації для її підтвердження!"
     vmilists: "Вмілості спеціалізації"
     users_panel: "Інструктори"
     moderator_panel: "Модератори"
@@ -70,7 +75,7 @@ ua:
     delete: "Видалити"
   users:
     title: "Адміністрація користувачів"
-    name: "Ім'я"
+    name: "Ім'я користувача"
     email: "Ел. адреса"
     role: "Роль"
     roles:

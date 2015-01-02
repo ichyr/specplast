@@ -12,8 +12,13 @@ en:
     instruktory_page: "Instruktory"
     provid_page: "Provid"
     bulava_page: "Bulava"
+    search_label: "Search"
+    search_placeholder: "Search"
     no_specializations: "There are currently no specializations available"
     no_vmilist: "There are currently no any vmilists in this specialization available"
+    no_uncorfirmed_qualifications: "No uncorfirmed instruktors found!"
+    no_approved_qualifications: "No approved instruktors found!"
+    no_no_info_qualifications: "No instruktors lacking information found!"
     vmilists: "Vmilists"
     users_panel: "Users"
     moderator_panel: "Moderators"
@@ -71,7 +76,7 @@ en:
     delete: "Delete"
   users:
     title: "User administration page"
-    name: "Name"
+    name: "User name"
     email: "E-mail"
     role: "Role"
     roles:
