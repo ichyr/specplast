@@ -8,6 +8,18 @@ $(document).on "ready page:load", ->
     $.get @action, $(this).serialize(), null, "script"
     false
 
+  $(".not_approved_qualifications_search").submit ->
+    $.get @action, $(this).serialize(), null, "script"
+    false
+
+  $(".no_info_qualifications_search").submit ->
+    $.get @action, $(this).serialize(), null, "script"
+    false
+
+  $(".approved_qualifications_search").submit ->
+    $.get @action, $(this).serialize(), null, "script"
+    false
+
   return
 
 $(document).on "ready page:update", ->

@@ -1,9 +1,29 @@
 h3.text-center.content-header = I18n.t "layout.moderator.qualifications_page"
 
-= render partial: "local_tabs", locals: {selected: APPROVED}
+= render partial: "local_tabs"
+
+br/
+ 	
+.pull-right
+  = simple_form_for :search, url: moderator_qualifications_approved_path, html: {class: "form-inline approved_qualifications_search"}, method: :get, remote: true do |f|
+    .input-group
+      = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
+      .input-group-btn
+        button.btn.btn-default type="submit" 
+          i.glyphicon.glyphicon-search
+  end
 
 br/
 br/
 
 #approved.tab-pane
-  .qualifications-list = render partial: 'qualifications', locals: {selected: APPROVED}
+  .qualifications-list = render partial: 'qualifications'
+
+  .pull-right
+  = simple_form_for :search, url: moderator_qualifications_for_approval_path, html: {class: "form-inline no_info_qualifications_search"}, method: :get, remote: true do |f|
+    .input-group
+      = f.text_field :name, label: "Search", placeholder: "Search", name: "search", class: "form-control "
+      .input-group-btn
+        button.btn.btn-default type="submit" 
+          i.glyphicon.glyphicon-search
+  end

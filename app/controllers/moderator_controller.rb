@@ -61,8 +61,12 @@ class ModeratorController < ApplicationController
 
     spec_vmilist_ids = current_user.specialization.vmilist_ids
 
-    @qualifications = Qualification.where("vmilist_id in (?) and 
-                        confirmed = ?", spec_vmilist_ids, @state_selected)
+    # 
+    # 
+    # 
+    @qualifications = Qualification.joins(:user)
+                      .where("vmilist_id in (?) and confirmed = ? and users.name like ?",
+                        spec_vmilist_ids, @state_selected, "%#{params[:search]}%")
                       .paginate(:page => params[:page], :per_page => 10)
   end
 end

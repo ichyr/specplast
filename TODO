@@ -67,9 +67,12 @@ Currently doing
      - ajax pagination
       - bug with ajax click - doesn't preventDefault() from click
      - search by name
+      - join Users
      - I18n button labels in qualifications block
      - filter by vmilist?
      - optimize SQL queries !!!
+       - http://guides.rubyonrails.org/active_record_querying.html
+       - solution to N+1 problem
 
    - instruktors skills path
      - when added to profile get status NEEDS_APPROVE
