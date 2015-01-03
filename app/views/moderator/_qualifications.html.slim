@@ -28,10 +28,10 @@
                   = link_to I18n.t("qualification.approve"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED  }, class: "btn btn-sm btn-success"
                   = link_to I18n.t("qualification.no_info"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: NO_INFORMATION }, class: "btn btn-sm btn-primary"
                 - elsif @state_selected == APPROVED
-                  = link_to I18n.t("qualification.delete"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
+                  = link_to I18n.t("qualification.delete"), { controller: "moderator", action: "delete_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
                 - elsif @state_selected == NO_INFORMATION
                   = link_to I18n.t("qualification.approve"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: APPROVED }, class: "btn btn-sm btn-success"
-                  = link_to I18n.t("qualification.delete"), { controller: "moderator", action: "change_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
+                  = link_to I18n.t("qualification.delete"), { controller: "moderator", action: "delete_qualification", id: qualification.id, new_state: TO_DELETE }, class: "btn btn-sm btn-danger"
 
     .row
       .text-center = will_paginate @qualifications, renderer: BootstrapPagination::Rails

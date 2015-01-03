@@ -51,8 +51,19 @@ class ModeratorController < ApplicationController
       render nothing: true, status: 200
     else
       render nothing: true, status: :unprocessable_entity
-    end     
+    end
+  end
 
+  def delete_qualification
+    authorize :moderator, :index?
+
+    temp = Qualification.find(params[:id])
+    
+    if temp.destroy
+      render nothing: true, status: 200
+    else
+      render nothing: true, status: :unprocessable_entity
+    end
   end
 
   private
@@ -61,9 +72,6 @@ class ModeratorController < ApplicationController
 
     spec_vmilist_ids = current_user.specialization.vmilist_ids
 
-    # 
-    # 
-    # 
     @qualifications = Qualification.joins(:user)
                       .where("vmilist_id in (?) and confirmed = ? and users.name like ?",
                         spec_vmilist_ids, @state_selected, "%#{params[:search]}%")
