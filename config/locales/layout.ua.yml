@@ -87,6 +87,7 @@ ua:
     city: "Станиця"
     region: "Округа"
     vmilists: "Кваліфікації"
+    public_profile: "Інформація про користувача"
   qualification:
     actions: "Можливі дії"
     waiting: "Очікують підтвердження"

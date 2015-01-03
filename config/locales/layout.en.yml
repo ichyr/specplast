@@ -88,6 +88,7 @@ en:
     city: "City"
     region: "Region"
     vmilists: "Skills"
+    public_profile: "User's pubic profile"
   qualification:
     actions: "Possible actions"
     waiting: "Waiting for confirmation"
@@ -96,5 +97,3 @@ en:
     approve: "Approve"
     delete: "Delete"
     no_info: "Postpone"
-    
-

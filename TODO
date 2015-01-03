@@ -74,8 +74,8 @@ Currently doing
      - optimize SQL queries !!!
        - http://guides.rubyonrails.org/active_record_querying.html
        - solution to N+1 problem
-     - bug with doubling of token input field
-       - maybe with page:update ?
+     + bug with doubling of token input field
+       + maybe with page:update ?
 
    - instruktors skills path
      - when added to profile get status NEEDS_APPROVE
@@ -86,10 +86,7 @@ Currently doing
      - when deleted deleted from profile
      - when NO_INFORMATION is not visible
 
-
-   - instruktor public profile page
-     
-    
+   - instruktor public profile page    
 
 ==============================
 

@@ -1,13 +1,21 @@
-h3.text-center.content-header
+h3.text-center.content-header = I18n.t("users.public_profile")
+
+= image_tag @user.avatar.url(:thumb).to_s if @user.avatar
 
 h2.text-center = @user.name
 
-b = I18n.t "users.email"
-p = @user.email
-b = I18n.t "users.role"
-p = @user.role.to_s
-b = I18n.t "users.avatar"
-= image_tag user.avatar.url(:thumb).to_s if user.avatar
-
-
-= link_to 'Edit', controller: :users, action: :edit, id: @user.id
+.row 
+  .col-md-6
+		b = I18n.t "users.email"
+		p = @user.email
+		b = I18n.t "users.role"
+		p = @user.role.to_s
+  .col-md-6
+		b = I18n.t "devise.user.city"
+		p = @user.city
+		b = I18n.t "devise.user.region"
+		p = @user.region
+b = I18n.t "devise.user.description"
+p = @user.description
+b = I18n.t "devise.user.vmilists"
+p = raw decorate_set(@user.vmilists)

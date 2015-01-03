@@ -25,8 +25,6 @@ Rails.application.routes.draw do
   get 'moderator/qualifications/:id/:new_state', to: 'moderator#change_qualification'
   get 'qualifications/:id/delete/', to: 'moderator#delete_qualification'
 
-
-
   get 'admin', to: 'admin#index'
   get 'admin/instruktors', to: 'admin#instruktors'
   get 'admin/moderators', to: 'admin#moderators'
