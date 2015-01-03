@@ -69,17 +69,20 @@ Currently doing
       - resolved by page:update event of Turbolinks
      + search by name
       + join Users
-     - I18n button labels in qualifications block
+     + I18n button labels in qualifications block
      - filter by vmilist?
      - optimize SQL queries !!!
        - http://guides.rubyonrails.org/active_record_querying.html
        - solution to N+1 problem
+     - bug with doubling of token input field
+       - maybe with page:update ?
 
    - instruktors skills path
      - when added to profile get status NEEDS_APPROVE
-     - when approved is visible in the public lists and search
+     - when added is visible in the public lists and search
        - general search
-       - vmilist sspecific search
+       - vmilist specific search
+     - when approved - get approved bange|color changes
      - when deleted deleted from profile
      - when NO_INFORMATION is not visible
 

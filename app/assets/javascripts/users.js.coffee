@@ -18,4 +18,4 @@ tokenInputInit = ->
   return
 
 $(document).ready tokenInputInit
-$(document).on "page:update", tokenInputInit
+$(document).on "page:load", tokenInputInit
