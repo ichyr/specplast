@@ -14,6 +14,7 @@ ua:
     bulava_page: "Булава"
     search_label: "Пошук"
     search_placeholder: "Введіть ім'я для пошуку"
+    search_vmilist_label: "Обмежити по вмілості"
     no_specializations: "В базі даних немає відомостей про жодну спеціалізацію"
     no_vmilist: "В дані спеціалізації поки що немає наявних вмілостей"
     no_uncorfirmed_qualifications: "Не було знайдено жодної кваліфікації, яка потребує підтвердження!"

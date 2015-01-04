@@ -4,14 +4,15 @@ h3.text-center.content-header = I18n.t "layout.moderator.qualifications_page"
 
 br/
 
-.pull-right
-  = simple_form_for :search, url: moderator_qualifications_need_review_path, html: {class: "form-inline no_info_qualifications_search"}, method: :get, remote: true do |f|
-    .input-group
-      = f.text_field :name, label: I18n.t("layout.search_label"), placeholder: I18n.t("layout.search_placeholder"), name: "search", class: "form-control "
-      .input-group-btn
-        button.btn.btn-default type="submit" 
-          i.glyphicon.glyphicon-search
-  end
+= simple_form_for :search, url: moderator_qualifications_need_review_path, html: {class: "form-inline no_info_qualifications_search"}, method: :get, remote: true do |f|
+	.input-group.pull-left
+	  = f.input :vmilist, collection: @spec_vmilists, label: false, input_html: {class: "form-control", name: "vmilist"}, :include_blank => I18n.t("layout.search_vmilist_label")
+	.input-group.pull-right
+	  = f.text_field :name, label: I18n.t("layout.search_label"), placeholder: I18n.t("layout.search_placeholder"), name: "search", class: "form-control "
+	  .input-group-btn
+	    button.btn.btn-default type="submit" 
+	      i.glyphicon.glyphicon-search
+end
 
 br/
 br/
