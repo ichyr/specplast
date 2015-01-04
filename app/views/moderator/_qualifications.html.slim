@@ -21,7 +21,7 @@
           - @qualifications.each do |qualification|
             tr.row
               - user = qualification.user
-              td.col-md-4 = link_to user.name, user_path(user)
+              td.col-md-4 = link_to user.name, user_path(user), title: user.description
               td.col-md-1 = image_tag qualification.user.avatar.url(:thumb).to_s, size: '25x25' if qualification.user.avatar
               td.col-md-3 = qualification.vmilist.name
               td.col-md-4.btn-toolbar.text-center

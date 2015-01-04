@@ -39,12 +39,12 @@ Currently doing
       + make lots of navs not in 1 row as in http://localhost:3000/activities with 15 specializations
       - style general no items found message
 
-   - vmilist instruktors list
+   + vmilist instruktors list
      + list all instruktors
      + додати пагінацію
      + вибрати тільки тих користувачів, в яких є вмілості
-     - make search
-       - try implementing via form_for tag, not hardcoded <form> structure
+     + make search
+       + try implementing via form_for tag, not hardcoded <form> structure
 
    + AJAX questions and turbolinks
     + links have additional param added
@@ -79,7 +79,7 @@ Currently doing
        + general search
        + vmilist specific search
      + when approved - get approved bange|color changes
-       - the are of different color
+       + the area of different color
      + when deleted deleted from profile
 
    + instruktor public profile page

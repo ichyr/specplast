@@ -31,6 +31,14 @@ class CreateAdminService
   REGIONS = ["Львівська", "Волинська", "Тернопільська", "Миколаївська", "Київська",
     "Івано-Франківська", "Закарпатська", "Дніпропетровська", "Луганська"]
 
+  DESCRIPTION = <<-HERE
+    Master of economics. Master from diving, chonicle witing and lorem ipsuming.
+    Master of economics. Master from diving, chonicle witing and lorem ipsuming.
+    Master of economics. Master from diving, chonicle witing and lorem ipsuming.
+    Master of economics. Master from diving, chonicle witing and lorem ipsuming.
+    HERE
+
+
   def call_instruktor email, password, role, vmilists = []
     user = User.new
     user.name = INSTRUCTOR_NAMES[rand(INSTRUCTOR_NAMES.count)]
@@ -41,13 +49,14 @@ class CreateAdminService
     user.password_confirmation = password
     user.change_role role
     user.vmilists = vmilists
+    user.description = DESCRIPTION
     user.save
     user
   end
 
   def call_moderator_create email, password, specialization
     user = User.new
-    user.name = "TestUser"
+    user.name = specialization.name + " moderator"
     user.email = email
     user.password = password
     user.password_confirmation = password
