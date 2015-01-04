@@ -25,7 +25,7 @@ table.table.table-hover
   tbody
     - @admins.each do |user|
       tr.row
-        td = user.name
+        td = link_to user.name, user_path(user)
         td = user.email
         td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
         td = link_to I18n.t("actions.edit"), {controller: :users, action: :edit, id: user.id }, {:class => "btn btn-sm btn-warning"}

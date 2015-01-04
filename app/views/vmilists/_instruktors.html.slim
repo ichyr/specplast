@@ -16,7 +16,7 @@
         tbody
           - @instruktors.each do |instruktor|
             tr.row
-              td.col-md-2 = instruktor.name
+              td.col-md-2 = link_to instruktor.name, user_path(instruktor)
               td.col-md-1 = image_tag instruktor.avatar.url(:thumb).to_s, size: '25x25' if instruktor.avatar
               td.col-md-5 = instruktor.email
               td.col-md-2 = instruktor.city

@@ -26,7 +26,7 @@ table.table.table-hover
   tbody
     - @moderators.each do |user|
       tr.row
-        td = user.name
+        td = link_to user.name, user_path(user)
         td = user.email
         td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
         td = user.specialization.name if user.specialization
