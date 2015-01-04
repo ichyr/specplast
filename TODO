@@ -73,15 +73,16 @@ Currently doing
        + maybe with page:update ?
      - filter by vmilist?
 
-   - instruktors skills path
+   + instruktors skills path
      + when added to profile get status NEEDS_APPROVE
      + when added or NO_INFORMATION is visible in the public lists and search
        + general search
        + vmilist specific search
-     - when approved - get approved bange|color changes
+     + when approved - get approved bange|color changes
+       - the are of different color
      + when deleted deleted from profile
 
-   - instruktor public profile page
+   + instruktor public profile page
 
    REFACTIORING TASKS
    - delete DELETE status of insturktors qualification
