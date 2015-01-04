@@ -70,7 +70,21 @@ class ModeratorController < ApplicationController
   def qualification_select
     authorize :moderator, :index?
 
-    spec_vmilist_ids = current_user.specialization.vmilist_ids
+    specialization = current_user.specialization
+
+    puts "PARAMS"
+    puts
+    puts  params.inspect
+    puts
+    puts "PARAMS"
+
+    if params[:vmilist]
+      spec_vmilist_ids = params[:vmilist]
+    else
+      spec_vmilist_ids = specialization.vmilist_ids
+    end
+
+    @spec_vmilists = specialization.vmilists
 
     @qualifications = Qualification.joins(:user)
                       .where("vmilist_id in (?) and confirmed = ? and users.name like ?",
