@@ -84,6 +84,11 @@ Currently doing
 
    + instruktor public profile page
 
+   BUG
+   - image upload on specialization RichText edit
+   - avatar preview in edit profile
+   - 
+
    REFACTIORING TASKS
    - delete DELETE status of insturktors qualification
    - dependency destroy for qualifications on instruktor delete  

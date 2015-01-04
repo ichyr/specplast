@@ -33,7 +33,9 @@ class CreateAdminService
 
   def call_instruktor email, password, role, vmilists = []
     user = User.new
-    user.name = "TestUser"
+    user.name = INSTRUCTOR_NAMES[rand(INSTRUCTOR_NAMES.count)]
+    user.city = CITIES[rand(CITIES.count)]
+    user.region = REGIONS[rand(REGIONS.count)]
     user.email = email
     user.password = password
     user.password_confirmation = password
