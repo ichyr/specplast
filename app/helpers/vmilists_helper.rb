@@ -7,7 +7,7 @@ module VmilistsHelper
 			if qualification.confirmed == APPROVED
 				result += link_to vmilist.name, vmilist, class: 'btn btn-xs btn-success'
 			else 
-				result += link_to vmilist.name, vmilist, class: 'btn btn-xs btn-warning'
+				result += link_to vmilist.name, vmilist, class: 'btn btn-xs btn-primary'
 			end
 
 			result += "\n"
