@@ -46,13 +46,12 @@ Currently doing
      - make search
        - try implementing via form_for tag, not hardcoded <form> structure
 
-   - AJAX questions and turbolinks
-    - links have additional param added
-      - http://localhost:3000/vmilists/1?_=1420009858815&page=1#list
+   + AJAX questions and turbolinks
+    + links have additional param added
+      + http://localhost:3000/vmilists/1?_=1420009858815&page=1#list
         - e.preventDefault()
         - workaround - anchor in navigation
         - http://stackoverflow.com/questions/13121793/how-to-paginate-combined-with-anchor-id
-    - 
 
     - moderator acceptance list
       + check for ARecord where(..).select(:id)
@@ -66,27 +65,30 @@ Currently doing
         - pundit check for ability to change qualification (moder.spec_id == qual.vmilist.spec_id)
      + ajax pagination
       + bug with ajax click - doesn't preventDefault() from click
-      - resolved by page:update event of Turbolinks
+      + resolved by page:update event of Turbolinks
      + search by name
       + join Users
      + I18n button labels in qualifications block
-     - filter by vmilist?
-     - optimize SQL queries !!!
-       - http://guides.rubyonrails.org/active_record_querying.html
-       - solution to N+1 problem
      + bug with doubling of token input field
        + maybe with page:update ?
+     - filter by vmilist?
 
    - instruktors skills path
-     - when added to profile get status NEEDS_APPROVE
-     - when added is visible in the public lists and search
-       - general search
-       - vmilist specific search
+     + when added to profile get status NEEDS_APPROVE
+     + when added or NO_INFORMATION is visible in the public lists and search
+       + general search
+       + vmilist specific search
      - when approved - get approved bange|color changes
-     - when deleted deleted from profile
-     - when NO_INFORMATION is not visible
+     + when deleted deleted from profile
 
-   - instruktor public profile page    
+   - instruktor public profile page
+
+   REFACTIORING TASKS
+   - delete DELETE status of insturktors qualification
+   - dependency destroy for qualifications on instruktor delete  
+   - optimize SQL queries !!!
+     - http://guides.rubyonrails.org/active_record_querying.html
+     - solution to N+1 problem
 
 ==============================
 

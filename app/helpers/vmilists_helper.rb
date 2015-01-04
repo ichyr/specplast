@@ -1,9 +1,15 @@
 module VmilistsHelper
-	def decorate_set vmilists
+	def decorate_set instruktor
 		# here the first link_to doesn't render the first symbol
 		result = ""
-		vmilists.each { |vmilist|
-			result += link_to vmilist.name, vmilist, class: 'btn btn-xs btn-primary'
+		instruktor.qualifications.each { |qualification|
+			vmilist = qualification.vmilist
+			if qualification.confirmed == APPROVED
+				result += link_to vmilist.name, vmilist, class: 'btn btn-xs btn-success'
+			else 
+				result += link_to vmilist.name, vmilist, class: 'btn btn-xs btn-warning'
+			end
+
 			result += "\n"
 		}
 		result
