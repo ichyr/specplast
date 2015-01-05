@@ -72,12 +72,6 @@ class ModeratorController < ApplicationController
 
     specialization = current_user.specialization
 
-    puts "PARAMS"
-    puts
-    puts  params.inspect
-    puts
-    puts "PARAMS"
-
     if params[:vmilist]
       spec_vmilist_ids = params[:vmilist]
     else
@@ -86,9 +80,10 @@ class ModeratorController < ApplicationController
 
     @spec_vmilists = specialization.vmilists
 
-    @qualifications = Qualification.joins(:user)
+    @qualifications = Qualification.includes(:user, :vmilist).joins(:user)
                       .where("vmilist_id in (?) and confirmed = ? and users.name like ?",
                         spec_vmilist_ids, @state_selected, "%#{params[:search]}%")
+                      .references(:user, :vmilist)
                       .paginate(:page => params[:page], :per_page => 10)
   end
 end
