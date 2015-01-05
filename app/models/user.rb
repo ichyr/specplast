@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates :role,  inclusion: { in: User.roles.keys }
 
 
-  has_many :qualifications
+  has_many :qualifications, dependent: :destroy
   has_many :vmilists, through: :qualifications
 
   attr_reader :vmilist_token

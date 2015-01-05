@@ -73,21 +73,21 @@ GeneralInfo.create bulava
 
 # ============== Create instruktors for VmilistService
 
-# vmilist_temp = Vmilist.find(1)
-# (1..100).each { |index| 
-# 	temp = CreateAdminService.new.call_instruktor "in#{index}@example.com", "changeme", :instruktor, [vmilist_temp]
-# }
+vmilist_temp = Vmilist.all
+(1..20).each { |index| 
+	temp = CreateAdminService.new.call_instruktor "in#{index}@example.com", "changeme", :instruktor, vmilist_temp
+}
 
-# Qualification.all.each_with_index { |qualification, index| 
-# 	case index % 3
-# 	when 0
-# 		qualification.set_confirmed NEEDS_APPROVE
-# 	when 1
-# 		qualification.set_confirmed APPROVED
-# 	when 2
-# 		qualification.set_confirmed NO_INFORMATION
-# 	end
+Qualification.all.each_with_index { |qualification, index| 
+	case index % 3
+	when 0
+		qualification.set_confirmed NEEDS_APPROVE
+	when 1
+		qualification.set_confirmed APPROVED
+	when 2
+		qualification.set_confirmed NO_INFORMATION
+	end
 
-# 	qualification.save!
-# }
+	qualification.save!
+}
 
