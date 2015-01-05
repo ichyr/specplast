@@ -6,7 +6,7 @@ class Vmilist < ActiveRecord::Base
 
 	belongs_to :specialization
 
-	has_many :qualifications
+	has_many :qualifications, dependent: :destroy
   has_many :users, through: :qualifications
 
 	validates :name, presence: true, 
