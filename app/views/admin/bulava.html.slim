@@ -21,5 +21,7 @@ ul.nav.nav-tabs.nav-justified
     = f.input :value, as: :bootsy, label: false, input_html: {class: 'form-control', rows: 15}
     end
 
+  br/ 
+
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: "btn btn-success ", value: I18n.t("layout.administration.save_bulava")

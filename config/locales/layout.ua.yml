@@ -39,6 +39,7 @@ ua:
       administrators_tab: "Адміністратори"
       moderators_tab: "Модератори"
       bulava_tab: "Булава"
+      save_bulava: "Зберегти зміни"
       name: "Назва"
       avatar: "Світлина"
       button:

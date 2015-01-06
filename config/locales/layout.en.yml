@@ -39,6 +39,7 @@ en:
       administrators_tab: "Administrators"
       moderators_tab: "Moderators"
       bulava_tab: "Bulava"
+      save_bulava: "Save changes"
       name: "Name"
       avatar: "Avatar"
       button:
