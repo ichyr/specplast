@@ -34,13 +34,13 @@
         /! Tab panes
         .tab-content
           #gen_info.tab-pane role="tabpanel" 
-            = builder.input :gen_info, as: :bootsy, input_html: {class: 'form-control', rows: 25}
+            = builder.input :gen_info, as: :bootsy, label: false, input_html: {class: 'form-control', rows: 25}
           #proby.tab-pane role="tabpanel" 
-            = builder.input :proby, as: :bootsy, input_html: {class: 'form-control', rows: 25}
+            = builder.input :proby, as: :bootsy, label: false, input_html: {class: 'form-control', rows: 25}
           #activity.tab-pane role="tabpanel" 
-            = builder.input :activity, as: :bootsy, input_html: {class: 'form-control', rows: 25}
+            = builder.input :activity, as: :bootsy, label: false, input_html: {class: 'form-control', rows: 25}
           #provid.tab-pane role="tabpanel" 
-            = builder.input :provid, as: :bootsy, input_html: {class: 'form-control', rows: 25}
+            = builder.input :provid, as: :bootsy, label: false, input_html: {class: 'form-control', rows: 25}
           / end
           #main.tab-pane.active role="tabpanel"
             .form-inputs
