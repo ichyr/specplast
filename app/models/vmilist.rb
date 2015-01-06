@@ -6,7 +6,7 @@ class Vmilist < ActiveRecord::Base
 
 	belongs_to :specialization
 
-	has_many :qualifications
+	has_many :qualifications, dependent: :destroy
   has_many :users, through: :qualifications
 
 	validates :name, presence: true, 
@@ -18,11 +18,9 @@ class Vmilist < ActiveRecord::Base
 	validates :specialization_id, presence: true 
 	validates :name, uniqueness: { case_sensitive: false }
 
-	DEFAULT_TEXT = "Даний розділ ще не є заповнений інформацією!"
-
 	def check_defaults 
-		self.child_info ||= DEFAULT_TEXT
-		self.instructor_info ||= DEFAULT_TEXT
+		self.child_info ||= VMILIST_REQUIREMENTS_DEFAULT_TEXT
+		self.instructor_info ||= VMILIST_REQUIREMENTS_DEFAULT_TEXT
 	end
 
 end
