@@ -90,6 +90,7 @@ ua:
     region: "Округа"
     vmilists: "Кваліфікації"
     public_profile: "Інформація про користувача"
+    edit_of_user: "Редагування користувача"
   qualification:
     actions: "Можливі дії"
     waiting: "Очікують підтвердження"

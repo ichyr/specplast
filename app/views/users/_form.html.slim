@@ -1,15 +1,30 @@
 = simple_form_for(@user, html:{multipart:true}) do |f|
-  .alert.alert-danger = f.error_notification
+  - if @user.errors.any?
+    .alert.alert-danger role="alert"
+      = I18n.t("simple_form.error_notification.default_message")
+      ul
+        - @user.errors.full_messages.each do |msg|
+          li = msg
+  end
 
   .form-inputs
-    = f.input :name, html: { name: "user[name]" }
-    = f.input :email, html: { name: "user[email]" }
-    = f.label :avatar
-    .upload-preview
-  		= image_tag @user.avatar.url(:thumb).to_s
-    = f.file_field :avatar, class: "file"
-    = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }
-    = f.association :specialization, html: { name: "user[specialization_id]" }
+    .row
+      = f.input :name, html: { name: "user[name]" }, :error => false
+    .row
+      = f.input :email, html: { name: "user[email]" }, :error => false
+    .row
+      = f.label :avatar
+      .upload-preview
+        = image_tag @user.avatar.url(:thumb).to_s
+      = f.file_field :avatar, class: "file", :error => false
+    .row 
+      br/
+      .col-md-4 = f.label :role
+      .col-md-8 = f.input_field :role, as: :radio_buttons, collection: User::STATUSES, html: { name: "user[role]" }, error: false, label: false
+    .row
+      = f.association :specialization, html: { name: "user[specialization_id]" }, :error => false
 
-  .form-actions
-    = f.button :submit
+    br/ 
+    
+    .form-actions.pull-right
+      = f.button :submit, class: "btn btn-success ", value: I18n.t("layout.administration.save_bulava")

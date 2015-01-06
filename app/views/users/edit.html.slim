@@ -1,6 +1,6 @@
-h3.text-center.content-header = "Edit of user #{@user.name}"
+h3.text-center.content-header = "#{I18n.t("users.edit_of_user")} #{@user.name}"
 
-== render "form"
+.authform == render "form"
 
 javascript:
 	$(document).ready(function () {

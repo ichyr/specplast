@@ -95,6 +95,7 @@ Currently doing
    - admin cabinet
      - I18n role radio buttons labels
      - notification in english ?
+     - error dialog div is present from the start
      - save user button not styled
      + http://localhost:3000/admin/bulava - button and Булави menu item ?
      + label to WISYWIG ??? http://localhost:3000/admin/bulava
