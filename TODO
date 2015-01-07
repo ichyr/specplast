@@ -101,13 +101,12 @@ Currently doing
 
 
    + RESOLVED BUGS
-   -
+     + N+1 problem with qualifications in vmilist/:id#list
 
    BUG
    - image upload on specialization RichText edit
    - avatar preview in edit profile
    - headings in akciji and proba in the general menu items
-   - N+1 problem with qualifications in vmilist/:id#list
 
    REFACTIORING TASKS
    + dependency destroy for qualifications on instruktor/vmilist delete  

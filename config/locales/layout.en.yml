@@ -63,11 +63,12 @@ en:
       proby_header: "Specialization proby"
       provid_header: "Specialization provid"
       vmilists: "Specialized vmilists search"
-      general_info: "Information"
-      proby: "Proby"
-      provid: "Provid"
-      activity: "Activities"
-      main: "Main"
+      edit_tabs:
+        general_info: "Information"
+        proby: "Proby"
+        provid: "Provid"
+        activity: "Activities"
+        main: "Main"
       edit_page: "Editing specialization"
     page_under_construction: "This page is under construction"
     vmilist:
