@@ -13,7 +13,8 @@ class VmilistsController < ApplicationController
   # GET /vmilists/1
   # GET /vmilists/1.json
   def show
-    @instruktors = Vmilist.find(params[:id]).users
+    @vmilist = Vmilist.find(params[:id])
+    @instruktors = @vmilist.users
       .where("name like ?", "%#{params[:search]}%")
       .paginate(:page => params[:page], :per_page => 10)
 

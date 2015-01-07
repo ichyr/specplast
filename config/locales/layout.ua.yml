@@ -91,6 +91,7 @@ ua:
     vmilists: "Кваліфікації"
     public_profile: "Інформація про користувача"
     edit_of_user: "Редагування користувача"
+    recommended: "Рекомендований"
   qualification:
     actions: "Можливі дії"
     waiting: "Очікують підтвердження"

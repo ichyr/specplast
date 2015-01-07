@@ -84,26 +84,30 @@ Currently doing
 
    + instruktor public profile page
 
+   - admin cabinet
+     - I18n role radio buttons labels
+     - notification in english ?
+       - http://stackoverflow.com/questions/7098023/how-to-create-a-translatable-successful-notice
+     + error dialog div is present from the start
+     + save user button not styled
+     + http://localhost:3000/admin/bulava - button and Булави menu item ?
+     + label to WISYWIG ??? http://localhost:3000/admin/bulava
+
+   - style vmilists pills on visitors#intruktors and public page
+     - use .row
+     - use .col-md-5
+
+   - vmilist instruktors list add who is recommended and who is not
+
+
    + RESOLVED BUGS
    -
 
    BUG
    - image upload on specialization RichText edit
    - avatar preview in edit profile
-   - 
-
-   - admin cabinet
-     - I18n role radio buttons labels
-     - notification in english ?
-     - error dialog div is present from the start
-     - save user button not styled
-     + http://localhost:3000/admin/bulava - button and Булави menu item ?
-     + label to WISYWIG ??? http://localhost:3000/admin/bulava
-     - 
-
-   - style vmilists pills on visitors#intruktors and public page
-     - use .row
-     - use .col-md-5
+   - headings in akciji and proba in the general menu items
+   - N+1 problem with qualifications in vmilist/:id#list
 
    REFACTIORING TASKS
    + dependency destroy for qualifications on instruktor/vmilist delete  
