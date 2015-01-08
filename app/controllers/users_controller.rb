@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     authorize @user
 
     @user.destroy
-    redirect_to request.referrer || root_path, notice: 
+    redirect_to request.referrer || root_path, notice: I18n.t("activerecord.attributes.user.destroy_success")
   end
 
   private

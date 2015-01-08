@@ -10,3 +10,6 @@ delete contents of DB
 run migrations and seed data
   heroku run rake db:migrate --app specplast
   heroku run rake db:seed --app specplast
+
+restart server
+	heroku restart --app specplast
