@@ -15,7 +15,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def instructors
-		@instruktors = User.select(:id, :name, :avatar, :city, :region)
+		@instruktors = User.select(:id, :name, :avatar, :city)
 											 .includes(:vmilists)
 											 .where("name like ?", "%#{params[:search]}%")
 											 .paginate(:page => params[:page], :per_page => 10)
