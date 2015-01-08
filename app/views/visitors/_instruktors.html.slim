@@ -7,19 +7,19 @@
       table.table.table-hover
         thead
           tr.row
-            th.col-md-2 = I18n.t "users.name"
+            th.col-md-3 = I18n.t "users.name"
             th.text-center.col-md-1 = I18n.t "users.avatar"
-            th.col-md-2 = I18n.t "users.city"
-            th.col-md-2 = I18n.t "users.region"
-            th.col-md-5 = I18n.t "users.vmilists"
+            th.col-md-1 = I18n.t "users.city"
+            th.col-md-1 = I18n.t "users.region"
+            th.col-md-6 = I18n.t "users.vmilists"
 
         tbody
           - @instruktors.each do |instruktor|
             tr.row
-              td.col-md-2 = link_to instruktor.name, user_path(instruktor)
+              td.col-md-3 = link_to instruktor.name, user_path(instruktor)
               td.col-md-1 = image_tag instruktor.avatar.url(:thumb).to_s, size: '25x25' if instruktor.avatar
-              td.col-md-2 = instruktor.city
-              td.col-md-2 = instruktor.region
-              td.col-md-5 = raw decorate_set(instruktor)
+              td.col-md-1 = instruktor.city
+              td.col-md-1 = instruktor.region
+              td.col-md-6 = raw decorate_set(instruktor)
     .row
       .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails
