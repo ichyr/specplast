@@ -1,7 +1,7 @@
 class UserPolicy < ApplicationPolicy
 
   def index?
-    # noone should be abe to view list of users
+    # noone should be able to view list of users
     false if !user.nil?
   end
 

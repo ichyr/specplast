@@ -20,7 +20,7 @@
     .row 
       br/
       .col-md-4 = f.label :role
-      .col-md-8 = f.input_field :role, as: :radio_buttons, collection: User::STATUSES, html: { name: "user[role]" }, error: false, label: false
+      .col-md-8 = f.input_field :role, as: :radio_buttons, collection: User.gender_attributes_for_select, html: { name: "user[role]" }, error: false, label: false
     .row
       = f.association :specialization, html: { name: "user[specialization_id]" }, :error => false
 

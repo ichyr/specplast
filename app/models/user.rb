@@ -39,4 +39,10 @@ class User < ActiveRecord::Base
   def change_role role
     self.role = role
   end
+
+  def self.gender_attributes_for_select
+    roles.map do |role, _|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.roles.#{role}"), role]
+    end
+  end
 end

@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   def index
     authorize :users, :index?
 
-    @instruktors = User.where("role = ?", 0)
-    @moderators = User.where("role = ?", 1)
-    @admins = User.where("role = ?", 2)
+    @instruktors = find_by_role 0
+    @moderators = find_by_role 1
+    @admins = find_by_role 2
   end
 
   def show
@@ -63,5 +63,10 @@ class UsersController < ApplicationController
       else admin_path
       end
 
+    end
+
+    def find_by_role role_id
+      User.select(:id, :name, :avatar, :email, :specialization_id)
+          .where("role = ?", role_id)
     end
 end

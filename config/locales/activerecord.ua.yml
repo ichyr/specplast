@@ -32,6 +32,12 @@ ua:
         role: "Роль"
         password: "Пароль"
         password_confirmation: "Пароль"
+        avatar: "Світлина"
+        specialization: "Спеціалізація"
+        roles:
+          instruktor: "Інструктор"
+          moderator: "Модератор"
+          admin: "Адміністратор"
       specialization:
         name: "Назва"
         avatar: "Іконка"
