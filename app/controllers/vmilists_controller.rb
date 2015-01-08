@@ -48,7 +48,7 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       if @vmilist.save
-        format.html {  redirect_to moderator_path, notice: 'Vmilist was successfully created.' }
+        format.html {  redirect_to moderator_path, notice: I18n.t("activerecord.attributes.vmilist.create_success") }
       else
         format.html { render :new }
       end
@@ -62,7 +62,7 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       if @vmilist.update(vmilist_params)
-        format.html { redirect_to moderator_path, notice: 'Vmilist was successfully update.' }
+        format.html { redirect_to moderator_path, notice: I18n.t("activerecord.attributes.vmilist.update_success") }
       else
         format.html { render :edit }
       end
@@ -76,7 +76,7 @@ class VmilistsController < ApplicationController
 
     @vmilist.destroy
     respond_to do |format|
-      format.html { redirect_to :back , notice: 'Vmilist was successfully destroyed.' }
+      format.html { redirect_to :back , notice: I18n.t("activerecord.attributes.vmilist.destroy_success") }
     end
   end
 

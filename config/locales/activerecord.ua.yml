@@ -38,6 +38,8 @@ ua:
           instruktor: "Інструктор"
           moderator: "Модератор"
           admin: "Адміністратор"
+        update_success: 'Інформацію користувача успішно оновлено!'
+        destroy_success: 'Користувача успішно видалено із системи.'
       specialization:
         name: "Назва"
         avatar: "Іконка"
@@ -53,5 +55,7 @@ ua:
         avatar: "Іконка"
         child_info: "Вимоги до здачі"
         instructor_info: "Вимоги до інструкторів"
+        create_success: 'Успішно створено нову вмілість!'
+        update_success: 'Інформацію вмілості успішно оновлено!'
+        destroy_success: 'Вмілість успішно видалено із системи.'
 
-      # will translate User attribute "login" as "Handle"

@@ -85,9 +85,8 @@ Currently doing
 
    + instruktor public profile page
 
-   - admin cabinet
-     - notification in english ?
-       - http://stackoverflow.com/questions/7098023/how-to-create-a-translatable-successful-notice
+   + admin cabinet
+     + notification in english ?
      + I18n role radio buttons labels
        + http://stackoverflow.com/questions/22827270/how-to-use-i18n-with-rails-4-enums
      + error dialog div is present from the start
@@ -109,6 +108,7 @@ Currently doing
 
    BUG
      - image upload on specialization RichText edit
+       - only on heroku version
      ? avatar preview in edit profile
 
    REFACTIORING TASKS

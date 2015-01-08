@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to form_route(@user.role), 
-                                  notice: 'User was successfully updated.' }
+                                  notice: I18n.t("activerecord.attributes.user.update_success") }
       else
         format.html { render :edit }
       end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     authorize @user
 
     @user.destroy
-    redirect_to request.referrer || root_path, notice: 'User was successfully destroyed.'
+    redirect_to request.referrer || root_path, notice: 
   end
 
   private

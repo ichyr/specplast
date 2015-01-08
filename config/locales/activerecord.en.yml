@@ -39,6 +39,8 @@ en:
           instruktor: "Instruktor"
           moderator: "Moderator"
           admin: "Administrator"
+        update_success: 'User was successfully updated.'
+        destroy_success: 'User was successfully destroyed.'
       specialization:
         name: "name"
         avatar: "avatar"
@@ -54,5 +56,6 @@ en:
         avatar: "avatar"
         child_info: "Scouts checklist"
         instructor_info: "Instruktor qualifications"
-
-      # will translate User attribute "login" as "Handle"
+        create_success: 'Vmilist was successfully created.'
+        update_success: 'Vmilisr was successfully updated.'
+        destroy_success: 'Vmilisr was successfully destroyed.'
