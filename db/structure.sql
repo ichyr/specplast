@@ -36,7 +36,7 @@ SET default_with_oids = false;
 CREATE TABLE bootsy_image_galleries (
     id integer NOT NULL,
     bootsy_resource_id integer,
-    bootsy_resource_type character varying(255),
+    bootsy_resource_type character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
@@ -67,7 +67,7 @@ ALTER SEQUENCE bootsy_image_galleries_id_seq OWNED BY bootsy_image_galleries.id;
 
 CREATE TABLE bootsy_images (
     id integer NOT NULL,
-    image_file character varying(255),
+    image_file character varying,
     image_gallery_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
@@ -163,7 +163,7 @@ ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
 --
 
 CREATE TABLE schema_migrations (
-    version character varying(255) NOT NULL
+    version character varying NOT NULL
 );
 
 
@@ -180,7 +180,7 @@ CREATE TABLE specdata (
     specialization_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    file character varying(255)
+    file character varying
 );
 
 
@@ -209,10 +209,10 @@ ALTER SEQUENCE specdata_id_seq OWNED BY specdata.id;
 
 CREATE TABLE specializations (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    avatar character varying(255)
+    avatar character varying
 );
 
 
@@ -241,24 +241,24 @@ ALTER SEQUENCE specializations_id_seq OWNED BY specializations.id;
 
 CREATE TABLE users (
     id integer NOT NULL,
-    email character varying(255) DEFAULT ''::character varying NOT NULL,
-    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
-    reset_password_token character varying(255),
+    email character varying DEFAULT ''::character varying NOT NULL,
+    encrypted_password character varying DEFAULT ''::character varying NOT NULL,
+    reset_password_token character varying,
     reset_password_sent_at timestamp without time zone,
     remember_created_at timestamp without time zone,
     sign_in_count integer DEFAULT 0 NOT NULL,
     current_sign_in_at timestamp without time zone,
     last_sign_in_at timestamp without time zone,
-    current_sign_in_ip character varying(255),
-    last_sign_in_ip character varying(255),
+    current_sign_in_ip character varying,
+    last_sign_in_ip character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    name character varying(255),
+    name character varying,
     role integer,
     specialization_id integer,
-    avatar character varying(255),
-    city character varying(255),
-    region character varying(255),
+    avatar character varying,
+    city character varying,
+    region character varying,
     description text
 );
 
@@ -288,13 +288,13 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 CREATE TABLE vmilists (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     child_info text,
     instructor_info text,
     specialization_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    avatar character varying(255)
+    avatar character varying
 );
 
 

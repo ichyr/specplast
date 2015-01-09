@@ -1,4 +1,4 @@
 class GeneralInfo < ActiveRecord::Base
-	validate :key, presence: true
-	validate :value, presence: true
+	validates :key, presence: true
+	validates :value, presence: true
 end
