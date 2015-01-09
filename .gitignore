@@ -14,7 +14,6 @@
 # TODO
 # HEROKU_COMMANDS
 01_Plan_zbirky
-/config/secrets.yml
 
 # Uploaded for development files
 /public/uploads/*
@@ -40,6 +39,7 @@ db/*.sqlite3
 .redcar/
 .sass-cache
 /config/config.yml
+/config/secrets.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
