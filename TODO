@@ -120,9 +120,10 @@ Currently doing
     + create gmail account
     - setup mail
     - send test mail
+    - setup ActiveJob
+      - http://edgeguides.rubyonrails.org/active_job_basics.HTML
     - setup mailer views
 
-  - group gems, so not all are required in production setup
 
   - resolve bugs found by my wife
     1.
@@ -136,6 +137,8 @@ Currently doing
     9.
     10.
     11.
+
+  - group gems, so not all are required in production setup
 
   + RESOLVED BUGS
     + N+1 problem with qualifications in vmilist/:id#list
