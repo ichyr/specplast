@@ -94,6 +94,7 @@ en:
     public_profile: "User's pubic profile"
     edit_of_user: "Edit of user"
     recommended: "Approved"
+    read_about_vmilists: "View skills list..."
   qualification:
     actions: "Possible actions"
     waiting: "Waiting for confirmation"

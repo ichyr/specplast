@@ -15,7 +15,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def instructors
-		@instruktors = User.select(:id, :name, :avatar, :city)
+		@instruktors = User.select(:id, :name, :avatar, :city, :region)
 											 .includes(:vmilists)
 											 .where("name like ?", "%#{params[:search]}%")
 											 .paginate(:page => params[:page], :per_page => 10)
@@ -41,8 +41,7 @@ class VisitorsController < ApplicationController
 	def api
 		@specialization = Specialization.find(params[:id])
 
-		@vmilists = Vmilist.select(:id, :name)
-			.where('vmilists.name LIKE ? and vmilists.specialization_id = ?',
+		@vmilists = Vmilist.where('vmilists.name LIKE ? and vmilists.specialization_id = ?',
 											 	      "%#{params[:search]}%", "#{params[:id]}")
 			.limit(10)
 	end

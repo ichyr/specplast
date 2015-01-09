@@ -93,6 +93,7 @@ ua:
     public_profile: "Інформація про користувача"
     edit_of_user: "Редагування користувача"
     recommended: "Рекомендований"
+    read_about_vmilists: "Переглянути список кваліфікацій"
   qualification:
     actions: "Можливі дії"
     waiting: "Очікують підтвердження"
