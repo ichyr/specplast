@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   get "visitors/api/:id", to: 'visitors#api'
   
   #  User controller
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registration" }
 
   get 'users', to: 'users#index'
   get 'users/:id', to: 'users#show', :as => :user
