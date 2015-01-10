@@ -85,5 +85,5 @@ pickle-email-*.html
 **.swp
 
 # Environment files that may contain sensitive data
-.env
+.env.yml
 .powenv
