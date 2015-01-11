@@ -14,7 +14,7 @@ en:
     bulava_page: "Bulava"
     search_label: "Search"
     search_placeholder: "Search"
-    search_vmilist_label: "Restrict to vmilist"
+    search_vmilist_label: "Select vmilist"
     no_specializations: "There are currently no specializations available"
     no_vmilist: "There are currently no any vmilists in this specialization available"
     no_uncorfirmed_qualifications: "No uncorfirmed instruktors found!"
