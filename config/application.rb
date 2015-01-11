@@ -32,7 +32,7 @@ module Specplast
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :en
     config.i18n.default_locale = :ua
-    # config.i18n.locale = :ua
+    config.i18n.locale = :ua
 
     config.active_record.schema_format = :sql
   end
