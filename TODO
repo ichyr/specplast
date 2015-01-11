@@ -138,13 +138,13 @@ Currently doing
   - resolve bugs found by my wife
     1.    improvement ( need js )
     2.  +
-    3.    http://railscasts.com/episodes/228-sortable-table-columns
-    4.    bug
+    3.  + improvement.
+    4.  ?  bug
     5.  NOT_A_BUG  test this thing. improvement.
     6.  +  improvement
-    7.  +  improvement. add update at I18n.l(@provid.updated_at)
+    7.  +  improvement.
     8.  LOW  improvement.
-    9.    improvement.
+    9.  ?  improvement.
     10. + it is working now. renamed the label.
     11. + improvement. easy.
     12.   is it necessary?
