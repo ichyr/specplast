@@ -48,10 +48,10 @@ ua:
         edit: "Оновити"
         delete: "Видалити"
     moderator:
-      page_title: "Панель модератора"
+      page_title: "Управління вмілостями"
       vmilists_tab: "Вмілості"
       specializations_tab: "Дані спеціалізації"
-      qualifications: "Управління кваліфікаціями"
+      qualifications: "Рекомендація інструкторів"
       qualifications_page: "Підтвердження кваліфікаційного рівня"
     specialization:
       pologennya_link: "Положення про спеціалізацію"

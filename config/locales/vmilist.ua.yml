@@ -4,3 +4,4 @@ ua:
     children_info: "Вимоги для юнаків"
     instruktor_info: "Вимоги до інструкторів"
     name: "Назва вмілості"
+    transition_to_specialization: "Перевести вмілість до іншої спеціалізації"

@@ -4,3 +4,4 @@ en:
     children_info: "Scouts requirements"
     instruktor_info: "Instructors skills"
     name: "Skill name"
+    transition_to_specialization: "Transition to specialization"
