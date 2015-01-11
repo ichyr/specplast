@@ -120,10 +120,10 @@ Currently doing
     + create gmail account
     - setup mail
       - make env variable last through sessions
-      
     + send test mail
     - setup mil send during devise sign_up
       - http://stackoverflow.com/questions/17479864/rails-devise-send-user-email-after-sign-up-create
+      
     - setup ActiveJob
       - http://edgeguides.rubyonrails.org/active_job_basics.HTML
     - setup mailer views
