@@ -140,8 +140,8 @@ Currently doing
     2.  +
     3.    http://railscasts.com/episodes/228-sortable-table-columns
     4.    bug
-    5.    test this thing. improvement.
-    6.    improvement
+    5.  NOT_A_BUG  test this thing. improvement.
+    6.  +  improvement
     7.  +  improvement. add update at I18n.l(@provid.updated_at)
     8.  LOW  improvement.
     9.    improvement.
@@ -154,7 +154,7 @@ Currently doing
     16. + improvement. easy
     17. + improvement. easy.
     18. + improvement. easy.
-    19.   bugs? list needs to be sorted by updated_at date
+    19. + bugs? list needs to be sorted by updated_at date
 
   - group gems, so not all are required in production setup
 

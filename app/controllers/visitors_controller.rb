@@ -1,11 +1,11 @@
 class VisitorsController < ApplicationController
 
 	def index		
-		@specializations = Specialization.all
+		@specializations = Specialization.order(name: :asc)
 	end
 
 	def activities
-		@specializations = Specialization.all
+		@specializations = Specialization.order(name: :asc)
 	end
 
 	def vmilosti
@@ -24,14 +24,14 @@ class VisitorsController < ApplicationController
 	def provid
 		@specializations = Specialization.select(:id, :name)
 																		 .includes(:specdatum)
-																		 .all
+																		 .order(name: :asc)
 
 	end
 
 	def proby
 		@specializations = Specialization.select(:id, :name)
 																		 .includes(:specdatum)
-																		 .all
+																		 .order(name: :asc)
 	end
 
 	def bulava

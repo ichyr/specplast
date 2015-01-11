@@ -86,6 +86,7 @@ class ModeratorController < ApplicationController
                         "vmilists.name", "qualifications.confirmed")
                       .where("vmilist_id in (?) and confirmed = ? and lower(users.name) like ?",
                         spec_vmilist_ids, @state_selected, "%#{params[:search].downcase if params[:search]}%")
+                      .order("qualifications.updated_at DESC")
                       .paginate(:page => params[:page], :per_page => 10)
   end
 end
