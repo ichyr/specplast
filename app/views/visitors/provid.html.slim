@@ -10,3 +10,7 @@ br/
   - @specializations.each_with_index do |specialization, index|
     div class=("tab-pane #{"active" if index == 0}") id=specialization.name 
       = raw specialization.specdatum.provid
+
+      br/
+	    br/
+	    i.pull-right = last_updated_at(@specialization.specdatum)

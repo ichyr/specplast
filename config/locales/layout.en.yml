@@ -70,6 +70,7 @@ en:
         activity: "Activities"
         main: "Main"
       edit_page: "Editing specialization"
+      information_last_updated: "Information last updated on the "
     page_under_construction: "This page is under construction"
     vmilist:
       new: "New vmilist"

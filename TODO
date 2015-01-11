@@ -142,11 +142,11 @@ Currently doing
     4.    bug
     5.    test this thing. improvement.
     6.    improvement
-    7.    improvement. add update at I18n.l(@provid.updated_at)
-    8.    improvement.
-    9.    improvement. easy.
-    10.   it is working now.
-    11.   improvement. easy.
+    7.  +  improvement. add update at I18n.l(@provid.updated_at)
+    8.  LOW  improvement.
+    9.    improvement.
+    10. + it is working now. renamed the label.
+    11. + improvement. easy.
     12.   is it necessary?
     13. + improvement. IMPORTANT
     14. + improvement. easy.

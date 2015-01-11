@@ -69,6 +69,7 @@ ua:
         activity: "Заходи"
         main: "Основне"
       edit_page: "Оновлення спеціалізації"
+      information_last_updated: "Інформація востаннє оновлена "
     page_under_construction: "Сторінка у розробці"
     vmilist:
       new: "Створення вмілості"

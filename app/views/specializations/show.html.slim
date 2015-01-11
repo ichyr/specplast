@@ -36,15 +36,35 @@ ul.nav.nav-tabs.nav-justified role="tablist"
 
   .tab-pane id="Інформація"
     = raw @specialization.specdatum.gen_info
-    br
+
+    br/
     - if @specialization.specdatum.file.file
         .row.text-right = link_to I18n.t("layout.specialization.pologennya_link"), @specialization.specdatum.file.url
 
+    br/
+    br/
+    i.pull-right = last_updated_at(@specialization.specdatum)
+
   .tab-pane id="Проба"
+
     = raw @specialization.specdatum.proby
 
+    br/
+    br/
+    i.pull-right = last_updated_at(@specialization.specdatum)
+
   .tab-pane id="Заходи"
+
     = raw @specialization.specdatum.activity
+
+    br/
+    br/
+    i.pull-right = last_updated_at(@specialization.specdatum)
     
   .tab-pane id="Провід"
+
     = raw @specialization.specdatum.provid
+
+    br/
+    br/
+    i.pull-right = last_updated_at(@specialization.specdatum)
