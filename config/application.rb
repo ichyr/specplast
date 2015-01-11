@@ -35,5 +35,9 @@ module Specplast
     config.i18n.locale = :ua
 
     config.active_record.schema_format = :sql
+
+    # Be sure to have the adapter's gem in your Gemfile and follow
+    # the adapter's specific installation and deployment instructions.
+    config.active_job.queue_adapter = :sidekiq
   end
 end

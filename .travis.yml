@@ -10,6 +10,9 @@ before_install:
 - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
 # skip installing docs for gems
 
+services:
+  - redis-server
+
 env:
   global:
   - BUNDLE_ARCHIVE="test-bundle"

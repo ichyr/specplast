@@ -131,7 +131,10 @@ Currently doing
     - I18n devise mail views
     - setup mailer views
     - setup ActiveJob
-      - http://edgeguides.rubyonrails.org/active_job_basics.HTML
+      + http://edgeguides.rubyonrails.org/active_job_basics.HTML
+      + added sidekiq
+      - installed redis ( http://redis.io/topics/quickstart )
+      -
 
 
 
