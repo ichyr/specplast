@@ -136,14 +136,14 @@ Currently doing
 
 
   - resolve bugs found by my wife
-    1.
+    1. improvement ( need js )
     2. +
-    3.
-    4.
-    5.
-    6.
-    7.
-    8.
+    3. http://railscasts.com/episodes/228-sortable-table-columns
+    4. bug
+    5. test this thing. improvement.
+    6. improvement
+    7. improvement. add update at I18n.l(@provid.updated_at)
+    8. 
     9.
     10.
     11.
