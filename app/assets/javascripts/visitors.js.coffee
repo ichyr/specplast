@@ -21,6 +21,11 @@ ajax_search_listeners_init = ->
     $.getScript @href
     false
 
+  $(".visitor_instruktors_table .sort-theader a").click (e) ->
+    e.preventDefault()
+    $.getScript @href
+    false
+
   return
 
 $(document).on "ready page:update", ajax_search_listeners_init

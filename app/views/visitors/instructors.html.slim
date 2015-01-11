@@ -4,6 +4,8 @@ br
 
 .pull-right
   = simple_form_for :search, url: instructors_path, html: {class: "form-inline visitors_instructors_search"}, method: :get, remote: true do |f|
+  	= hidden_field_tag :sort, params[:sort]
+  	= hidden_field_tag :direction, params[:direction]
     .input-group
       = f.text_field :name, label: I18n.t("layout.search_label"), placeholder: I18n.t("layout.search_placeholder"), name: "search", class: "form-control "
       .input-group-btn
