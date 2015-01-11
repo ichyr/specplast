@@ -1,11 +1,8 @@
 class UserMailer < ApplicationMailer
+	from: 
 
 	def new_registration user
 		@user = user
-    mail(to: user.email, 
-    		 subject: "Welcome to Specplast Technologies!!!") do |format|
-      format.html { render layout: 'mailer' }
-      format.text
-    end
+    mail(to: user.email, subject: I18n.t("mailer.title.registration"))
 	end
 end
