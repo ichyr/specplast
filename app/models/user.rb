@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
 
   validates :specialization_id, presence:true, 
             allow_nil: false, if: :is_moderator
-  validates :name, presence: true, length: { minimum: 4},
-                   uniqueness: {case_sensitive: false}
+  validates :name, presence: true, length: { minimum: 4}
   validates :role,  inclusion: { in: User.roles.keys }
+  validates :email, uniqueness: {case_sensitive: false}
 
 
   has_many :qualifications, dependent: :destroy

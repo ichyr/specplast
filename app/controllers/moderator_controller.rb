@@ -3,7 +3,7 @@ class ModeratorController < ApplicationController
     authorize :moderator, :index?
     
     @vmilists = Vmilist.select(:id, :avatar, :name).where("specialization_id = ? and lower(name) like ?", 
-                        current_user.specialization_id, "%#{params[:search].downcase}%")
+                        current_user.specialization_id, "%#{params[:search].downcase if params[:search]}%")
                        .paginate(:page => params[:page], :per_page => 10)
   end
 
@@ -85,7 +85,7 @@ class ModeratorController < ApplicationController
                         "qualifications.id", "users.name", "users.avatar",
                         "vmilists.name", "qualifications.confirmed")
                       .where("vmilist_id in (?) and confirmed = ? and lower(users.name) like ?",
-                        spec_vmilist_ids, @state_selected, "%#{params[:search].downcase}%")
+                        spec_vmilist_ids, @state_selected, "%#{params[:search].downcase if params[:search]}%")
                       .paginate(:page => params[:page], :per_page => 10)
   end
 end

@@ -10,14 +10,14 @@ class VisitorsController < ApplicationController
 
 	def vmilosti
 		@vmilists = Vmilist.select(:id, :name, :avatar)
-											 .where("lower(name) like ?", "%#{params[:search].downcase}%")
+											 .where("lower(name) like ?", "%#{params[:search].downcase if params[:search]}%")
 			                 .paginate(:page => params[:page], :per_page => 12)
 	end
 
 	def instructors
 		@instruktors = User.select(:id, :name, :avatar, :city, :region)
 											 .includes(:vmilists)
-											 .where("lower(name) like ?", "%#{params[:search].downcase}%")
+											 .where("lower(name) like ?", "%#{params[:search].downcase if params[:search]}%")
 											 .paginate(:page => params[:page], :per_page => 10)
 	end
 
@@ -42,7 +42,7 @@ class VisitorsController < ApplicationController
 		@specialization = Specialization.find(params[:id])
 
 		@vmilists = Vmilist.where('lower(vmilists.name) LIKE ? and vmilists.specialization_id = ?',
-											 	      "%#{params[:search].downcase}%", "#{params[:id]}")
+											 	      "%#{params[:search].downcase if params[:search]}%", "#{params[:id]}")
 			.limit(10)
 	end
 
