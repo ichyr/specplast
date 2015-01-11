@@ -45,6 +45,9 @@ gem 'will_paginate-bootstrap'
 # Gem for token input in instruktors
 gem 'jquery-tokeninput-rails'
 
+# Gem for Active Job
+gem 'sidekiq'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
