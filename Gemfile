@@ -15,6 +15,8 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
+
+# Application server
 gem 'unicorn'
 gem 'unicorn-rails'
 
@@ -43,6 +45,9 @@ gem 'will_paginate-bootstrap'
 # Gem for token input in instruktors
 gem 'jquery-tokeninput-rails'
 
+# Gem for Active Job
+gem 'sidekiq'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -50,7 +55,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
-  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano-rbenv', "~> 2.0" 
   gem 'foreman'
   gem 'guard-bundler'
   gem 'guard-rails'
