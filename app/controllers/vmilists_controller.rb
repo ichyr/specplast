@@ -17,8 +17,8 @@ class VmilistsController < ApplicationController
     @vmilist = Vmilist.find(params[:id])
     @qualifications = Qualification.includes(:user, :vmilist)
                       .joins(:user)
-                      .where("qualifications.vmilist_id = ? and users.name like ?",
-                        params[:id], "%#{params[:search]}%")
+                      .where("qualifications.vmilist_id = ? and lower(users.name) like ?",
+                        params[:id], "%#{params[:search].downcase}%")
                       .paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
