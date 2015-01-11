@@ -10,7 +10,7 @@ feature 'Sign Up', :devise do
   #   Then I see a successful sign up message
   scenario 'visitor can sign up with valid email address and password' do
     sign_up_with('test@example.com', 'please123', 'please123')
-    expect(page).to have_content I18n.t 'devise.registrations.user.signed_up'
+    expect(page).to have_content I18n.t 'devise.registration.user.signed_up'
   end
 
   # Scenario: Visitor cannot sign up with invalid email address
