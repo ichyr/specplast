@@ -64,9 +64,9 @@ GEM
       capistrano-bundler (>= 1.0.0)
     capistrano-rails-console (0.3.0)
       capistrano (>= 3.0.0)
-    capistrano-rvm (0.1.2)
+    capistrano-rbenv (2.0.1)
       capistrano (~> 3.0)
-      sshkit (~> 1.2)
+      sshkit (~> 1.3)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -362,7 +362,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
   capistrano-rails-console
-  capistrano-rvm (~> 0.1.1)
+  capistrano-rbenv (~> 2.0)
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
