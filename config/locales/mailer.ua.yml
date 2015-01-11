@@ -1,4 +1,5 @@
 ua:
   mailer:
-  	title:
-  		registration: "Welcome to scout specializations system!"
+    company_name: "Сатй спецпластування"
+    title:
+      registration: "Вітамо у системі спецпластування!"

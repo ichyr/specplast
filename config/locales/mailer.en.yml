@@ -1,4 +1,5 @@
 en:
   mailer:
-  	title:
-  		registration: "Welcome to scout specializations system!"
+    company_name: "Scout Specializations"
+    title:
+      registration: "Welcome to scout specializations system!"
