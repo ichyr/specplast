@@ -118,15 +118,19 @@ Currently doing
 
   - SETUP MAILER
     + create gmail account
-    - setup mail
-      - make env variable last through sessions
+    + setup mail
+      + make env variable last through sessions
     + send test mail
-    - setup mil send during devise sign_up
-      - http://stackoverflow.com/questions/17479864/rails-devise-send-user-email-after-sign-up-create
-      
+    + setup mil send during devise sign_up
+      + http://stackoverflow.com/questions/17479864/rails-devise-send-user-email-after-sign-up-create
+      + Enable IMAP for my mail box
+    - setup display name for system to send messages
+      - http://stackoverflow.com/questions/9712916/how-to-setup-devise-sender-name-for-email
+    - I18n devise mail views
+    - setup mailer views
     - setup ActiveJob
       - http://edgeguides.rubyonrails.org/active_job_basics.HTML
-    - setup mailer views
+
 
 
   - resolve bugs found by my wife
