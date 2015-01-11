@@ -7,11 +7,11 @@
       table.table.table-hover
         thead
           tr.row
-            th.col-md-3 = I18n.t "users.name"
+            th.col-md-3.sort-theader = sortable :name, I18n.t("users.name")
             th.text-center.col-md-1 = I18n.t "users.avatar"
-            th.col-md-2 = I18n.t "users.city"
-            th.col-md-2 = I18n.t "users.region"
-            th.col-md-4 = I18n.t "users.vmilists"
+            th.col-md-2.text-center.sort-theader = sortable :city, I18n.t("users.city")
+            th.col-md-2.text-center.sort-theader = sortable :region, I18n.t("users.region")
+            th.col-md-4.text-center = I18n.t "users.vmilists"
 
         tbody
           - @instruktors.each do |instruktor|
