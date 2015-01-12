@@ -14,7 +14,7 @@ set :ssh_options, {
   port: 10375
 }
 
-set :log_level, :info
+set :log_level, :debug
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
@@ -26,11 +26,15 @@ set :keep_releases, 10
 
 namespace :deploy do
 
-  desc "Makes sure local git is in sync with remote."
-  task :check_revision do
-    unless `git rev-parse HEAD` == 'git rev-parse origin/production'
-      puts "WARNING: HEAD is not the same as origin/production"
-      puts "Run `git push` to sync changes."
+  desc "checks whether the currently checkout out revision matches the
+  remote one we're trying to deploy from"
+    task :check_revision do
+      branch = fetch(:branch)
+      unless `git rev-parse HEAD` == `git rev-parse origin/#{branch}`
+        puts "WARNING: HEAD is not the same as origin/#{branch}"
+        puts "Run `git push` to sync changes or make sure you've"
+        puts "checked out the branch: #{branch} as you can only deploy"
+        puts "if you've got the target branch checked out"
       exit
     end
   end
