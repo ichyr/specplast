@@ -12,7 +12,7 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:ichyr/#{application}.git"
-set :branch, "master"
+set :branch, "production"
 
 
 default_run_options[:pty] = true
