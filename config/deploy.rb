@@ -1,7 +1,7 @@
 require "bundler/capistrano"
-require "rvm/capistrano"
+require "rbenv/capistrano"
 
-server "123.123.123.123", :web, :app, :db, primary: true
+server "188.166.34.64", :web, :app, :db, primary: true
 
 set :application, "specplast"
 set :user, "specplast"
@@ -9,6 +9,11 @@ set :port, 22
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+
+set :rbenv_type, :system
+set :rbenv_ruby, '2.1.2'
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
 
 set :scm, "git"
 set :repository, "git@github.com:ichyr/#{application}.git"
