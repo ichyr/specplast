@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Secret tokens and keys
+
+  config.secret_token = Rails.application.secrets.secret_token
+  config.secret_key_base = Rails.application.secrets.secret_key_base
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
