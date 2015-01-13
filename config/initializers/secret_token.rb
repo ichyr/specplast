@@ -12,4 +12,4 @@ else
   ENV['SPECPLAST_PRODUCTION_SECRET_TOKEN'] || SecureRandom.hex(64)
 end
 
-Specplast::Application.config.secret_key_base = Rails.
+Specplast::Application.config.secret_key_base = Rails.application.secrets.secret_key_base
