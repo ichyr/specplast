@@ -1,4 +1,4 @@
-root = "/home/specplast/apps/specplast/current"
+root = "/var/www/specplast_prod/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"

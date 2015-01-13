@@ -7,7 +7,7 @@ set :scm, :git
 set :repo_url,  "git@github.com:ichyr/#{fetch(:application)}.git"
 set :branch, 'production'
 
-set :deploy_to, "/home/specplast/webapp"
+set :deploy_to, "/var/www/specplast_prod"
 
 set :ssh_options, {
   forward_agent: true,
