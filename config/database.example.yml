@@ -31,7 +31,7 @@ production:
   <<: *default
   database: specplast_production
   username: specplast
-  password:
+  password: 
 
 cucumber:
   <<: *test
