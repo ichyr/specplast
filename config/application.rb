@@ -35,5 +35,16 @@ module Specplast
     config.i18n.locale = :ua
 
     config.active_record.schema_format = :sql
+
+
+    puts 'Start of the server'
+    puts 'Start of the server'
+    puts
+    puts
+    puts  
+    puts
+    puts
+    puts 'Start of the server'
+    puts 'Start of the server'
   end
 end

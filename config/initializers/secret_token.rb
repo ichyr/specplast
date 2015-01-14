@@ -9,5 +9,5 @@
 # Rails.application.config.secret_token = ENV['SPECPLAST_PRODUCTION_SECRET_TOKEN'] || SecureRandom.hex(64)
 # Rails.application.config.secret_key_base = Rails.application.secrets.secret_key_base || SecureRandom.hex(64)
 
-Specplast::Application.config.secret_token = ENV['SPECPLAST_PRODUCTION_SECRET_TOKEN'] || SecureRandom.hex(64)
+Specplast::Application.config.secret_token = Rails.application.secrets.secret_token || SecureRandom.hex(64)
 Specplast::Application.config.secret_key_base = Rails.application.secrets.secret_key_base || SecureRandom.hex(64)
