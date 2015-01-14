@@ -3,8 +3,8 @@ Rails.application.configure do
 
   # Secret tokens and keys
 
-  config.secret_token = Rails.application.secrets.secret_token
-  config.secret_key_base = Rails.application.secrets.secret_key_base
+  config.secret_token = "#{Rails.application.secrets.secret_token}"
+  config.secret_key_base = "#{Rails.application.secrets.secret_key_base}"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
