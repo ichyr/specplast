@@ -35,16 +35,5 @@ module Specplast
     config.i18n.locale = :ua
 
     config.active_record.schema_format = :sql
-
-
-    puts 'Start of the server'
-    puts 'Start of the server'
-    puts
-    puts  ENV["SPECPLAST_PRODUCTION_SECRET_TOKEN"]
-    puts
-    puts  ENV["SPECPLAST_PRODUCTION_SECRET_KEY_BASE"]
-    puts
-    puts 'Start of the server'
-    puts 'Start of the server'
   end
 end
