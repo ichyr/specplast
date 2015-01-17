@@ -93,3 +93,8 @@ a.btn {
 #bg-color {
   background-color: #F2DEDE;
 }
+
+// Overrider for visited anchors
+a:visited {
+	color: black;
+}

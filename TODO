@@ -4,11 +4,11 @@ Currently doing
 
   Smoke test:
   - links are grey after click
-  - uploads must be saved in shared directory
-    - http://corlewsolutions.com/articles/article-3-how-to-add-a-new-folder-to-the-shared-directory-in-capistrano-2-15-5
+  + uploads must be saved in shared directory
+    + http://corlewsolutions.com/articles/article-3-how-to-add-a-new-folder-to-the-shared-directory-in-capistrano-2-15-5
   + qualification search error
     + when no vmilsit selected LINE 1: ...ualifications"."vmilist_id" WHERE (vmilist_id in ('') and co...
-  
+
 
 
 
