@@ -17,7 +17,7 @@ set :ssh_options, {
 set :log_level, :debug
 
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp vendor/bundle public/system public/uploads}
 
 SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
 SSHKit.config.command_map[:rails] = "bundle exec rails"
@@ -49,6 +49,7 @@ namespace :deploy do
   end
 
   before :deploy, "deploy:check_revision"
+  after :deploy, "setup:upload_yml"
   after :deploy, "deploy:restart"
   after :rollback, "deploy:restart"
 
