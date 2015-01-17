@@ -45,11 +45,11 @@
       .form-group
         = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
         = f.password_field :password_confirmation, class: 'form-control'
-    fieldset
-      p = I18n.t("devise.user.must_enter_password")
-      .form-group
-        = f.label :current_password, I18n.t("devise.user.current_password")
-        = f.password_field :current_password, class: 'form-control'
+    fieldset#bg-color
+        p = I18n.t("devise.user.must_enter_password")
+        .form-group
+          = f.label :current_password, I18n.t("devise.user.current_password")
+          = f.password_field :current_password, class: 'form-control'
     = f.submit I18n.t("devise.buttons.update"), :class => 'button right'
 .authform
   h4 = I18n.t("devise.user.cancel_account")

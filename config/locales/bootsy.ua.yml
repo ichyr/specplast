@@ -1,4 +1,4 @@
-en:
+ua:
   bootsy:
     action:
       refresh: Оновити
@@ -9,7 +9,7 @@ en:
     image_gallery: Гелерея малюнків
     image:
       s: Малюнок
-      p: Манюнки
+      p: Малюнки
       size: Розмір
       large: Великий
       medium: Середній
