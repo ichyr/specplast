@@ -72,7 +72,7 @@ class ModeratorController < ApplicationController
 
     specialization = current_user.specialization
 
-    if params[:vmilist]
+    if params[:vmilist] && params[:vmilist] != ""
       spec_vmilist_ids = params[:vmilist]
     else
       spec_vmilist_ids = specialization.vmilist_ids
