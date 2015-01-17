@@ -2,9 +2,73 @@ Currently doing
 
 ============================== release version 1.1
 
+  Smoke test:
+  - links are grey after click
+  - 
+
    - add many-to-many association to vmilist-instrukor
      - add delete logic to models dependendy: destroy
      - add meaning to qualification field
+
+  - SETUP MAILER
+    + create gmail account
+    + setup mail
+      + make env variable last through sessions
+    + send test mail
+    + setup mil send during devise sign_up
+      + http://stackoverflow.com/questions/17479864/rails-devise-send-user-email-after-sign-up-create
+      + Enable IMAP for my mail box
+    + setup display name for system to send messages
+      + http://stackoverflow.com/questions/9712916/how-to-setup-devise-sender-name-for-email
+    - error in utf-8 :from field
+      - http://stackoverflow.com/questions/8430940/utf-8-and-actionmailer
+    - I18n devise mail views
+    - setup mailer views
+    - setup ActiveJob
+      - http://edgeguides.rubyonrails.org/active_job_basics.HTML
+
+
+
+  - resolve bugs found by my wife
+    1.    improvement ( need js )
+    2.  +
+    3.  + improvement.
+    4.  ?  bug
+    5.  NOT_A_BUG  test this thing. improvement.
+    6.  +  improvement
+    7.  +  improvement.
+    8.  LOW  improvement.
+    9.  ?  improvement.
+    10. + it is working now. renamed the label.
+    11. + improvement. easy.
+    12.   is it necessary?
+    13. + improvement. IMPORTANT
+    14. + improvement. easy.
+    15.   ?
+    16. + improvement. easy
+    17. + improvement. easy.
+    18. + improvement. easy.
+    19. + bugs? list needs to be sorted by updated_at date
+
+  - group gems, so not all are required in production setup
+
+  + RESOLVED BUGS
+    + N+1 problem with qualifications in vmilist/:id#list
+    + headings in akciji and proba in the general menu items
+    + http://localhost:3000/moderator/qualifications/need_review
+      + filtration not working properly! (results are not shown)
+      + not a bug
+    + no validation on other fields of User model !!! ( ensure uniqueness of email)
+
+  BUG
+    ? image upload on specialization RichText edit
+      - only on heroku version
+    ? avatar preview in edit profile
+    - visited links are grey ! ( disable it! )
+    - sign_up the errors occur, vmilists field in cleared !!!
+
+
+======================= release 1.1 work done
 
    - add tokeninput to instruktor menu
      + gem 'jquery-tokeninput-rails'
@@ -114,65 +178,6 @@ Currently doing
 
       (1.3ms)  SELECT COUNT(DISTINCT "qualifications"."id") FROM "qualifications" INNER JOIN "users" ON "users"."id" = "qualifications"."user_id" LEFT OUTER JOIN "vmilists" ON "vmilists"."id" = "qualifications"."vmilist_id" WHERE (vmilist_id in ('4') and confirmed = 1 and users.name like '%%')
       SQL (2.2ms)  SELECT  users.name, users.avatar, vmilists.name, qualifications.confirmed, "qualifications"."id" AS t0_r0, "qualifications"."user_id" AS t0_r1, "qualifications"."vmilist_id" AS t0_r2, "qualifications"."confirmed" AS t0_r3, "qualifications"."created_at" AS t0_r4, "qualifications"."updated_at" AS t0_r5, "users"."id" AS t1_r0, "users"."email" AS t1_r1, "users"."encrypted_password" AS t1_r2, "users"."reset_password_token" AS t1_r3, "users"."reset_password_sent_at" AS t1_r4, "users"."remember_created_at" AS t1_r5, "users"."sign_in_count" AS t1_r6, "users"."current_sign_in_at" AS t1_r7, "users"."last_sign_in_at" AS t1_r8, "users"."current_sign_in_ip" AS t1_r9, "users"."last_sign_in_ip" AS t1_r10, "users"."created_at" AS t1_r11, "users"."updated_at" AS t1_r12, "users"."name" AS t1_r13, "users"."role" AS t1_r14, "users"."specialization_id" AS t1_r15, "users"."avatar" AS t1_r16, "users"."city" AS t1_r17, "users"."region" AS t1_r18, "users"."description" AS t1_r19, "vmilists"."id" AS t2_r0, "vmilists"."name" AS t2_r1, "vmilists"."child_info" AS t2_r2, "vmilists"."instructor_info" AS t2_r3, "vmilists"."specialization_id" AS t2_r4, "vmilists"."created_at" AS t2_r5, "vmilists"."updated_at" AS t2_r6, "vmilists"."avatar" AS t2_r7 FROM "qualifications" INNER JOIN "users" ON "users"."id" = "qualifications"."user_id" LEFT OUTER JOIN "vmilists" ON "vmilists"."id" = "qualifications"."vmilist_id" WHERE (vmilist_id in ('4') and confirmed = 1 and users.name like '%%') LIMIT 10 OFFSET 0
-
-
-  - SETUP MAILER
-    + create gmail account
-    + setup mail
-      + make env variable last through sessions
-    + send test mail
-    + setup mil send during devise sign_up
-      + http://stackoverflow.com/questions/17479864/rails-devise-send-user-email-after-sign-up-create
-      + Enable IMAP for my mail box
-    + setup display name for system to send messages
-      + http://stackoverflow.com/questions/9712916/how-to-setup-devise-sender-name-for-email
-    - error in utf-8 :from field
-      - http://stackoverflow.com/questions/8430940/utf-8-and-actionmailer
-    - I18n devise mail views
-    - setup mailer views
-    - setup ActiveJob
-      - http://edgeguides.rubyonrails.org/active_job_basics.HTML
-
-
-
-  - resolve bugs found by my wife
-    1.    improvement ( need js )
-    2.  +
-    3.  + improvement.
-    4.  ?  bug
-    5.  NOT_A_BUG  test this thing. improvement.
-    6.  +  improvement
-    7.  +  improvement.
-    8.  LOW  improvement.
-    9.  ?  improvement.
-    10. + it is working now. renamed the label.
-    11. + improvement. easy.
-    12.   is it necessary?
-    13. + improvement. IMPORTANT
-    14. + improvement. easy.
-    15.   ?
-    16. + improvement. easy
-    17. + improvement. easy.
-    18. + improvement. easy.
-    19. + bugs? list needs to be sorted by updated_at date
-
-  - group gems, so not all are required in production setup
-
-  + RESOLVED BUGS
-    + N+1 problem with qualifications in vmilist/:id#list
-    + headings in akciji and proba in the general menu items
-    + http://localhost:3000/moderator/qualifications/need_review
-      + filtration not working properly! (results are not shown)
-      + not a bug
-    + no validation on other fields of User model !!! ( ensure uniqueness of email)
-
-  BUG
-    ? image upload on specialization RichText edit
-      - only on heroku version
-    ? avatar preview in edit profile
-    - visited links are grey ! ( disable it! )
-    - sign_up the errors occur, vmilists field in cleared !!!
-
 
 ==============================
 
