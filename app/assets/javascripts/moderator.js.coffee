@@ -24,7 +24,7 @@ $(document).on "ready page:load", ->
 
 $(document).on "ready page:update", ->
 
-  $(".qualifications_manage a").click (e) ->
+  $(".qualifications_manage a.btn").click (e) ->
     $(this).attr("data-pending", "true")
     e.preventDefault()
     $.get(@href).done(->
