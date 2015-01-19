@@ -1,4 +1,5 @@
 class Vmilist < ActiveRecord::Base
+  include Bootsy::Container
 
   mount_uploader :avatar, AvatarUploader
 

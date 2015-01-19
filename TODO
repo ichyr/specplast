@@ -1,20 +1,17 @@
+  - положення
+
+  - спеціалізаційні заходи - хто їх затвреджує ( спеціалізація - сприяє в методичні базі, інстуркторах, вишколах тощо)
+  - рівні вмілостей - одна вмілість?
+
+
+
 Currently doing
 
 ============================== release version 1.1
+  - апробація вмілості
+  - vmilist and specialization different bootsy views
+  
 
-  Smoke test:
-  - links are grey after click
-  + uploads must be saved in shared directory
-    + http://corlewsolutions.com/articles/article-3-how-to-add-a-new-folder-to-the-shared-directory-in-capistrano-2-15-5
-  + qualification search error
-    + when no vmilsit selected LINE 1: ...ualifications"."vmilist_id" WHERE (vmilist_id in ('') and co...
-
-
-
-
-   - add many-to-many association to vmilist-instrukor
-     - add delete logic to models dependendy: destroy
-     - add meaning to qualification field
 
   - SETUP MAILER
     + create gmail account
@@ -70,11 +67,23 @@ Currently doing
     ? image upload on specialization RichText edit
       - only on heroku version
     ? avatar preview in edit profile
-    - visited links are grey ! ( disable it! )
+    + visited links are grey ! ( disable it! )
     - sign_up the errors occur, vmilists field in cleared !!!
 
 
 ======================= release 1.1 work done
+
+  Smoke test:
+  + links are grey after click
+  + uploads must be saved in shared directory
+    + http://corlewsolutions.com/articles/article-3-how-to-add-a-new-folder-to-the-shared-directory-in-capistrano-2-15-5
+  + qualification search error
+    + when no vmilsit selected LINE 1: ...ualifications"."vmilist_id" WHERE (vmilist_id in ('') and co...
+  + update qualificaton list when vmilsit selection changed
+
+   + add many-to-many association to vmilist-instrukor
+     + add delete logic to models dependendy: destroy
+     + add meaning to qualification field
 
    - add tokeninput to instruktor menu
      + gem 'jquery-tokeninput-rails'
