@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
-  mount_uploaders :documents, DocumentUploader
+  mount_uploader :documents, DocumentUploader
   
   # :user role stands for instructor
   STATUSES = [:instruktor, :moderator, :admin]

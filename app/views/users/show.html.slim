@@ -21,6 +21,10 @@ br/
 	p = @user.description
 
 br/
+- if @user.documents.file
+  .row.text-right = link_to I18n.t("devise.user.documents"), @user.documents.file.url
+
+br/
 
 .row
 	b = I18n.t "devise.user.vmilists"

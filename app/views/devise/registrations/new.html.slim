@@ -15,7 +15,10 @@
     .form-group
       = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
     .form-group
-      = f.file_field :documents, multiple: true
+      = f.label :documents, label: I18n.t("devise.user.documents")
+      = f.file_field :documents
+      = f.hint :documents, hint: I18n.t("devise.user.documents_hint")
+      / , multiple: true, name: "user[documents]"
     .form-group
       = f.label :email, I18n.t("devise.user.email")
       = f.email_field :email, class: 'form-control'

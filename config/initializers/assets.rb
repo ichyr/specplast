@@ -6,3 +6,4 @@ Rails.application.config.assets.version = '0.6'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( progressbar.gif loading.gif )
