@@ -21,7 +21,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 
 # file management
-gem 'carrierwave'
+gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git'
 gem 'rmagick'
 
 # for diagram generation
@@ -33,7 +33,7 @@ gem 'will_paginate', '~> 3.0'
 # PostGreSQL DB
 gem 'pg'
 
-# Assets 
+# Assets
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload

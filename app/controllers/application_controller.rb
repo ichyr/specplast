@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :role
     devise_parameter_sanitizer.for(:account_update) << :specialization_id
     devise_parameter_sanitizer.for(:account_update) << :avatar
+    devise_parameter_sanitizer.for(:account_update) << :documents
     devise_parameter_sanitizer.for(:account_update) << :vmilist_token
     devise_parameter_sanitizer.for(:account_update) << :city
     devise_parameter_sanitizer.for(:account_update) << :region
@@ -26,6 +27,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :role
     devise_parameter_sanitizer.for(:sign_up) << :specialization_id
     devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:sign_up) << :documents
     devise_parameter_sanitizer.for(:sign_up) << :vmilist_token
     devise_parameter_sanitizer.for(:sign_up) << :city
     devise_parameter_sanitizer.for(:sign_up) << :region

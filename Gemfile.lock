@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/carrierwaveuploader/carrierwave.git
+  revision: 0033279be9b62bccb330a6d78c8fa9e21a299d5a
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,6 +48,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (6.0.0)
+    autoprefixer-rails (5.0.0.1)
+      execjs
     bcrypt (3.1.9)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -45,9 +57,10 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
-    bootsy (2.0.12)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
+    bootsy (2.0.13)
       carrierwave (~> 0.10)
       mini_magick (~> 4.0)
       remotipart (~> 1.2)
@@ -75,11 +88,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     childprocess (0.5.5)
@@ -148,7 +156,7 @@ GEM
       bundler (~> 1.0)
       guard (~> 2.2)
       guard-compat (~> 1.1)
-    guard-compat (1.2.0)
+    guard-compat (1.2.1)
     guard-rails (0.7.0)
       guard (~> 2.0)
     guard-rspec (4.5.0)
@@ -188,7 +196,7 @@ GEM
     minitest (5.5.1)
     multi_json (1.10.1)
     multi_test (0.1.1)
-    nenv (0.1.1)
+    nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -376,7 +384,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rbenv
   capybara
-  carrierwave
+  carrierwave!
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner

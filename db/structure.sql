@@ -259,7 +259,8 @@ CREATE TABLE users (
     avatar character varying,
     city character varying,
     region character varying,
-    description text
+    description text,
+    documents json
 );
 
 
@@ -495,4 +496,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141106162220');
 INSERT INTO schema_migrations (version) VALUES ('20141210222059');
 
 INSERT INTO schema_migrations (version) VALUES ('20141224162619');
+
+INSERT INTO schema_migrations (version) VALUES ('20150119225402');
 
