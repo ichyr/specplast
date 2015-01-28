@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  mount Bootsy::Engine => '/bootsy' , as: 'bootsy'
 
 
   resources :vmilists do
@@ -51,9 +51,11 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#delete'
 
   # Exceptions and errors 
-  get '/403', to: "error#error_403"
-  get '/404', to: "error#error_404"
-  get '/500', to: "error#error_500"
+  namespace :admin do
+    get '/403', to: "error#error_403"
+    get '/404', to: "error#error_404"
+    get '/500', to: "error#error_500"
+  end
 
   # Default root
   get '*path', to: redirect("/404")

@@ -7,7 +7,7 @@ class Specialization < ActiveRecord::Base
 
   accepts_nested_attributes_for :specdatum, allow_destroy: true
 
-  validates :name, presence: true, length: { minimum: 4},
-                   uniqueness: {case_sensitive: false}
+  validates :name, presence: true, length: { minimum: 4 },
+                   uniqueness: { case_sensitive: false }
   
 end
