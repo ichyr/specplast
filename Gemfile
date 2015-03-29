@@ -63,6 +63,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -89,4 +90,5 @@ group :test do
 
   # for Travis CI
   gem 'rake'
+  gem 'spork'
 end
