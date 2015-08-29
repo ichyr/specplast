@@ -295,7 +295,8 @@ CREATE TABLE vmilists (
     specialization_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    avatar character varying
+    avatar character varying,
+    status integer
 );
 
 
@@ -498,4 +499,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141210222059');
 INSERT INTO schema_migrations (version) VALUES ('20141224162619');
 
 INSERT INTO schema_migrations (version) VALUES ('20150119225402');
+
+INSERT INTO schema_migrations (version) VALUES ('20150829172041');
 

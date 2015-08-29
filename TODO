@@ -1,18 +1,50 @@
-  - положення
+  ###  Improvements  #### 
+
+  - Password fields present on an insecure (http://) page. This is a security risk that allows user login credentials to be stolen.[Learn More]
+
+  ====  Chrome add-ons ====
+  - layot load
+  - live page
+
+Version 2.0
+- Create registry of skobs and virlytsi
+- add skob registry to proby as searchable/paginatable table http://filterrific.clearcove.ca/
+
+TODO
+- Add general overview for vmilist
+- locate all constants somewhere
+
+General Info canditates
+  - цитата на першій сторінці
+  - положення про вмілості
+  - положення про спеціалізації
+  - положення про крайову булаву спеціалізацій
+
+
+Спеціалізація:
+- Назви сторінок
+- фотопідтвердження кваліфікації
+
+1. Фільтр по станиці|окрузі у списках інструкторів ( ХЧир)  http://filterrific.clearcove.ca/
+2. Можливість дочлучення файлу ( МБігус)
+3. Відрізняти апробаційну вмілість від затвердженої
+
+
+================= NARADA INFO ======================
+    - положення
 
   - спеціалізаційні заходи - хто їх затвреджує ( спеціалізація - сприяє в методичні базі, інстуркторах, вишколах тощо)
   - рівні вмілостей - одна вмілість?
   - фінансування на розвиток булави?
-  -
 
-
+====================================================
 
 Currently doing
 
 ============================== release version 1.1
   - апробація вмілості
-    - add fields to scheme
-    - add fields to model
+    + add fields to scheme
+    + add fields to model
     - add view to forms
       - checkbox for status
       - textbox for date|reason
@@ -217,27 +249,6 @@ Currently doing
   - maybe delete index action in users controller?
 
 
-  ###  Improvements  #### 
-
-  - Password fields present on an insecure (http://) page. This is a security risk that allows user login credentials to be stolen.[Learn More]
-
-  ====  Chrome add-ons ====
-  - layot load
-  - live page
-
-Version 2.0
-- Create registry of skobs and virlytsi
-- add skob registry to proby as searchable/paginatable table
-
-TODO
-- Add general overview for vmilist
-- locate all constants somewhere
-
-General Info canditates
-  - цитата на першій сторінці
-  - положення про вмілості
-  - положення про спеціалізації
-  - положення про крайову булаву спеціалізацій
 
 
 ================== RELEASE 1.0 ================= BACKLOG

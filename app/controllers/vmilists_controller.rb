@@ -97,6 +97,6 @@ class VmilistsController < ApplicationController
     def vmilist_params
       params.require(:vmilist).permit(:name, :avatar, :child_info, 
                                       :instructor_info, :specialization_id,
-                                      :users, :bootsy_image_gallery_id)
+                                      :users, :bootsy_image_gallery_id, :status)
     end
 end
