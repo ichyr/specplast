@@ -7,6 +7,7 @@
       thead
         tr.row
           th = I18n.t("activerecord.attributes.vmilist.name")
+          th = I18n.t("activerecord.attributes.vmilist.status_short")
           th.text-center = I18n.t("activerecord.attributes.vmilist.avatar")
           th
           th
@@ -16,6 +17,7 @@
         - @vmilists.each do |vmilist|
           tr.row
             td = vmilist.name
+            th = vmilist.status
             td = image_tag vmilist.avatar.url(:thumb).to_s, size: "25x25" if vmilist.avatar
             td = link_to I18n.t("actions.show"), vmilist, :class => "btn btn-sm btn-info"
             td = link_to I18n.t("actions.edit"), edit_vmilist_path(vmilist), :class => "btn btn-sm btn-warning"
