@@ -98,3 +98,19 @@ a.btn {
 a:visited {
 	color: black;
 }
+
+.overlay {
+	position:absolute;
+  left:130px;
+  top:70px;
+
+  font-size: 30px;
+}
+
+.status-pending {
+	color: orange;
+}
+
+.status-accepted {
+	color: green;
+}

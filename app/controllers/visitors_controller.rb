@@ -12,8 +12,9 @@ class VisitorsController < ApplicationController
 	end
 
 	def vmilosti
-		@vmilists = Vmilist.select(:id, :name, :avatar)
+		@vmilists = Vmilist.select(:id, :name, :avatar, :status)
 											 .where("lower(name) like ?", "%#{search_query}%")
+											 .order(name: :asc)
 			                 .paginate(:page => params[:page], :per_page => 12)
 	end
 

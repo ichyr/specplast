@@ -23,7 +23,7 @@ class Vmilist < ActiveRecord::Base
   def check_defaults 
     self.child_info ||= VMILIST_REQUIREMENTS_DEFAULT_TEXT
     self.instructor_info ||= VMILIST_REQUIREMENTS_DEFAULT_TEXT
-    self.status ||= VMILIST_STATUS[:TRIAL]
+    self.status ||= false
   end
 
 end

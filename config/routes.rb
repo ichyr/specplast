@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   mount Bootsy::Engine => '/bootsy' , as: 'bootsy'
 
-
   resources :vmilists do
     collection do
       get 'preview'
@@ -58,6 +57,6 @@ Rails.application.routes.draw do
   end
 
   # Default root
-  get '*path', to: redirect("/404")
+  get '*unmatched_route', to: "error#error_404"
 
 end

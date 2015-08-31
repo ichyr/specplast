@@ -54,6 +54,7 @@ en:
       vmilist:
         name: "name"
         avatar: "avatar"
+        status: "status"
         child_info: "Scouts checklist"
         instructor_info: "Instruktor qualifications"
         create_success: 'Vmilist was successfully created.'
