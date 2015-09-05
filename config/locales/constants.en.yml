@@ -1,0 +1,9 @@
+en:
+  constants:
+    vmilist_status:
+      trial: "on trial period"
+      approved: "approved"
+      discussion: "in discussion phase"
+    specialization_status:
+      initiative_group: "Initiative group"
+      specialization: "Active specialization"

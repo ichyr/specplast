@@ -14,4 +14,9 @@ module VmilistsHelper
 		}
 		result
 	end
+
+	def vmilist_status_decoder(status)
+		key = VMILIST_STATUS.key(status)
+		I18n.t("constants.vmilist_status.#{key}")
+	end
 end

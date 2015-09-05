@@ -9,10 +9,20 @@ TO_DELETE = 4
 
 VMILIST_REQUIREMENTS_DEFAULT_TEXT = "Даний розділ ще не є заповнений інформацією!"
 
-# Constants for vmilist statuses
+# Constants for vmilist statuses 
+# Currently not used
 
 VMILIST_STATUS = {
-	TRIAL: 1,
-	APPROVED: 2,
-	RENEWAL: 3
+	'trial' => 0,
+	'approved' => 1,
+	'discussion' => 2
+}
+
+
+# Constants for pecialization statuses
+# When change - change the config/locales/constatnts.yml
+
+SPECIALIZATION_STATUS = {
+	'initiative_group' => 0,
+	'specialization' => 1,
 }

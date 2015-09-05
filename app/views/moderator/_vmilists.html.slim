@@ -17,7 +17,7 @@
         - @vmilists.each do |vmilist|
           tr.row
             td = vmilist.name
-            th = vmilist.status
+            th = vmilist_status_decoder(vmilist.status)
             td = image_tag vmilist.avatar.url(:thumb).to_s, size: "25x25" if vmilist.avatar
             td = link_to I18n.t("actions.show"), vmilist, :class => "btn btn-sm btn-info"
             td = link_to I18n.t("actions.edit"), edit_vmilist_path(vmilist), :class => "btn btn-sm btn-warning"
