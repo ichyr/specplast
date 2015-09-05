@@ -42,6 +42,7 @@ en:
       save_bulava: "Save changes"
       name: "Name"
       avatar: "Avatar"
+      status: "Status"
       button:
         new: "New Specialization"
         show: "Show"

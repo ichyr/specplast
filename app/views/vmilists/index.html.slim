@@ -26,7 +26,8 @@ br
         - @vmilists.each do |vmilist|
           tr.row
             td = vmilist.name
-            td = image_tag vmilist.avatar.url(:thumb).to_s if vmilist.avatar
+            td = raw decorate_vmilist_with_state(vmilist)
+            / td = image_tag vmilist.avatar.url(:thumb).to_s if vmilist.avatar
             td = vmilist.child_info
             td = vmilist.instructor_info
             td = vmilist.specialization_id

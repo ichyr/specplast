@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   def index
     authorize :admin, :index?
 
-  	@specializations = Specialization.select(:name, :avatar, :id).all
+  	@specializations = Specialization.select(:name, :avatar, :id, :status).all
   											.paginate(:page => params[:page], :per_page => 10)
   end
 

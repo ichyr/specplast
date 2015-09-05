@@ -212,7 +212,8 @@ CREATE TABLE specializations (
     name character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    avatar character varying
+    avatar character varying,
+    status integer DEFAULT 0
 );
 
 
@@ -501,4 +502,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141224162619');
 INSERT INTO schema_migrations (version) VALUES ('20150119225402');
 
 INSERT INTO schema_migrations (version) VALUES ('20150829172041');
+
+INSERT INTO schema_migrations (version) VALUES ('20150905071601');
 

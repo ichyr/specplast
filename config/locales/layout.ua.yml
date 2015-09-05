@@ -42,6 +42,7 @@ ua:
       save_bulava: "Зберегти зміни"
       name: "Назва"
       avatar: "Світлина"
+      status: "Статус"
       button:
         new: "Нова спеціалізація"
         show: "Відкрити"
