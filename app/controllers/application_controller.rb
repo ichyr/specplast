@@ -17,17 +17,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| 
       u.permit( :name, :email, :role,
                 :specialization_id, :avatar, :vmilist_token,
-                :city, :region, :description,
+                :city, :region, :description, :current_password,
                 attachments_attributes: [:id, :file, :_destroy] )
     }
 
     devise_parameter_sanitizer.for(:sign_up) { |u| 
       u.permit( :name, :email, :role,
                 :specialization_id, :avatar, :vmilist_token,
-                :city, :region, :description,
+                :city, :region, :description, :current_password,
                 attachments_attributes: [:id, :file, :_destroy] )
     }
-    
+
   end
 
   private

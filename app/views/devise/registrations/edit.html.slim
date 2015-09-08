@@ -24,6 +24,7 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
     p.row.control-label = f.label :file 
     = f.fields_for :attachments do |attachment_form|
       .row.form-inputs.margin-bottom-30
+        .col-sm-2 = attachment_form.object.file.filename
         .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true", placeholder: "#{attachment_form.object.file.filename}"}
         .col-sm-offset-1.col-sm-2 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
 
@@ -60,13 +61,14 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
         = f.label :current_password, I18n.t("devise.user.current_password")
         = f.password_field :current_password, class: 'form-control'
   = f.submit I18n.t("devise.buttons.update"), :class => 'btn btn-primary pull-right'
+
 .authform
   h4 = I18n.t("devise.user.cancel_account")
   p = I18n.t("devise.user.unhappy")
   = button_to I18n.t("devise.user.cancel_my_account"), registration_path(resource_name), :data => { :confirm => I18n.t("devise.user.are_you_sure") }, :method => :delete, :class => 'button'
 
 javascript:
-  $(document).ready(function(){
+  $(document).on("ready page:update", function(){
     $(document).on('nested:fieldAdded', function(event){
       $(":file").filestyle({buttonText: 'Find file',
                             buttonBefore: 'true',
