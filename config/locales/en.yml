@@ -1,4 +1,7 @@
 en:
+  attachment:
+    add: "Add attachment"
+    remove: "Remove item"
   alerts:
     are_you_sure: "Are you sure?"
   actions:

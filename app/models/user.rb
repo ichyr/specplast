@@ -1,6 +1,13 @@
 class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
-  mount_uploader :documents, DocumentUploader
+
+
+  # mount_uploaders :documents, DocumentUploader
+  has_many :attachments, as: :attachable
+  accepts_nested_attributes_for :attachments, :allow_destroy => true,
+    reject_if: proc { |attributes| attributes['file'].blank? }
+                                
+
   
   # :user role stands for instructor
   STATUSES = [:instruktor, :moderator, :admin]

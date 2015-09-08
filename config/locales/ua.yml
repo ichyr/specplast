@@ -1,4 +1,7 @@
 ua:
+  attachment:
+    add: "Додати файл"
+    remove: "Видалити файл"
   alerts:
     are_you_sure: "Ви впевнені у цьому?"
   actions:
