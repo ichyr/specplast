@@ -21,7 +21,7 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
     = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
   .form-group
 
-    p.row.control-label = f.label :file 
+    p.control-label = f.label I18n.t("devise.user.documents")
     = f.fields_for :attachments do |attachment_form|
       .row.form-inputs.margin-bottom-30
         -if attachment_form.object.id

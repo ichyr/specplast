@@ -21,13 +21,15 @@ br/
 	p = @user.description
 
 br/
-b = I18n.t("devise.user.documents")
-ul
-- @user.attachments.each do |file|
-  li.col-sm-offset-1 = link_to file.file.file.filename, file.file.url
-
-br/
 
 .row
 	b = I18n.t "devise.user.vmilists"
 	p = raw decorate_set(@user)
+
+br/
+
+.row.margin-bottom-20
+	b = I18n.t("devise.user.documents")
+	ul
+	- @user.attachments.each do |file|
+	  li.col-sm-offset-1 = link_to file.file.file.filename, file.file.url

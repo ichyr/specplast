@@ -16,17 +16,17 @@
       = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
     .form-group
 
-      = f.fields_for :attachments do |attachment_form|
-        fieldset.margin-bottom-10.single-task
-          .row.form-inputs.margin-bottom-10
-            p.control-label.col-sm-1 = attachment_form.label :file 
-            .col-sm-11 = attachment_form.file_field :file, class: "form-control"
+    p.control-label = f.label I18n.t("devise.user.documents")
+    = f.fields_for :attachments do |attachment_form|
+      .row.form-inputs.margin-bottom-30
+        -if attachment_form.object.id
+          .col-sm-8 = attachment_form.object.file.file.filename
+        -else
+          .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true"}
+        .col-sm-offset-1.col-sm-2 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
 
-          .row.col-sm-offset-1 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
-
-      = f.link_to_add I18n.t("attachment.add"), :attachments, class: "btn btn-success pull-right"
-      = f.hint :documents, hint: I18n.t("devise.user.documents_hint")
-    
+    = f.link_to_add I18n.t("attachment.add"), :attachments, class: "btn btn-success pull-right"
+    = f.hint :documents, hint: I18n.t("devise.user.documents_hint")
 
     .form-group
       = f.label :email, I18n.t("devise.user.email")
