@@ -24,8 +24,10 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
     p.row.control-label = f.label :file 
     = f.fields_for :attachments do |attachment_form|
       .row.form-inputs.margin-bottom-30
-        .col-sm-2 = attachment_form.object.file.filename
-        .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true", placeholder: "#{attachment_form.object.file.filename}"}
+        -if attachment_form.object.id
+          .col-sm-8 = attachment_form.object.file.file.filename
+        -else
+          .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true"}
         .col-sm-offset-1.col-sm-2 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
 
     = f.link_to_add I18n.t("attachment.add"), :attachments, class: "btn btn-success pull-right"
@@ -70,12 +72,12 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
 javascript:
   $(document).on("ready page:update", function(){
     $(document).on('nested:fieldAdded', function(event){
-      $(":file").filestyle({buttonText: 'Find file',
+      $(":file").filestyle({buttonText: "#{I18n.t('devise.user.select_file')}",
                             buttonBefore: 'true',
                             buttonName: 'btn-primary'});
     });
 
-    $(":file").filestyle({buttonText: 'Find file',
+    $(":file").filestyle({buttonText: "#{I18n.t('devise.user.select_file')}",
                             buttonBefore: 'true',
                             buttonName: 'btn-primary'});
   });
