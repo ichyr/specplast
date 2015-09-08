@@ -21,8 +21,10 @@ br/
 	p = @user.description
 
 br/
-- if @user.documents.file
-  .row.text-right = link_to I18n.t("devise.user.documents"), @user.documents.file.url
+b = I18n.t("devise.user.documents")
+ul
+- @user.attachments.each do |file|
+  li.col-sm-offset-1 = link_to file.file.file.filename, file.file.url
 
 br/
 
