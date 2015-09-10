@@ -54,4 +54,18 @@ class User < ActiveRecord::Base
       [I18n.t("activerecord.attributes.#{model_name.i18n_key}.roles.#{role}"), role]
     end
   end
+
+  # unique list of cities of instruktors
+  def self.get_cities_list
+    User.select("distinct city")
+        .where("city != ''")
+        .map {|a| a.city}.sort
+  end
+
+  # unique list of cities of instruktors
+  def self.get_regions_list
+    User.select("distinct region")
+        .where("region != ''")
+        .map {|a| a.region}.sort
+  end
 end
