@@ -26,7 +26,7 @@ class VisitorsController < ApplicationController
 		puts ""
 		@instruktors = User.select(:id, :name, :avatar, :city, :region)
 											 .includes(:vmilists)
-											 .where("lower(name) like ? AND lower(city) like ? AND lower(region) like ?",
+											 .where("lower(name) like ? AND city like ? AND region like ?",
 											 	"%#{search_query}%", "%#{search_city}%", "%#{search_region}%")
 											 .order(sort_column + " " + sort_direction)
 											 .paginate(:page => params[:page], :per_page => 10)
@@ -68,15 +68,15 @@ class VisitorsController < ApplicationController
   end
 
   def search_query
-  	params["search"]["name"].downcase if params["search"] && params["search"]["name"]
+  	params["search"]["name"].mb_chars.downcase.to_s if params["search"] && params["search"]["name"]
   end
 
   def search_city
-  	params["search"]["city"].downcase if params["search"] && params["search"]["city"]
+  	params["search"]["city"] if params["search"] && params["search"]["city"]
   end
 
 	def search_region
-  	params["search"]["region"].downcase if params["search"] && params["search"]["region"]
+  	params["search"]["region"] if params["search"] && params["search"]["region"]
   end  
 
 end

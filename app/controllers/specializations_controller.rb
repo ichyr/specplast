@@ -16,7 +16,7 @@ class SpecializationsController < ApplicationController
     @specialization = Specialization.find(params[:id])
     @vmilists = Vmilist.select(:id, :name, :avatar, :status)
       .where('lower(vmilists.name) LIKE ? and vmilists.specialization_id = ?', 
-        "%#{params[:search].downcase if params[:search]}%", "#{params[:id]}")
+        "%#{params[:search].mb_chars.downcase.to_s if params[:search]}%", "#{params[:id]}")
       .paginate per_page: 9, page: params[:page]
   end
 
