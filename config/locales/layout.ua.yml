@@ -75,6 +75,9 @@ ua:
     vmilist:
       new: "Створення вмілості"
       editing: "Редагування вмілості"
+    selects:
+      city: "Оберіть станицю"
+      region: "Оберіть округу"
   buttons:
     edit: "Редагувати"
     delete: "Видалити"

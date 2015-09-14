@@ -76,6 +76,9 @@ en:
     vmilist:
       new: "New vmilist"
       editing: "Editing vmilist"
+    selects:
+      city: "Pick city"
+      region: "Pick region"
   buttons:
     edit: "Edit"
     delete: "Delete"
