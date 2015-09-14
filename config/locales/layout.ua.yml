@@ -13,7 +13,7 @@ ua:
     provid_page: "Провід"
     bulava_page: "Булава"
     search_label: "Пошук"
-    search_placeholder: "Введіть ім'я для пошуку"
+    search_placeholder: "Шукати по імені"
     search_vmilist_label: "Вибрати за вмілістю"
     no_specializations: "В базі даних немає відомостей про жодну спеціалізацію"
     no_vmilist: "В дані спеціалізації поки що немає наявних вмілостей"
