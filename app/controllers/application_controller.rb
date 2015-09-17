@@ -13,23 +13,21 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) << :name
-    devise_parameter_sanitizer.for(:account_update) << :role
-    devise_parameter_sanitizer.for(:account_update) << :specialization_id
-    devise_parameter_sanitizer.for(:account_update) << :avatar
-    devise_parameter_sanitizer.for(:account_update) << :vmilist_token
-    devise_parameter_sanitizer.for(:account_update) << :city
-    devise_parameter_sanitizer.for(:account_update) << :region
-    devise_parameter_sanitizer.for(:account_update) << :description
 
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :role
-    devise_parameter_sanitizer.for(:sign_up) << :specialization_id
-    devise_parameter_sanitizer.for(:sign_up) << :avatar
-    devise_parameter_sanitizer.for(:sign_up) << :vmilist_token
-    devise_parameter_sanitizer.for(:sign_up) << :city
-    devise_parameter_sanitizer.for(:sign_up) << :region
-    devise_parameter_sanitizer.for(:sign_up) << :description
+    devise_parameter_sanitizer.for(:account_update) { |u| 
+      u.permit( :name, :email, :role, :password, :password_confirmation,
+                :specialization_id, :avatar, :vmilist_token,
+                :city, :region, :description, :current_password,
+                attachments_attributes: [:id, :file, :_destroy] )
+    }
+
+    devise_parameter_sanitizer.for(:sign_up) { |u| 
+      u.permit( :name, :email, :role, :password, :password_confirmation,
+                :specialization_id, :avatar, :vmilist_token,
+                :city, :region, :description, :current_password,
+                attachments_attributes: [:id, :file, :_destroy] )
+    }
+
   end
 
   private

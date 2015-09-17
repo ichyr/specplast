@@ -4,6 +4,7 @@ en:
   devise:
     user:
       name: "Name"
+      select_file: "Select file"
       phone: "Phone"
       password: "Password"
       email: "Email"
@@ -35,6 +36,8 @@ en:
       region: "District/Region"
       description: "Qualification summary"
       description_hint: "Here you can specify received certificates, diplomas, and categorical level achievements in the specified field relating to vmilosti and specialization, and work experience in the specified field and position. Please specify the information as clearly as possible (time, institution, place, etc.)."
+      documents: "Supporting documents"
+      documents_hint: "Visible only for specializations management"
     buttons:
       update: "Update"
     confirmations:

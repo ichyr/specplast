@@ -2,4 +2,8 @@ ua:
   mailer:
     company_name: "Сатй спецпластування"
     title:
-      registration: "Вітамо у системі спецпластування!"
+      registration: "Вітаємо у системі спецпластування!"
+    registration:
+      greeting: "Вітаємо"
+    letter_end: "З повагою"
+    development_team: "Команда розробки"

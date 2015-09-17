@@ -13,12 +13,13 @@ class VmilistsController < ApplicationController
   # GET /vmilists/1
   # GET /vmilists/1.json
   def show
-
     @vmilist = Vmilist.find(params[:id])
-    @qualifications = Qualification.includes(:user, :vmilist)
+    @qualifications = Qualification.includes(:user)
                       .joins(:user)
-                      .where("qualifications.vmilist_id = ? and lower(users.name) like ?",
-                        params[:id], "%#{params[:search].downcase if params[:search]}%")
+                      .where('"qualifications"."vmilist_id" = ?', params[:id])
+                      .where('lower("users"."name") like ?', "%#{search_query}%")
+                      .where('"users"."city" like ?', "%#{search_city}%")
+                      .where('"users"."region" like ?', "%#{search_region}%")
                       .paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
@@ -48,7 +49,8 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       if @vmilist.save
-        format.html {  redirect_to moderator_path, notice: I18n.t("activerecord.attributes.vmilist.create_success") }
+        format.html {  redirect_to moderator_path, 
+          notice: I18n.t("activerecord.attributes.vmilist.create_success") }
       else
         format.html { render :new }
       end
@@ -62,7 +64,8 @@ class VmilistsController < ApplicationController
 
     respond_to do |format|
       if @vmilist.update(vmilist_params)
-        format.html { redirect_to moderator_path, notice: I18n.t("activerecord.attributes.vmilist.update_success") }
+        format.html { redirect_to moderator_path, 
+          notice: I18n.t("activerecord.attributes.vmilist.update_success") }
       else
         format.html { render :edit }
       end
@@ -95,7 +98,20 @@ class VmilistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vmilist_params
-      params.require(:vmilist).permit(:name, :avatar, :child_info, :instructor_info, 
-                                      :specialization_id, :users)
+      params.require(:vmilist).permit(:name, :avatar, :child_info, 
+                                      :instructor_info, :specialization_id,
+                                      :users, :bootsy_image_gallery_id, :status)
     end
+
+    def search_query
+      params["search"]["name"].mb_chars.downcase.to_s if params["search"] && params["search"]["name"]
+    end
+
+    def search_city
+      params["search"]["city"] if params["search"] && params["search"]["city"]
+    end
+
+    def search_region
+      params["search"]["region"] if params["search"] && params["search"]["region"]
+    end  
 end

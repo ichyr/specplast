@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
+
+
+  # mount_uploaders :documents, DocumentUploader
+  has_many :attachments, as: :attachable
+  accepts_nested_attributes_for :attachments, :allow_destroy => true,
+    reject_if: proc { |attributes| attributes['file'].blank? }
+                                
+
   
   # :user role stands for instructor
   STATUSES = [:instruktor, :moderator, :admin]
@@ -45,5 +53,19 @@ class User < ActiveRecord::Base
     roles.map do |role, _|
       [I18n.t("activerecord.attributes.#{model_name.i18n_key}.roles.#{role}"), role]
     end
+  end
+
+  # unique list of cities of instruktors
+  def self.get_cities_list
+    User.select("distinct city")
+        .where("city != ''")
+        .map {|a| a.city}.sort
+  end
+
+  # unique list of cities of instruktors
+  def self.get_regions_list
+    User.select("distinct region")
+        .where("region != ''")
+        .map {|a| a.region}.sort
   end
 end

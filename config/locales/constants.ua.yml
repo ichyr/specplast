@@ -1,0 +1,9 @@
+ua:
+  constants:
+    vmilist_status:
+      trial: "апробація"
+      approved: "затверджена"
+      discussion: "обговорення"
+    specialization_status:
+      initiative_group: "Ініціативна група"
+      specialization: "Спеціалізація"

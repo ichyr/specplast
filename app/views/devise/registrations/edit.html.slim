@@ -1,57 +1,84 @@
-.authform
-  h3.text-center.content-header = I18n.t "devise.user.edit"
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :method => :put, :role => 'form'}) do |f|
-    - if devise_error_messages! && devise_error_messages! != ""
-      .alert.alert-danger = devise_error_messages!
+h3.text-center.content-header = I18n.t "devise.user.edit"
+= simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :method => :put, :role => 'form'}) do |f|
+  - if devise_error_messages! && devise_error_messages! != ""
+    .alert.alert-danger = devise_error_messages!
+  .form-group
+    = f.label :name, I18n.t("devise.user.name")
+    = f.text_field :name, :autofocus => true, class: 'form-control'
+  .form-group
+    = f.label :email, I18n.t("devise.user.email")
+    = f.email_field :email, class: 'form-control'
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      div
+        | Currently waiting confirmation for: #{resource.unconfirmed_email}
+  .form-group
+    = f.label :city, I18n.t("devise.user.city")
+    = f.text_field :city, class: 'form-control'
+  .form-group
+    = f.label :region, I18n.t("devise.user.region")
+    = f.text_field :region, class: 'form-control'
+  .form-group
+    = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
+  .form-group
+
+    p.control-label = f.label I18n.t("devise.user.documents")
+    = f.fields_for :attachments do |attachment_form|
+      .row.form-inputs.margin-bottom-30
+        -if attachment_form.object.id
+          .col-sm-8 = attachment_form.object.file.file.filename
+        -else
+          .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true"}
+        .col-sm-offset-1.col-sm-2 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
+
+    = f.link_to_add I18n.t("attachment.add"), :attachments, class: "btn btn-success pull-right"
+    = f.hint :documents, hint: I18n.t("devise.user.documents_hint")
+  .form-group
+     = f.label :avatar, I18n.t("devise.user.avatar")
+  .form-group
+    .upload-preview
+      = image_tag @user.avatar.url(:thumb).to_s
+  .form-group
+    = f.file_field :avatar, class: "file"
+  .form-group
+    = f.label :vmilist_token, I18n.t("devise.user.vmilists")
+    = f.text_field :vmilist_token, "data-pre" => ( current_user.vmilists ? current_user.vmilists.map(&:attributes).to_json : "" ), "data-url" => preview_vmilists_path, class: 'form-control token_input'
+  .form-group
+    = f.label :name, I18n.t("users.role"), class: 'col-sm-6'
+    = f.label I18n.t("users.roles.#{@user.role}"), class: 'col-sm-6'
+  - if @user.role == "moderator"
     .form-group
-      = f.label :name, I18n.t("devise.user.name")
-      = f.text_field :name, :autofocus => true, class: 'form-control'
+      = f.label I18n.t("layout.models.specialization"), class: 'col-sm-6'
+      = f.label @user.specialization.name, class: 'col-sm-6'
+  fieldset
+    p = I18n.t("devise.user.live_it_blank")
     .form-group
-      = f.label :email, I18n.t("devise.user.email")
-      = f.email_field :email, class: 'form-control'
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        div
-          | Currently waiting confirmation for: #{resource.unconfirmed_email}
+      = f.label :password, I18n.t("devise.user.password")
+      = f.password_field :password, :autocomplete => 'off', class: 'form-control'
     .form-group
-      = f.label :city, I18n.t("devise.user.city")
-      = f.text_field :city, class: 'form-control'
-    .form-group
-      = f.label :region, I18n.t("devise.user.region")
-      = f.text_field :region, class: 'form-control'
-    .form-group
-      = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
-    .form-group
-       = f.label :avatar, I18n.t("devise.user.avatar")
-    .form-group
-      .upload-preview
-        = image_tag @user.avatar.url(:thumb).to_s
-    .form-group
-      = f.file_field :avatar, class: "file"
-    .form-group
-      = f.label :vmilist_token, I18n.t("devise.user.vmilists")
-      = f.text_field :vmilist_token, "data-pre" => ( current_user.vmilists ? current_user.vmilists.map(&:attributes).to_json : "" ), "data-url" => preview_vmilists_path, class: 'form-control token_input'
-    .form-group
-      = f.label :name, I18n.t("users.role"), class: 'col-sm-6'
-      = f.label I18n.t("users.roles.#{@user.role}"), class: 'col-sm-6'
-    - if @user.role == "moderator"
-      .form-group
-        = f.label I18n.t("layout.models.specialization"), class: 'col-sm-6'
-        = f.label @user.specialization.name, class: 'col-sm-6'
-    fieldset
-      p = I18n.t("devise.user.live_it_blank")
-      .form-group
-        = f.label :password, I18n.t("devise.user.password")
-        = f.password_field :password, :autocomplete => 'off', class: 'form-control'
-      .form-group
-        = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
-        = f.password_field :password_confirmation, class: 'form-control'
-    fieldset
+      = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
+      = f.password_field :password_confirmation, class: 'form-control'
+  fieldset#bg-color
       p = I18n.t("devise.user.must_enter_password")
       .form-group
         = f.label :current_password, I18n.t("devise.user.current_password")
         = f.password_field :current_password, class: 'form-control'
-    = f.submit I18n.t("devise.buttons.update"), :class => 'button right'
+  = f.submit I18n.t("devise.buttons.update"), :class => 'btn btn-primary pull-right'
+
 .authform
   h4 = I18n.t("devise.user.cancel_account")
   p = I18n.t("devise.user.unhappy")
-  = button_to I18n.t("devise.user.cancel_my_account"), registration_path(resource_name), :data => { :confirm => I18n.t("devise.user.are_you_sure") }, :method => :delete, :class => 'button right'
+  = button_to I18n.t("devise.user.cancel_my_account"), registration_path(resource_name), :data => { :confirm => I18n.t("devise.user.are_you_sure") }, :method => :delete, :class => 'button'
+
+javascript:
+  $(document).on("ready page:update", function(){
+    $(document).on('nested:fieldAdded', function(event){
+      $(":file").filestyle({buttonText: "#{I18n.t('devise.user.select_file')}",
+                            buttonBefore: 'true',
+                            buttonName: 'btn-primary'});
+    });
+
+    $(":file").filestyle({buttonText: "#{I18n.t('devise.user.select_file')}",
+                            buttonBefore: 'true',
+                            buttonName: 'btn-primary'});
+  });
+  

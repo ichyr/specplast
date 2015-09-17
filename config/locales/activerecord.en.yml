@@ -54,6 +54,8 @@ en:
       vmilist:
         name: "name"
         avatar: "avatar"
+        status: "Status deternimes whether vmilist is active or not (trial period or discussion)."
+        status_short: "Status"
         child_info: "Scouts checklist"
         instructor_info: "Instruktor qualifications"
         create_success: 'Vmilist was successfully created.'

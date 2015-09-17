@@ -3,3 +3,7 @@ en:
     company_name: "Scout Specializations"
     title:
       registration: "Welcome to scout specializations system!"
+    registration:
+      greeting: "Hello"
+    letter_end: "Sincerely yours"
+    development_team: "Development team"

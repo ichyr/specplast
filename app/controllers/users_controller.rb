@@ -50,7 +50,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :role,
                                    :specialization_id, :avatar, :vmilist_token,
-                                   :city, :region, :description)
+                                   :city, :region, :description,
+                                   attachments_attributes: [:id, :file, :_destroy])
     end
 
     def form_route role

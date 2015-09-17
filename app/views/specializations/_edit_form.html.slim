@@ -53,6 +53,11 @@
                 br
                 = f.text_field :name, inner_html: {class: 'form-control'}
                 br
+                = f.input :status, collection: SPECIALIZATION_STATUS.keys, 
+                                   label_method: ->(obj){ I18n.t("constants.specialization_status.#{obj}") },
+                                   value_method: ->(obj){ SPECIALIZATION_STATUS[obj] },
+                                   selected: :status
+                br
                 = f.label :avatar
                 .upload-preview
                   = image_tag @specialization.avatar.url(:thumb).to_s

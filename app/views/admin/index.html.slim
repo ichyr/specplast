@@ -24,6 +24,7 @@ table.table.table-hover
     tr.row
       th = I18n.t("layout.administration.name")
       th.text-center = I18n.t("layout.administration.avatar")
+      th.text-center  = I18n.t("layout.administration.status")
       th 
       th 
       - if policy(Specialization.new).new?
@@ -34,6 +35,7 @@ table.table.table-hover
       tr.row
         td.vertical-align = specialization.name
         td = image_tag specialization.avatar.url(:thumb).to_s if specialization.avatar
+        td.vertical-align = speciaization_status_decoder(specialization.status)
         td.vertical-align = link_to I18n.t("actions.show"), specialization, :class => "btn btn-sm btn-info"
         td.vertical-align = link_to I18n.t("actions.edit"), edit_specialization_path(specialization),:class => "btn btn-sm btn-warning"
         - if policy(Specialization.new).new?

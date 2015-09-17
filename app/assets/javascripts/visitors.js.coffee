@@ -11,6 +11,10 @@ ajax_search_listeners_init = ->
     $.get @action, $(this).serialize(), null, "script"
     false
 
+  return
+
+ajax_table_listeners_init = ->
+
   $(".instruktors-list .pagination a").click (e) ->
     e.preventDefault()
     $.getScript @href
@@ -28,4 +32,5 @@ ajax_search_listeners_init = ->
 
   return
 
-$(document).on "ready page:update", ajax_search_listeners_init
+$(document).on "ready", ajax_search_listeners_init
+$(document).on "ready page:update", ajax_table_listeners_init

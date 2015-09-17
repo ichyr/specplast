@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Secret tokens and keys
+
+  config.secret_token = "#{Rails.application.secrets.secret_token}"
+  config.secret_key_base = "#{Rails.application.secrets.secret_key_base}"
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -87,6 +92,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
 
 
   # Disable automatic flushing of the log to improve performance.

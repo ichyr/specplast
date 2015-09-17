@@ -23,6 +23,10 @@
     #main.tab-pane.active
       .form-inputs
         = f.input :name, inner_html: {class: 'form-control'}
+        br /
+        = f.input_field :status, as: :boolean, boolean_style: :inline
+        = f.label :status, I18n.t("activerecord.attributes.vmilist.status")
+        br /
         = f.label :avatar
         .upload-preview
           = image_tag @vmilist.avatar.url(:thumb).to_s

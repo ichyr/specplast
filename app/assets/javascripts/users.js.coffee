@@ -17,5 +17,19 @@ tokenInputInit = ->
 
   return
 
+# fileupload_plugin = ->
+#   $("#user_documents").fileupload
+#     dataType: "src",
+#     done: (e, data) ->
+#       $.each data.result.files, (index, file) ->
+#         $("<p/>").text(file.name).appendTo document.body
+#         return
+
+#       return
+
+#   return
+
 $(document).ready tokenInputInit
+# $(document).ready fileupload_plugin
 $(document).on "page:load", tokenInputInit
+# $(document).on "page:load", fileupload_plugin

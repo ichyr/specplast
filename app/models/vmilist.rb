@@ -1,4 +1,5 @@
 class Vmilist < ActiveRecord::Base
+  include Bootsy::Container
 
   mount_uploader :avatar, AvatarUploader
 
@@ -22,6 +23,7 @@ class Vmilist < ActiveRecord::Base
   def check_defaults 
     self.child_info ||= VMILIST_REQUIREMENTS_DEFAULT_TEXT
     self.instructor_info ||= VMILIST_REQUIREMENTS_DEFAULT_TEXT
+    self.status ||= false
   end
 
 end

@@ -13,6 +13,8 @@
     .row
       = f.input :email, html: { name: "user[email]" }, :error => false
     .row
+      = f.file_field :documents, multiple: true
+    .row
       = f.label :avatar
       .upload-preview
         = image_tag @user.avatar.url(:thumb).to_s

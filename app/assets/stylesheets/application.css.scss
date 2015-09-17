@@ -83,3 +83,34 @@ a.btn {
 .not-visible {
 	visibility: hidden;
 }
+
+//  Fix for devise remember me checkbox
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+	margin-left: 0px;
+}
+
+// Override for password field bg-color
+#bg-color {
+  background-color: #F2DEDE;
+}
+
+// Overrider for visited anchors
+a:visited {
+	color: black;
+}
+
+.overlay {
+	position:absolute;
+  left:130px;
+  top:70px;
+
+  font-size: 30px;
+}
+
+.status-pending {
+	color: orange;
+}
+
+.status-accepted {
+	color: green;
+}

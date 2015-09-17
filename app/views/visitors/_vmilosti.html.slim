@@ -7,7 +7,7 @@
       .row
     .col-sm-4
       = link_to vmilist
-        img src=vmilist.avatar.url(:thumb) /
+        = raw decorate_vmilist_with_state(vmilist)
         p.text-center
           = vmilist.name
     - if index % 3 == 2

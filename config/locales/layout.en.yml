@@ -42,6 +42,7 @@ en:
       save_bulava: "Save changes"
       name: "Name"
       avatar: "Avatar"
+      status: "Status"
       button:
         new: "New Specialization"
         show: "Show"
@@ -75,6 +76,9 @@ en:
     vmilist:
       new: "New vmilist"
       editing: "Editing vmilist"
+    selects:
+      city: "Pick city"
+      region: "Pick region"
   buttons:
     edit: "Edit"
     delete: "Delete"

@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
+
 //= require jquery.tokeninput
 //= require bootstrap-sprockets
 //= require bootsy
 //= require turbolinks
-//= require_tree .
+//= require jquery_nested_form

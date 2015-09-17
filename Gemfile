@@ -21,7 +21,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 
 # file management
-gem 'carrierwave'
+gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git'
 gem 'rmagick'
 
 # for diagram generation
@@ -33,7 +33,7 @@ gem 'will_paginate', '~> 3.0'
 # PostGreSQL DB
 gem 'pg'
 
-# Assets 
+# Assets
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
@@ -48,18 +48,25 @@ gem 'jquery-tokeninput-rails'
 # Gem for Active Job
 gem 'sidekiq'
 
+# Multiple file upload plugin
+gem "jquery-fileupload-rails"
+
+# for link_helpers
+gem "nested_form"
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-rails'
   gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv', "~> 2.0" 
+  gem 'capistrano-rbenv'
   gem 'foreman'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -86,4 +93,5 @@ group :test do
 
   # for Travis CI
   gem 'rake'
+  gem 'spork'
 end

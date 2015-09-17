@@ -14,9 +14,9 @@ class SpecializationsController < ApplicationController
   # GET /specializations/1.json
   def show
     @specialization = Specialization.find(params[:id])
-    @vmilists = Vmilist.select(:id, :name, :avatar)
+    @vmilists = Vmilist.select(:id, :name, :avatar, :status)
       .where('lower(vmilists.name) LIKE ? and vmilists.specialization_id = ?', 
-        "%#{params[:search].downcase if params[:search]}%", "#{params[:id]}")
+        "%#{params[:search].mb_chars.downcase.to_s if params[:search]}%", "#{params[:id]}")
       .paginate per_page: 9, page: params[:page]
   end
 
@@ -89,11 +89,11 @@ class SpecializationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def specialization_params
-      params.require(:specialization).permit(:name, :avatar)
+      params.require(:specialization).permit(:name, :avatar, :status)
     end
 
     def specialization_update_params
-    params.require(:specialization).permit( :name, :avatar, 
+    params.require(:specialization).permit( :name, :avatar, :status, 
              specdatum_attributes: [:id, :gen_info, :proby, 
             :activity, :provid, :specialization_id, :file,
             :bootsy_image_gallery_id] )

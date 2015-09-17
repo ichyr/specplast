@@ -17,7 +17,7 @@ br
     .row
   .col-sm-4
     = link_to specialization
-      img src=specialization.avatar.url(:thumb) /
+      = raw decorate_specialization_with_state(specialization)
       p.text-center
         = specialization.name
   - if index % 3 == 2
