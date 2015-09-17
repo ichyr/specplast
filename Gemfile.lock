@@ -392,7 +392,6 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rails-console
-  capistrano-rbenv (~> 2.0)
   capistrano-rbenv
   capybara
   carrierwave!
