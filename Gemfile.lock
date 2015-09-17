@@ -398,11 +398,8 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rails-console
-<<<<<<< HEAD
   capistrano-rbenv (~> 2.0)
-=======
   capistrano-rbenv
->>>>>>> vmilistapp
   capybara
   carrierwave!
   coffee-rails (~> 4.0.0)
