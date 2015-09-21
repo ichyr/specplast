@@ -15,10 +15,7 @@
 # HEROKU_COMMANDS
 01_Plan_zbirky
 DEPLOYMENT
-<<<<<<< HEAD
-=======
 ENHANCEMENTS
->>>>>>> vmilistapp
 
 # Uploaded for development files
 /public/uploads/*
