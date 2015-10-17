@@ -330,7 +330,7 @@ CREATE TABLE vmilists (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     avatar character varying,
-    status integer
+    status boolean DEFAULT false
 );
 
 
