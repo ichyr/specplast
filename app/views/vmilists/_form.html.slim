@@ -2,7 +2,11 @@
 
 = simple_form_for(@vmilist, html:{multipart:true, class: 'form-horizontal'}) do |f|
   -if f.error_notification
-    .alert.alert-danger = f.error_notification
+    .alert.alert-danger role="alert"
+      = I18n.t("simple_form.error_notification.default_message")
+      ul
+        - @vmilist.errors.full_messages.each do |msg|
+          li = msg
 
   .form-actions
     = f.button :submit, class: 'btn btn-success pull-right', value: I18n.t("devise.buttons.update")

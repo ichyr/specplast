@@ -16,6 +16,8 @@ module VmilistsHelper
 	end
 
 	def vmilist_status_decoder(status)
+		# TODO Need to introduce 3 stages of vmilist lifecicle
+		status = status ? 1 : 0
 		key = VMILIST_STATUS.key(status)
 		I18n.t("constants.vmilist_status.#{key}")
 	end
