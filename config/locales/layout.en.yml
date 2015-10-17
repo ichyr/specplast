@@ -49,6 +49,7 @@ en:
         edit: "Edit"
         delete: "Delete"
     moderator:
+      title: "Moderator pages"
       page_title: "Vmilists management"
       vmilists_tab: "Vmilists"
       specializations_tab: "Specialization data"
@@ -73,6 +74,7 @@ en:
       edit_page: "Editing specialization"
       information_last_updated: "Information last updated on the "
     page_under_construction: "This page is under construction"
+    general_info: "General info"
     vmilist:
       new: "New vmilist"
       editing: "Editing vmilist"

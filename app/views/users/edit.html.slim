@@ -1,3 +1,5 @@
+= set_page_title "#{I18n.t('users.edit_of_user')} #{@user.name}"
+
 h3.text-center.content-header = "#{I18n.t("users.edit_of_user")} #{@user.name}"
 
 .authform == render "form"

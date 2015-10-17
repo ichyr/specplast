@@ -49,6 +49,7 @@ ua:
         edit: "Оновити"
         delete: "Видалити"
     moderator:
+      title: "Сторінки модератора"
       page_title: "Управління вмілостями"
       vmilists_tab: "Вмілості"
       specializations_tab: "Дані спеціалізації"
@@ -72,6 +73,7 @@ ua:
       edit_page: "Оновлення спеціалізації"
       information_last_updated: "Інформація востаннє оновлена "
     page_under_construction: "Сторінка у розробці"
+    general_info: "Загальна інформація"
     vmilist:
       new: "Створення вмілості"
       editing: "Редагування вмілості"
