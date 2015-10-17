@@ -45,11 +45,10 @@ gem 'will_paginate-bootstrap'
 # Gem for token input in instruktors
 gem 'jquery-tokeninput-rails'
 
-# Gem for Active Job
-gem 'sidekiq'
-
 # Multiple file upload plugin
 gem "jquery-fileupload-rails"
+
+gem "que"
 
 # for link_helpers
 gem "nested_form"
