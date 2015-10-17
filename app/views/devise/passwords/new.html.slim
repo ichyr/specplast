@@ -1,3 +1,5 @@
+= set_page_title "#{t('layout.title')} : #{t('devise.user.password_reset')}"
+
 .authform
   = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f|
 

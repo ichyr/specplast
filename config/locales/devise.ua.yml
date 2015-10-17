@@ -24,6 +24,7 @@ ua:
       sign_up_label: "Реєстрація"
       remember_me: "Запам'ятати мене"
       forgot_your_password: "Забули пароль?"
+      password_reset: "Відновлення паролю"
       didnt_receive_confirmation_instructions: "Не отримали листа з підтвердженням?"
       reset_instructions: "Вам будуть надіслані інструкції для створення нового паролю."
       edit: "Редагування користувача"

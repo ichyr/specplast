@@ -24,6 +24,7 @@ en:
       sign_up_label: "Sign up"
       remember_me: "remember me"
       forgot_your_password: "Forgot password?"
+      password_reset: "Password reset"
       didnt_receive_confirmation_instructions: "Din't recieve emai with confirmaiton instructions?"
       reset_instructions: "We'll send password reset instructions."
       edit: "Editing user"
