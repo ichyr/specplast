@@ -1,52 +1,65 @@
-.authform
-  = simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :role => 'form'}) do |f|
-    h3.text-center.content-header = I18n.t "devise.user.sign_up_label"
-    - if devise_error_messages! && devise_error_messages! != ""
-      .alert.alert-danger = devise_error_messages!
-    .form-group
-      = f.label :name, I18n.t("devise.user.name")
-      = f.text_field :name, :autofocus => true, class: 'form-control'
-    .form-group
-      = f.label :city, I18n.t("devise.user.city")
-      = f.text_field :city, class: 'form-control'
-    .form-group
-      = f.label :region, I18n.t("devise.user.region")
-      = f.text_field :region, class: 'form-control'
-    .form-group
-      = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
-    .form-group
+/ .authform
+= simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, :role => 'form'}) do |f|
+  h3.text-center.content-header = I18n.t "devise.user.sign_up_label"
+  - if devise_error_messages! && devise_error_messages! != ""
+    .alert.alert-danger = devise_error_messages!
+  .form-group
+    = f.label :name, I18n.t("devise.user.name")
+    = f.text_field :name, :autofocus => true, class: 'form-control'
+  .form-group
+    = f.label :city, I18n.t("devise.user.city")
+    = f.text_field :city, class: 'form-control'
+  .form-group
+    = f.label :region, I18n.t("devise.user.region")
+    = f.text_field :region, class: 'form-control'
+  .form-group
+    = f.input :description, label: I18n.t("devise.user.description"), input_html: { class: 'form-control' }, hint: I18n.t("devise.user.description_hint")
+  .form-group
 
-    p.control-label = f.label I18n.t("devise.user.documents")
-    = f.fields_for :attachments do |attachment_form|
-      .row.form-inputs.margin-bottom-30
-        -if attachment_form.object.id
-          .col-sm-8 = attachment_form.object.file.file.filename
-        -else
-          .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true"}
-        .col-sm-offset-1.col-sm-2 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
+  p.control-label = f.label I18n.t("devise.user.documents")
+  = f.fields_for :attachments do |attachment_form|
+    .row.form-inputs.margin-bottom-30
+      -if attachment_form.object.id
+        .col-sm-8 = attachment_form.object.file.file.filename
+      -else
+        .col-sm-8.target-file = attachment_form.file_field :file, class: "filestyle", data: {buttonName: "btn-primary", badge: "true"}
+      .col-sm-offset-1.col-sm-2 = attachment_form.link_to_remove I18n.t("attachment.remove"), class: "btn btn-warning"
 
-    = f.link_to_add I18n.t("attachment.add"), :attachments, class: "btn btn-success pull-right"
-    = f.hint :documents, hint: I18n.t("devise.user.documents_hint")
+  = f.link_to_add I18n.t("attachment.add"), :attachments, class: "btn btn-success pull-right"
+  = f.hint :documents, hint: I18n.t("devise.user.documents_hint")
 
-    .form-group
-      = f.label :email, I18n.t("devise.user.email")
-      = f.email_field :email, class: 'form-control'
-    .form-group
-      = f.label :password, I18n.t("devise.user.password")
-      = f.password_field :password, class: 'form-control'
-    .form-group
-      = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
-      = f.password_field :password_confirmation, class: 'form-control'
-    .form-group
-       = f.label :avatar, I18n.t("devise.user.avatar")
-    .form-group
-      .upload-preview
-        = image_tag @user.avatar.url(:thumb).to_s
-    .form-group
-      = f.file_field :avatar, class: "file"
-    .form-group
-      = f.label :vmilist_token, I18n.t("devise.user.vmilists")
-      = f.text_field :vmilist_token, "data-pre" => "#{params[:vmilists]}", "data-url" => preview_vmilists_path, class: 'form-control token_input'
-    .form-group.hidden
-      = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }, value: 0, :label => I18n.t("devise.user.status")
-    = f.submit I18n.t('devise.user.sign_up'), :class => 'button right'
+  .form-group
+    = f.label :email, I18n.t("devise.user.email")
+    = f.email_field :email, class: 'form-control'
+  .form-group
+    = f.label :password, I18n.t("devise.user.password")
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :password_confirmation, I18n.t("devise.user.password_confirmation")
+    = f.password_field :password_confirmation, class: 'form-control'
+  .form-group
+     = f.label :avatar, I18n.t("devise.user.avatar")
+  .form-group
+    .upload-preview
+      = image_tag @user.avatar.url(:thumb).to_s
+  .form-group
+    = f.file_field :avatar, class: "file"
+  .form-group
+    = f.label :vmilist_token, I18n.t("devise.user.vmilists")
+    = f.text_field :vmilist_token, "data-pre" => "#{params[:vmilists]}", "data-url" => preview_vmilists_path, class: 'form-control token_input'
+  .form-group.hidden
+    = f.input :role, as: :radio_buttons, collection: User.roles.keys, html: { name: "user[role]" }, value: 0, :label => I18n.t("devise.user.status")
+  = f.submit I18n.t('devise.user.sign_up'), :class => 'btn btn-primary pull-right'
+
+javascript:
+  $(document).on("ready page:update", function(){
+    $(document).on('nested:fieldAdded', function(event){
+      $(":file").filestyle({buttonText: "#{I18n.t('devise.user.select_file')}",
+                            buttonBefore: 'true',
+                            buttonName: 'btn-primary'});
+    });
+
+    $(":file").filestyle({buttonText: "#{I18n.t('devise.user.select_file')}",
+                            buttonBefore: 'true',
+                            buttonName: 'btn-primary'});
+  });
