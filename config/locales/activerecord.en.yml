@@ -32,7 +32,8 @@ en:
         email: "Email"
         role: "Role"
         password: "Password"
-        password_confirmation: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
         avatar: "Avatar"
         specialization: "Specialization"
         roles:

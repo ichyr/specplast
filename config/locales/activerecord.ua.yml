@@ -31,8 +31,9 @@ ua:
         email: "Електронна пошта"
         role: "Роль"
         password: "Пароль"
-        password_confirmation: "Пароль"
+        password_confirmation: "Підтвердження паролю"
         avatar: "Світлина"
+        current_password: "Поточний пароль"
         specialization: "Спеціалізація"
         roles:
           instruktor: "Інструктор"
