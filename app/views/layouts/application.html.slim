@@ -7,7 +7,7 @@ html lang="en"
     meta content="" name="author" 
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Specplast'}"
     title
-      = content_for?(:title) ? yield(:title) : 'Specplast'
+      = content_for?(:title) ? yield(:title) : I18n.t("layout.title")
 
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
