@@ -1,4 +1,5 @@
 en:
+  error_page: "Error page"
   error_403:
     main_message: "Buddy - strengthen you lashes!"
     sub_main_message: "You won't make it over this river."
