@@ -17,6 +17,7 @@ env:
   global:
   - BUNDLE_ARCHIVE="test-bundle"
   - RAILS_ENV=test
+  - SPECPLAST_GMAIL_USERNAME="test@example.com"
 
 addons:
   postgresql: "9.3"
