@@ -32,3 +32,6 @@ table.table.table-hover
         td = image_tag user.avatar.url(:thumb).to_s, size: "25x25" if user.avatar
         td = link_to I18n.t("actions.edit"), {controller: :users, action: :edit, id: user.id }, {:class => "btn btn-sm btn-warning"}
         td = link_to I18n.t("actions.delete"), user, data: {:confirm => I18n.t("alerts.are_you_sure")}, :method => :delete, :class => "btn btn-sm btn-danger"
+
+.row
+  .text-center = will_paginate @instruktors, renderer: BootstrapPagination::Rails
