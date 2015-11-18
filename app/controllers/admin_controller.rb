@@ -38,4 +38,10 @@ class AdminController < ApplicationController
   	@bulava_info = GeneralInfo.where("key = ?", "bulava")
   end
 
+  def administrator_contacts
+    authorize :admin, :administrator_contacts?
+    
+    @information = GeneralInfo.where("key = ?", "administration")
+  end
+
 end

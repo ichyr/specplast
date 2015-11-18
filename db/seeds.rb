@@ -70,6 +70,12 @@ BULAVA_INFO = <<-DOCS
 bulava = { key: "bulava", value: BULAVA_INFO }
 GeneralInfo.create bulava
 
+ADMINISTRATORS = <<-DOCS
+	Контакти адміністраторів сторінки
+	DOCS
+administrators = { key: "administration", value: ADMINISTRATORS }
+GeneralInfo.create administrators
+
 
 # # ============== Create instruktors for VmilistService
 

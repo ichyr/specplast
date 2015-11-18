@@ -27,6 +27,8 @@ ua:
     no_vmilists: "За вашим запитом не було знайдено жодної вмілості"
     no_instructors: "За вашим запитом не було знайдено жодного інструктора"
     no_uncorfirmed_qualifacations: "У вашої спеціалізації немає інструкторів з не підтвердженимим кваліфікаціями"
+    general:
+      administration: "Контакти адміністраторів"
     models:
       specialization: "Спеціалізація"
       specialization_edit: "Редагування спеціалізації"
@@ -38,6 +40,7 @@ ua:
       instruktors_tab: "Інструктори"
       administrators_tab: "Адміністратори"
       moderators_tab: "Модератори"
+      contacts_tab: "Контакти"
       bulava_tab: "Булава"
       save_bulava: "Зберегти зміни"
       name: "Назва"

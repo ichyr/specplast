@@ -1,4 +1,4 @@
-= set_page_title "#{t('layout.title')} : #{t('layout.administration.bulava_tab')}"
+= set_page_title "#{t('layout.title')} : #{t('layout.administration.contacts_tab')}"
 
 h3.text-center.content-header = I18n.t "layout.administration.page_title"
 
@@ -12,12 +12,12 @@ ul.nav.nav-tabs.nav-justified
     a href="#{admin_moderators_path}" = I18n.t("layout.administration.moderators_tab")
   li
     a href="#{admin_administrators_path}" = I18n.t("layout.administration.administrators_tab")
-  li.active
-    a href="#{admin_bulava_path}" = I18n.t("layout.administration.bulava_tab")
   li
+    a href="#{admin_bulava_path}" = I18n.t("layout.administration.bulava_tab")
+  li.active
     a href="#{admin_contacts_path}" = I18n.t("layout.administration.contacts_tab")
 
-= simple_form_for(@bulava_info[0], html:{class: 'form-horizontal'}) do |f|
+= simple_form_for(@information[0], html:{class: 'form-horizontal'}) do |f|
   br/
   = f.error_notification
 
@@ -28,4 +28,4 @@ ul.nav.nav-tabs.nav-justified
   br/ 
 
   .form-action.pull-right
-    = f.button :submit, class: "btn btn-success ", value: I18n.t("layout.administration.save_bulava")
+    = f.button :submit, class: "btn btn-success ", value: I18n.t("layout.administration.save_administration")

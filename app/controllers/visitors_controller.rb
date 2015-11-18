@@ -49,6 +49,10 @@ class VisitorsController < ApplicationController
 		@bulava_info = GeneralInfo.where("key = ?", "bulava")
 	end
 
+	def administration
+		@information = GeneralInfo.where("key = ?", "administration")
+	end
+
 	def api
 		@specialization = Specialization.find(params[:id])
 

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'admin/moderators', to: 'admin#moderators'
   get 'admin/administrators', to: 'admin#administrators'
   get 'admin/bulava', to: 'admin#bulava'
+  get 'admin/contacts', to: 'admin#administrator_contacts'
 
   # Visitors controller
   get "activities", to: 'visitors#activities'
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
   get "instructors", to: 'visitors#instructors'
   get "provid", to: 'visitors#provid'
   get "bulava", to: 'visitors#bulava'
+  get "administration", to: 'visitors#administration'
   get "visitors/api/:id", to: 'visitors#api'
   
   #  User controller

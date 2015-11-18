@@ -18,5 +18,9 @@ class AdminPolicy < ApplicationPolicy
   def bulava?
     user.admin? if !user.nil?
   end
+
+  def administrator_contacts?
+    user.admin? if !user.nil?
+  end
 end
 
