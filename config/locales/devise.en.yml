@@ -4,6 +4,7 @@ en:
   devise:
     user:
       name: "Name"
+      name_surname: "Name and surname"
       select_file: "Select file"
       phone: "Phone"
       password: "Password"

@@ -4,6 +4,7 @@ ua:
   devise:
     user:
       name: "Ім'я"
+      name_surname: "Ім'я та прізвище"
       select_file: "Вибрати файл"
       phone: "Телефон"
       password: "Пароль"
