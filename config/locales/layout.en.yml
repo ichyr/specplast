@@ -43,6 +43,7 @@ en:
       contacts_tab: "Contacts"
       bulava_tab: "Bulava"
       save_bulava: "Save changes"
+      save_administration: "Save changes"
       name: "Name"
       avatar: "Avatar"
       status: "Status"

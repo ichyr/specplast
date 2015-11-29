@@ -43,6 +43,7 @@ ua:
       contacts_tab: "Контакти"
       bulava_tab: "Булава"
       save_bulava: "Зберегти зміни"
+      save_administration: "Зберегти контакти"
       name: "Назва"
       avatar: "Світлина"
       status: "Статус"
