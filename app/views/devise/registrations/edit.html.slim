@@ -51,7 +51,7 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
     .form-group
       = f.label I18n.t("layout.models.specialization"), class: 'col-sm-6'
       = f.label @user.specialization.name, class: 'col-sm-6'
-  fieldset
+  fieldset.form-group
     p = I18n.t("devise.user.live_it_blank")
     .form-group
       = f.label :password, I18n.t("devise.user.password")
