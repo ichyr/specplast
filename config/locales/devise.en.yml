@@ -17,6 +17,7 @@ en:
       live_it_blank: "Leave this field blank, if you don't ant to change it"
       we_neew_current: "We need you current password to confirm it the changes"
       unhappy: "Are you unhappy?"
+      remove_lillies: "Remove all lillies"
       cancel_my_account: "Cancel registration of my account"
       change_default_password: "Please, change the default password"
       sign_up: "Sign up"
