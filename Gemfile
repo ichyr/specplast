@@ -94,3 +94,5 @@ group :test do
   gem 'rake'
   gem 'spork'
 end
+
+gem 'datetimepicker-rails', '>= 3.0.0', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git', :branch => 'tarruda'

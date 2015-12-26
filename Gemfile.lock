@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: b0c93d9e5cac3d3bb6d6f1d7ac57adbba3d025c1
+  branch: tarruda
+  specs:
+    datetimepicker-rails (3.0.1)
+
+GIT
   remote: https://github.com/carrierwaveuploader/carrierwave.git
   revision: 0033279be9b62bccb330a6d78c8fa9e21a299d5a
   specs:
@@ -389,6 +396,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
+  datetimepicker-rails (>= 3.0.0)!
   devise
   factory_girl_rails
   faker

@@ -19,3 +19,5 @@
 //= require bootsy
 //= require turbolinks
 //= require jquery_nested_form
+
+//= require bootstrap-datetimepicker
