@@ -1,0 +1,51 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @registry.name
+p
+  strong Surname:
+  = @registry.surname
+p
+  strong Dob:
+  = @registry.dob
+p
+  strong Sex:
+  = @registry.sex
+p
+  strong Rank:
+  = @registry.rank
+p
+  strong Troop:
+  = @registry.troop
+p
+  strong Group:
+  = @registry.group
+p
+  strong City:
+  = @registry.city
+p
+  strong Region:
+  = @registry.region
+p
+  strong Vmilist:
+  = @registry.vmilist_id
+p
+  strong Achievement date:
+  = @registry.achievement_date
+p
+  strong Place:
+  = @registry.place
+p
+  strong Activity:
+  = @registry.activity
+p
+  strong Instruktor:
+  = @registry.instruktor_id
+p
+  strong Comment:
+  = @registry.comment
+
+= link_to 'Edit', edit_registry_path(@registry)
+'|
+= link_to 'Back', registries_path

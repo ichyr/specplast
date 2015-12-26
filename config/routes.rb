@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :registries
+
   root to: 'visitors#index'
 
   mount Bootsy::Engine => '/bootsy' , as: 'bootsy'

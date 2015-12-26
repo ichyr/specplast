@@ -1,0 +1,24 @@
+h1 Listing registries
+
+table.table.table-hover.table-condensed
+  thead
+    tr
+      th Rank
+      th Name and Surname
+      th Troop
+      th City
+      th Vmilist
+      th Achievement date
+
+  tbody
+    - @registries.each do |registry|
+      tr
+        td = registry.rank
+        td = "#{registry.name} #{registry.surname}"
+        td = registry.troop
+        td = registry.city
+        td = registry.vmilist_id
+        td = registry.achievement_date
+br
+
+.btn.btn-info = link_to 'New Registry', new_registry_path

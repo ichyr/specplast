@@ -192,6 +192,51 @@ ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
 
 
 --
+-- Name: registries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE registries (
+    id integer NOT NULL,
+    name character varying,
+    surname character varying,
+    dob date,
+    sex boolean,
+    rank integer,
+    troop character varying,
+    "group" character varying,
+    city character varying,
+    region integer,
+    vmilist_id integer,
+    achievement_date date,
+    place character varying,
+    activity character varying,
+    instruktor_id integer,
+    comment text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: registries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE registries_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: registries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE registries_id_seq OWNED BY registries.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -392,6 +437,13 @@ ALTER TABLE ONLY qualifications ALTER COLUMN id SET DEFAULT nextval('qualificati
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY registries ALTER COLUMN id SET DEFAULT nextval('registries_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY specdata ALTER COLUMN id SET DEFAULT nextval('specdata_id_seq'::regclass);
 
 
@@ -454,6 +506,14 @@ ALTER TABLE ONLY general_infos
 
 ALTER TABLE ONLY qualifications
     ADD CONSTRAINT qualifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: registries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY registries
+    ADD CONSTRAINT registries_pkey PRIMARY KEY (id);
 
 
 --
@@ -561,4 +621,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150829172041');
 INSERT INTO schema_migrations (version) VALUES ('20150905071601');
 
 INSERT INTO schema_migrations (version) VALUES ('20150906173919');
+
+INSERT INTO schema_migrations (version) VALUES ('20151226145849');
 
