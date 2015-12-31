@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :registries
 
   root to: 'visitors#index'
 
@@ -18,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :general_infos
 
+  resources :registries
+  
   get 'moderator', to: 'moderator#index'
   get 'moderator/specialization', to: 'moderator#specialization'
   get 'moderator/qualifications/for_approval', to: 'moderator#waiting'

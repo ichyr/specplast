@@ -1,4 +1,28 @@
 en:
+  registry:
+    rank: "Rank"
+    name: "Name"
+    surname: "Surname"
+    dob: "Date of birth"
+    sex: "Sex"
+    troop: "Troop"
+    group: "Group"
+    city: "City"
+    region: "Region"
+    vmilist: "Skill"
+    achieve_date: "Achievement date"
+    place: "Place"
+    activity: "Activity"
+    instruktor: "Instruktor"
+    comment: "Comment"
+    hints:
+      troop: 'Please use special format'
+      group: 'Please enter only name without any numbers.'
+      vmilist: 'Start typing and then select appropriate name from dropdown'
+      place: "Please specify the place where you have passed the skill test"
+      activity: 'E.g. camp, training etc.'
+      instruktor: 'Start typing and then select appropriate name from dropdown'
+      comment: 'Please tell us how did you felt about getting this merit badge?'
   attachment:
     add: "Add attachment"
     remove: "Remove item"
