@@ -5,7 +5,7 @@ class CreateRegistries < ActiveRecord::Migration
       t.string :surname
       t.date :dob
       t.boolean :sex
-      t.integer :rank
+      t.integer :rank_id
       t.string :troop
       t.string :group
       t.string :city

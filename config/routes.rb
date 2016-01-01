@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   resources :general_infos
 
-  resources :registries
+  resources :registries do
+    collection do
+      get 'vmilist_instruktors'
+    end
+  end
   
   get 'moderator', to: 'moderator#index'
   get 'moderator/specialization', to: 'moderator#specialization'

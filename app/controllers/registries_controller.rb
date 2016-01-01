@@ -36,12 +36,24 @@ class RegistriesController < ApplicationController
     respond_with(@registry)
   end
 
+  def vmilist_instruktors
+    @instruktors = Qualification
+    .joins(:user)
+    .where("vmilist_id = CAST(? AS INT)", params[:vmilist_id])
+    .select("users.id", "users.name")
+    .limit(10)
+    
+    respond_to do |format|
+      format.json { render :json => @instruktors }
+    end
+  end
+
   private
     def set_registry
       @registry = Registry.find(params[:id])
     end
 
     def registry_params
-      params.require(:registry).permit(:name, :surname, :dob, :sex, :rank, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment)
+      params.require(:registry).permit(:name, :surname, :dob, :sex, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment)
     end
 end

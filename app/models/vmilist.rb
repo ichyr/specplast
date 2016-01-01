@@ -10,6 +10,8 @@ class Vmilist < ActiveRecord::Base
   has_many :qualifications, dependent: :destroy
   has_many :users, through: :qualifications
 
+  has_many :registries
+
   validates :name, presence: true, 
                    length: { minimum: 4},
                    uniqueness: {case_sensitive: false}

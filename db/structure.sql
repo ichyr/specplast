@@ -192,6 +192,37 @@ ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
 
 
 --
+-- Name: ranks; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ranks (
+    id integer NOT NULL,
+    title character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: ranks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ranks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ranks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ranks_id_seq OWNED BY ranks.id;
+
+
+--
 -- Name: registries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -201,7 +232,7 @@ CREATE TABLE registries (
     surname character varying,
     dob date,
     sex boolean,
-    rank integer,
+    rank_id integer,
     troop character varying,
     "group" character varying,
     city character varying,
@@ -437,6 +468,13 @@ ALTER TABLE ONLY qualifications ALTER COLUMN id SET DEFAULT nextval('qualificati
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY ranks ALTER COLUMN id SET DEFAULT nextval('ranks_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY registries ALTER COLUMN id SET DEFAULT nextval('registries_id_seq'::regclass);
 
 
@@ -506,6 +544,14 @@ ALTER TABLE ONLY general_infos
 
 ALTER TABLE ONLY qualifications
     ADD CONSTRAINT qualifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ranks_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ranks
+    ADD CONSTRAINT ranks_pkey PRIMARY KEY (id);
 
 
 --
@@ -623,4 +669,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150905071601');
 INSERT INTO schema_migrations (version) VALUES ('20150906173919');
 
 INSERT INTO schema_migrations (version) VALUES ('20151226145849');
+
+INSERT INTO schema_migrations (version) VALUES ('20151231234354');
 
