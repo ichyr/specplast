@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :vmilists do
     collection do
-      get 'preview'
+      get :preview
     end
   end
 
@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
   resources :registries do
     collection do
-      get 'vmilist_instruktors'
+      get :autocomplete_vmilist_name
+      get :autocomplete_instruktor_name
     end
   end
   

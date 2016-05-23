@@ -39,12 +39,37 @@ class RegistriesController < ApplicationController
   def vmilist_instruktors
     @instruktors = Qualification
     .joins(:user)
-    .where("vmilist_id = CAST(? AS INT)", params[:vmilist_id])
+    .where("vmilist_id = CAST(? AS INT) and \"users\".\"name\" like ?", params[:vmilist_id], "%#{params[:q]}%")
     .select("users.id", "users.name")
     .limit(10)
     
     respond_to do |format|
       format.json { render :json => @instruktors }
+    end
+  end
+
+  def autocomplete_vmilist_name
+    params[:q] = params[:q] || ''
+    @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%")
+    .limit(10)
+    
+    respond_to do |format|
+      format.json { render :json => @vmilists.map{|v| [v.id.to_s, v.name.to_s]} }
+    end
+  end
+
+  def autocomplete_instruktor_name
+    params[:q] = params[:q] || ''
+    params[:direction] = params[:q] || ''
+
+    @instruktors = Qualification
+    .joins(:user)
+    .where("vmilist_id = CAST(? AS INT) and \"users\".\"name\" like ?", params[:vmilist_id], "%#{params[:q]}%")
+    .select("users.id", "users.name")
+    .limit(10)
+    
+    respond_to do |format|
+      format.json { render :json => @instruktors.map{|v| [v.id.to_s, v.name.to_s]} }
     end
   end
 

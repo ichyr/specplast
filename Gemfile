@@ -16,6 +16,8 @@ gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
 
+gem 'bootstrap3_autocomplete_input'
+
 # Application server
 gem 'unicorn'
 gem 'unicorn-rails'

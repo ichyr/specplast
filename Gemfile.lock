@@ -67,6 +67,7 @@ GEM
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap3_autocomplete_input (0.1.9)
     bootsy (2.0.13)
       carrierwave (~> 0.10)
       mini_magick (~> 4.0)
@@ -385,6 +386,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap3_autocomplete_input
   bootsy
   capistrano
   capistrano-bundler

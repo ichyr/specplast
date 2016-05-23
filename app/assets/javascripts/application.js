@@ -16,6 +16,8 @@
 
 //= require jquery.tokeninput
 //= require bootstrap-sprockets
+//= require bootstrap3-typeahead.min
+//= require bootstrap3-autocomplete-input.min
 //= require bootsy
 //= require turbolinks
 //= require jquery_nested_form
