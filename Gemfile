@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'slim-rails'
 
 gem 'bootstrap3_autocomplete_input'
+gem 'twitter-typeahead-rails'
 
 # Application server
 gem 'unicorn'

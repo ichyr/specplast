@@ -86,8 +86,7 @@
     .form-group
         .row
             = f.label I18n.t("registry.instruktor"), :instruktor_id, class: 'col-sm-3 control-label'
-            / # .col-sm-9 = f.input_field :instruktor_id, class: 'form-control'
-            .col-sm-9 = f.input_field :instruktor, as: :autocomplete, source_query: autocomplete_instruktor_name_registries_url, :vmilist_id => '7346', class: 'form-control'
+            .col-sm-9 = f.input_field :instruktor_id, class: 'form-control'
             .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.instruktor")
             .col-sm-offset-3.col-sm-9 = f.error :instruktor_id, id: 'registry_instruktor_id_error'
 

@@ -42,7 +42,7 @@ class RegistriesController < ApplicationController
     .where("vmilist_id = CAST(? AS INT) and \"users\".\"name\" like ?", params[:vmilist_id], "%#{params[:q]}%")
     .select("users.id", "users.name")
     .limit(10)
-    
+
     respond_to do |format|
       format.json { render :json => @instruktors }
     end
@@ -52,7 +52,7 @@ class RegistriesController < ApplicationController
     params[:q] = params[:q] || ''
     @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%")
     .limit(10)
-    
+
     respond_to do |format|
       format.json { render :json => @vmilists.map{|v| [v.id.to_s, v.name.to_s]} }
     end
@@ -60,25 +60,28 @@ class RegistriesController < ApplicationController
 
   def autocomplete_instruktor_name
     params[:q] = params[:q] || ''
-    params[:direction] = params[:q] || ''
+    params[:vmilist_id] = params[:vmilist_id] || ''
 
     @instruktors = Qualification
     .joins(:user)
     .where("vmilist_id = CAST(? AS INT) and \"users\".\"name\" like ?", params[:vmilist_id], "%#{params[:q]}%")
     .select("users.id", "users.name")
     .limit(10)
-    
+
+    puts params[:q]
+    puts params[:vmilist_id]
+
     respond_to do |format|
       format.json { render :json => @instruktors.map{|v| [v.id.to_s, v.name.to_s]} }
     end
   end
 
   private
-    def set_registry
-      @registry = Registry.find(params[:id])
-    end
+  def set_registry
+    @registry = Registry.find(params[:id])
+  end
 
-    def registry_params
-      params.require(:registry).permit(:name, :surname, :dob, :sex, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment)
-    end
+  def registry_params
+    params.require(:registry).permit(:name, :surname, :dob, :sex, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment)
+  end
 end
