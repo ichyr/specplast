@@ -25,9 +25,11 @@
             / .col-sm-9 = f.input :sex
             .col-sm-9
                 label.radio-inline
-                  input type="radio" name="registry[sex]" value="man" = I18n.t('registry.sex.man')
+                  input type="radio" name="registry[sex]" value="man" checked="checked"
+                  = I18n.t('registry.sex.man')
                 label.radio-inline
-                  input type="radio" name="registry[sex]" value="woman" = I18n.t('registry.sex.woman')
+                  input type="radio" name="registry[sex]" value="woman"
+                  = I18n.t('registry.sex.woman')
             .col-sm-offset-3.col-sm-9 = f.error :sex, id: 'registry_sex_error'
 
     .form-group
