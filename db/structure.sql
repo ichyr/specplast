@@ -244,7 +244,8 @@ CREATE TABLE registries (
     instruktor_id integer,
     comment text,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    photo_url character varying
 );
 
 
@@ -671,4 +672,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150906173919');
 INSERT INTO schema_migrations (version) VALUES ('20151226145849');
 
 INSERT INTO schema_migrations (version) VALUES ('20151231234354');
+
+INSERT INTO schema_migrations (version) VALUES ('20160530234355');
 
