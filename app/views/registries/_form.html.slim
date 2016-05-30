@@ -24,12 +24,13 @@
             = f.label I18n.t("registry.sex.title"), :sex, class: 'col-sm-3'
             / .col-sm-9 = f.input :sex
             .col-sm-9
-                label.radio-inline
-                  input type="radio" name="registry[sex]" value="man" checked="checked"
-                  = I18n.t('registry.sex.man')
-                label.radio-inline
-                  input type="radio" name="registry[sex]" value="woman"
-                  = I18n.t('registry.sex.woman')
+                .col-sm-6
+                    input type="radio" name="registry[sex]" id="registry_sex_male" value="man" checked="checked"
+                    label.radio-inline.col-sm-12 for="registry_sex_male"= I18n.t('registry.sex.man')
+                .col-sm-6
+                    input type="radio" name="registry[sex]" id="registry_sex_female" value="woman"
+                    label.radio-inline.col-sm-12 for="registry_sex_female" = I18n.t('registry.sex.woman')
+                  
             .col-sm-offset-3.col-sm-9 = f.error :sex, id: 'registry_sex_error'
 
     .form-group
@@ -107,4 +108,4 @@
             .col-sm-offset-3.col-sm-9 = f.error :comment, id: 'registry_comment_error'
 
   .form-actions
-    = f.button :submit, class: 'btn btn-success pull-right'
+    = f.button :submit, I18n.t('registry.create'), class: 'btn btn-success pull-right'

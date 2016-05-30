@@ -1,5 +1,6 @@
 en:
   registry:
+    create: "Add new achievement"
     title: "Vmilit achivement submission"
     rank: "Rank"
     name: "Name"
