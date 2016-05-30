@@ -1,6 +1,6 @@
 en:
   registry:
-    create: "Add new achievement"
+    create: "I obtained merit badge!"
     title: "Vmilit achivement submission"
     rank: "Rank"
     name: "Name"
@@ -29,7 +29,7 @@ en:
       activity: 'E.g. camp, training etc.'
       instruktor: 'Start typing and then select appropriate name from dropdown'
       comment: 'Please tell us how did you felt about getting this merit badge?'
-      photo_url: 'Please upload photo of your certificate somewhere and paste here the url directly to the image'
+      photo_url: 'Please upload photo of your certificate somewhere and paste here the url directly to the image.'
   attachment:
     add: "Add attachment"
     remove: "Remove item"
