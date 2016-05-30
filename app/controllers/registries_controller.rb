@@ -4,47 +4,47 @@ class RegistriesController < ApplicationController
   respond_to :html
 
   def index
-    authorize :registry, :index?
+    authorize Registry
     @registries = Registry.all
     respond_with(@registries)
   end
 
   def show
-    authorize :registry, :show?
+    authorize Registry
     respond_with(@registry)
   end
 
   def new
-    authorize :registry, :new?
+    authorize Registry
     @registry = Registry.new
     respond_with(@registry)
   end
 
   def edit
-    authorize :registry, :edit?
+    authorize Registry
   end
 
   def create
-    authorize :registry, :create?
+    authorize Registry
     @registry = Registry.new(registry_params)
     @registry.save
     respond_with(@registry)
   end
 
   def update
-    authorize :registry, :update?
+    authorize Registry
     @registry.update(registry_params)
     respond_with(@registry)
   end
 
   def destroy
-    authorize :registry, :destroy?
+    authorize Registry
     @registry.destroy
     respond_with(@registry)
   end
 
   def vmilist_instruktors
-    authorize :registry, :vmilist_instruktors?
+    authorize Registry
     @instruktors = Qualification
     .joins(:user)
     .where("vmilist_id = CAST(? AS INT) and \"users\".\"name\" like ?", params[:vmilist_id], "%#{params[:q]}%")
@@ -57,7 +57,7 @@ class RegistriesController < ApplicationController
   end
 
   def autocomplete_vmilist_name
-    authorize :registry, :autocomplete_vmilist_name?
+    authorize Registry
     params[:q] = params[:q] || ''
     @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%")
     .limit(10)
@@ -68,7 +68,7 @@ class RegistriesController < ApplicationController
   end
 
   def autocomplete_instruktor_name
-    authorize :registry, :autocomplete_instruktor_name?
+    authorize Registry
     params[:q] = params[:q] || ''
     params[:vmilist_id] = params[:vmilist_id] || ''
 
