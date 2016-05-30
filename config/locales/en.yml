@@ -1,10 +1,14 @@
 en:
   registry:
+    title: "Vmilit achivement submission"
     rank: "Rank"
     name: "Name"
     surname: "Surname"
     dob: "Date of birth"
-    sex: "Sex"
+    sex:
+      title: "Sex"
+      man: "Male"
+      woman: "Female"
     troop: "Troop"
     group: "Group"
     city: "City"
