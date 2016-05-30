@@ -1,4 +1,4 @@
-$(document).on("ready page:update", function() {
+$(document).on("ready page:update",function() {
 	var form = $('#new_registry');
 
 	var instruktorIdInput = form.find('#registry_instruktor_id');
@@ -6,8 +6,6 @@ $(document).on("ready page:update", function() {
 
 	var instruktorInput = form.find('#registry_instruktor');
 	var vmilistInput = form.find('#registry_vmilist');
-
-	instruktorInput.prop('disabled', true);
 
 	vmilistInput.autocomplete({
 		search: function(event, ui) {

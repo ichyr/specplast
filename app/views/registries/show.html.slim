@@ -14,7 +14,7 @@ p
   = @registry.sex
 p
   strong Rank:
-  = @registry.rank
+  = @registry.rank.title
 p
   strong Troop:
   = @registry.troop
@@ -29,7 +29,7 @@ p
   = @registry.region
 p
   strong Vmilist:
-  = @registry.vmilist_id
+  = @registry.vmilist.name
 p
   strong Achievement date:
   = @registry.achievement_date
@@ -41,11 +41,7 @@ p
   = @registry.activity
 p
   strong Instruktor:
-  = @registry.instruktor_id
+  = @registry.instruktor.name
 p
   strong Comment:
   = @registry.comment
-
-= link_to 'Edit', edit_registry_path(@registry)
-'|
-= link_to 'Back', registries_path
