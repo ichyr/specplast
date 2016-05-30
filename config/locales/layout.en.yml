@@ -1,5 +1,6 @@
 en:
   layout:
+    new_vmilist_input: "Submit achievement"
     title: "Scouts specialization"
     sign_in: "Sign in"
     sign_out: "Sign out"

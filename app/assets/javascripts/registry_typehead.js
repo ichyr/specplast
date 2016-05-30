@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("ready page:update", function() {
 	var form = $('#new_registry');
 
 	var instruktorIdInput = form.find('#registry_instruktor_id');

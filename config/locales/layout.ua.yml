@@ -1,5 +1,6 @@
 ua:
   layout:
+    new_vmilist_input: "Зареєструвати здобуток"
     title: "Спеціалізаційне пластування"
     sign_in: "Увійти"
     sign_out: "Вийти"
