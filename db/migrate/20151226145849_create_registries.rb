@@ -9,7 +9,7 @@ class CreateRegistries < ActiveRecord::Migration
       t.string :troop
       t.string :group
       t.string :city
-      t.integer :region
+      t.string :region
       t.integer :vmilist_id
       t.date :achievement_date
       t.string :place

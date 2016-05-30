@@ -236,7 +236,7 @@ CREATE TABLE registries (
     troop character varying,
     "group" character varying,
     city character varying,
-    region integer,
+    region character varying,
     vmilist_id integer,
     achievement_date date,
     place character varying,
