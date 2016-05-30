@@ -18,6 +18,7 @@ en:
     achieve_date: "Achievement date"
     place: "Place"
     activity: "Activity"
+    photo_url: "Certificate photo"
     instruktor: "Instruktor"
     comment: "Comment"
     hints:
@@ -28,6 +29,7 @@ en:
       activity: 'E.g. camp, training etc.'
       instruktor: 'Start typing and then select appropriate name from dropdown'
       comment: 'Please tell us how did you felt about getting this merit badge?'
+      photo_url: 'Please upload photo of your certificate somewhere and paste here the url directly to the image'
   attachment:
     add: "Add attachment"
     remove: "Remove item"

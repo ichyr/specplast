@@ -7,5 +7,5 @@ class Registry < ActiveRecord::Base
 
 	validates :name, :surname, :dob, :troop, :group, :city, presence: true
 	validates :region, :vmilist_id, :comment, :achievement_date, presence: true
-	validates :place, :activity, :instruktor_id, presence: true
+	validates :place, :activity, :instruktor_id, :photo_url, presence: true
 end
