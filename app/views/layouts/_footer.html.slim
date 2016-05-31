@@ -1,3 +1,2 @@
 .text-muted.text-center
-	p © Пласт НСОУ. КБ УПЮ. 2014 - 2015.
-	=link_to I18n.t("layout.general.administration"), administration_path, class: 'footer-links-item'
+	p = "© Пласт НСОУ. КБ УПЮ. 2014 - 2016. | #{ link_to(I18n.t("layout.general.administration"), administration_path, class: 'footer-links-item')}" .html_safe
