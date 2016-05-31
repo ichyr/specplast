@@ -5,7 +5,8 @@ class RegistriesController < ApplicationController
 
   def index
     authorize Registry
-    @registries = Registry.all.paginate(:page => params[:page], :per_page => 10)
+    @registries = Registry.all.order(created_at: :desc)
+                          .paginate(:page => params[:page], :per_page => 10)
     respond_with(@registries)
   end
 
