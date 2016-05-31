@@ -31,7 +31,7 @@ h3.text-center Реєстр здачі вмілостей
           td = registry.vmilist.name if registry.vmilist
           td = registry.achievement_date
           td = registry.created_at.strftime("%F")  
-          td = link_to "...", registry.photo_url
+          td = (link_to "...", registry.photo_url) if registry.photo_url
           td = registry.instruktor.name if registry.instruktor
           td = registry.comment
 br
