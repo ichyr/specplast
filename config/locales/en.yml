@@ -1,7 +1,7 @@
 en:
   registry:
     create: "Register badge"
-    title: "Vmilit achivement submission"
+    title: "Vmilist achivement submission"
     rank: "Rank"
     name: "Name"
     surname: "Surname"
@@ -21,6 +21,7 @@ en:
     photo_url: "Certificate photo"
     instruktor: "Instruktor"
     comment: "Comment"
+    created_at: "Creation"
     hints:
       troop: 'Please use special format'
       group: 'Please enter only name without any numbers.'

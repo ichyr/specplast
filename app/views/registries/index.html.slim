@@ -1,24 +1,39 @@
-h1 Listing registries
 
-table.table.table-hover.table-condensed
-  thead
-    tr
-      th Rank
-      th Name and Surname
-      th Troop
-      th City
-      th Vmilist
-      th Achievement date
+h3.text-center Реєстр здачі вмілостей
 
-  tbody
-    - @registries.each do |registry|
+.initialize-scroll
+  table.table.table-hover.table-condensed
+    thead
       tr
-        td = registry.rank
-        td = "#{registry.name} #{registry.surname}"
-        td = registry.troop
-        td = registry.city
-        td = registry.vmilist_id
-        td = registry.achievement_date
-br
+        th = "№"
+        th = I18n.t('registry.rank')
+        th = "#{I18n.t('registry.name')} #{I18n.t('registry.surname')}"
+        th = I18n.t('registry.troop')
+        th = I18n.t('registry.group')
+        th = I18n.t('registry.city')
+        th = I18n.t('registry.vmilist')
+        th = I18n.t('registry.achieve_date')
+        th = I18n.t('registry.created_at')
+        th = I18n.t('registry.photo_url')
+        th = I18n.t('registry.instruktor')
+        th = I18n.t('registry.comment')
 
-.btn.btn-info = link_to 'New Registry', new_registry_path
+
+    tbody
+      - @registries.each do |registry|
+        tr
+          td = registry.id
+          td = registry.rank.title if registry.rank
+          td = "#{registry.name} #{registry.surname}"
+          td = registry.troop
+          td = registry.group
+          td = registry.city
+          td = registry.vmilist.name if registry.vmilist
+          td = registry.achievement_date
+          td = registry.created_at.strftime("%F")  
+          td = link_to "...", registry.photo_url
+          td = registry.instruktor.name if registry.instruktor
+          td = registry.comment
+br
+.row
+  .text-center = will_paginate @registries, renderer: BootstrapPagination::Rails
