@@ -18,7 +18,7 @@
           - @qualifications.each do |qualification|
             tr.row
               - instruktor = qualification.user
-              td.col-md-3 = link_to instruktor.name, user_path(qualification)
+              td.col-md-3 = link_to instruktor.name, user_path(instruktor)
               td.col-md-1 = image_tag instruktor.avatar.url(:thumb).to_s, size: '25x25' if instruktor.avatar
               td.col-md-3 = uglify_email_helper(instruktor.email)
               td.col-md-2 = instruktor.city
