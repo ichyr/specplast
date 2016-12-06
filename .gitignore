@@ -92,3 +92,6 @@ pickle-email-*.html
 
 # Database specification
 /config/database.yml
+
+# VS Code configuration
+/.vscode/*
