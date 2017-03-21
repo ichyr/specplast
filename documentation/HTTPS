@@ -14,3 +14,11 @@ lrwxrwxrwx 1 root root   41 Dec 11 15:37 cert.pem -> ../../archive/spec.plast.or
 lrwxrwxrwx 1 root root   42 Dec 11 15:37 chain.pem -> ../../archive/spec.plast.org.ua/chain1.pem
 lrwxrwxrwx 1 root root   46 Dec 11 15:37 fullchain.pem -> ../../archive/spec.plast.org.ua/fullchain1.pem
 lrwxrwxrwx 1 root root   44 Dec 11 15:37 privkey.pem -> ../../archive/spec.plast.org.ua/privkey1.pem
+
+
+2. Added to crontab those commands
+
+sudo crontab -e
+
+30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log
+35 2 * * 1 /etc/init.d/nginx reload

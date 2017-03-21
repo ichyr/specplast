@@ -9,7 +9,7 @@ stdout_path "#{root}/log/unicorn.log"
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/tmp/unicorn.specplast.sock"
+listen "/var/sockets/unicorn.specplast.sock"
 listen 8080, :tcp_nopush => true
 
 worker_processes 2
