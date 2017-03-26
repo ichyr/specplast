@@ -84,7 +84,8 @@ class VmilistsController < ApplicationController
   end
 
   def preview
-    @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%").select(:id, :name).limit(10)
+    query = params[:q].to_s.strip.downcase
+    @vmilists = Vmilist.where("lower(name) like ?", "%#{query}%").select(:id, :name).limit(10)
     respond_to do |format|
       format.json { render :json => @vmilists.map(&:attributes) }
     end
