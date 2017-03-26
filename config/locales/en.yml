@@ -5,6 +5,7 @@ en:
     rank: "Rank"
     name: "Name"
     surname: "Surname"
+    email: "Email"
     dob: "Date of birth"
     sex:
       title: "Sex"

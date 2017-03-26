@@ -14,6 +14,11 @@
             .col-sm-offset-3.col-sm-9 = f.error :surname, id: 'registry_surname_error'
 
     .form-group
+            .row
+                = f.label I18n.t("registry.email"), :email, class: 'col-sm-3 control-label'
+                .col-sm-9 = f.input_field :email, class: 'form-control'
+                .col-sm-offset-3.col-sm-9 = f.error :email, id: 'registry_email_error'
+    .form-group
         .row
             = f.label I18n.t("registry.dob"),  :dob, class: 'col-sm-3 control-label'
             .col-sm-9 = f.input_field :dob, class: 'form-control', as: :date_picker

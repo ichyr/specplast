@@ -291,7 +291,8 @@ CREATE TABLE registries (
     comment text,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    photo_url character varying
+    photo_url character varying,
+    email character varying
 );
 
 
@@ -737,4 +738,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151231234354');
 INSERT INTO schema_migrations (version) VALUES ('20160530234355');
 
 INSERT INTO schema_migrations (version) VALUES ('20170326122135');
+
+INSERT INTO schema_migrations (version) VALUES ('20170326201832');
 

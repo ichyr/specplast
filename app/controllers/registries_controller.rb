@@ -93,6 +93,6 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:name, :surname, :dob, :sex, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment, :photo_url)
+    params.require(:registry).permit(:name, :surname, :dob, :sex, :email, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment, :photo_url)
   end
 end
