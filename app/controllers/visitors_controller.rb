@@ -12,7 +12,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def vmilosti
-		query = search_query.to_s.strip.downcase
+		query = params["search"].to_s.strip.downcase
 		@vmilists = Vmilist.select(:id, :name, :avatar, :status)
 											 .where("lower(name) like ?", "%#{query}%")
 											 .order(name: :asc)
