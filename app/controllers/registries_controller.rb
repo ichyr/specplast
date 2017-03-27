@@ -59,9 +59,8 @@ class RegistriesController < ApplicationController
 
   def autocomplete_vmilist_name
     authorize Registry
-    params[:q] = params[:q] || ''
-    @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%")
-    .limit(10)
+    query = params[:q].to_s.strip.downcase
+    @vmilists = Vmilist.where("lower(name) like (?)", "%#{query}%").limit(10)
 
     respond_to do |format|
       format.json { render :json => @vmilists.map{|v| [v.id.to_s, v.name.to_s]} }
