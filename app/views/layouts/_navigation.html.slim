@@ -1,4 +1,13 @@
 .page-header
-  h1.text-center = I18n.t "layout.title"
-  ul.nav.navbar-nav.nav-justified
-    == render 'layouts/navigation_links'
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#main-navbar" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar style="color:black;background-color:black;"
+        span.icon-bar style="color:black;background-color:black;"
+        span.icon-bar style="color:black;background-color:black;"
+      h4.collapsed = I18n.t "layout.title"
+    .nav.navbar-nav
+      h1.text-center = I18n.t "layout.title"
+      ul.nav.navbar-nav.nav-justified#main-navbar
+        == render 'layouts/navigation_links'
