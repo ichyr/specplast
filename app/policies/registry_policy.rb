@@ -1,6 +1,6 @@
 class RegistryPolicy < ApplicationPolicy
   def index?
-    (user.admin? || user.moderator?) if !user.nil?
+    true
   end
 
   def show?
