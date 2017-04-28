@@ -8,6 +8,7 @@ h3.text-center Реєстр здачі вмілостей
         th = "№"
         th = I18n.t('registry.rank')
         th = "#{I18n.t('registry.name')} #{I18n.t('registry.surname')}"
+        th = I18n.t('registry.email')
         th = I18n.t('registry.troop')
         th = I18n.t('registry.group')
         th = I18n.t('registry.city')
@@ -25,6 +26,7 @@ h3.text-center Реєстр здачі вмілостей
           td = registry.id
           td = registry.rank.title if registry.rank
           td = "#{registry.name} #{registry.surname}"
+          td = registry.email
           td = registry.troop
           td = registry.group
           td = registry.city

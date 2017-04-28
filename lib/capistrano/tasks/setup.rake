@@ -41,4 +41,12 @@ namespace :setup do
    end
   end
 
+    desc "Symlink SSL config files for Nginx"
+  task :nginx_ssl_test do
+    on roles(:app) do
+      execute "rm -f /etc/nginx/sites-enabled/default"
+      execute "ln -nfs #{current_path}/config/nginx.ssl.conf /etc/nginx/sites-enabled/#{fetch(:application)}"
+   end
+  end
+
 end

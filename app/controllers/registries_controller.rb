@@ -1,7 +1,7 @@
 class RegistriesController < ApplicationController
   before_action :set_registry, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     authorize Registry
@@ -59,9 +59,8 @@ class RegistriesController < ApplicationController
 
   def autocomplete_vmilist_name
     authorize Registry
-    params[:q] = params[:q] || ''
-    @vmilists = Vmilist.where("name like ?", "%#{params[:q]}%")
-    .limit(10)
+    query = params[:q].to_s.strip.downcase
+    @vmilists = Vmilist.where("lower(name) like (?)", "%#{query}%").limit(10)
 
     respond_to do |format|
       format.json { render :json => @vmilists.map{|v| [v.id.to_s, v.name.to_s]} }
@@ -93,6 +92,6 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:name, :surname, :dob, :sex, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment, :photo_url)
+    params.require(:registry).permit(:name, :surname, :dob, :sex, :email, :rank_id, :troop, :group, :city, :region, :vmilist_id, :achievement_date, :place, :activity, :instruktor_id, :comment, :photo_url)
   end
 end

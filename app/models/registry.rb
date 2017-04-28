@@ -5,7 +5,9 @@ class Registry < ActiveRecord::Base
 
 	attr_accessor :instructor_details
 
-	validates :name, :surname, :dob, :troop, :group, :city, presence: true
+	validates :name, :surname, :dob, :email, :troop, :group, :city, presence: true
 	validates :region, :vmilist_id, :comment, :achievement_date, presence: true
 	validates :place, :activity, :instruktor_id, :photo_url, presence: true
+
+	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
 end

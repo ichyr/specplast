@@ -5,6 +5,7 @@ en:
     rank: "Rank"
     name: "Name"
     surname: "Surname"
+    email: "Email"
     dob: "Date of birth"
     sex:
       title: "Sex"
@@ -23,6 +24,7 @@ en:
     comment: "Comment"
     created_at: "Creation"
     hints:
+      email: 'Please mind that this is used as identifier to see your history of obtained merit badges. Also this is a key for other systems to query information about merit badget that you have.'
       troop: 'Please use special format'
       group: 'Please enter only name without any numbers.'
       vmilist: 'Start typing and then select appropriate name from dropdown'
