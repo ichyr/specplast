@@ -57,7 +57,8 @@ angular.module('specplast', [
           name: 'comment',
           displayName: 'Коментар',
           width: '300',
-          enableGrouping: false
+          enableGrouping: false,
+          cellTemplate: '<div class="ui-grid-cell-contents txt-center" title="{{row.entity.comment}}">{{row.entity.comment}}</div>'
         },
         {
           name: 'photo_url',
