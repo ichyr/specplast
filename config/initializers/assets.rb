@@ -1,10 +1,24 @@
 # Be sure to restart your server when you modify this file.
 
 # Version of your assets, change this if you want to expire all your assets.
-Rails.application.config.assets.version = '0.7'
+Rails.application.config.assets.version = '0.8'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( registries_angular/*.js registries_angular/*.coffee )
-Rails.application.config.assets.precompile += %w( registries_angular/*.scss registries_angular/*.css )
 Rails.application.config.assets.precompile += %w( progressbar.gif loading.gif )
+
+Rails.application.config.assets.precompile << Proc.new do |path|
+if path =~ /\.(css|js|eot|svg|ttf|woff|coffee|scss)\z/
+ full_path = Rails.application.assets.resolve(path).to_path
+ app_assets_path = Rails.root.join('app', 'assets').to_path
+ if full_path.starts_with? app_assets_path
+   puts "including asset: " + full_path
+   true
+ else
+   puts "excluding asset: " + full_path
+   false
+ end       
+else
+ false
+ end
+end
