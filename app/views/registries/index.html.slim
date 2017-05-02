@@ -1,4 +1,8 @@
+== stylesheet_link_tag "registries_angular", 'data-turbolinks-track' => true
+== javascript_include_tag "registries_angular", 'data-turbolinks-track' => true
+
 h3.text-center Реєстр здачі вмілостей
-div ng-view="" 
-  div ng-controller="View1Ctrl" 
-    .myGrid ui-grid="gridOptions" ui-grid-grouping=""
+div ng-app="specplast"
+  div ng-view="" 
+    div ng-controller="RegistryListing" 
+      .myGrid ui-grid="gridOptions" ui-grid-grouping=""

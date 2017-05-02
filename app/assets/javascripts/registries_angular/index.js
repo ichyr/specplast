@@ -10,18 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require jquery-ui/autocomplete
-//= require_directory .
-
-//= require jquery.tokeninput
-//= require bootstrap-sprockets
-//= require bootstrap3-typeahead.min
-//= require bootstrap3-autocomplete-input.min
-//= require twitter/typeahead
-//= require bootsy
-//= require turbolinks
-//= require jquery_nested_form
-
-//= require bootstrap-datetimepicker
+//= require ./angular.min.js
+//= require ./ui-grid.min.js
+//= require ./app.js
+//= require_self
