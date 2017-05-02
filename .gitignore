@@ -95,3 +95,5 @@ pickle-email-*.html
 
 # VS Code configuration
 /.vscode/*
+
+/public/assets/*
