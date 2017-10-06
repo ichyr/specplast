@@ -3,7 +3,11 @@ class ApiController < ApplicationController
 
   # api/vmilists/:id(.json) 
   def vmilist
-  	@vmilist = Vmilist.find(params[:id])
+    @vmilist = Vmilist.find(params[:id])
+
+    respond_to do |format|
+      format.json
+    end
   end
 
   # api/vmilists?name=імя_вмілості(.json)
@@ -30,10 +34,10 @@ class ApiController < ApplicationController
   private
   
   def restrict_access
-    authenticate_or_request_with_http_token do |token, options|
+    # authenticate_or_request_with_http_token do |token, options|
       # ApiKey.exists?(access_token: token)
-      true
-    end
+    # end
+    true
   end
 
   def search_query

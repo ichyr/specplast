@@ -65,6 +65,9 @@ Rails.application.routes.draw do
     get '/500', to: "error#error_500"
   end
 
+  # public JSON APi interface 
+  get 'api/vmilist/:id', to: "api#vmilist"
+
   # Default root
   get '*unmatched_route', to: "error#error_404"
 
