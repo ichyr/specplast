@@ -35,6 +35,7 @@ class ApiController < ApplicationController
       .select(:vmilist_id)
       .where(email: search_email)
       .map(&:vmilist_id)
+      .uniq 
 
     respond_to do |format|
       format.json { render json: @registries }
