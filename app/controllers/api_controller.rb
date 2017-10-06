@@ -19,9 +19,9 @@ class ApiController < ApplicationController
       .select(:id, :name, :child_info, :instructor_info, :specialization_id, :status, :level, :avatar)
       .where('lower("vmilists"."name") like ?', "%#{search_query}%")
       
-    if search_level
-      @vmilists = @vmilists.where('"vmilists"."level" = ?', "#{search_level}")
-    end
+    # if search_level
+    #   @vmilists = @vmilists.where('"vmilists"."level" = ?', "#{search_level}")
+    # end
 
     respond_to do |format|
       format.json { render json: @vmilists}
@@ -39,18 +39,18 @@ class ApiController < ApplicationController
 
 
   def specialization_index
-    @specializations = Specialization.all.includes(:vmilists).join(:vmilists)
+    @specializations = Specialization.includes(:vmilists)
 
     respond_to do |format|
-      format.json { render json: @specializations}
+      format.json
     end
   end
 
   def specialization
-    @specialization = Specialization.find(params[:id]).includes(:vmilists).join(:vmilists)
+    @specialization = Specialization.includes(:vmilists).find(params[:id])
     
     respond_to do |format|
-      format.json { render json: @specialization}
+      format.json
     end
   end
 
