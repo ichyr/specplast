@@ -452,9 +452,3 @@ DEPENDENCIES
   unicorn-rails
   will_paginate (~> 3.0)
   will_paginate-bootstrap
-
-RUBY VERSION
-   ruby 2.1.2p95
-
-BUNDLED WITH
-   1.14.6
