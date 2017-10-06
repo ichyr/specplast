@@ -1,5 +1,6 @@
 class ApiController < ApplicationController
   before_filter :restrict_access
+  before_action :set_default_response_format
 
   # api/vmilists/:id(.json) 
   def vmilist
@@ -30,10 +31,13 @@ class ApiController < ApplicationController
 
   # api/user/:email(.json)
   def user_achievements
-    @registries = Registry.select(:vmilist_id).find(email: params[:email])
+    @registries = Registry
+      .select(:vmilist_id)
+      .where(email: search_email)
+      .map(&:vmilist_id)
 
     respond_to do |format|
-      format.json { render json: @vmilists}
+      format.json { render json: @registries }
     end
   end
 
@@ -50,9 +54,16 @@ class ApiController < ApplicationController
     @specialization = Specialization.includes(:vmilists).find(params[:id])
     
     respond_to do |format|
-      format.json
+      format.json 
     end
   end
+
+  protected
+  
+  def set_default_response_format
+    request.format = :json unless params[:format]
+  end
+
 
   private
   
@@ -69,6 +80,13 @@ class ApiController < ApplicationController
 
   def search_level
     params["search"]["level"].to_i if params["search"] && params["search"]["level"]
+  end
+
+  def search_email
+    email = params[:email]
+    if email
+      email.include?('.json') ? email.split('.json')[0] : email      
+    end
   end
 
 end

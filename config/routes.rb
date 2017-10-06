@@ -68,7 +68,7 @@ Rails.application.routes.draw do
   # public JSON APi interface 
   get 'api/vmilist/:id', to: 'api#vmilist'
   get 'api/vmilists', to: 'api#vmilist_search'
-  get 'api/user/:email', to: 'api#user_achievements'
+  get 'api/user/:email', to: 'api#user_achievements',  constraints: { email: /[^\/]+/}
   get 'api/specialization/:id', to: 'api#specialization'
   get 'api/specialization', to: 'api#specialization_index'
 
