@@ -2,16 +2,12 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.6
--- Dumped by pg_dump version 9.5.6
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
-SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -34,7 +30,39 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: attachments; Type: TABLE; Schema: public; Owner: -
+-- Name: api_keys; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE api_keys (
+    id integer NOT NULL,
+    access_token character varying,
+    owner character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: api_keys_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE api_keys_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: api_keys_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE api_keys_id_seq OWNED BY api_keys.id;
+
+
+--
+-- Name: attachments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE attachments (
@@ -67,7 +95,7 @@ ALTER SEQUENCE attachments_id_seq OWNED BY attachments.id;
 
 
 --
--- Name: bootsy_image_galleries; Type: TABLE; Schema: public; Owner: -
+-- Name: bootsy_image_galleries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE bootsy_image_galleries (
@@ -99,7 +127,7 @@ ALTER SEQUENCE bootsy_image_galleries_id_seq OWNED BY bootsy_image_galleries.id;
 
 
 --
--- Name: bootsy_images; Type: TABLE; Schema: public; Owner: -
+-- Name: bootsy_images; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE bootsy_images (
@@ -131,7 +159,7 @@ ALTER SEQUENCE bootsy_images_id_seq OWNED BY bootsy_images.id;
 
 
 --
--- Name: general_infos; Type: TABLE; Schema: public; Owner: -
+-- Name: general_infos; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE general_infos (
@@ -163,7 +191,7 @@ ALTER SEQUENCE general_infos_id_seq OWNED BY general_infos.id;
 
 
 --
--- Name: qualifications; Type: TABLE; Schema: public; Owner: -
+-- Name: qualifications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE qualifications (
@@ -196,7 +224,7 @@ ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
 
 
 --
--- Name: que_jobs; Type: TABLE; Schema: public; Owner: -
+-- Name: que_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE que_jobs (
@@ -238,7 +266,7 @@ ALTER SEQUENCE que_jobs_job_id_seq OWNED BY que_jobs.job_id;
 
 
 --
--- Name: ranks; Type: TABLE; Schema: public; Owner: -
+-- Name: ranks; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE ranks (
@@ -269,7 +297,7 @@ ALTER SEQUENCE ranks_id_seq OWNED BY ranks.id;
 
 
 --
--- Name: registries; Type: TABLE; Schema: public; Owner: -
+-- Name: registries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE registries (
@@ -316,7 +344,7 @@ ALTER SEQUENCE registries_id_seq OWNED BY registries.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE schema_migrations (
@@ -325,7 +353,7 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: specdata; Type: TABLE; Schema: public; Owner: -
+-- Name: specdata; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE specdata (
@@ -361,7 +389,7 @@ ALTER SEQUENCE specdata_id_seq OWNED BY specdata.id;
 
 
 --
--- Name: specializations; Type: TABLE; Schema: public; Owner: -
+-- Name: specializations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE specializations (
@@ -394,7 +422,7 @@ ALTER SEQUENCE specializations_id_seq OWNED BY specializations.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -
+-- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -442,7 +470,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: vmilists; Type: TABLE; Schema: public; Owner: -
+-- Name: vmilists; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE vmilists (
@@ -454,7 +482,8 @@ CREATE TABLE vmilists (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     avatar character varying,
-    status boolean DEFAULT false
+    status boolean DEFAULT false,
+    level integer DEFAULT 1
 );
 
 
@@ -475,6 +504,13 @@ CREATE SEQUENCE vmilists_id_seq
 --
 
 ALTER SEQUENCE vmilists_id_seq OWNED BY vmilists.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY api_keys ALTER COLUMN id SET DEFAULT nextval('api_keys_id_seq'::regclass);
 
 
 --
@@ -562,7 +598,15 @@ ALTER TABLE ONLY vmilists ALTER COLUMN id SET DEFAULT nextval('vmilists_id_seq':
 
 
 --
--- Name: attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: api_keys_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY api_keys
+    ADD CONSTRAINT api_keys_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY attachments
@@ -570,7 +614,7 @@ ALTER TABLE ONLY attachments
 
 
 --
--- Name: bootsy_image_galleries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: bootsy_image_galleries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY bootsy_image_galleries
@@ -578,7 +622,7 @@ ALTER TABLE ONLY bootsy_image_galleries
 
 
 --
--- Name: bootsy_images_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: bootsy_images_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY bootsy_images
@@ -586,7 +630,7 @@ ALTER TABLE ONLY bootsy_images
 
 
 --
--- Name: general_infos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: general_infos_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY general_infos
@@ -594,7 +638,7 @@ ALTER TABLE ONLY general_infos
 
 
 --
--- Name: qualifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: qualifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY qualifications
@@ -602,7 +646,7 @@ ALTER TABLE ONLY qualifications
 
 
 --
--- Name: que_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: que_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY que_jobs
@@ -610,7 +654,7 @@ ALTER TABLE ONLY que_jobs
 
 
 --
--- Name: ranks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: ranks_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY ranks
@@ -618,7 +662,7 @@ ALTER TABLE ONLY ranks
 
 
 --
--- Name: registries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: registries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY registries
@@ -626,7 +670,7 @@ ALTER TABLE ONLY registries
 
 
 --
--- Name: specdata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: specdata_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY specdata
@@ -634,7 +678,7 @@ ALTER TABLE ONLY specdata
 
 
 --
--- Name: specializations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: specializations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY specializations
@@ -642,7 +686,7 @@ ALTER TABLE ONLY specializations
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -650,7 +694,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: vmilists_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: vmilists_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY vmilists
@@ -658,28 +702,28 @@ ALTER TABLE ONLY vmilists
 
 
 --
--- Name: index_attachments_on_attachable_type_and_attachable_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_attachments_on_attachable_type_and_attachable_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_attachments_on_attachable_type_and_attachable_id ON attachments USING btree (attachable_type, attachable_id);
 
 
 --
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
 
 
 --
--- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
@@ -689,7 +733,7 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user", public;
+SET search_path TO "$user",public;
 
 INSERT INTO schema_migrations (version) VALUES ('20140909072738');
 
@@ -740,4 +784,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160530234355');
 INSERT INTO schema_migrations (version) VALUES ('20170326122135');
 
 INSERT INTO schema_migrations (version) VALUES ('20170326201832');
+
+INSERT INTO schema_migrations (version) VALUES ('20171006170141');
+
+INSERT INTO schema_migrations (version) VALUES ('20171006170142');
 
