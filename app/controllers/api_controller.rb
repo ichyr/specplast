@@ -8,7 +8,7 @@ class ApiController < ApplicationController
       .find(params[:id])
 
     respond_to do |format|
-      format.json { render json: @vmilist}
+      format.json
     end
   end
 
@@ -18,9 +18,9 @@ class ApiController < ApplicationController
     @vmilists = Vmilist
       .where('lower("vmilists"."name") like ?', "%#{search_query}%")
       
-    # if search_level
-    #   @vmilists = @vmilists.where('"vmilists"."level" = ?', "#{search_level}")
-    # end
+    if search_level
+      @vmilists = @vmilists.where('"vmilists"."level" = ?', "#{search_level}")
+    end
 
     respond_to do |format|
       format.json
@@ -74,11 +74,11 @@ class ApiController < ApplicationController
   end
 
   def search_query
-    params["search"]["name"].mb_chars.downcase.to_s if params["search"] && params["search"]["name"]
+    params["name"].mb_chars.downcase.to_s if params["name"]
   end
 
   def search_level
-    params["search"]["level"].to_i if params["search"] && params["search"]["level"]
+    params["level"].to_i if params["level"]
   end
 
   def search_email
