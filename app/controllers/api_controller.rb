@@ -67,10 +67,9 @@ class ApiController < ApplicationController
   private
   
   def restrict_access
-    # authenticate_or_request_with_http_token do |token, options|
-      # ApiKey.exists?(access_token: token)
-    # end
-    true
+    authenticate_or_request_with_http_token do |token, options|
+      ApiKey.exists?(access_token: token)
+    end
   end
 
   def search_query
