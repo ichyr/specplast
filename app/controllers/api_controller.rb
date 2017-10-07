@@ -5,7 +5,6 @@ class ApiController < ApplicationController
   # api/vmilists/:id(.json) 
   def vmilist
     @vmilist = Vmilist
-      .select(:id, :name, :child_info, :instructor_info, :specialization_id, :status, :level, :avatar)
       .find(params[:id])
 
     respond_to do |format|
@@ -17,7 +16,6 @@ class ApiController < ApplicationController
   # api/vmilists?rank=номер_рівня(.json)
   def vmilist_search
     @vmilists = Vmilist
-      .select(:id, :name, :child_info, :instructor_info, :specialization_id, :status, :level, :avatar)
       .where('lower("vmilists"."name") like ?', "%#{search_query}%")
       
     # if search_level
@@ -25,7 +23,7 @@ class ApiController < ApplicationController
     # end
 
     respond_to do |format|
-      format.json { render json: @vmilists}
+      format.json
     end
   end
 

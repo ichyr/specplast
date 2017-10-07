@@ -97,3 +97,6 @@ pickle-email-*.html
 /.vscode/*
 
 /public/assets/*
+
+# data from bundler install --binstubs
+bin/*
