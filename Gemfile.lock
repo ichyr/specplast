@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: b0c93d9e5cac3d3bb6d6f1d7ac57adbba3d025c1
+  branch: tarruda
+  specs:
+    datetimepicker-rails (3.0.1)
+
+GIT
   remote: https://github.com/carrierwaveuploader/carrierwave.git
   revision: 0033279be9b62bccb330a6d78c8fa9e21a299d5a
   specs:
@@ -11,43 +18,43 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.2.0)
-      actionpack (= 4.2.0)
-      actionview (= 4.2.0)
-      activejob (= 4.2.0)
+    actionmailer (4.2.5)
+      actionpack (= 4.2.5)
+      actionview (= 4.2.5)
+      activejob (= 4.2.5)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.0)
-      actionview (= 4.2.0)
-      activesupport (= 4.2.0)
-      rack (~> 1.6.0)
+    actionpack (4.2.5)
+      actionview (= 4.2.5)
+      activesupport (= 4.2.5)
+      rack (~> 1.6)
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    actionview (4.2.0)
-      activesupport (= 4.2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (4.2.5)
+      activesupport (= 4.2.5)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    activejob (4.2.0)
-      activesupport (= 4.2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    activejob (4.2.5)
+      activesupport (= 4.2.5)
       globalid (>= 0.3.0)
-    activemodel (4.2.0)
-      activesupport (= 4.2.0)
+    activemodel (4.2.5)
+      activesupport (= 4.2.5)
       builder (~> 3.1)
-    activerecord (4.2.0)
-      activemodel (= 4.2.0)
-      activesupport (= 4.2.0)
+    activerecord (4.2.5)
+      activemodel (= 4.2.5)
+      activesupport (= 4.2.5)
       arel (~> 6.0)
-    activesupport (4.2.0)
+    activesupport (4.2.5)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.6)
-    arel (6.0.0)
+    arel (6.0.4)
     autoprefixer-rails (5.0.0.1)
       execjs
     bcrypt (3.1.9)
@@ -60,11 +67,12 @@ GEM
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap3_autocomplete_input (0.1.9)
     bootsy (2.0.13)
       carrierwave (~> 0.10)
       mini_magick (~> 4.0)
       remotipart (~> 1.2)
-    builder (3.2.2)
+    builder (3.2.3)
     capistrano (3.3.5)
       capistrano-stats (~> 1.1.0)
       i18n
@@ -140,7 +148,7 @@ GEM
     formatador (0.2.5)
     gherkin (2.12.2)
       multi_json (~> 1.3)
-    globalid (0.3.0)
+    globalid (0.3.7)
       activesupport (>= 4.1.0)
     guard (2.11.1)
       formatador (>= 0.2.4)
@@ -170,7 +178,7 @@ GEM
     hike (1.2.3)
     hitimes (1.2.2)
     hub (1.12.4)
-    i18n (0.7.0)
+    i18n (0.8.1)
     interception (0.5)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -183,7 +191,9 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-tokeninput-rails (1.6.0)
-    json (1.8.2)
+    jquery-ui-rails (5.0.0)
+      railties (>= 3.2.16)
+    json (1.8.6)
     kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -191,25 +201,25 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    loofah (2.0.1)
+    loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
-    mail (2.6.3)
-      mime-types (>= 1.16, < 3)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
     method_source (0.8.2)
-    mime-types (2.4.3)
+    mime-types (2.99.3)
     mini_magick (4.0.2)
-    mini_portile (0.6.2)
-    minitest (5.5.1)
-    multi_json (1.10.1)
+    mini_portile2 (2.1.0)
+    minitest (5.10.1)
+    multi_json (1.12.1)
     multi_test (0.1.1)
     nenv (0.2.0)
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
-    nokogiri (1.6.5)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.7.1)
+      mini_portile2 (~> 2.1.0)
     notiffany (0.0.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -229,28 +239,28 @@ GEM
     que (0.10.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.0)
+    rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     railroady (1.3.0)
-    rails (4.2.0)
-      actionmailer (= 4.2.0)
-      actionpack (= 4.2.0)
-      actionview (= 4.2.0)
-      activejob (= 4.2.0)
-      activemodel (= 4.2.0)
-      activerecord (= 4.2.0)
-      activesupport (= 4.2.0)
+    rails (4.2.5)
+      actionmailer (= 4.2.5)
+      actionpack (= 4.2.5)
+      actionview (= 4.2.5)
+      activejob (= 4.2.5)
+      activemodel (= 4.2.5)
+      activerecord (= 4.2.5)
+      activesupport (= 4.2.5)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.0)
+      railties (= 4.2.5)
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.5)
+    rails-dom-testing (1.0.8)
       activesupport (>= 4.2.0.beta, < 5.0)
-      nokogiri (~> 1.6.0)
+      nokogiri (~> 1.6)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.1)
+    rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
@@ -258,13 +268,13 @@ GEM
     rails_layout (1.0.24)
     rails_serve_static_assets (0.0.3)
     rails_stdout_logging (0.0.3)
-    railties (4.2.0)
-      actionpack (= 4.2.0)
-      activesupport (= 4.2.0)
+    railties (4.2.5)
+      actionpack (= 4.2.5)
+      activesupport (= 4.2.5)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.4.2)
+    rake (12.0.0)
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.4)
@@ -329,12 +339,12 @@ GEM
     slop (3.6.0)
     spork (0.9.2)
     spring (1.2.0)
-    sprockets (2.12.3)
+    sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.2)
+    sprockets-rails (2.3.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
@@ -343,14 +353,18 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.7.5)
-    thor (0.19.1)
-    thread_safe (0.3.4)
+    thor (0.19.4)
+    thread_safe (0.3.6)
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
     turbolinks (2.5.3)
       coffee-rails
-    tzinfo (1.2.2)
+    twitter-typeahead-rails (0.11.1)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (2.7.0)
       execjs (>= 0.3.0)
@@ -378,6 +392,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap3_autocomplete_input
   bootsy
   capistrano
   capistrano-bundler
@@ -389,6 +404,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
+  datetimepicker-rails (>= 3.0.0)!
   devise
   factory_girl_rails
   faker
@@ -402,6 +418,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   jquery-tokeninput-rails
+  jquery-ui-rails
   launchy
   nested_form
   pg
@@ -411,7 +428,7 @@ DEPENDENCIES
   que
   quiet_assets
   railroady
-  rails (= 4.2.0)
+  rails (= 4.2.5)
   rails_12factor
   rails_layout
   rake
@@ -429,6 +446,7 @@ DEPENDENCIES
   spork
   spring
   turbolinks
+  twitter-typeahead-rails
   uglifier (>= 1.3.0)
   unicorn
   unicorn-rails

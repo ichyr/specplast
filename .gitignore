@@ -92,3 +92,11 @@ pickle-email-*.html
 
 # Database specification
 /config/database.yml
+
+# VS Code configuration
+/.vscode/*
+
+/public/assets/*
+
+# data from bundler install --binstubs
+bin/*

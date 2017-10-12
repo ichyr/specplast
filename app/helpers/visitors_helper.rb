@@ -17,4 +17,8 @@ module VisitorsHelper
 		end
 		title
 	end
+
+	def multi_word_id_trasnform(id)
+		id.split(' ').join('_')
+	end
 end

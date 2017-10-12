@@ -1,5 +1,6 @@
 en:
   layout:
+    new_vmilist_input: "I obtained merit badge!"
     title: "Scouts specialization"
     sign_in: "Sign in"
     sign_out: "Sign out"
@@ -27,6 +28,8 @@ en:
     no_vmilists: "No vmilists found for your query!"
     no_instructors: "No instruktors found maching your criteria!"
     no_uncorfirmed_qualifacations: "No uncorfirmed qualifications for your specialization!"
+    general:
+      administration: "System administration"
     models:
       specialization: "Specialization"
       specialization_edit: "Specialization edit"
@@ -38,8 +41,10 @@ en:
       instruktors_tab: "Instructors"
       administrators_tab: "Administrators"
       moderators_tab: "Moderators"
+      contacts_tab: "Contacts"
       bulava_tab: "Bulava"
       save_bulava: "Save changes"
+      save_administration: "Save changes"
       name: "Name"
       avatar: "Avatar"
       status: "Status"

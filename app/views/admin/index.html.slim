@@ -14,6 +14,8 @@ ul.nav.nav-tabs.nav-justified
     a href="#{admin_administrators_path}" = I18n.t("layout.administration.administrators_tab")
   li
     a href="#{admin_bulava_path}" = I18n.t("layout.administration.bulava_tab")
+  li
+    a href="#{admin_contacts_path}" = I18n.t("layout.administration.contacts_tab")
 
 - if policy(Specialization.new).new?
   br

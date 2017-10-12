@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -15,6 +15,9 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
+
+gem 'bootstrap3_autocomplete_input'
+gem 'twitter-typeahead-rails'
 
 # Application server
 gem 'unicorn'
@@ -52,6 +55,8 @@ gem "que"
 
 # for link_helpers
 gem "nested_form"
+
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'better_errors'
@@ -94,3 +99,5 @@ group :test do
   gem 'rake'
   gem 'spork'
 end
+
+gem 'datetimepicker-rails', '>= 3.0.0', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git', :branch => 'tarruda'

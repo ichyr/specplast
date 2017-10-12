@@ -1,0 +1,37 @@
+// Place all the styles related to the Registries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_registry  {
+	input[type=radio] {
+		display:none;
+		margin:10px;
+	}
+
+	input[type=radio] + label {
+		display:inline-block;
+		margin:-2px;
+		padding: 4px 12px;
+		background-color: #e6e6e6;
+		color: black;
+		border-color: #ddd;
+		border-radius: 4px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	input[type=radio]:checked + label {
+		background-image: none;
+		color: white;
+		background-color: green;
+		font-weight: bold;
+	}
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.initialize-scroll {
+	overflow: auto;
+}

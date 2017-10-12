@@ -1,10 +1,13 @@
 br
 
-i.text-right.row.col-xs-4.col-xs-offset-8 = "Раз добром нагріте серце вік не прохолоне!"
-b.text-right.row.col-xs-4.col-xs-offset-8 = "Т. Шевченко"
 
-br
-br
+.row
+	= link_to I18n.t("layout.new_vmilist_input"), new_registry_path, class: "btn btn-success pull-left"
+	
+	div.col-xs-4.pull-right.text-right
+		i.col-xs-12 = "Раз добром нагріте серце вік не прохолоне!"
+		b.col-xs-12 = "Т. Шевченко"
+
 br
 br
 br

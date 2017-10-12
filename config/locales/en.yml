@@ -1,4 +1,38 @@
 en:
+  registry:
+    create: "Register badge"
+    title: "Vmilist achivement submission"
+    rank: "Rank"
+    name: "Name"
+    surname: "Surname"
+    email: "Email"
+    dob: "Date of birth"
+    sex:
+      title: "Sex"
+      man: "Male"
+      woman: "Female"
+    troop: "Troop"
+    group: "Group"
+    city: "City"
+    region: "Region"
+    vmilist: "Skill"
+    achieve_date: "Achievement date"
+    place: "Place"
+    activity: "Activity"
+    photo_url: "Certificate photo"
+    instruktor: "Instruktor"
+    comment: "Comment"
+    created_at: "Creation"
+    hints:
+      email: 'Please mind that this is used as identifier to see your history of obtained merit badges. Also this is a key for other systems to query information about merit badget that you have.'
+      troop: 'Please use special format'
+      group: 'Please enter only name without any numbers.'
+      vmilist: 'Start typing and then select appropriate name from dropdown'
+      place: "Please specify the place where you have passed the skill test"
+      activity: 'E.g. camp, training etc.'
+      instruktor: 'Start typing and then select appropriate name from dropdown'
+      comment: 'Please tell us how did you felt about getting this merit badge?'
+      photo_url: 'Please upload photo of your certificate somewhere and paste here the url directly to the image.'
   attachment:
     add: "Add attachment"
     remove: "Remove item"

@@ -5,7 +5,7 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
   - if devise_error_messages! && devise_error_messages! != ""
     .alert.alert-danger = devise_error_messages!
   .form-group
-    = f.label :name, I18n.t("devise.user.name")
+    = f.label :name, I18n.t("devise.user.name_surname")
     = f.text_field :name, :autofocus => true, class: 'form-control'
   .form-group
     = f.label :email, I18n.t("devise.user.email")
@@ -51,7 +51,7 @@ h3.text-center.content-header = I18n.t "devise.user.edit"
     .form-group
       = f.label I18n.t("layout.models.specialization"), class: 'col-sm-6'
       = f.label @user.specialization.name, class: 'col-sm-6'
-  fieldset
+  fieldset.form-group
     p = I18n.t("devise.user.live_it_blank")
     .form-group
       = f.label :password, I18n.t("devise.user.password")

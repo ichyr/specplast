@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :vmilists do
     collection do
-      get 'preview'
+      get :preview
     end
   end
 
@@ -16,6 +16,13 @@ Rails.application.routes.draw do
 
   resources :general_infos
 
+  resources :registries do
+    collection do
+      get :autocomplete_vmilist_name
+      get :autocomplete_instruktor_name
+    end
+  end
+  
   get 'moderator', to: 'moderator#index'
   get 'moderator/specialization', to: 'moderator#specialization'
   get 'moderator/qualifications/for_approval', to: 'moderator#waiting'
@@ -29,18 +36,20 @@ Rails.application.routes.draw do
   get 'admin/moderators', to: 'admin#moderators'
   get 'admin/administrators', to: 'admin#administrators'
   get 'admin/bulava', to: 'admin#bulava'
+  get 'admin/contacts', to: 'admin#administrator_contacts'
 
   # Visitors controller
-  get "activities", to: 'visitors#activities'
-  get "vmilosti", to: 'visitors#vmilosti'
-  get "proby", to: 'visitors#proby'
-  get "instructors", to: 'visitors#instructors'
-  get "provid", to: 'visitors#provid'
-  get "bulava", to: 'visitors#bulava'
-  get "visitors/api/:id", to: 'visitors#api'
+  get 'activities', to: 'visitors#activities'
+  get 'vmilosti', to: 'visitors#vmilosti'
+  get 'proby', to: 'visitors#proby'
+  get 'instructors', to: 'visitors#instructors'
+  get 'provid', to: 'visitors#provid'
+  get 'bulava', to: 'visitors#bulava'
+  get 'administration', to: 'visitors#administration'
+  get 'visitors/api/:id', to: 'visitors#api'
   
   #  User controller
-  devise_for :users, :controllers => { :registrations => "registration" }
+  devise_for :users, :controllers => { :registrations => 'registration' }
 
   get 'users', to: 'users#index'
   get 'users/:id', to: 'users#show', :as => :user
@@ -51,12 +60,19 @@ Rails.application.routes.draw do
 
   # Exceptions and errors 
   namespace :admin do
-    get '/403', to: "error#error_403"
-    get '/404', to: "error#error_404"
-    get '/500', to: "error#error_500"
+    get '/403', to: 'error#error_403'
+    get '/404', to: 'error#error_404'
+    get '/500', to: 'error#error_500'
   end
 
+  # public JSON APi interface 
+  get 'api/vmilist/:id', to: 'api#vmilist'
+  get 'api/vmilists', to: 'api#vmilist_search'
+  get 'api/user/:email', to: 'api#user_achievements',  constraints: { email: /[^\/]+/}
+  get 'api/specialization/:id', to: 'api#specialization'
+  get 'api/specialization', to: 'api#specialization_index'
+
   # Default root
-  get '*unmatched_route', to: "error#error_404"
+  get '*unmatched_route', to: 'error#error_404'
 
 end

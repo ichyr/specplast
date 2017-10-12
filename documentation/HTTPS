@@ -1,0 +1,24 @@
+1. Get certificates from Let's encrypt https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04
+
+ - Congratulations! Your certificate and chain have been saved at
+   /etc/letsencrypt/live/spec.plast.org.ua/fullchain.pem. Your cert
+   will expire on 2017-03-11. To obtain a new or tweaked version of
+   this certificate in the future, simply run certbot-auto again. To
+   non-interactively renew *all* of your certificates, run
+   "certbot-auto renew"
+
+
+drwxr-xr-x 2 root root 4096 Dec 11 15:37 .
+drwx------ 3 root root 4096 Dec 11 15:37 ..
+lrwxrwxrwx 1 root root   41 Dec 11 15:37 cert.pem -> ../../archive/spec.plast.org.ua/cert1.pem
+lrwxrwxrwx 1 root root   42 Dec 11 15:37 chain.pem -> ../../archive/spec.plast.org.ua/chain1.pem
+lrwxrwxrwx 1 root root   46 Dec 11 15:37 fullchain.pem -> ../../archive/spec.plast.org.ua/fullchain1.pem
+lrwxrwxrwx 1 root root   44 Dec 11 15:37 privkey.pem -> ../../archive/spec.plast.org.ua/privkey1.pem
+
+
+2. Added to crontab those commands
+
+sudo crontab -e
+
+30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log
+35 2 * * 1 /etc/init.d/nginx reload

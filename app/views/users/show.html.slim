@@ -8,7 +8,8 @@ h3.text-center.content-header.margin-bottom-30 = I18n.t("users.public_profile")
 		h2.text-center = @user.name
   .col-md-6
 		b = I18n.t "users.email"
-		p = @user.email
+		small.margin-left-10.grey = I18n.t('devise.user.remove_lillies')
+		p = uglify_email_helper(@user.email)
 		b = I18n.t "users.role"
 		p = @user.role.to_s
 		b = I18n.t "devise.user.city"

@@ -10,7 +10,7 @@ br/
 
 .tab-content
   - @specializations.each_with_index do |specialization, index|
-    div class=("tab-pane #{"active" if index == 0}") id=specialization.name 
+    div class=("tab-pane #{"active" if index == 0}") id="#{multi_word_id_trasnform(specialization.name)}" 
       = raw specialization.specdatum.activity
 
       br/

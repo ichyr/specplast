@@ -1,0 +1,55 @@
+p#notice = notice
+
+h2.text-center.content-header = "Перегляд запису в реєстрі"
+
+p.row
+  .col-sm-4.strong Ім'я:
+  .col-sm-8 = @registry.name
+p.row
+  .col-sm-4.strong Прізвище:
+  .col-sm-8 = @registry.surname
+p.row
+  .col-sm-4.strong Email:
+  .col-sm-8 = @registry.email
+p.row
+  .col-sm-4.strong Дата народження:
+  .col-sm-8 = @registry.dob
+p.row
+  .col-sm-4.strong Стать:
+  .col-sm-8 = @registry.sex ? "Жіноча" : "Чоловіча"
+p.row
+  .col-sm-4.strong Ступінь:
+  .col-sm-8 = @registry.rank.title
+p.row
+  .col-sm-4.strong Курінь:
+  .col-sm-8 = @registry.troop
+p.row
+  .col-sm-4.strong Гурток:
+  .col-sm-8 = @registry.group
+p.row
+  .col-sm-4.strong Станиця:
+  .col-sm-8 = @registry.city
+p.row
+  .col-sm-4.strong Округа:
+  .col-sm-8 = @registry.region
+p.row
+  .col-sm-4.strong Назва вмілості:
+  .col-sm-8 = @registry.vmilist.name
+p.row
+  .col-sm-4.strong Дата здачі:
+  .col-sm-8 = @registry.achievement_date
+p.row
+  .col-sm-4.strong Місце здачі:
+  .col-sm-8 = @registry.place
+p.row
+  .col-sm-4.strong Вид заходу:
+  .col-sm-8 = @registry.activity
+p.row
+  .col-sm-4.strong Посилання на світлину з посвідкою:
+  .col-sm-8 = @registry.photo_url
+p.row
+  .col-sm-4.strong Інструктор:
+  .col-sm-8 = @registry.instruktor.name
+p.row
+  .col-sm-4.strong Коментар:
+  .col-sm-8 = @registry.comment

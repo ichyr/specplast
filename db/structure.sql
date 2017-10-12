@@ -30,6 +30,38 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: api_keys; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE api_keys (
+    id integer NOT NULL,
+    access_token character varying,
+    owner character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: api_keys_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE api_keys_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: api_keys_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE api_keys_id_seq OWNED BY api_keys.id;
+
+
+--
 -- Name: attachments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -192,6 +224,126 @@ ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
 
 
 --
+-- Name: que_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE que_jobs (
+    priority smallint DEFAULT 100 NOT NULL,
+    run_at timestamp with time zone DEFAULT now() NOT NULL,
+    job_id bigint NOT NULL,
+    job_class text NOT NULL,
+    args json DEFAULT '[]'::json NOT NULL,
+    error_count integer DEFAULT 0 NOT NULL,
+    last_error text,
+    queue text DEFAULT ''::text NOT NULL
+);
+
+
+--
+-- Name: TABLE que_jobs; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE que_jobs IS '3';
+
+
+--
+-- Name: que_jobs_job_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE que_jobs_job_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: que_jobs_job_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE que_jobs_job_id_seq OWNED BY que_jobs.job_id;
+
+
+--
+-- Name: ranks; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ranks (
+    id integer NOT NULL,
+    title character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: ranks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ranks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ranks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ranks_id_seq OWNED BY ranks.id;
+
+
+--
+-- Name: registries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE registries (
+    id integer NOT NULL,
+    name character varying,
+    surname character varying,
+    dob date,
+    sex boolean,
+    rank_id integer,
+    troop character varying,
+    "group" character varying,
+    city character varying,
+    region character varying,
+    vmilist_id integer,
+    achievement_date date,
+    place character varying,
+    activity character varying,
+    instruktor_id integer,
+    comment text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    photo_url character varying,
+    email character varying
+);
+
+
+--
+-- Name: registries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE registries_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: registries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE registries_id_seq OWNED BY registries.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -330,7 +482,8 @@ CREATE TABLE vmilists (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     avatar character varying,
-    status boolean DEFAULT false
+    status boolean DEFAULT false,
+    level integer DEFAULT 1
 );
 
 
@@ -351,6 +504,13 @@ CREATE SEQUENCE vmilists_id_seq
 --
 
 ALTER SEQUENCE vmilists_id_seq OWNED BY vmilists.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY api_keys ALTER COLUMN id SET DEFAULT nextval('api_keys_id_seq'::regclass);
 
 
 --
@@ -389,6 +549,27 @@ ALTER TABLE ONLY qualifications ALTER COLUMN id SET DEFAULT nextval('qualificati
 
 
 --
+-- Name: job_id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY que_jobs ALTER COLUMN job_id SET DEFAULT nextval('que_jobs_job_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ranks ALTER COLUMN id SET DEFAULT nextval('ranks_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY registries ALTER COLUMN id SET DEFAULT nextval('registries_id_seq'::regclass);
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -414,6 +595,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 --
 
 ALTER TABLE ONLY vmilists ALTER COLUMN id SET DEFAULT nextval('vmilists_id_seq'::regclass);
+
+
+--
+-- Name: api_keys_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY api_keys
+    ADD CONSTRAINT api_keys_pkey PRIMARY KEY (id);
 
 
 --
@@ -454,6 +643,30 @@ ALTER TABLE ONLY general_infos
 
 ALTER TABLE ONLY qualifications
     ADD CONSTRAINT qualifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: que_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY que_jobs
+    ADD CONSTRAINT que_jobs_pkey PRIMARY KEY (queue, priority, run_at, job_id);
+
+
+--
+-- Name: ranks_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ranks
+    ADD CONSTRAINT ranks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: registries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY registries
+    ADD CONSTRAINT registries_pkey PRIMARY KEY (id);
 
 
 --
@@ -561,4 +774,18 @@ INSERT INTO schema_migrations (version) VALUES ('20150829172041');
 INSERT INTO schema_migrations (version) VALUES ('20150905071601');
 
 INSERT INTO schema_migrations (version) VALUES ('20150906173919');
+
+INSERT INTO schema_migrations (version) VALUES ('20151226145849');
+
+INSERT INTO schema_migrations (version) VALUES ('20151231234354');
+
+INSERT INTO schema_migrations (version) VALUES ('20160530234355');
+
+INSERT INTO schema_migrations (version) VALUES ('20170326122135');
+
+INSERT INTO schema_migrations (version) VALUES ('20170326201832');
+
+INSERT INTO schema_migrations (version) VALUES ('20171006170141');
+
+INSERT INTO schema_migrations (version) VALUES ('20171006170142');
 

@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
   has_many :qualifications, dependent: :destroy
   has_many :vmilists, through: :qualifications
 
+  has_many :registries
+
   attr_reader :vmilist_token
 
   def vmilist_token=(ids)

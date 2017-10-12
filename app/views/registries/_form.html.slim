@@ -1,0 +1,125 @@
+= simple_form_for(@registry, :html=> { class: 'form-horizontal ' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .form-group
+        .row
+            = f.label I18n.t("registry.name"), :name, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :name, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.error :name, id: 'registry_name_error'
+    .form-group
+        .row
+            = f.label I18n.t("registry.surname"),  :surname, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :surname, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.error :surname, id: 'registry_surname_error'
+
+    .form-group
+            .row
+                = f.label I18n.t("registry.email"), :email, class: 'col-sm-3 control-label'
+                .col-sm-9 = f.input_field :email, class: 'form-control'
+                .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.email")
+                .col-sm-offset-3.col-sm-9 = f.error :email, id: 'registry_email_error'
+    .form-group
+        .row
+            = f.label I18n.t("registry.dob"),  :dob, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :dob, class: 'form-control', as: :date_picker
+            .col-sm-offset-3.col-sm-9 = f.error :dob, id: 'registry_dob_error'
+
+    .form-group.form-inline
+        .row
+            = f.label I18n.t("registry.sex.title"), :sex, class: 'col-sm-3'
+            / .col-sm-9 = f.input :sex
+            .col-sm-9
+                .col-sm-6
+                    input type="radio" name="registry[sex]" id="registry_sex_male" value="man" checked="checked"
+                    label.radio-inline.col-sm-12 for="registry_sex_male"= I18n.t('registry.sex.man')
+                .col-sm-6
+                    input type="radio" name="registry[sex]" id="registry_sex_female" value="woman"
+                    label.radio-inline.col-sm-12 for="registry_sex_female" = I18n.t('registry.sex.woman')
+                  
+            .col-sm-offset-3.col-sm-9 = f.error :sex, id: 'registry_sex_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.rank"), :rank_id, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :rank_id, collection: Rank.all, label_method: :title, value_method: :id, include_blank: false, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.error :rank, id: 'registry_rank_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.troop"), :troop, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :troop, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.troop")
+            .col-sm-offset-3.col-sm-9 = f.error :troop, id: 'registry_troop_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.group"), :group, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :group, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.group")
+            .col-sm-offset-3.col-sm-9 = f.error :group, id: 'registry_group_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.city"), :city, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :city, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.error :city, id: 'registry_city_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.region"), :region, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :region, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.error :region, id: 'registry_region_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.vmilist"), :vmilist_id, class: 'col-sm-3 control-label'
+            = f.hidden_field :vmilist_id, class: 'form-control'
+            .col-sm-9 = f.input_field :vmilist, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.vmilist")
+            .col-sm-offset-3.col-sm-9 = f.error :vmilist_id, id: 'registry_vmilist_id_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.achieve_date"), :achievement_date, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :achievement_date, class: 'form-control', as: :date_picker
+            .col-sm-offset-3.col-sm-9 = f.error :achievement_date, id: 'registry_achievement_date_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.place"), :place, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :place, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.place")
+            .col-sm-offset-3.col-sm-9 = f.error :place, id: 'registry_place_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.activity"), :activity, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :activity, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.activity")
+            .col-sm-offset-3.col-sm-9 = f.error :activity, id: 'registry_activity_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.instruktor"), :instruktor_id, class: 'col-sm-3 control-label'
+            = f.hidden_field :instruktor_id
+            .col-sm-9 = f.input_field :instruktor, class: 'form-control', disabled: true
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.instruktor")
+            .col-sm-offset-3.col-sm-9 = f.error :instruktor_id, id: 'registry_instruktor_id_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.photo_url"), :photo_url, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :photo_url, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.photo_url")
+            .col-sm-offset-3.col-sm-9 = f.error :photo_url, id: 'registry_activity_error'
+
+    .form-group
+        .row
+            = f.label I18n.t("registry.comment"), :comment, class: 'col-sm-3 control-label'
+            .col-sm-9 = f.input_field :comment, class: 'form-control'
+            .col-sm-offset-3.col-sm-9 = f.hint I18n.t("registry.hints.comment")
+            .col-sm-offset-3.col-sm-9 = f.error :comment, id: 'registry_comment_error'
+
+  .form-actions
+    = f.button :submit, I18n.t('registry.create'), class: 'btn btn-success pull-right'

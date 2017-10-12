@@ -12,10 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-ui/autocomplete
+//= require_directory .
 
 //= require jquery.tokeninput
 //= require bootstrap-sprockets
+//= require bootstrap3-typeahead.min
+//= require bootstrap3-autocomplete-input.min
+//= require twitter/typeahead
 //= require bootsy
 //= require turbolinks
 //= require jquery_nested_form
+
+//= require bootstrap-datetimepicker
