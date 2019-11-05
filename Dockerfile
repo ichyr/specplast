@@ -135,4 +135,4 @@ COPY . /myapp
 RUN apt-get install -y --no-install-recommends nodejs
 
 # Start the main process.
-# CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
