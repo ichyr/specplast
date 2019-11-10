@@ -6,6 +6,8 @@
 
    docker build -t specplast01 .
 
+3. Use postgres docker images env varialbes from https://hub.docker.com/_/postgres
+
 # Troubleshooting:
 
 1. to run image do

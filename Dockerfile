@@ -24,6 +24,11 @@ RUN apt-get update \
     libxslt1-dev \
     libcurl4-openssl-dev \
     python-software-properties \
+    checkinstall \
+    wget \
+    libmagickcore-dev \
+    libmagickwand-dev \
+    nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 # skip installing gem documentation
@@ -87,22 +92,22 @@ RUN set -ex \
 
 
 RUN git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
-RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-RUN export PATH="$HOME/.rbenv/bin:$PATH"
+RUN echo 'export PATH="/root/.rbenv/bin:$PATH"' >> ~/.bashrc
+ENV PATH="/root/.rbenv/bin:$PATH"
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 RUN eval "$(rbenv init -)"
 
 RUN git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-RUN echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
-RUN export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+RUN echo 'export PATH="/root/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+ENV PATH="/root/.rbenv/plugins/ruby-build/bin:$PATH"
 
 RUN git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 
 RUN git clone https://github.com/ianheggie/rbenv-binstubs.git ~/.rbenv/plugins/rbenv-binstubs
 
-RUN $HOME/.rbenv/bin/rbenv install 2.1.2
-RUN $HOME/.rbenv/bin/rbenv rehash
-RUN $HOME/.rbenv/bin/rbenv global 2.1.2
+RUN /root/.rbenv/bin/rbenv install 2.1.2
+RUN /root/.rbenv/bin/rbenv rehash
+RUN /root/.rbenv/bin/rbenv global 2.1.2
 
 RUN /root/.rbenv/shims/gem install bundler -v 1.9.8
 RUN /root/.rbenv/shims/bundle -v
@@ -112,7 +117,6 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN apt-get install -y --no-install-recommends build-essential checkinstall wget
 RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.7.7-10.tar.xz
 RUN tar xf ImageMagick-6.7.7-10.tar.xz
 RUN pwd
@@ -127,12 +131,16 @@ RUN identify -version
 RUN pwd
 WORKDIR /myapp
 RUN pwd
-RUN apt-get install -y --no-install-recommends libmagickcore-dev libmagickwand-dev
 RUN /root/.rbenv/shims/gem install rmagick -v '2.13.4'
 RUN /root/.rbenv/shims/bundle install --quiet
 COPY . /myapp
 
-RUN apt-get install -y --no-install-recommends nodejs
-
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+RUN env
+ENV PATH="/root/.rbenv/shims:$PATH"
+ENV RUBY_PATH="/root/.rbenv/shims/ruby"
+RUN echo 'export PATH="/root/.rbenv/shims:$PATH"' >> ~/.bashrc
+RUN echo 'export RUBY_PATH="/root/.rbenv/shims/ruby"' >> ~/.bashrc
+RUN env
+RUN env
+CMD ["bash", "-l", "/root/.rbenv/shims/rails", "server", "-b", "0.0.0.0"]
