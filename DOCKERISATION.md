@@ -1,3 +1,15 @@
+# How to use
+
+1. build specplast comtainer
+2. run `docker-compose up`
+3. login to `web` container `docker-compose exec web bash` and run
+
+   rake db:create
+   rake db:migrate
+   rake db:seed
+
+4. Now you can see something at localhost:3000
+
 # Steps
 
 1. Created good Dockerfile

@@ -142,5 +142,8 @@ ENV RUBY_PATH="/root/.rbenv/shims/ruby"
 RUN echo 'export PATH="/root/.rbenv/shims:$PATH"' >> ~/.bashrc
 RUN echo 'export RUBY_PATH="/root/.rbenv/shims/ruby"' >> ~/.bashrc
 RUN env
+ENV RAILS_ENV=development
 RUN env
+
+RUN apt-get install -y --no-install-recommends postgresql-client
 CMD ["bash", "-l", "/root/.rbenv/shims/rails", "server", "-b", "0.0.0.0"]
