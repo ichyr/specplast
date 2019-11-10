@@ -6,8 +6,16 @@ SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+
+--
+-- Name: DATABASE postgres; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON DATABASE postgres IS 'default administrative connection database';
+
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -23,8 +31,6 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
-SET search_path = public, pg_catalog;
-
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -33,7 +39,7 @@ SET default_with_oids = false;
 -- Name: api_keys; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE api_keys (
+CREATE TABLE public.api_keys (
     id integer NOT NULL,
     access_token character varying,
     owner character varying,
@@ -46,7 +52,7 @@ CREATE TABLE api_keys (
 -- Name: api_keys_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE api_keys_id_seq
+CREATE SEQUENCE public.api_keys_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -58,14 +64,14 @@ CREATE SEQUENCE api_keys_id_seq
 -- Name: api_keys_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE api_keys_id_seq OWNED BY api_keys.id;
+ALTER SEQUENCE public.api_keys_id_seq OWNED BY public.api_keys.id;
 
 
 --
 -- Name: attachments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE attachments (
+CREATE TABLE public.attachments (
     id integer NOT NULL,
     file character varying,
     attachable_id integer,
@@ -79,7 +85,7 @@ CREATE TABLE attachments (
 -- Name: attachments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE attachments_id_seq
+CREATE SEQUENCE public.attachments_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -91,14 +97,14 @@ CREATE SEQUENCE attachments_id_seq
 -- Name: attachments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE attachments_id_seq OWNED BY attachments.id;
+ALTER SEQUENCE public.attachments_id_seq OWNED BY public.attachments.id;
 
 
 --
 -- Name: bootsy_image_galleries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE bootsy_image_galleries (
+CREATE TABLE public.bootsy_image_galleries (
     id integer NOT NULL,
     bootsy_resource_id integer,
     bootsy_resource_type character varying,
@@ -111,7 +117,7 @@ CREATE TABLE bootsy_image_galleries (
 -- Name: bootsy_image_galleries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE bootsy_image_galleries_id_seq
+CREATE SEQUENCE public.bootsy_image_galleries_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -123,14 +129,14 @@ CREATE SEQUENCE bootsy_image_galleries_id_seq
 -- Name: bootsy_image_galleries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE bootsy_image_galleries_id_seq OWNED BY bootsy_image_galleries.id;
+ALTER SEQUENCE public.bootsy_image_galleries_id_seq OWNED BY public.bootsy_image_galleries.id;
 
 
 --
 -- Name: bootsy_images; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE bootsy_images (
+CREATE TABLE public.bootsy_images (
     id integer NOT NULL,
     image_file character varying,
     image_gallery_id integer,
@@ -143,7 +149,7 @@ CREATE TABLE bootsy_images (
 -- Name: bootsy_images_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE bootsy_images_id_seq
+CREATE SEQUENCE public.bootsy_images_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -155,14 +161,14 @@ CREATE SEQUENCE bootsy_images_id_seq
 -- Name: bootsy_images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE bootsy_images_id_seq OWNED BY bootsy_images.id;
+ALTER SEQUENCE public.bootsy_images_id_seq OWNED BY public.bootsy_images.id;
 
 
 --
 -- Name: general_infos; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE general_infos (
+CREATE TABLE public.general_infos (
     id integer NOT NULL,
     key text,
     value text,
@@ -175,7 +181,7 @@ CREATE TABLE general_infos (
 -- Name: general_infos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE general_infos_id_seq
+CREATE SEQUENCE public.general_infos_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -187,14 +193,14 @@ CREATE SEQUENCE general_infos_id_seq
 -- Name: general_infos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE general_infos_id_seq OWNED BY general_infos.id;
+ALTER SEQUENCE public.general_infos_id_seq OWNED BY public.general_infos.id;
 
 
 --
 -- Name: qualifications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE qualifications (
+CREATE TABLE public.qualifications (
     id integer NOT NULL,
     user_id integer,
     vmilist_id integer,
@@ -208,7 +214,7 @@ CREATE TABLE qualifications (
 -- Name: qualifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE qualifications_id_seq
+CREATE SEQUENCE public.qualifications_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -220,14 +226,14 @@ CREATE SEQUENCE qualifications_id_seq
 -- Name: qualifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE qualifications_id_seq OWNED BY qualifications.id;
+ALTER SEQUENCE public.qualifications_id_seq OWNED BY public.qualifications.id;
 
 
 --
 -- Name: que_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE que_jobs (
+CREATE TABLE public.que_jobs (
     priority smallint DEFAULT 100 NOT NULL,
     run_at timestamp with time zone DEFAULT now() NOT NULL,
     job_id bigint NOT NULL,
@@ -243,14 +249,14 @@ CREATE TABLE que_jobs (
 -- Name: TABLE que_jobs; Type: COMMENT; Schema: public; Owner: -
 --
 
-COMMENT ON TABLE que_jobs IS '3';
+COMMENT ON TABLE public.que_jobs IS '3';
 
 
 --
 -- Name: que_jobs_job_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE que_jobs_job_id_seq
+CREATE SEQUENCE public.que_jobs_job_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -262,14 +268,14 @@ CREATE SEQUENCE que_jobs_job_id_seq
 -- Name: que_jobs_job_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE que_jobs_job_id_seq OWNED BY que_jobs.job_id;
+ALTER SEQUENCE public.que_jobs_job_id_seq OWNED BY public.que_jobs.job_id;
 
 
 --
 -- Name: ranks; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE ranks (
+CREATE TABLE public.ranks (
     id integer NOT NULL,
     title character varying,
     created_at timestamp without time zone NOT NULL,
@@ -281,7 +287,7 @@ CREATE TABLE ranks (
 -- Name: ranks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE ranks_id_seq
+CREATE SEQUENCE public.ranks_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -293,14 +299,14 @@ CREATE SEQUENCE ranks_id_seq
 -- Name: ranks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE ranks_id_seq OWNED BY ranks.id;
+ALTER SEQUENCE public.ranks_id_seq OWNED BY public.ranks.id;
 
 
 --
 -- Name: registries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE registries (
+CREATE TABLE public.registries (
     id integer NOT NULL,
     name character varying,
     surname character varying,
@@ -328,7 +334,7 @@ CREATE TABLE registries (
 -- Name: registries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE registries_id_seq
+CREATE SEQUENCE public.registries_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -340,14 +346,14 @@ CREATE SEQUENCE registries_id_seq
 -- Name: registries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE registries_id_seq OWNED BY registries.id;
+ALTER SEQUENCE public.registries_id_seq OWNED BY public.registries.id;
 
 
 --
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE schema_migrations (
+CREATE TABLE public.schema_migrations (
     version character varying NOT NULL
 );
 
@@ -356,7 +362,7 @@ CREATE TABLE schema_migrations (
 -- Name: specdata; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE specdata (
+CREATE TABLE public.specdata (
     id integer NOT NULL,
     gen_info text,
     proby text,
@@ -373,7 +379,7 @@ CREATE TABLE specdata (
 -- Name: specdata_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE specdata_id_seq
+CREATE SEQUENCE public.specdata_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -385,14 +391,14 @@ CREATE SEQUENCE specdata_id_seq
 -- Name: specdata_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE specdata_id_seq OWNED BY specdata.id;
+ALTER SEQUENCE public.specdata_id_seq OWNED BY public.specdata.id;
 
 
 --
 -- Name: specializations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE specializations (
+CREATE TABLE public.specializations (
     id integer NOT NULL,
     name character varying,
     created_at timestamp without time zone,
@@ -406,7 +412,7 @@ CREATE TABLE specializations (
 -- Name: specializations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE specializations_id_seq
+CREATE SEQUENCE public.specializations_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -418,14 +424,14 @@ CREATE SEQUENCE specializations_id_seq
 -- Name: specializations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE specializations_id_seq OWNED BY specializations.id;
+ALTER SEQUENCE public.specializations_id_seq OWNED BY public.specializations.id;
 
 
 --
 -- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE users (
+CREATE TABLE public.users (
     id integer NOT NULL,
     email character varying DEFAULT ''::character varying NOT NULL,
     encrypted_password character varying DEFAULT ''::character varying NOT NULL,
@@ -454,7 +460,7 @@ CREATE TABLE users (
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE users_id_seq
+CREATE SEQUENCE public.users_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -466,14 +472,14 @@ CREATE SEQUENCE users_id_seq
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
 -- Name: vmilists; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE vmilists (
+CREATE TABLE public.vmilists (
     id integer NOT NULL,
     name character varying,
     child_info text,
@@ -491,7 +497,7 @@ CREATE TABLE vmilists (
 -- Name: vmilists_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE vmilists_id_seq
+CREATE SEQUENCE public.vmilists_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -503,105 +509,105 @@ CREATE SEQUENCE vmilists_id_seq
 -- Name: vmilists_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE vmilists_id_seq OWNED BY vmilists.id;
+ALTER SEQUENCE public.vmilists_id_seq OWNED BY public.vmilists.id;
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY api_keys ALTER COLUMN id SET DEFAULT nextval('api_keys_id_seq'::regclass);
+ALTER TABLE ONLY public.api_keys ALTER COLUMN id SET DEFAULT nextval('public.api_keys_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY attachments ALTER COLUMN id SET DEFAULT nextval('attachments_id_seq'::regclass);
+ALTER TABLE ONLY public.attachments ALTER COLUMN id SET DEFAULT nextval('public.attachments_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY bootsy_image_galleries ALTER COLUMN id SET DEFAULT nextval('bootsy_image_galleries_id_seq'::regclass);
+ALTER TABLE ONLY public.bootsy_image_galleries ALTER COLUMN id SET DEFAULT nextval('public.bootsy_image_galleries_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY bootsy_images ALTER COLUMN id SET DEFAULT nextval('bootsy_images_id_seq'::regclass);
+ALTER TABLE ONLY public.bootsy_images ALTER COLUMN id SET DEFAULT nextval('public.bootsy_images_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY general_infos ALTER COLUMN id SET DEFAULT nextval('general_infos_id_seq'::regclass);
+ALTER TABLE ONLY public.general_infos ALTER COLUMN id SET DEFAULT nextval('public.general_infos_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY qualifications ALTER COLUMN id SET DEFAULT nextval('qualifications_id_seq'::regclass);
+ALTER TABLE ONLY public.qualifications ALTER COLUMN id SET DEFAULT nextval('public.qualifications_id_seq'::regclass);
 
 
 --
 -- Name: job_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY que_jobs ALTER COLUMN job_id SET DEFAULT nextval('que_jobs_job_id_seq'::regclass);
+ALTER TABLE ONLY public.que_jobs ALTER COLUMN job_id SET DEFAULT nextval('public.que_jobs_job_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY ranks ALTER COLUMN id SET DEFAULT nextval('ranks_id_seq'::regclass);
+ALTER TABLE ONLY public.ranks ALTER COLUMN id SET DEFAULT nextval('public.ranks_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY registries ALTER COLUMN id SET DEFAULT nextval('registries_id_seq'::regclass);
+ALTER TABLE ONLY public.registries ALTER COLUMN id SET DEFAULT nextval('public.registries_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY specdata ALTER COLUMN id SET DEFAULT nextval('specdata_id_seq'::regclass);
+ALTER TABLE ONLY public.specdata ALTER COLUMN id SET DEFAULT nextval('public.specdata_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY specializations ALTER COLUMN id SET DEFAULT nextval('specializations_id_seq'::regclass);
+ALTER TABLE ONLY public.specializations ALTER COLUMN id SET DEFAULT nextval('public.specializations_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY vmilists ALTER COLUMN id SET DEFAULT nextval('vmilists_id_seq'::regclass);
+ALTER TABLE ONLY public.vmilists ALTER COLUMN id SET DEFAULT nextval('public.vmilists_id_seq'::regclass);
 
 
 --
 -- Name: api_keys_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY api_keys
+ALTER TABLE ONLY public.api_keys
     ADD CONSTRAINT api_keys_pkey PRIMARY KEY (id);
 
 
@@ -609,7 +615,7 @@ ALTER TABLE ONLY api_keys
 -- Name: attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY attachments
+ALTER TABLE ONLY public.attachments
     ADD CONSTRAINT attachments_pkey PRIMARY KEY (id);
 
 
@@ -617,7 +623,7 @@ ALTER TABLE ONLY attachments
 -- Name: bootsy_image_galleries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY bootsy_image_galleries
+ALTER TABLE ONLY public.bootsy_image_galleries
     ADD CONSTRAINT bootsy_image_galleries_pkey PRIMARY KEY (id);
 
 
@@ -625,7 +631,7 @@ ALTER TABLE ONLY bootsy_image_galleries
 -- Name: bootsy_images_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY bootsy_images
+ALTER TABLE ONLY public.bootsy_images
     ADD CONSTRAINT bootsy_images_pkey PRIMARY KEY (id);
 
 
@@ -633,7 +639,7 @@ ALTER TABLE ONLY bootsy_images
 -- Name: general_infos_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY general_infos
+ALTER TABLE ONLY public.general_infos
     ADD CONSTRAINT general_infos_pkey PRIMARY KEY (id);
 
 
@@ -641,7 +647,7 @@ ALTER TABLE ONLY general_infos
 -- Name: qualifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY qualifications
+ALTER TABLE ONLY public.qualifications
     ADD CONSTRAINT qualifications_pkey PRIMARY KEY (id);
 
 
@@ -649,7 +655,7 @@ ALTER TABLE ONLY qualifications
 -- Name: que_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY que_jobs
+ALTER TABLE ONLY public.que_jobs
     ADD CONSTRAINT que_jobs_pkey PRIMARY KEY (queue, priority, run_at, job_id);
 
 
@@ -657,7 +663,7 @@ ALTER TABLE ONLY que_jobs
 -- Name: ranks_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY ranks
+ALTER TABLE ONLY public.ranks
     ADD CONSTRAINT ranks_pkey PRIMARY KEY (id);
 
 
@@ -665,7 +671,7 @@ ALTER TABLE ONLY ranks
 -- Name: registries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY registries
+ALTER TABLE ONLY public.registries
     ADD CONSTRAINT registries_pkey PRIMARY KEY (id);
 
 
@@ -673,7 +679,7 @@ ALTER TABLE ONLY registries
 -- Name: specdata_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY specdata
+ALTER TABLE ONLY public.specdata
     ADD CONSTRAINT specdata_pkey PRIMARY KEY (id);
 
 
@@ -681,7 +687,7 @@ ALTER TABLE ONLY specdata
 -- Name: specializations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY specializations
+ALTER TABLE ONLY public.specializations
     ADD CONSTRAINT specializations_pkey PRIMARY KEY (id);
 
 
@@ -689,7 +695,7 @@ ALTER TABLE ONLY specializations
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY users
+ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
@@ -697,7 +703,7 @@ ALTER TABLE ONLY users
 -- Name: vmilists_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY vmilists
+ALTER TABLE ONLY public.vmilists
     ADD CONSTRAINT vmilists_pkey PRIMARY KEY (id);
 
 
@@ -705,28 +711,28 @@ ALTER TABLE ONLY vmilists
 -- Name: index_attachments_on_attachable_type_and_attachable_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE INDEX index_attachments_on_attachable_type_and_attachable_id ON attachments USING btree (attachable_type, attachable_id);
+CREATE INDEX index_attachments_on_attachable_type_and_attachable_id ON public.attachments USING btree (attachable_type, attachable_id);
 
 
 --
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
+CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
 
 
 --
 -- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
+CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING btree (reset_password_token);
 
 
 --
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+CREATE UNIQUE INDEX unique_schema_migrations ON public.schema_migrations USING btree (version);
 
 
 --

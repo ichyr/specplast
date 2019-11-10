@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.3
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  db-test:
+    image: postgres:9.3
+    volumes:
+      - ./tmp/db-test:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: specplast_test
+  web:
+    # build: .
+    command: bash -c "rm -f tmp/pids/server.pid && RAILS_ENV=development /root/.rbenv/shims/bundle exec rails s webrick -p 3000 -b '0.0.0.0'"
+    image: specplast01:latest
+    volumes:
+      - .:/myapp
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    # entrypoint: ['sh', '-c', 'sleep 2073600']
