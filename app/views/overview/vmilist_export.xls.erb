@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Номер</Data></Cell>
+        <Cell><Data ss:Type="String">Назва вмілості</Data></Cell>
+        <Cell><Data ss:Type="String">Вимоги до юнацтва</Data></Cell>
+        <Cell><Data ss:Type="String">Вимоги до інструктора</Data></Cell>
+        <Cell><Data ss:Type="String">Посилання на відзначку</Data></Cell>
+      </Row>
+    <% @vmilists.each do |v| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= v.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= v.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= v.child_info %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= v.instructor_info || "" %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= v.avatar.url(:thumb).to_s || "" %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

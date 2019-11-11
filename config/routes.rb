@@ -72,6 +72,8 @@ Rails.application.routes.draw do
   get 'api/specialization/:id', to: 'api#specialization'
   get 'api/specialization', to: 'api#specialization_index'
 
+  get 'overview/vmilist/export', to: 'overview#vmilist_export'
+
   # Default root
   get '*unmatched_route', to: 'error#error_404'
 

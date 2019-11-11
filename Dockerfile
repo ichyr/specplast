@@ -29,6 +29,7 @@ RUN apt-get update \
     libmagickcore-dev \
     libmagickwand-dev \
     nodejs \
+    postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
 # skip installing gem documentation
@@ -92,14 +93,12 @@ RUN set -ex \
 
 
 RUN git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
-RUN echo 'export PATH="/root/.rbenv/bin:$PATH"' >> ~/.bashrc
-ENV PATH="/root/.rbenv/bin:$PATH"
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 RUN eval "$(rbenv init -)"
 
 RUN git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-RUN echo 'export PATH="/root/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
-ENV PATH="/root/.rbenv/plugins/ruby-build/bin:$PATH"
+RUN echo 'export PATH="/root/.rbenv/bin:/root/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+ENV PATH="/root/.rbenv/bin:/root/.rbenv/plugins/ruby-build/bin:$PATH"
 
 RUN git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 
@@ -133,17 +132,15 @@ WORKDIR /myapp
 RUN pwd
 RUN /root/.rbenv/shims/gem install rmagick -v '2.13.4'
 RUN /root/.rbenv/shims/bundle install --quiet
-COPY . /myapp
 
 # Start the main process.
-RUN env
 ENV PATH="/root/.rbenv/shims:$PATH"
 ENV RUBY_PATH="/root/.rbenv/shims/ruby"
 RUN echo 'export PATH="/root/.rbenv/shims:$PATH"' >> ~/.bashrc
 RUN echo 'export RUBY_PATH="/root/.rbenv/shims/ruby"' >> ~/.bashrc
-RUN env
-ENV RAILS_ENV=development
-RUN env
 
-RUN apt-get install -y --no-install-recommends postgresql-client
+ENV RAILS_ENV=development
+
+COPY . /myapp
+
 CMD ["bash", "-l", "/root/.rbenv/shims/rails", "server", "-b", "0.0.0.0"]
