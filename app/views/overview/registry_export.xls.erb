@@ -32,7 +32,7 @@
         <Cell><Data ss:Type="Number"><%= entry.id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.name + " " + entry.surname %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.email %></Data></Cell>
-        <Cell><Data ss:Type="Date"><%= entry.dob %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.dob %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.sex ? "Жіноча" : "Чоловіча" %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.rank.title %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.troop %></Data></Cell>
@@ -40,14 +40,14 @@
         <Cell><Data ss:Type="String"><%= entry.city %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.region %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.vmilist.name %></Data></Cell>
-        <Cell><Data ss:Type="Date"><%= entry.achievement_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.achievement_date %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.place %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.activity %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.instruktor.name %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.instruktor.email %></Data></Cell>
         <Cell><Data ss:Type="String"><%= entry.photo_url %></Data></Cell>
-        <Cell><Data ss:Type="DaStringte"><%= entry.comment %></Data></Cell>
-        <Cell><Data ss:Type="Date"><%= entry.created_at.to_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.comment %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.created_at.to_date %></Data></Cell>
       </Row>
     <% end %>
     </Table>
