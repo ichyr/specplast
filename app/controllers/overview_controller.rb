@@ -9,5 +9,13 @@ class OverviewController < ApplicationController
         respond_to do |format|
             format.xls
         end
+    end
+    
+    def registry_export
+        @registries = Registry.all.order(created_at: :desc)
+        
+        respond_to do |format|
+            format.xls
+        end
 	end
 end

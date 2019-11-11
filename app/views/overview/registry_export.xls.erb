@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Номер</Data></Cell>
+        <Cell><Data ss:Type="String">Ім'я та прізвище</Data></Cell>
+        <Cell><Data ss:Type="String">Електронна пошта</Data></Cell>
+        <Cell><Data ss:Type="String">Дата народження</Data></Cell>
+        <Cell><Data ss:Type="String">Стать</Data></Cell>
+        <Cell><Data ss:Type="String">Ступінь</Data></Cell>
+        <Cell><Data ss:Type="String">Курінь</Data></Cell>
+        <Cell><Data ss:Type="String">Гурток</Data></Cell>
+        <Cell><Data ss:Type="String">Станиця</Data></Cell>
+        <Cell><Data ss:Type="String">Округа</Data></Cell>
+        <Cell><Data ss:Type="String">Вмілість</Data></Cell>
+        <Cell><Data ss:Type="String">Дата здотуття</Data></Cell>
+        <Cell><Data ss:Type="String">Місце здобуття</Data></Cell>
+        <Cell><Data ss:Type="String">Вид акції</Data></Cell>
+        <Cell><Data ss:Type="String">Вмілість прийняв</Data></Cell>
+        <Cell><Data ss:Type="String">Електронна пошта інструктора</Data></Cell>
+        <Cell><Data ss:Type="String">Посилання на підтвердження</Data></Cell>
+        <Cell><Data ss:Type="String">Коментар</Data></Cell>
+        <Cell><Data ss:Type="String">Дата внесення в систему</Data></Cell>
+      </Row>
+    <% @registries.each do |entry| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= entry.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.name + " " + entry.surname %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.email %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= entry.dob %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.sex ? "Жіноча" : "Чоловіча" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.rank.title %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.troop %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.group %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.city %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.region %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.vmilist.name %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= entry.achievement_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.place %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.activity %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.instruktor.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.instruktor.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= entry.photo_url %></Data></Cell>
+        <Cell><Data ss:Type="DaStringte"><%= entry.comment %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= entry.created_at.to_date %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
