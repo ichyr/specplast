@@ -31,10 +31,10 @@
             / .col-sm-9 = f.input :sex
             .col-sm-9
                 .col-sm-6
-                    input type="radio" name="registry[sex]" id="registry_sex_male" value="man" checked="checked"
+                    input type="radio" name="registry[sex]" id="registry_sex_male" value="1" checked="checked"
                     label.radio-inline.col-sm-12 for="registry_sex_male"= I18n.t('registry.sex.man')
                 .col-sm-6
-                    input type="radio" name="registry[sex]" id="registry_sex_female" value="woman"
+                    input type="radio" name="registry[sex]" id="registry_sex_female" value="0"
                     label.radio-inline.col-sm-12 for="registry_sex_female" = I18n.t('registry.sex.woman')
                   
             .col-sm-offset-3.col-sm-9 = f.error :sex, id: 'registry_sex_error'
