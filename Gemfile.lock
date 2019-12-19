@@ -239,7 +239,7 @@ GEM
     que (0.10.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.5)
+    rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
     railroady (1.3.0)
