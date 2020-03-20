@@ -1,23 +1,23 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.2.5'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'rails', '5.2.4.2'
+gem 'sass-rails', '~> 5.0.5'
+gem 'uglifier', '>= 2.7.0'
+gem 'coffee-rails', '~> 4.2.2'
+gem 'jquery-rails', '>= 4.0.3'
+gem 'turbolinks', '>= 2.5.3'
+gem 'jbuilder', '~> 2.2', '>= 2.2.6'
+gem 'sdoc', '~> 1.0.0', group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
-gem 'devise'
-gem 'pundit'
-gem 'simple_form'
-gem 'slim-rails'
+gem 'devise', '>= 4.4.2'
+gem 'pundit', '>= 0.3.0'
+gem 'simple_form', '>= 4.0.0'
+gem 'slim-rails', '>= 3.1.0'
 
 gem 'bootstrap3_autocomplete_input'
-gem 'twitter-typeahead-rails'
+gem 'twitter-typeahead-rails', '>= 0.11.1'
 
 # Application server
 gem 'unicorn'
@@ -40,7 +40,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
-gem 'bootsy'
+gem 'bootsy', '>= 2.0.13'
 
 # Bootstrap pagination links
 gem 'will_paginate-bootstrap'
@@ -49,14 +49,14 @@ gem 'will_paginate-bootstrap'
 gem 'jquery-tokeninput-rails'
 
 # Multiple file upload plugin
-gem "jquery-fileupload-rails"
+gem "jquery-fileupload-rails", ">= 0.4.1"
 
 gem "que"
 
 # for link_helpers
 gem "nested_form"
 
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '>= 5.0.0'
 
 group :development do
   gem 'better_errors'
@@ -72,7 +72,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'hub', :require=>nil
-  gem 'quiet_assets'
+  gem 'quiet_assets', '>= 1.1.0'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
@@ -80,11 +80,11 @@ group :development do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '>= 4.5.0'
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.1.0'
 end
 
 group :test do
@@ -92,8 +92,8 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'cucumber-rails', :require=>false
-  gem 'shoulda-matchers'
+  gem 'cucumber-rails', '>= 1.4.3', :require=>false
+  gem 'shoulda-matchers', '>= 2.7.0'
 
   # for Travis CI
   gem 'rake'
