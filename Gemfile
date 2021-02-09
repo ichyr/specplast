@@ -40,7 +40,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
-gem 'bootsy'
+gem 'bootsy', '>= 2.4.0'
 
 # Bootstrap pagination links
 gem 'will_paginate-bootstrap'
