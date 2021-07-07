@@ -90,7 +90,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'launchy'
+  gem 'launchy', '>= 2.4.3'
   gem 'selenium-webdriver'
   gem 'cucumber-rails', :require=>false
   gem 'shoulda-matchers'
