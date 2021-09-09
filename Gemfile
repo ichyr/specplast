@@ -2,22 +2,22 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 gem 'rails', '4.2.5'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 4.0.5'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
+gem 'coffee-rails', '~> 4.0.1'
+gem 'jquery-rails', '>= 4.0.3'
+gem 'turbolinks', '>= 2.5.3'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '>= 3.4.1'
 gem 'pundit'
-gem 'simple_form'
-gem 'slim-rails'
+gem 'simple_form', '>= 3.1.0'
+gem 'slim-rails', '>= 3.0.1'
 
 gem 'bootstrap3_autocomplete_input'
-gem 'twitter-typeahead-rails'
+gem 'twitter-typeahead-rails', '>= 0.11.1'
 
 # Application server
 gem 'unicorn'
@@ -49,17 +49,17 @@ gem 'will_paginate-bootstrap'
 gem 'jquery-tokeninput-rails'
 
 # Multiple file upload plugin
-gem "jquery-fileupload-rails"
+gem "jquery-fileupload-rails", ">= 0.4.1"
 
 gem "que"
 
 # for link_helpers
 gem "nested_form"
 
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '>= 5.0.0'
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano'
   gem 'capistrano-bundler'
@@ -72,7 +72,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'hub', :require=>nil
-  gem 'quiet_assets'
+  gem 'quiet_assets', '>= 1.1.0'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
@@ -80,19 +80,19 @@ group :development do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '>= 4.5.0'
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.1.0'
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '>= 2.4.4'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'cucumber-rails', :require=>false
+  gem 'cucumber-rails', '>= 1.4.2', :require=>false
   gem 'shoulda-matchers'
 
   # for Travis CI
