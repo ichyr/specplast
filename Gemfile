@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.2.5'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'rails', '5.2.8.1'
+gem 'sass-rails', '~> 5.0.5'
+gem 'uglifier', '>= 2.7.2'
+gem 'coffee-rails', '~> 4.2.2'
+gem 'jquery-rails', '>= 4.4.0'
+gem 'turbolinks', '>= 5.0.0'
+gem 'jbuilder', '~> 2.6', '>= 2.6.4'
+gem 'sdoc', '~> 1.0.0', group: :doc
 gem 'spring',        group: :development
-gem 'bootstrap-sass'
-gem 'devise'
+gem 'bootstrap-sass', '>= 3.4.0'
+gem 'devise', '>= 4.7.1'
 gem 'pundit'
-gem 'simple_form'
-gem 'slim-rails'
+gem 'simple_form', '>= 5.0.0'
+gem 'slim-rails', '>= 3.1.0'
 
 gem 'bootstrap3_autocomplete_input'
 gem 'twitter-typeahead-rails'
@@ -40,7 +40,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
-gem 'bootsy'
+gem 'bootsy', '>= 2.4.0'
 
 # Bootstrap pagination links
 gem 'will_paginate-bootstrap'
@@ -56,10 +56,10 @@ gem "que"
 # for link_helpers
 gem "nested_form"
 
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '>= 6.0.0'
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano'
   gem 'capistrano-bundler'
@@ -92,11 +92,11 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'cucumber-rails', :require=>false
+  gem 'cucumber-rails', '>= 2.1.0', :require=>false
   gem 'shoulda-matchers'
 
   # for Travis CI
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
   gem 'spork'
 end
 
