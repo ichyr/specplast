@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.2.5'
-gem 'sass-rails', '~> 4.0.3'
+gem 'rails', '5.0.0'
+gem 'sass-rails', '~> 5.0.5'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '>= 4.0.0'
 gem 'pundit'
-gem 'simple_form'
-gem 'slim-rails'
+gem 'simple_form', '>= 3.2.1'
+gem 'slim-rails', '>= 3.1.0'
 
 gem 'bootstrap3_autocomplete_input'
 gem 'twitter-typeahead-rails'
@@ -92,7 +92,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'cucumber-rails', :require=>false
+  gem 'cucumber-rails', '>= 1.4.3', :require=>false
   gem 'shoulda-matchers'
 
   # for Travis CI
