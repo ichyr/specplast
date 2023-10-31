@@ -25,7 +25,7 @@ gem 'unicorn-rails'
 
 # file management
 gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git'
-gem 'rmagick'
+gem 'rmagick', '>= 5.3.0'
 
 # for diagram generation
 gem 'railroady'
