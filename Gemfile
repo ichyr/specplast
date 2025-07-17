@@ -1,27 +1,27 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.2.5'
-gem 'sass-rails', '~> 4.0.3'
+gem 'rails', '7.1.0'
+gem 'sass-rails', '~> 6.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'coffee-rails', '~> 4.2.2'
+gem 'jquery-rails', '>= 4.1.1'
+gem 'turbolinks', '>= 5.0.0'
+gem 'jbuilder', '~> 2.6', '>= 2.6.4'
+gem 'sdoc', '~> 1.0.0', group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
-gem 'devise'
-gem 'pundit'
-gem 'simple_form'
-gem 'slim-rails'
+gem 'devise', '>= 4.7.0'
+gem 'pundit', '>= 1.0.0'
+gem 'simple_form', '>= 4.0.0'
+gem 'slim-rails', '>= 3.1.0'
 
 gem 'bootstrap3_autocomplete_input'
 gem 'twitter-typeahead-rails'
 
 # Application server
 gem 'unicorn'
-gem 'unicorn-rails'
+gem 'unicorn-rails', '>= 2.2.1'
 
 # file management
 gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git'
@@ -40,7 +40,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
-gem 'bootsy'
+gem 'bootsy', '>= 2.4.0'
 
 # Bootstrap pagination links
 gem 'will_paginate-bootstrap'
@@ -49,51 +49,51 @@ gem 'will_paginate-bootstrap'
 gem 'jquery-tokeninput-rails'
 
 # Multiple file upload plugin
-gem "jquery-fileupload-rails"
+gem "jquery-fileupload-rails", ">= 0.4.2"
 
 gem "que"
 
 # for link_helpers
 gem "nested_form"
 
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '>= 5.0.1'
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.2.0'
   gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv'
+  gem 'capistrano', '>= 3.4.0'
+  gem 'capistrano-bundler', '>= 1.1.4'
+  gem 'capistrano-rails', '>= 1.1.3'
+  gem 'capistrano-rails-console', '>= 0.4.0'
+  gem 'capistrano-rbenv', '>= 2.0.3'
   gem 'foreman'
-  gem 'guard-bundler'
-  gem 'guard-rails'
-  gem 'guard-rspec'
+  gem 'guard-bundler', '>= 2.2.0'
+  gem 'guard-rails', '>= 0.7.1'
+  gem 'guard-rspec', '>= 4.5.1'
   gem 'guard-spork'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
+  gem 'rb-inotify', '>= 0.9.7', :require=>false
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '>= 4.6.0'
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.5.0'
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '>= 2.5.0'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'selenium-webdriver'
-  gem 'cucumber-rails', :require=>false
-  gem 'shoulda-matchers'
+  gem 'selenium-webdriver', '>= 2.45.0'
+  gem 'cucumber-rails', '>= 3.0.0', :require=>false
+  gem 'shoulda-matchers', '>= 2.8.0'
 
   # for Travis CI
   gem 'rake'
