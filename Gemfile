@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.2.5'
+gem 'rails', '7.1.5.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -13,8 +13,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
-gem 'simple_form'
-gem 'slim-rails'
+gem 'simple_form', '>= 4.0.0'
+gem 'slim-rails', '>= 3.1.0'
 
 gem 'bootstrap3_autocomplete_input'
 gem 'twitter-typeahead-rails'
@@ -40,7 +40,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 
 # Bootstrap 3 WYSIWYG editor with carrierwave file upload
-gem 'bootsy'
+gem 'bootsy', '>= 2.1.0'
 
 # Bootstrap pagination links
 gem 'will_paginate-bootstrap'
@@ -49,7 +49,7 @@ gem 'will_paginate-bootstrap'
 gem 'jquery-tokeninput-rails'
 
 # Multiple file upload plugin
-gem "jquery-fileupload-rails"
+gem "jquery-fileupload-rails", ">= 0.4.2"
 
 gem "que"
 
@@ -84,7 +84,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.5.0'
 end
 
 group :test do
@@ -92,7 +92,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'cucumber-rails', :require=>false
+  gem 'cucumber-rails', '>= 1.4.3', :require=>false
   gem 'shoulda-matchers'
 
   # for Travis CI
